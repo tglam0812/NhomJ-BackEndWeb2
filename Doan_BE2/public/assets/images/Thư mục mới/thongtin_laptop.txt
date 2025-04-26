@@ -1,0 +1,255 @@
+1.Laptop Asus - brand 4/ category laptop = 2
+['product_name' => 'Laptop ASUS VivoBook S 14 FLIP TP3402VA-LZ025W','product_price' => 16990000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 4,
+'product_images_1' => 'laptopasuss14flip_1.jpg','product_images_2' => 'laptopasuss14flip_2.jpg','product_images_3' => 'laptopasuss14flip_3.jpg',
+'product_description' => '
+Sở hữu thiết kế sang trọng, màu bạc sáng bóng dễ dàng thu hút mọi người
+CPU I3-1315U giúp bạn thực hiện các tác vụ văn phòng một cách tối đa, xử lý ảnh nhẹ
+RAM 8GB hỗ trợ mở các tab ổn định, không lag
+Ổ cứng 256GB SSD giúp bạn lưu trữ không gian cực lớn, không cần sao chép qua USB
+Trang bị laptop có thiết kế gập và màn hình cảm ứng đem lại trải nghiệm tối đa
+Laptop Asus Vivobook S 14 FLIP TP3402VA-LZ025W – Màn hình cảm ứng tiện lợi
+Sở hữu một thiết kế mỏng nhẹ cùng hiệu năng ổn định, laptop Asus Vivobook S 14 FLIP TP3402VA-LZ025W là một sản phẩm thích hợp cho học sinh sinh viên và nhân viên văn phòng. Vậy cụ thể thì laptop Asus Vivobook này có gì, hãy cùng tìm hiểu sau đây.
+Bộ nhớ RAM 8GB đa nhiệm ổn định cùng ổ cứng thể rắn SSD PCIE
+Laptop Asus Vivobook S 14 FLIP TP3402VA-LZ025W được trang bị bộ nhớ RAM 8GB giúp máy có thể thực hiện đa nhiệm tốt khi người dùng sử dụng cùng lúc nhiều tác vụ. Bên cạnh đó thì laptop còn sở hữu khả năng khởi động máy và ứng dụng nhanh chóng nhờ được trang bị ổ cứng thể rắn SSD chuẩn PCIE.
+Thiết kế mỏng nhẹ cùng tone màu màu bạc sang trọng
+Về thiết kế, laptop Asus Vivobook S 14 FLIP TP3402VA-LZ025W được hoàn thiện với lớp vỏ kim loại mang lại một vẻ đẹp trang nhã. Bên trong, laptop gây ấn tượng thiết thiết kế nút enter với họa tiết sọc. Tổng thể, laptop chỉ nặng khoảng 1.5kg giúp người dùng có thể dễ dàng mang theo và làm việc trong nhiều trường hợp.
+Bên cạnh đó, laptop còn được trang bị bản lề với khả năng gập mở tới 360 độ cùng độ bền vượt trội với hơn 20.000 lần gập mở. Máy cũng sở hữu một hệ thống cổng kết nối khá đa dạng từ USB-C đến HDMI giúp laptop có thể kết nối với các phụ kiện hay thiết bị ngoại vi khác một các dễ dàng.
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+2.Laptop Asus - brand 4/ category laptop = 2
+['product_name' => 'Laptop ASUS TUF Gaming F15 FX506HF-HN078W','product_price' => 20990000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 4,
+'product_images_1' => 'laptopasusf15_1.jpg','product_images_2' => 'laptopasusf15_2.jpg','product_images_3' => 'laptopasusf15_3.jpg',
+'product_description' => '
+CPU Intel Core i5 11260H đáp ứng tốt các tác vụ, mang lại trải nghiệm sử dụng tuyệt vời trong cả công việc lẫn giải trí, chiến game.
+Card đồ họa NVIDIA GeForce RTX 2050 đáp ứng tốt nhu cầu chơi game cấu hình cao và xử lý các file thiết kế nặng.
+RAM 16 GB cho bạn tận hưởng những giây phút chiến game đỉnh cao khi có thể mở nhiều ứng dụng cùng lúc.
+Ổ cứng SSD 512 GB cho tốc độ khởi động nhanh chóng cùng khả năng tải ứng dụng mượt mà.
+Màn hình 15.6 inch Full HD và tần số quét 144 Hz mang lại hình ảnh sắc nét và mượt mà, cho trải nghiệm chơi game tuyệt vời,với tốc độ khung hình cao.
+Laptop Asus Tuf Gaming F15 FX506HF-HN078W với thiết kế năng động, mang vẻ đẹp thu hút với CPU core intel i5, GPU GeForce RTX™ 2050 và RAM 8 GB. Kết hợp là màn hiển thị FHD IPS 144Hz cực kỳ rõ nét. Ngoài ra laptop Asus Gaming cũng có thêm hệ thống âm thanh đỉnh cao nhờ vào công nghệ tiên tiến để phục vụ tối đa người dùng.
+Laptop Asus Tuf Gaming F15 FX506HF-HN078W – Mạnh mẽ, đẳng cấp, siêu tốc độ
+Laptop Asus Tuf Gaming F15 FX506HF-HN078W chính là siêu phẩm nhận được lượt tìm hiểu và bàn luận khá nhiều của người dùng trong không gian gần đây. Nhờ vào các tiện ích, chất lượng và công nghệ mà nó sở hữu cũng như đem đến. Hãy tham khảo ngay những thông tin của em máy này ngay sau đây để có cho mình thêm thông tin cũng như hướng dẫn lựa chọn đúng đắn nhất bạn nhé.
+Sức mạnh đến từ công nghệ, thiết kế, và tiện ích khủng
+Laptop Asus Tuf Gaming F15 FX506HF-HN078W chính là siêu phẩm giúp mang đến cho bạn sự hoàn hảo đến từ công nghệ và tiện ích. Với hàng loạt sự trang bị đỉnh cao ở cả ngoại hình, linh kiện và thông số máy để giúp bạn có được trải nghiệm game hàng đầu.
+Cấu hình khủng với khả năng xử lý êm mượt
+Một trong những ưu điểm tạo được sự hài lòng và đánh giá cao của người dùng đối với Asus Tuf Gaming F15 FX506HF-HN078W chính là bộ cấu hình mà nó sở hữu.
+Với trung tâm chính là CPU Intel® Core™ i5-11260H tốc độ boost lên đến 4.4 GHz đầy uy lực và mạnh mẽ. Kết hợp cùng người trợ thủ GPU NVIDIA® GeForce RTX™ 2050 và chipset cao cấp, chất lượng cũng như tốc độ. Tất cả giúp mang lại cho người dùng những trải nghiệm game êm ái, thú vị và kịch tích nhất.
+Kho bộ nhớ lưu trữ siêu lớn
+Laptop Asus Tuf Gaming F15 FX506HF-HN078W được nhà sản xuất cực kỳ ưu ái khi trang bị kho bộ nhớ lưu trữ siêu lớn và tiện ích. Với hệ thống RAM chính là DDR4-3200 SO-DIMM *2 8GB kết hợp cùng ổ cứng ngoài SSD NVMe PCIe® cho khả năng chứa lên đến tối đa 512 GB dữ liệu. Nhằm mang lại cho người dùng một không gian giải trí rộng lớn, thoải mái và tiện dụng nhất trên từng nhu cầu trải nghiệm.
+Thiết kế mạnh mẽ, đậm tính gaming
+Thiết kế nổi bật, mạnh mẽ nhưng không kém phần sang trọng hiện đại chính là những ưu điểm ngoại hình dễ bắt gặp nhất trên Asus Tuf Gaming F15 FX506HF-HN078W này. Máy được thiết kế từ chất liệu cao cấp, độ bền cao chuẩn quân đội. 
+Đi kèm là các góc cạnh được bố trí, gọt giũa một cách dứt khoát, sắc nét giúp tạo nên sự năng động nhưng lại rất đẹp mắt, hiện đại. Bên cạnh hệ thống đèn bàn phím nổi bật và logo nằm giữa máy đầy điểm nhấn.
+Màn hình sắc nét với khả năng chuyển mượt mà
+Laptop Asus Tuf Gaming F15 FX506HF-HN078W sở hữu một màn hình hiển thị khá cân đối và vừa vặn với tỉ lệ 16:9 siêu đẹp mắt. Điểm nhấn chính tạo nên ở phần tấm nền IPS cao cấp cho khả năng phân giải FHD 1920 x 1080 chi tiết. chân thực. Kết hợp cùng tần số quét 144 HZ cho những thao tác, chuyển động mượt mà, nhanh chóng và tinh tế nhất trên từng nhân vật trong game.
+Dung lượng pin khủng với cổng kết nối đa dạng
+Để đáp ứng yêu cầu của một chiếc laptop gaming cao cấp nhà sản xuất đã trang bị cho laptop Asus Tuf Gaming F15 FX506HF-HN078W một viên pin siêu vip với thông số ấn tượng 48WHrs. Kết hợp cùng hệ thống đa dạng các cổng kết nối đủ để hỗ trợ người dùng.
+Laptop Asus Tuf Gaming F15 FX506HF-HN078W khi nào ra mắt?
+Laptop Asus Tuf Gaming F15 FX506HF-HN078W là một siêu phẩm với chất lượng cấu hình, sự tiện ích. Cùng với đó là vẻ đẹp bề ngoài làm mê ngoặc cũng như say đắm biết bao game thủ cả chuyên và bán chuyên khi lần đầu nhìn thấy, trải nghiệm trên nó. 
+Được biết, con máy đã được nhà sản xuất trình làng cũng như đưa ra thị trường để phục vụ khách hàng của mình từ thời điểm năm 2021. Nhưng đến hiện tại nó vẫn cực kỳ hot và nhận được sự tin tưởng, mua sắm hàng đầu từ nhiều người dùng.
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+3.Laptop Asus - brand 4/ category laptop = 2
+['product_name' => 'Laptop ASUS TUF Gaming A15 FA507NU-LP140W','product_price' => 25990000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 4,
+'product_images_1' => 'laptopasussa15_1.jpg','product_images_2' => 'laptopasussa15_2.jpg','product_images_3' => 'laptopasussa15_3.jpg',
+'product_description' => '
+Một chiếc laptop dành cho game thủ, với cấu hình khủng và thiết kế độc đáo
+Bộ vi xử lý AMD R5-7535HS và card đồ họa NVIDIA Geforce RTX 4050 giúp bạn chinh phục mọi tựa game nặng và đòi hỏi cao về đồ họa
+RAM 8 GB cùng ổ cứng SSD 512 GB cho không gian lưu trữ rộng rãi, hỗ trợ mở máy, mở ứng dụng nhanh chóng
+Màn hình IPS 15.6 inch cho hình ảnh sắc nét, mượt mà và rực rỡ, với tần số quét 144 Hz, độ phân giải FHD và dải màu sRGB rộng
+Laptop còn có thiết kế chắc chắn, chống va đập và bụi bẩn hiệu quả
+Laptop Asus TUF Gaming A15 FA507NU-LP140W đem tới hiệu suất xử lý khủng nhờ được trang bị chipset AMD Ryzen 5 7535HS và VGA NVIDIA GeForce RTX 4050 6GB. Cùng với đó là khả năng lưu trữ và đa nhiệm xuất sắc thông qua dung lượng RAM 8GB DDR5-4800 SO-DIMM cùng ổ cứng 512GB PCIe 4.0 NVMe M.2 SSD. Ngoài ra, dòng laptop Asus Gaming này còn sở hữu màn hình 15.6 inches với công nghệ hiển thị tiên tiến, hỗ trợ độ sáng 250nits và độ phủ màu sRGB 100% siêu thực.
+Laptop Asus TUF Gaming A15 FA507NU-LP140W - Hiệu năng đỉnh cao, chất lượng hình ảnh sắc nét
+Laptop Asus TUF Gaming A15 FA507NU-LP140W không chỉ nổi bật với cấu hình khủng mà còn thu hút người dùng bởi thiết kế độc đáo và hiện đại. Sở hữu một kiểu dáng góc cạnh, cứng cáp, Asus TUF Gaming A15 FA507NU-LP140W cực kỳ phù hợp với phong cách mạnh mẽ của game thủ và người dùng cá tính. Bên cạnh đó, dòng laptop Gaming tới từ nhà Asus này còn hỗ trợ kết nối đa dạng, từ HDMI, USB, đến Wifi 6, mang lại sự tiện lợi và đảm bảo linh hoạt trong sử dụng.
+Dễ dàng xử lý mọi tác vụ đồ họa, chiến game khủng với hiệu năng mạnh
+Laptop Asus TUF Gaming A15 FA507NU-LP140W khẳng định vị thế của mình trong thế giới gaming bằng thông số cấu hình cực khủng. Cụ thể, nhờ được hỗ trợ bởi bộ vi xử lý AMD Ryzen 5 và card đồ họa NVIDIA GeForce RTX 4050, dòng laptop gaming này không chỉ đảm bảo hiệu suất cao khi xử lý các tác vụ hằng ngày mà còn làm chủ mọi tựa game đòi hỏi cấu hình cao. 
+Sự kết hợp ấn tượng giữa CPU mạnh mẽ và GPU hiệu quả, cùng công nghệ làm mát tiên tiến, đã cho phép Asus TUF Gaming A15 FA507NU-LP140W duy trì hiệu suất ổn định dài lâu, đem lại trải nghiệm gaming mượt mà, không giới hạn.
+Bộ nhớ ổn định giúp đa nhiệm linh hoạt và ghi nhớ dữ liệu cỡ lớn dễ dàng
+Asus TUF Gaming A15 FA507NU-LP140W không chỉ mạnh mẽ về hiệu suất mà còn ấn tượng với khả năng lưu trữ và đa nhiệm. Với RAM DDR5 8GB và ổ cứng SSD PCIe 4.0 NVMe M.2 512GB, phân khúc laptop Gaming nhà Asus này cung cấp tới người dùng một không gian lưu trữ rộng rãi và tốc độ truy cập dữ liệu cực nhanh. 
+Ngoài bộ nhớ tiêu chuẩn trên máy thì bạn cũng có thể mở rộng RAM lên tới 32GB và nâng cấp thêm ổ cứng để đáp ứng nhu cầu lưu trữ cũng như đa nhiệm mà không gặp bất kỳ khó khăn nào. Điểm nhấn về bộ nhớ này đặc biệt hữu ích cho game thủ và những người sử dụng cần xử lý công việc nặng như chỉnh sửa video, đồ họa mà không cần lo lắng về không gian lưu trữ và đa nhiệm.
+Kiểu dáng hầm hố, mạnh mẽ chuẩn Gaming
+Thiết kế của Asus TUF Gaming A15 FA507NU-LP140W hội tụ đầy đủ các nét nổi trội của một phân khúc laptop gaming: mạnh mẽ, cứng cáp và đầy cá tính. Theo đó, Asus TUF Gaming A15 FA507NU-LP140W mang một vẻ ngoài hiện đại với góc cạnh được tinh chỉnh kỹ lưỡng, cùng màu sắc và hoàn thiện bề mặt độc đáo, tạo nên điểm nhấn nổi bật cho không gian làm việc hay giải trí của bạn. 
+Thông qua đó, thế hệ laptop nhà Asus này không chỉ thu hút người dùng bởi hiệu suất ấn tượng mà còn bởi thiết kế ngoại hình cuốn hút, phản ánh phong cách và đẳng cấp của người sở hữu.
+Hiển thị siêu thực, mượt mà trong từng khung hình với tần số quét lớn
+Màn hình của Asus TUF Gaming A15 FA507NU-LP140W đem lại trải nghiệm hình ảnh đỉnh cao với độ phân giải Full HD 1920 x 1080 pixels, cùng công nghệ màn hình IPS chống chói giúp màu sắc hiển thị thêm phần rực rỡ, sống động. Đặc biệt, tần số quét trên Asus TUF Gaming A15 FA507NU-LP140W còn lên đến 144Hz, mang lại khả năng hiển thị mượt mà, giảm nhiễu và xé hình. 
+Nhờ vậy mà mọi nhu cầu chiến game hay xem phim của người dùng đều được đáp ứng với trải nghiệm mượt mà hàng đầu. Kèm theo đó là độ phủ màu NTSC 72%, SRGB 100%, Adobe 75.35%, cho phép dòng máy tính xách tay Gaming nhà Asus đảm bảo trải nghiệm hình ảnh chân thực và sắc nét, trong từng chi tiết nhỏ.
+Viên pin lớn, cho phép thoải mái chiến game hay xử lý đồ hoạ suốt ngày dài
+Asus TUF Gaming A15 FA507NU-LP140W không chỉ mạnh mẽ về hiệu suất mà còn ấn tượng với khả năng sử dụng pin dài lâu. Theo đó, Asus TUF Gaming A15 FA507NU-LP140W sở hữu viên pin dung lượng lớn 90WHrs, hỗ trợ người dùng trong nhiều giờ làm việc, giải trí mà không cần sạc liên tục. 
+Kết hợp với mức năng lượng lớn này công nghệ sạc nhanh xuất sắc giúp giảm thiểu thời gian chờ đợi của người dùng trong quá trình nạp lại năng lượng cho máy. Thông qua tính năng ấn tượng về pin và khả năng sạc này, Asus TUF Gaming A15 FA507NU-LP140W trở thành lựa chọn lý tưởng cho những ai cần một phiên bản laptop đáng tin cậy mà không lo lắng về việc cạn kiệt năng lượng.
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+4.Laptop Asus - brand 4/ category laptop = 2
+['product_name' => 'Laptop ASUS ZenBook UM3402YA-KM074W','product_price' => 23990000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 4,
+'product_images_1' => 'laptopasussa15_1.jpg','product_images_2' => 'laptopasussa15_2.jpg','product_images_3' => 'laptopasussa15_3.jpg',
+'product_description' => '
+Sở hữu thiết kế sang trọng khi khoác lên mình lớp vỏ màu đen ngọc thạch tối giản, thanh lịch được lấy cảm hứng từ vẻ đẹp của đá tự nhiên.
+CPU AMD Ryzen 5 5625U kết hợp cùng card AMD Radeon mang hiệu năng cao, tiết kiệm pin vận hành các tác vụ chơi game, làm đồ họa thiết kế.
+Ram 8 GB, ổ cứng 512GB SSD cho tốc độ xử lý nhanh, mở nhiều tab cùng lúc không bị giật, lag.
+Màn hình cảm ứng OLED 14 inch cùng độ phân giải lên đến 2.8K mang lại hình ảnh chân thực, rõ nét, sắc màu sống động.
+Bản lề gập mở 180 độ tối ưu hóa laptop thành một chiếc máy tính bảng dễ dàng chia sẻ thông tin cực tiện lợi. 
+Khung máy nhỏ gọn, trọng lượng chỉ 1.39kg sẵn sàng đồng hành mọi chuyến đi.
+Laptop Asus Zenbook UM3402YA-KM074W – Thiết kế sang trọng, hiệu năng ổn định
+Laptop Asus Zenbook UM3402YA-KM074W chiếm được khá nhiều tình cảm của người dùng nhờ lối thiết kế cũng như hiệu năng đỉnh cao mà nó mang lại. Để tìm hiểu thêm laptop Asus Zenbook UM3402YA-KM074W có phù hợp với nhu cầu sử dụng của bản thân hay không, hãy tìm hiểu chi tiết ngay sau đây.
+Thiết kế tinh gọn, trang nhã
+Asus Zenbook UM3402YA-KM074W chiếc laptop 2 in 1 mang 1 thiết kế cực kì mỏng nhẹ, hiện đại không thua kém bất kỳ chiếc máy tính đắt tiền nào. Với thiết kế màu đen phủ trên nền hợp kim nhôm bóng loáng chính là điểm nhấn. Cân nặng của chiếc máy này là vô cùng nhỏ nên tăng được tính linh động trong giải quyết công việc.
+Hiệu năng chuyên nghiệp, mạnh mẽ, màn hình sắc nét
+Nền tảng win 11 mới nhất cũng được cài đặt trên máy mang lại một khả năng hoạt động ổn địnhh. Asus Zenbook UM3402YA-KM074W với bộ GPU AMD Radeon™ Graphics, Ram 8GB cùng bộ lưu trữ ngoài SSD 512GB giúp bạn dễ dàng xử lý, lưu trữ cũng như giải quyết các công việc của mình 1 cách nhẹ nhàng, dễ dàng.
+Với màn hình 14 inch cực lớn cùng độ phân giải đến con số 2.8K cho phép người dùng chiêm ngưỡng được những hình ảnh sắc nét nhất, chân thực nhất đến từng khung hình. Đặc biệt màn hình laptop dành cho văn phòng Asus Zenbook UM3402YA-KM074W còn là màn hình OLED cực hiện đại giúp cho hình ảnh trên máy đã xịn nay lại càng xịn và đặc sắc hơn.
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+5.Laptop HP - brand 5/ category laptop = 2
+['product_name' => 'Laptop HP Gaming Victus 15-FB1023AX 94F20PA','product_price' => 24490000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 5,
+'product_images_1' => 'laptophpvictus15_1.jpg','product_images_2' => 'laptophpvictus15_2.jpg','product_images_3' => 'laptophpvictus15_3.jpg',
+'product_description' => '
+Sở hữu màn hình 15.6 inch với lớp vỏ đen thời thượng
+CPU Intel Core R5-7535HS hỗ trợ mình giải quyết nhanh gọn hàng loạt tác vụ mà không lo giật lag
+Card  RTX 2050 giúp giải quyết được khối lượng công việc nặng
+RAM 8GB cùng ổ cứng 512 GB SSD ch không gian lưu trữ đủ lớn, lưu trữ tài liệu, hình ảnh,...
+Laptop HP Gaming Victus 15 FB1023AX 94F20PA được trang bị bộ xử lý trung tâm AMD Ryzen 5 7535HS 6 nhân, 12 luồng với tốc độ xung nhịp lên tới 4.5GHz. RAM dung lượng 8GB xử lý tốt khối lượng công việc tốt và phù hợp để thiết kế đồ hoạ 2D. VGA NVIDIA Geforce RTX 2050 4GB trên laptop HP Victus này mang tới trải nghiệm chiến game mượt mà trên màn hình rộng 15.6 inch cùng tần số quét 144Hz ấn tượng. 
+Laptop HP Gaming Victus 15 FB1023AX 94F20PA - Hiệu năng mạnh mẽ
+Mặc dù chỉ mới gia nhập thị trường laptop gaming chưa lâu nhưng HP đã dần chiếm được cảm tình của khách hàng nhờ hiệu năng ổn định và cấu hình mạnh mẽ. Trong đó, laptop HP Victus 15 FB1023AX 94F20PA là một trong những mẫu máy đáng tham khảo ở thời điểm hiện tại với kiểu dáng trẻ trung và khả năng xử lý đáng kinh ngạc,
+Đa nhiệm mượt mà với RAM 8GB, SSD 512GB
+Laptop HP Gaming Victus 15 FB1023AX 94F20PA được trang bị RAM dung lượng 8GB chuẩn DDR5 giúp bạn chạy nhiều tác vụ cùng một lúc mà không bị giật, lag. Ngoài ra, máy sở hữu ổ cứng 512GB mang đến không gian lưu trữ khổng lồ. Bạn có thể tải về nhiều ứng dụng hay dữ liệu như video, hình ảnh độ phân giải cao mà không cần bận tâm về tình trạng đầy bộ nhớ. Không những vậy, SSD của Victus 15 FB1023AX 94F20PA còn tăng tốc độ ghi - xuất dữ liệu cho máy và bảo mật thông tin an toàn.
+Thiết kế gaming bắt mắt, khỏe khoắn
+Máy được hoàn thiện với phần vỏ ngoài làm từ nhựa cứng cao cấp, chống trầy xước tốt. Logo chữ V sáng bóng ở ngay trung tâm vô cùng nổi bật và thu hút. Viền máy mỏng mang đến vùng hiển thị rộng hơn, tạo cảm giác thoải mái và hài hoà khi làm việc hay thưởng thức các nội dung giải trí.
+Bên cạnh đó, với kích thước 15.6 inch, HP đã trang bị thêm bàn phím số tiện lợi cho Victus 15 FB1023AX 94F20PA. Đặc điểm này sẽ cực hữu ích cho các game thủ khi tham gia những trò chơi đòi hỏi sự hỗ trợ từ phím số. Đồng thời, bộ bàn phím còn được tích hợp thêm đèn LED - giải quyết hiệu quả trong trường hợp người dùng phải làm việc trong điều kiện ánh sáng yếu. 
+CPU AMD Ryzen 5 7535HS ổn định, phù hợp chơi game
+Nhà sản xuất đã đầu tư CPU AMD Ryzen 5 7535HS cho Victus 15 FB1023AX 94F20PA với tốc độ xung nhịp lên tới 4.5GHz - nâng cao hiệu suất trên các ứng dụng đơn luồng. Nhờ vậy, mẫu laptop này rất phù hợp cho việc chơi các tựa game ở độ phân giải từ trung bình đến cao. Máy sở hữu card đồ họa RTX 2050 4GB GDDR6 mang đến từng khung hình sống động.
+Đa cổng kết nối, pin dùng tới 6 tiếng
+Laptop HP Gaming Victus 15 FB1023AX 94F20PA hỗ trợ nhiều cổng kết nối như HDMI, USB Type-C/DisplayPort, LAN 1Gbps, Audio com,... Nhờ vậy, bạn có thể kết nối sản phẩm với những thiết bị ngoại vi nhanh chóng, phục vụ cho nhiều mục đích sử dụng khác nhau. Đặc biệt, cổng type-C cho phép sạc các thiết bị với công suất lớn, giảm thời lượng nạp pin hiệu quả. Máy sử dụng kiểu pin 3-cell, 52.5Wh cho thời gian sử dụng lên tới nhiều giờ đồng hồ.
+Màn hình FHD sống động, dải màu 45% NTSC
+Màn hình máy kích thước 15.6 inch sử dụng tấm nền IPS với độ phân giải FHD (1920*1080 pixels). Nhờ vậy, từng nội dung trên HP Gaming Victus 15 FB1023AX 94F20PA có độ hiển thị rõ ràng vì được chi tiết hoá những điểm ảnh nhỏ nhất trên màn hình. Đáng chú ý, khả năng tái tạo màu sắc trên máy tích hợp công nghệ IPS, độ phủ màu 45% NTSC bắt mắt và chân thực. Tần số quét cao hạn chế tốt tình trạng phản hồi trễ, xé hình hay bóng mờ. 
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+6.Laptop HP - brand 5/ category laptop = 2
+['product_name' => 'Laptop HP Pavilion 14-DV2073TU 7C0P2PA','product_price' => 20090000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 5,
+'product_images_1' => 'laptophppa14_1.jpg','product_images_2' => 'laptophppa14_2.jpg','product_images_3' => 'laptophppa14_3.jpg',
+'product_description' => '
+Thuộc phân khúc laptop học tập - văn phòng với kích thước nhỏ gọn, màn hình 14 inch tiêu chuẩn.
+Bộ vi xử lý Intel Core i5-1235U mạnh mẽ, xử lý mượt mà các tác vụ văn phòng như Word, Excel, PowerPoint.
+Card đồ họa tích hợp Intel Iris Xe Graphics cho khả năng chỉnh sửa hình ảnh cơ bản, làm poster trên Lightroom, Photoshop, Illustrator,... một cách trơn tru.
+16GB RAM DDR4 đáp ứng tốt khả năng đa nhiệm.
+Cùng ổ cứng SSD 512GB NVMe PCIe cho không gian lưu trữ các tài liệu học tập, làm việc.
+Đa dạng kết nối với các cổng như: USB Type-C, USB Type-A, HDMI 2.0, jack tai nghe/mic,...
+Laptop HP Pavilion 14-DV2073TU 7C0P2PA - Thiết kế thanh lịch, hiệu năng cao
+Laptop HP Pavilion 14-DV2073TU 7C0P2PA vẫn giữ nguyên nét đặc trưng thiết kế của hãng laptop HP Pavilion. Với ngoại hình đẹp mắt, màu vàng bên ngoài tạo nên vẻ ngoài đơn giản và hiện đại. Tìm hiểu nhiều hơn về sản phẩm laptop HP Pavilion qua bài viết sau đây nhé!
+Trọng lượng nhẹ nhàng, khả năng xử lý cao cấp
+Laptop HP Pavilion 14-DV2073TU 7C0P2PA là một trong những dòng máy có trọng lượng nhẹ nhàng. Cụ thể sản phẩm có độ mỏng 17mm và trọng lượng là 1,41kg. Với trọng lượng này sẽ tương đương nhiều mẫu laptop màn hình 14 inch. Nhờ đó mà tính di động của sản phẩm được nâng cấp vượt bậc.
+HP Pavilion 14-DV2073TU 7C0P2PA được cung cáp sức mạnh nhờ bộ vi xử lý Intel Core i5 1235U. Đây là một dòng chip vô cùng mạnh mẽ và tiết kiệm điện năng. Từ đó mà các khả năng xử lý các tác vụ mượt mà hơn bao giờ hết.
+Màn hình giải trí lớn, hỗ trợ âm thanh cao cấp
+Laptop HP Pavilion 14-DV2073TU 7C0P2PA có kích thước màn hình lên đến 14 inch cùng độ phân giải Full HD. Do đó sẽ cho phép người dùng sử dụng màn hình rõ nét đến từng chi tiết. Ngoài ra còn có tấm nền IPS mở rộng cùng góc nhìn đến 178 độ, đảm bảo cho người dùng cần khi chia sẻ thông tin trong việc học hay hội họp.
+Đặc biệt sản phẩm còn sở hữu công nghệ âm thanh Audio by Bang & Olufsen danh tiếng. Giúp người dùng có thể tận hưởng từng chất âm ở độ phân giải cao.
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+7.Laptop HP - brand 5/ category laptop = 2
+['product_name' => 'Laptop HP Envy X360 BF0112TU 7C0N9PA','product_price' => 29690000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 5,
+'product_images_1' => 'laptophpenvy_1.jpg','product_images_2' => 'laptophpenvy_2.jpg','product_images_3' => 'laptophpenvy_3.jpg',
+'product_description' => '
+Khối lượng nhẹ chỉ 1.34 kg dễ dàng mang theo nó bất cứ đâu.
+Màn hình cảm ứng nhỏ gọn 13.3 inch, độ phân giải 2.8K cho màu sắc chân thực, sống động.
+CPU Intel Core i5 - 1230U đi kèm RAM 16 GB và ổ cứng 512 GB SSD xử lý trơn tru các tác vụ nặng từ làm office đến phần mềm đồ họa cơ bản.
+Card đồ họa Intel Iris Xe Graphics đáp ứng tốt các nhu cầu đồ họa, thiết kế đồ họa hay chơi game cấu hình nhẹ.
+HP Envy X360 là dòng laptop sở hữu bộ vi xử lý Intel Core i5 Alder Lake - 1230U, kết hợp cùng RAM 16 GB xử lý mượt mà các tác vụ đa nhiệm nặng. Máy tích hợp ổ cứng 512GB PCIe Gen4 NVMe cho không gia lưu trữ lớn, cùng màn 13.3 inch với độ phân giải sắc nét. Đặc biệt, laptop có thiết kế bản lề 360 độ linh hoạt cùng đầy đủ các cổng kết nối.
+Laptop HP Envy X360 - Màn đẹp sắc nét, gập 360 tiện lợi
+Laptop HP ENVY X360 đứng trong hàng ngũ những thiết bị 2 trong 1 tiên tiến và độc đáo. Mặc dù có thiết kế mỏng nhẹ, máy vẫn đáp ứng tốt nhu cầu công việc hàng ngày với khả năng xử lý tác vụ nặng mượt mà.
+Tác vụ nhanh gọn với RAM 16GB 
+Với bộ nhớ trong 16GB DDR4 và tốc độ bus RAM lên đến 4266 MHz, laptop HP Envy X360 đảm bảo hiệu suất đa nhiệm tối ưu. Khả năng xử lý đồng thời nhiều ứng dụng mà không gặp tình trạng giật lag giúp người dùng trải nghiệm mượt mà và linh hoạt hơn.
+Về ổ cứng, chiếc laptop HP Envy X360 sở hữu dung lượng 512GB PCIe Gen4 NVMe TLC M.2 SSD. Với dung lượng này, người dùng có đủ không gian lưu trữ cho mọi nhu cầu: từ tài liệu, hình ảnh, video cho đến các ứng dụng công việc và giải trí. Không chỉ rộng rãi về dung lượng, ổ cứng này còn mang lại tốc độ đọc/ghi nhanh chóng, giúp tiết kiệm được nhiều thời gian làm việc hàng ngày. 
+Thiết kế 2 trong 1 độc đáo 
+Thiết kế của laptop Envy X360 này đã được tối ưu hóa để mang lại sự thuận tiện và đa năng cho người dùng. Với khối lượng siêu nhẹ chỉ 1.34 kg, việc di chuyển và mang theo máy trở nên dễ dàng hơn bao giờ hết, giúp bạn có thể sáng tạo mọi lúc mọi nơi. Bên cạnh đó, việc tích hợp Stylus pen vào thân máy cho phép bạn phác thảo ý tưởng một cách tự nhiên và nhanh chóng.
+Về thiết kế tổng thể, laptop HP Envy X360 đã trải qua sự cải tiến với việc giảm viền xung quanh màn hình, tạo nên một hình dáng nhỏ gọn và thanh lịch hơn. Bề mặt kim loại màu bạc sáng làm tăng thêm sự sang trọng cho sản phẩm. Đặc biệt, bản lề 360 độ linh hoạt cho phép máy chuyển đổi giữa chế độ laptop và máy tính bảng vô cùng mượt mà. 
+Đáp ứng đủ nhu cầu đồ hoạ
+Card đồ họa trên laptop HP Envy X360 này đã được tối ưu hóa để đáp ứng mọi nhu cầu sử dụng từ cơ bản đến phức tạp. Với vi xử lý Intel Core i5 Alder Lake - 1230U, máy không chỉ mạnh mẽ trong việc xử lý các tác vụ văn phòng thông thường mà còn hoàn toàn đủ sức đối phó với các phần mềm đồ họa cơ bản.
+Với card đồ họa Intel Iris Xe Graphics tích hợp, laptop Envy X360 hoàn toàn có khả năng xử lý các tác vụ đồ họa từ cơ bản đến nâng cao. Bạn có thể thực hiện các công việc như chỉnh sửa ảnh, thiết kế đồ họa, hay thậm chí là trải nghiệm các trò chơi cấu hình nhẹ một cách mượt mà và ổn định. Đồ họa trên chiếc HP này xứng đáng với sự kỳ vọng của người dùng.
+Pin dùng lâu dài, đa cổng kết nối
+Laptop HP Envy X360 BF0112TU 7C0N9PA được trang bị pin 4-cell với dung lượng lên đến 66 Wh, giúp mang lại thời lượng pin ấn tượng. Với dung lượng này, người dùng có thể yên tâm sử dụng máy trong thời gian dài mà không lo ngại về việc cần sạc pin liên tục.
+Dù có thiết kế mỏng nhẹ và sang trọng, nhưng máy Envy X360 vẫn đảm bảo đầy đủ các cổng kết nối quan trọng. Người dùng có thể dễ dàng kết nối với các thiết bị khác nhờ jack 3.5 mm, Thunderbolt 4 với USB-C và cổng SuperSpeed USB A.
+Với việc tích hợp Intel® Wi-Fi 6E AX211 (2x2), laptop HP Envy X360 đảm bảo tốc độ kết nối mạng không dây vượt trội, phục vụ tốt cho mọi nhu cầu từ học tập đến giải trí. Đồng thời, Bluetooth® 5.2 combo cũng giúp người dùng linh hoạt trong việc kết nối và truyền dữ liệu với các thiết bị khác một cách dễ dàng và nhanh chóng.
+Màn OLED 2K sắc nét bắt trọn chuyển động hình ảnh
+Laptop HP Envy X360 BF0112TU 7C0N9PA sở hữu màn hình 13.3 inch với độ phân giải 2880 x 1800, đem đến trải nghiệm hình ảnh vô cùng sắc nét và chân thực. Đặc biệt, với hỗ trợ chuẩn màu DCI-P3 100%, màu sắc trên màn hình được tái tạo một cách sống động và chân thật, phục vụ tốt cho cả giải trí lẫn công việc thiết kế đồ họa chuyên nghiệp.
+Công nghệ màn hình OLED trên HP Envy X360 mang đến đẳng cấp màu sắc hàng đầu, đảm bảo mỗi hình ảnh hiển thị trên máy đều chính xác và sống động. Khả năng cảm ứng mượt mà trên màn hình cho phép người dùng tận dụng toàn bộ tiềm năng của máy, từ chức năng laptop đến chế độ máy tính bảng.
+Để tăng cường độ bền, màn hình của laptop Envy X360 này được trang bị kính Corning® Gorilla® Glass NBT™. Đây là một lớp kính chống trầy, chống ăn mòn và chống sốc, đảm bảo bề mặt màn hình luôn sáng bóng và bền bỉ theo thời gian, cung cấp sự an tâm cho người dùng. 
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+8.Laptop Apple- brand 1/ category laptop = 2
+['product_name' => 'Macbook Air M3 13','product_price' => 27990000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 1,
+'product_images_1' => 'macbookairm3_1.jpg','product_images_2' => 'macbookairm3_2.jpg','product_images_3' => 'macbookairm3_3.jpg',
+'product_description' => '
+Sức mạnh xử lý hàng đầu trên chip Apple M3 - Cân tốt mọi tác vụ từ đồ hoạ đến lập trình
+Màn hình Liquid Retina 13,6 inch - Màu sắc hiển thị rực rỡ, sắc nét
+Camera FaceTime HD 1080p - Đàm thoại, hội họp mọi lúc mọi nơi
+Hỗ trợ sạc 30W - Nhanh chóng nạp đầy pin khi bạn cần
+Apple Macbook Air 13 M3 với con chip Apple M3 mạnh mẽ cùng công nghệ dò tia tốc độ cao mang lại trải nghiệm dùng mượt mà. Laptop sở hữu một thiết kế siêu mỏng với độ dày 1,13 cm giúp người dùng dễ dàng mang theo. Macbook Air 13 được trang bị wifi 6E mang lại tốc độ nhanh hơn đến 2x lần so với wifi 622.
+Apple Macbook Air 13 M3 – Thiết kế mỏng nhẹ, hiệu năng vượt trội
+Apple Macbook Air 13 M3 là mẫu Macbook Air thế hệ 2024 với nhiều nâng cấp về cấu hình. Vậy chính xác dòng Macbook Air m3 này có gì nổi bật đáng để mua sử dụng thì cùng tìm hiểu chi tiết sau đây.
+RAM 8GB cùng dung lượng lưu trữ 256GB mượt mà
+Macbook Air 13 M3 sở hữu bộ nhớ RAM 8GB mang lại khả năng đa nhiệm ổn định. Với dung lượng RAM này, Macbook cho phép người dùng có thể hoạt động cùng lúc nhiều ứng dụng. Cùng với đó, Macbook còn sở hữu bộ nhớ lưu trữ 256GB giúp mang lại không gian lưu trữ rộng.
+Thiết kế siêu mỏng, bàn phím Magic Keyboard
+Apple Macbook Air 13 inch sở hữu một thiết kế siêu mỏng với độ dày chỉ 1,13 cm. Thiết kế mỏng nhẹ trên Macbook giúp sản phẩm có thể dễ dàng mang theo trong công việc và giải trí. Bên cạnh đó, Macbook còn được thiết kế thân thiện với môi trường với vỏ máy được hoàn thiện từ nhôm vật liệu tái chế.
+Macbook Air 13 M3 thế hệ 2024 này được trang bị tới 4 phiên bản màu sắc khác nhau từ đêm xanh thẳm đến ánh sao, xám không gian, bạc. Macbook còn được trang bị công nghệ bảo mật touch ID trên nút nguồn mang lại khả năng mở khóa nhanh chóng.
+Apple Macbook Air 13 M3 với bàn phím Magic Keyboard có hỗ trợ đèn nền giúp người dùng có thể sử dụng thiết bị dễ dàng kể cả trong điều kiện thiếu sáng. Cùng với đó, bàn phím với độ ồn gõ thấp không ảnh hưởng đến người dùng bên cạnh.
+Màn hình Liquid Retina 13 inch, hiển thị vượt trội
+Macbook Air 13 M3 được trang bị một màn hình kích thước 13 inch vừa phải. Màn hình Liquid Retina với khả năng hiển thị lên đến 1 tỷ màu nhờ đó các chi tiết hiển trị trên màn hình vô cùng chân thực, chi tiết sắc nét.
+Chip Apple M3 mạnh mẽ với công nghệ dò tia tốc độ cao
+Macbook Air 13 2024 được nâng cấp lên con chip M3, con chip thế hệ mới này cho tốc độ nhanh hơn đến 1,6x lần so với M1. Con chip M3 với kiến trúc GPU thế hệ mới kết hợp với công nghệ dò tia tốc độ cao bằng phần cứng, Dynamic Caching. Cấu hình này giúp tăng cường hiệu năng cho Macbook cũng như hỗ trợ hiển thị hình ảnh chân thực.
+Con chip M3 hỗ trợ thiết bị có những trải nghiệm gaming mượt mà hơn. Cùng với đó Macbook Air M3 còn tối ưu cho các công việc đồ họa với khả năng chỉnh sửa và video nhanh hơn 13x, lọc và xử lý hình ảnh 2,8x và kết xuất 3D tới 5,8x lần.
+Pin bền bỉ cùng hệ thống cổng kết nối đa dạng
+Macbook Air M3 được trang bị viên pin Li-Po 52,6 watt-giờ giúp mang lại một thời lượng sử dụng bền bỉ. Cùng với đó, sản phẩm còn được trang bị sạc nhanh công suất 30W thông qua cổng sạc USB-C.
+Cùng với dung lượng pin lớn, Macbook còn được hệ thống cổng kết nối đa dạng với cổng sạc MagSafe 3, jack cắm tai nghe 3,5 mm cùng với đó là 2 cổng Thunderbolt / USB 4. 
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+9.Laptop Apple- brand 1/ category laptop = 2
+['product_name' => 'Apple MacBook Pro 13 M2 2022','product_price' => 41990000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 1,
+'product_images_1' => 'macbookpro13m2_1.jpg','product_images_2' => 'macbookpro13m2_2.jpg','product_images_3' => 'macbookpro13m2_3.jpg',
+'product_description' => '
+Vẻ ngoài sang trọng, siêu mỏng nhẹ - trọng lượng chỉ 1.4kg
+Chip Apple M2 chạy mượt các úng dụng đồ hoạ như Phototshop, Premier hay các phần mềm văn phòng Word, Exel, Powerpoint
+Ram 8GB - Đa nhiệm mượt mà, mở cùng lúc nhiều ứng dụng hay tab trình duyệt mà không lo giật lag
+Màn hình Retina cùng các công nghệ như True Tone, Wide Color - Màu sắc hiển thị sắc nét, trải nghiệm giải trí tuyệt vời hơn bao giờ hết
+Tích hợp touch bar - Các thao tác nhu chụp màn hình, chỉnh âm lượng trở nên dễ dàng hơn
+Webcam 720p - Sẵn sàng tham gia các buổi họp trực tuyến hay họp online
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+10.Laptop Apple- brand 1/ category laptop = 2
+['product_name' => 'MacBook Pro 16 inch M2 Pro 2023','product_price' => 65990000,'product_qty' => 30, 'category_id' => 2,'brand_id' => 1,
+'product_images_1' => 'macbookpro16_1.jpg','product_images_2' => 'macbookpro16_2.jpg','product_images_3' => 'macbookpro16_3.jpg',
+'product_description' => '
+Thiết kế sang trọng - Vỏ kim loại cùng trọng lượng chỉ 2.15kg dễ dàng mang theo mọi nơi
+Hiển thị chân thật - Kích thước màn hình 16.2 inch cùng tần số quét lên đến 120Hz
+Cấu hình mạnh mẽ - Ram 16GB cùng SSD 512 GB đa nhiệm mượt mà, tránh tình trạng giật lag
+Xử lý tốt các tác vụ đồ hoạ - GPU 19 nhân giúp việc render videor hay chỉnh sửa ảnh diễn ra một cách nhẹ nhàng.
+Macbook Pro 16 inch 2023 M2 Pro – Đồ họa ấn tượng, cấu hình mạnh mẽ
+Macbook Pro 16 inch M2 Pro 2023 có thiết kế và tính năng ấn tượng có những ý kiến tích cực từ phía khách hàng. Chiếc Macbook Pro 2023 được sản xuất bởi nhà Apple, thương hiệu có tiếng trong thị trường công nghệ, nên càng nâng cao vị thế của sản phẩm khi ra mắt. 
+Cấu hình mạnh mẽ, ổn định với con chip M2 Pro
+Macbook Pro 16 2023 M2 Pro trang bị cấu hình nổi trội nhờ con chipset M2 Pro 12 nhân, 19 nhân GPU, 16 nhân Neural Engine cùng băng thông bộ nhớ lên đến 200GB/s. Nhờ vậy laptop sẽ hoạt động mạnh mẽ, ổn định trong nhiều giờ liền. Hiệu năng hoạt động của máy được nâng cao lên gấp nhiều lần so với sản phẩm thông thường khác trên thị trường.
+Dung lượng pin khủng, người dùng sử dụng liên tục, sau khi cạn pin có thể nạp đầy nhờ củ sạc nhanh đi kèm tăng khả năng sạc pin cho máy, không cần phải chờ đợi trong thời gian dài. Sản phẩm đã có độ hot nhất định từ lúc chưa tung ra thị trường cho đến bây giờ.
+Thiết kế tinh tế thời thượng, trọng lượng nhẹ dễ mang đi
+Macbook Pro 16 inch M2 Pro 2023 có thiết kế hiện đại, với viền mỏng nhẹ, màn hình lớn 16 inch giúp người dùng có trải nghiệm ấn tượng hơn khi xem phim, lướt web. Công nghệ màn hình Promotion, hình ảnh mang đến sắc nét và hiển thị hàng triệu sắc màu trên một khung hình.
+Kích thước Macbook Pro 16 inch gọn nhẹ: W35.57 x H1.68 x D24.81 (cm). Trong khi trọng lượng chỉ 2.15kg, người dùng dễ dàng mang đi nhiều nơi khác nhau để tiến hành học tập, làm việc.
+Với bàn phím có độ nảy tốt, tiến độ công việc sẽ được tăng lên, đạt hiệu quả khi sử dụng trong thời gian dài, laptop có tốc độ màn hình làm mới nhanh chóng lên đến từng giây, không sợ bị trễ khi đang thực hiện các thao tác trên sản phẩm. Chất liệu của Macbook Pro 16 inch M2 Pro 2023 cao cấp, cứng cáp giúp tăng sự bền bỉ, hạn chế trầy xước trong quá trình sử dụng.
+Laptop có chế độ ban đêm, giúp hạn chế ánh sáng xanh, ảnh hưởng trực tiếp đến mắt, giảm thiểu các tật khúc xạ khi tiếp xúc với thiết bị thông minh quá nhiều. Mật khẩu của laptop còn giúp bảo vệ sản phẩm khỏi kẻ xấu khi muốn lấy cắp thông tin quan trọng trong máy chủ của người dùng. 
+Đồ họa ấn tượng
+Macbook Pro 16 inch 2023 M2 Pro có camera sắc nét, quay phim hay chụp ảnh rõ ràng mà không lo bị nhòe. Do đó, người dùng sẽ có trải nghiệm ấn tượng khi chiến game, xem phim nhờ card đồ họa ấn tượng, hình ảnh sống động, rực rỡ đến từng chi tiết nhỏ. 
+Bên cạnh đó, kết hợp với hình ảnh là âm thanh, với âm thanh đa chiều, rõ đến từng nhịp bass, tiếng trống trong bài nhạc, người dùng sẽ thư giãn sau một khoảng thời gian dài làm việc tại công ty hay học tập tại trường. Ngoài ra, người dùng sẽ có khoảnh khắc bùng nổ khi chiến game cùng bạn bè, hay xem phim cùng người thân.
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],

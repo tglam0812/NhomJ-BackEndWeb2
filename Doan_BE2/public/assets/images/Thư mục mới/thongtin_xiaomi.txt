@@ -1,0 +1,145 @@
+1. Xiaomi brand_id 3
+['product_name' => 'Xiaomi 14','product_price' => 16550000,'product_qty' => 30, 'category_id' => 1,'brand_id' => 3,
+'product_images_1' => 'xiaomi14_1.jpg','product_images_2' => 'xiaomi14_2.jpg','product_images_3' => 'xiaomi14_3.jpg',
+'product_description' => '
+Xiaomi 14 là một trong những sản phẩm cao cấp mới nhất của Xiaomi, được đánh giá cao với thiết kế hiện đại, hiệu năng siêu mạnh mẽ và màn hình tuyệt đẹp. Trong bài viết này, chúng ta sẽ điều tra chi tiết về smartphone này để hiểu rõ hơn nhé.
+Thiết kế nhỏ gọn, sang trọng
+Xiaomi 14 có thiết kế không có quá nhiều khác biệt so với bản tiền nhiệm ngoại trừ cụm camera được thiết kế to hơn. Với hình dáng vuông vức giúp máy trở nên hiện đại và cứng cáp. Do các cạnh được vuốt nhẹ nên không gây cảm giác cấn khi cầm nắm sử dụng.
+Sản phẩm ra mắt với 2 phiên chất liệu mặt lưng là da và kính. Khung máy được gia công từ nhôm góp phần giúp thiết bị bền bỉ hơn theo thời gian.
+Màn hình 
+Màn hình Xiaomi 14 trang bị tấm nền LTPO OLED 120Hz, hỗ trợ 68 tỷ màu, Dolby Vision và HDR10+, giúp mang đến hình ảnh, nội dung hiển thị sống động, chân thực mượt mà và không nhòe hình.
+Với độ sáng 3000 nit giúp bạn sử dụng tốt trong mọi điều kiện ánh sáng mạnh, kể cả khi trời nắng gắt. Với kích thước 6,36 inch, tỷ lệ 20:9 giúp người dùng cầm nắm sử dụng dễ dàng. Bạn cũng sẽ được trải nghiệm hình ảnh siêu nét với độ phân giải 1.5K (1200 x 2670 pixel) có mật độ điểm ảnh ~460 ppi.
+Nâng cấp hiệu năng, Snapdragon 8 Gen 3
+Là một trong 2 sản phẩm sở hữu chip Snapdragon 8 Gen 3 đầu tiên trên thế giới, Xiaomi 14 và 14 Pro đem đến hiệu năng mạnh mẽ hàng đầu trên các thiết bị Android hiện nay (năm 2023).
+Cải tiến camera
+Xiaomi 14 có thiết lập 3 camera sau với cùng thông số 50MP bao gồm camera chính, camera tele và camera góc rộng đều sử dụng ống kính Leica mang đến chất ảnh đậm chất cổ điển, cũng vô cùng rực rỡ và hỗ trợ quay video lên tới 8K siêu sắc nét.
+Camera trước 32MP hỗ trợ chụp ảnh selfie siêu nét, ảo diệu với nhiều chế độ, bộ lọc màu hiện đại.
+Đặc biệt, bạn đã có thể quay video 4K lên tới 60fps với camera selfie này. Điều này đã khiến cho các MiFan không khỏi rơi những giọt nước mắt hạnh phúc.
+Nâng cấp dung lượng pin và sạc
+Xiaomi 14 có viên pin 4610mAh tăng hơn 110mAh so với thế hệ trước. Điều này cũng giúp thiết bị có thời lượng pin sử dụng kéo dài hơn các mẫu máy tiền nhiệm.
+Chưa dừng lại ở đó, thiết bị này còn hỗ trợ sạc siêu nhanh 90W giúp bạn pin nhanh chóng. Đây là lần đầu tiên Xiaomi tăng tốc độ sạc cho bản thường sau 3 thế hệ trung thành với sạc 67W. 
+Thông số kỹ thuật
+Màn hình : LTPO OLED  6.36″ + 120Hz
+Hệ điều hành : Xiaomi HyperOS
+Chipset : Qualcomm Snapdragon 8 Gen 3
+GPU: Adreno 750
+Camera trước : 32 MP (góc rộng), HDR, panorama | Quay phim: 4K@30/60fps, 1080p@30/60fps, gyro-EIS
+Camera sau : 
+50 MP, f/1.6, 23mm(góc rộng), dual pixel PDAF, Laser AF, OIS
+50 MP, f/2.2, 14mm, 115˚ (góc siêu rộng)
+50 MP, f/2.0, 75mm (tele), PDAF, OIS, zoom quang 3.2x
+Quay phim: 8K@24fps (HDR), 4K@24/30/60fps (HDR10+, 10-bit Dolby Vision HDR, 10-bit LOG), 1080p@30/60/120/240/960fps, 720p@1920fps, gyro-EIS
+Pin : Li-Po 4610 mAh
+Sạc nhanh: Có dây 90W, không dây 50W, sạc ngược 10W
+Kháng nước: IP68
+Cổng kết nối: Type-C
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+2. Xiaomi brand_id 3
+['product_name' => 'Redmi Note 13 Pro+ (Plus) 5G','product_price' => 8350000,'product_qty' => 30, 'category_id' => 1,'brand_id' => 3,
+'product_images_1' => 'xiaomi14_1.jpg','product_images_2' => 'xiaomi14_2.jpg','product_images_3' => 'xiaomi14_3.jpg',
+'product_description' => '
+Xiaomi Redmi Note
+Thiết kế sang trọng, đẳng cấp
+Chiếc điện thoại Redmi Note 13 Pro+ sở hữu thiết kế cao cấp với màn hình cong viền mỏng đều 4 cạnh thể hiện được sự thống trị của gã khổng lồ công nghệ Trung Quốc trong phân khúc điện thoại tầm trung. Theo đó máy sở hữu cụm camera sau với 3 ống kính cùng 1 cụm đèn LED trợ sáng. Thiết bị có khung nhựa và mặt lưng nhựa được gia công vô cùng tỷ mỉ bo cong các cạnh và các mặt tạo nên một chiếc điện thoại có vẻ đẹp lộng lẫy.
+Mặt trước được bao phủ bởi màn hình tràn viền siêu mỏng dạng đục lỗ để đặt camera selfie. Máy có màn hình phẳng và được bảo vệ bằng kính cường lực Gorilla Glass Victus cao cấp và bền bỉ.
+Người dùng hoàn toàn yên tâm khi sử dụng chiếc điện thoại Note 13 Pro+ này bởi nó đạt chuẩn kháng nước và bụi IP68. Đây là lần đầu tiên Xiaomi đem tính năng cao cấp này lên một chiếc điện thoại tầm trung của mình.
+Màu sắc đa dạng và trẻ trung
+Sản phẩm có 3 màu sắc cơ bản chính đó là Đen, Trắng và Tím. Đặc biệt là phiên bản màu tím được gia công vân gia ở mặt lưng cùng với nhiều mảng màu được phối hợp hài hòa với nhau tạo nên sự cá tính độc đáo cho người sử dụng.Trong khi các bản còn lại (Đen và Trắng) có mặt lưng giả kính cũng sang trọng và cao cấp không kém.
+Ngoài ra, nhà sản xuất còn ra mắt thêm phiên bản đặc biệt camo xanh lá thể hiện sự mạnh mẽ và đẳng cấp của người dùng.
+Màn hình OLED 1.5K siêu nét
+Redmi Note 13 Pro+ tích hợp tấm nền màn hình OLED, hỗ trợ 12 bit và có khả năng tái tạo tới 68 tỷ màu khác nhau, kết hợp với Dolby Vision và HDR10+ cho ra hình ảnh hiển thị với màu sắc chân thật, chất lượng tuyệt vời, sống động, độ tương phản cao. Hãng cũng không quên tích hợp cho màn hình của máy tần số quét cao 120Hz giúp trải nghiệm người dùng mượt mà hơn.
+Với độ sáng cao nhất đạt 1800 nit giúp thiết bị sử dụng tốt trong nhiều điều kiện ánh sáng môi trường, ngay cả dưới ánh nắng giữa trưa bạn vẫn sử dụng tốt.
+Cũng như các mẫu Redmi Note khác, Redmi Note 13 Pro+ có kích thước màn hình 6,67 inch cùng độ phân giải 1.5 (1220 x 2712 pixel) đủ đem đến hình ảnh sắc nét phù hợp với mọi đối tượng người dùng với mật độ điểm ảnh đạt 446 ppi.
+Hiệu năng siêu mạnh với chip mới
+Dimensity 7200 Ultra là con chip đầu tiên được trang bị trên chiếc điện thoại Redmi Note 13 Pro+ này. Dimensity 7200 Ultra là kết quả hợp tác của Xiaomi và MediaTek để tinh chỉnh một số yếu tố trên Dimensity 7200 sao cho chạy hiệu quả và tối ưu nhất trên Redmi Note 13 Pro+.
+Chip Dimensity 7200 Ultra được sản xuất theo tiến trình 4nm tiết kiệm điện tốt và mang đến hiệu năng siêu mạnh cho người dùng.
+Như vậy, có thể thấy rằng hiệu năng của Redmi Note 13 Pro+ mạnh ngang tầm với các thiết bị chạy Snapdragon 870. Và dĩ nhiên, bạn có thể sử dụng Redmi Note 13 Pro+ với mọi tác vụ khác nhau trong nhiều năm sau.
+RAM khủng, bộ nhớ thoải mái lưu trữ
+Sở hữu bộ nhớ trong dung lượng tối đa lên tới 512GB, Redmi Note 13 Pro+ có 2 phiên bản bộ nhớ là 256GB và 512GB đảm bảo cho đáp ứng mọi phân khúc cho nhu cầu lưu trữ của người dùng. Với chuẩn UFS 3.1 giúp máy có thể mở ứng dụng và truy xuất dữ liệu một cách nhanh chóng.
+Thiết bị có RAM 12GB và phiên bản cao hơn 16GB. Cả hai đều cho khả năng chạy đa nhiệm tốt, mang đến trải nghiệm người dùng vô cùng mượt mà.
+Camera 200MP chất lượng mỹ mãn
+Redmi Note 13 Pro+ được trang bị hệ thống camera chất lượng với thông số cực khủng. Camera sau bao gồm 3 cảm biến với ống kính chính 200MP góc rộng cho hình ảnh quay chụp chi tiết và sắc nét.Một cảm biến 8MP (góc siêu rộng) cho phép chụp các bức ảnh phong cảnh rộng, ảnh chụp tập thể nhiều người được tái hiện đẹp nhất. Cuối cùng là cảm biến 2MP (macro) cho khả năng chụp ảnh gần đẹp mắt.
+Hệ thống camera sau được tích hợp PDAF và OIS giúp tối ưu khả năng lấy nét và chống rung tốt. Máy quay phim 4K@30fps và 1080p@30/60/120fps cho video chất lượng cao.
+Camera trước 16 MP (góc rộng) cho ảnh "tự sướng" và video vlog chất lượng, hỗ trợ HDR giúp nâng cao chất lượng ảnh trong điều kiện thiếu ánh sáng hay ngược sáng.
+Pin lớn và sạc 120W siêu nhanh
+Redmi Note 13 Pro+ sở hữu viên pin 5000mAh không lớn hơn so với thế hệ tiền nhiệm, nhưng đây là viên phim đáp ứng đủ thời gian sử dụng cho người dùng mà làm cho thiết bị không bị dày lên. Với dung lượng pin này giúp cho Redmi Note 13 Pro+ có thời gian sử dụng lâu dài, có thể trụ cả ngày dài với các tác vụ cơ ban.
+Thiết bị có sạc nhanh siêu tốc 120W, giúp bạn sạc pin nhanh chóng cho máy. Với công suất sạc này bạn chỉ mất khoảng 19 phút để sạc đầy 100% pin cho thiết bị.
+Thông số kỹ thuật
+Màn hình : OLED 6.67″ + 120Hz
+Hệ điều hành : MIUI 14
+Chipset : MediaTek Dimensity 7200 Ultra (4 nm)
+GPU: Mali-G610 MC4
+Camera trước : 16 MP (góc rộng), HDR | Quay phim: 1080p@30/60fps
+Camera sau : 
+200 MP, f/1.7 (góc rộng), PDAF đa hướng, OIS
+8 MP, f/2.2, 120˚ (góc siêu rộng)
+2 MP, f/2.4 (macro)
+Quay phim: 4K@30fps, 1080p@30/60/120fps
+Pin : Li-Po 5000 mAh
+Sạc nhanh: Có dây 120W
+Kháng nước: IP68
+Cổng kết nối: Type-C
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+3. Xiaomi brand_id 3
+['product_name' => 'Xiaomi MIX Fold 3','product_price' => 37450000,'product_qty' => 30, 'category_id' => 1,'brand_id' => 3,
+'product_images_1' => 'xiaomi14_1.jpg','product_images_2' => 'xiaomi14_2.jpg','product_images_3' => 'xiaomi14_3.jpg',
+'product_description' => '
+Siêu phẩm Xiaomi MIX Fold 3 5G là chiếc điện thoại gập thế hệ thứ 3 của Xiaomi với hình dáng gập kiểu quyển sổ giúp máy có không gian trải nghiệm trên màn hình lớn hơn điện thoại thông thường. Sản phẩm có chip Snapdragon đầu 8 mạnh nhất, camera chất lượng với 4 ống kính, màn hình QHD+ siêu nét. Không những thế, thiết bị còn sở hữu viên pin lớn và sạc siêu nhanh, đặc biệt Xiaomi MIX Fold 3 5G còn được trang bị thêm sạc không dây 50W, tính năng mà trên thế hệ tiền nhiệm không được tích hợp.
+Thiết kế đẳng cấp
+Điện thoại MIX Fold 3 mang thiết kế đột phá với kiểu dáng điện thoại gập theo kiểu quyển sách, thể hiện sự sáng tạo. Khung nhôm chắc chắn kết hợp với mặt lưng bằng kính hoặc sợi quang Xiaomi Dragonscale có vân carbon, tạo ra vẻ đẹp sang trọng và hiện đại.
+Với kích thước mở ra 161.2 x 143.3 x 5.3 mm, MIX Fold 3 có diện tích màn hình lớn. Khi gấp lại, kích thước 161.2 x 73.5 x 10.96 mm (kính) và 161.2 x 73.5 x 10.86 mm (sợi quang Xiaomi Dragonscale) thuận tiện hơn cho cầm nắm. Trọng lượng 259g (kính) và 255g (sợi quang Xiaomi Dragonscale) vừa phải, tạo cảm giác cân đối khi sử dụng.
+Màn hình đỉnh cao hiển thị
+Màn hình của MIX Fold 3 được trang bị công nghệ Foldable LTPO OLED+, hay hãng còn gọi với cái tên riêng là Pol-less Plus mang đến trải nghiệm hiển thị cao cấp. Với khả năng hiển thị 1 tỷ màu và tần số quét 120Hz, màn hình này đảm bảo độ tương phản cao và sự mượt mà khi lướt web hoặc chơi game. HDR10+ và Dolby Vision cung cấp màu sắc chân thực, hình ảnh sống động và độ tương phản tốt.
+Màn hình chính có kích thước 8,03 inch và độ phân giải QHD+ (1914 x 2160 pixel), cho hình ảnh sắc nét và chi tiết. Với độ sáng tối đa 2600 nit, người dùng có thể nhìn rõ và sử dụng dễ dàng dưới ánh nắng gắt.
+MIX Fold 3 là chiếc smartphone gập sở hữu màn hình và hiệu năng đột phá của Xiaomi với những thông số cấu hình cao cấp. Thiết bị sở hữu màn hình chính 8,03 inch với tấm nền Foldable LTPO OLED+ (hãng còn gọi với tên Pol-less Plus) có tốc độ làm mới 120Hz và độ phân giải 2K+. Màn hình phụ AMOLED 120Hz có tỷ lệ 21:9 kích thước 6,56 inch cũng là một điểm nhấn đáng kể giúp người dùng trải nghiệm như điện thoại thông thường trên màn hình phụ này.
+Hiệu năng mạng mẽ
+Với chipset Snapdragon 8 Gen 2, được ép xung tới 3.36 GHz, MIX Fold 3 đảm bảo hiệu suất mạnh mẽ và mượt mà trong quá trình sử dụng. Hệ thống camera bao gồm bộ tứ cảm biến với camera chính là Sony IMX800 50MP OIS, kết hợp với Leica mang đến những bức ảnh chất lượng cao với khả năng chống rung hiệu quả cao.
+Pin lớn, sạc siêu nhanh
+Cung cấp năng lượng cho máy là viên pin 4800mAh và hỗ trợ sạc 67W cho tốc độ sạc ấn tượng. Bên cạnh đó, thiết bị còn tích hợp thêm sạc không dây 50W, đảm bảo năng lượng dồi dào và sạc nhanh, giúp người dùng trải nghiệm MIX Fold 3 không gián đoạn.
+Camera siêu sắc nét 
+Xiaomi trang bị cho MIX Fold 3 hệ thống camera sau khủng với 4 ống kính. Bao gồm camera chính là cảm biến Sony IMX800 có độ phân giải 50MP khẩu độ f/1.8, cho phép thu ánh sáng tốt giúp nắm bắt nhanh mọi khoảnh khắc cuộc sống cực kỳ sắc nét và chi tiết tốt. Chế độ tự động lấy nét theo pha (PDAF) và ổn định hình ảnh quang học (OIS) giúp tăng khả năng chụp ảnh trong động và giảm rung ảnh.Xiaomi MIX Fold 3 5G (Snapdragon 8 Gen 2 - Xung nhịp cao)This article is referenced content from https://mobilecity.vn - Xiaomi MIX Fold 3 5G (Snapdragon 8 Gen 2 - Xung nhịp cao)
+Máy có thế các camera phụ hỗ trợ nhiều tính năng chụp ảnh như camera tele 10MP với khả năng zoom quang 3.2x và camera tele kính tiềm vọng có chức năng zoom quang 5x, nhưng thông tin về độ phân giải chưa được hãng tiết lộ. Camera góc siêu rộng 12MP với khẩu độ f/2.4 và góc nhìn 120˚ cho phép chụp ảnh rộng và góc nhìn rộng hơn.
+Về quay phim, MIX Fold 3 có khả năng ghi hình ở chất lượng rất cao với 8K@24fps, 4K@30/60fps và 1080p có tốc độ khung hình lên tới 1920fps và được hỗ trợ hệ thống ổn định hình ảnh OIS và gyro-EIS.
+Ở phía trước, là camera selfie 20MP với khẩu độ f/2.4 cho khả năng chụp ảnh góc rộng. Chế độ HDR và panorama cung cấp những tùy chọn sáng tạo cho người dùng.
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+4. Xiaomi brand_id 3
+['product_name' => 'Redmi Note 11T Pro','product_price' => 6950000,'product_qty' => 30, 'category_id' => 1,'brand_id' => 3,
+'product_images_1' => 'xiaomi11Tpro_1.jpg','product_images_2' => 'xiaomi11Tpro_2.jpg','product_images_3' => 'xiaomi11Tpro_3.jpg',
+'product_description' => '
+Redmi Note 11T Pro có kích thước màn hình 6,6 inch, chipset MediaTek Dimensity 8100 và camera chính 64MP ở mặt sau, màn hình LCD cùng tốc độ làm mới lên tới 144Hz.
+Bộ đôi Redmi Note 11T Pro và Pro Plus
+Redmi Note 11T Pro và Pro + có cùng thông số và ngoại hình cốt lõi với màn hình tốc độ làm tươi thay đổi, màn 6,6 inch, chipset MediaTek Dimensity 8100 và cam chính 64MP ở mặt sau. Pro + có khả năng sạc 120W nhanh hơn và pin 4.400 mAh nhỏ hơn cũng như dung lượng lưu trữ lên đến 512GB. Redmi Note 11 SE là một tùy chọn tầm trung với chip Dimenisty 700 và 90Hz.
+Thiết kế hoàn thiện
+Xiaomi đã thiết kế mặt lưng của Redmi Note 11T Pro và 11T Pro+ khá giống với đàn anh Note 11 Series.
+Máy có mặt lưng được hoàn thiện từ chất liệu kính với khung viền nhựa vuông vắn. Redmi Note 11 Pro+ có ba tùy chọn màu sắc là đen, xanh và trắng xám. Phiên bản có trong bài viết này là phiên bản màu xanh.
+Màn hình 144Hz
+Màn hình kích thước 6.6 inch sử dụng tấm nền LCD IPS với độ phân giải FHD+, tần số quét 144Hz, có thể tùy chỉnh từ 30Hz – 144Hz. Màn hình này là màn hình phẳng, có camera selfie 16MP đặt ở vị trí “nốt ruồi” chính giữa.
+Chip xử lý hiệu năng cao
+Điện thoại Redmi Note 11T Pro được trang bị bộ vi xử lý Dimensity 8100 tới từ MediaTek, đây là một trong những vi xử lý mạnh mẽ hàng đầu của MediaTek ở thời điểm hiện tại, chỉ đứng sau Dimensiy 9000. Máy có RAM 8GB, bộ nhớ lưu trữ 256GB hoặc 512GB. Viên pin có dung lượng 5080mAh, hỗ trợ công nghệ sạc nhanh 120W với củ sạc đi kèm sẵn. Máy chạy trên Android 12 với giao diện MIUI 13.
+Thông số kỹ thuật
+Màn hình : IPS LCD 6.6″ + 144Hz
+Hệ điều hành : MIUI 13
+Chipset : MediaTek Dimensity 8100
+GPU : Mali-G610
+Camera trước : 16MP
+Camera sau : 64MP + 8MP + 2MP
+Chất lượng Video: 4K
+Pin :5080mAh
+Sạc nhanh: Có dây 67W,
+Cổng kết nối: Type-C
+Hỗ trợ: 5G, Bluetooth 5.0, Wi-fi 6.0
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+

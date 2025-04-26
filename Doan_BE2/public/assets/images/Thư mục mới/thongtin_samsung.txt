@@ -1,0 +1,96 @@
+['product_name' => 'Samsung Galaxy S23 Ultra 8/256 GB (Xanh lục)','product_price' => 33589500 ,'product_qty' => 30, 'category_id' => 1,'brand_id' => 2,
+'product_images_1' => 'samsum23_1.jpg','product_images_2' => 'samsum23_2.jpg','product_images_3' => 'samsum23_3.jpg','product_description' => '1.Điện thoại Samsung Galaxy S23 Ultra 8/256 GB (Xanh lục)
+	GIỚI THIỆU SẢN PHẨM
+	Tại sao lại nên mua Điện thoại Samsung Galaxy S23 Ultra?
+	Là sản phẩm điện thoại cao cấp nhất của Samsung, Galaxy S23 Ultra được tích hợp mọi công nghệ tinh túy nhất, với 1 màn hình độ phân giải 2K+ với kích thước 6.8 inch, 1 camera có độ phân giải khủng 200 MP cùng 1 chip xử lý có tốc độ nhanh nhất vào thời điểm máy ra mắt.
+	Thiết kế màn hình phẳng
+	Điện thoại Samsung Galaxy S23 Ultra có thiết kế gần giống với người tiền nhiệm S22 Ultra, nhưng đã được làm phẳng hơn nhiều khiến máy có ngoại hình trông tương tự như 1 chiếc iPhone. Tất nhiên, cạnh viền của máy vẫn giữ được thiết kế bo cong đặc trưng, giúp toát lên vẻ sang trọng của sản phẩm. Cũng giống như S23 và S23+, Galaxy S23 Ultra sử dụng thế hệ kính cường lực mới nhất Corning Gorilla Glass Victus 2, giúp tăng độ cứng cáp cho tổng thể sản phẩm. Đặc biệt, do được trang bị camera mới nên cụm camera sau của S23 Ultra cũng lớn hơn nhiều so với S22 Ultra.
+	Một điểm không thể không nhắc đến khi nói về S23 Ultra chính là máy tiếp tục hỗ trợ bút thông minh S-Pen. Đây là công cụ cực kỳ hữu dụng cho những người thích sở thích vẽ, hay thường phải ghi chép nhiều trong quá trình học tập và làm việc.
+	Màn hình OLED 2K+
+	Để xứng đáng với số tiền mà người dùng phải bỏ ra, Samsung Galaxy S23 Ultra được tích hợp 1 màn hình cao cấp có kích thước lớn 6.8 inch và độ phân giải 2K+, đi cùng với đó là mật độ điểm ảnh lên đến 501 ppi sẽ giúp các chi tiết được hiển thị một cách cực kì rõ nét và chi tiết. Ngoài ra, độ sáng tối đa 1750 nits cũng sẽ giúp cho người dùng có thể dễ dàng sử dụng máy trong mọi điều kiện ánh sáng môi trường khác nhau, bao gồm môi trường thiếu sáng hay có ánh sáng cực mạnh như ánh mặt trời.
+	Đặc biệt, S23 Ultra là điện thoại duy nhất của dòng Galaxy S23 được tích hợp công nghệ thông minh, cho phép tần số quét của máy có thể tự động điều chỉnh trong khoảng từ 1 Hz đến 120 Hz tùy vào từng hoàn cảnh, từ đó làm tăng đáng kể thời lượng sử dụng pin mà vẫn đảm bảo được trải nghiệm mượt mà nhất cho người dùng.
+	Camera độ phân giải 200 MP
+	Đây không phải là lần đầu tiên 1 camera có độ phân giải 200 MP được sử dụng trên 1 chiếc điện thoại, thế nhưng đây là lần đầu tiên Samsung tích hợp 1 camera 200 MP lên các sản phẩm điện thoại của mình. Hơn thế nữa, nhờ có thuật toán AI và phần mềm ưu việt hơn, chất lượng ảnh chụp và video quay được trên camera 200 MP này của S23 Ultra sẽ vượt trội hơn so với các mẫu điện thoại có camera 200 MP đã ra mắt trước đó.
+	Ngoài camera 200 MP, cụm camera sau trên Galaxy S23 Ultra còn có 1 camera tiềm vọng 10 MP, có hỗ trợ công nghệ chống rung quang học OIS và zoom quang học 10x, giúp người dùng có thể quay và chụp các cảnh vật ở xa mà vẫn giữ được hình ảnh và độ chi tiết tốt. Còn camera tele 10 MP cũng hỗ trợ OIS cùng zoom quang học 3x, và cuối cùng là 1 camera góc siêu rộng 12 MP.
+	Hiệu năng cực cao
+	GIống như S23 và S23+, Galaxy S23 Ultra được trang bị chip Qualcomm Snapdragon 8 Gen 2, là chip xử lý mạnh nhất hiện tại dành cho các điện thoại chạy hệ điều hành Android. Với nó, người dùng có thể yên tâm sử dụng máy cho mọi tác vụ đòi hỏi hiệu năng cao như render video hay chơi game nặng. Ngoài ra, công nghệ đọc ghi nhanh UFS 4.0 cho tốc độ đọc lên đến 4200 MB/s và tốc độ ghi 2800 MB/s sẽ giúp người sử dụng truyền tải dữ liệu qua lại giữa các thiết bị một cách nhanh chóng và dễ dàng nhất.
+	Thời lượng sử dụng pin dài
+	Galaxy S23 Ultra được tích hợp pin dung lượng 5000 mAh, cũng là dung lượng lớn nhất trong các mẫu điện thoại thuộc dòng Galaxy S23. Đặc biệt, nhờ vào công nghệ tự động điều chỉnh tần số quét màn hình cùng công nghệ tiết kiệm pin trên chip xử lý mới, S23 Ultra có thể mở video liên tục trong suốt 27 tiếng, lâu hơn đến 30% so với người tiền nhiệm S22 Ultra. Khi phát nhạc, thời lượng pin trên S23 Ultra cũng sẽ kéo dài đến 99 giờ, cao hơn đến 22% so với S22 Ultra.', 
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+['product_name' => 'Samsung Galaxy S22 Ultra 8 GB/128 GB','product_price' => 31990000 ,'product_qty' => 30, 'category_id' => 1,'brand_id' => 2,
+'product_images_1' => 'samsum22_1.jpg','product_images_2' => 'samsum22_2.jpg','product_images_3' => 'samsum22_3.jpg','product_description' => 'Tại sao lại nên mua Điện thoại Samsung Galaxy S22 Ultra?
+	Sau khi khai tử dòng Samsung Galaxy Note, điện thoại Galaxy S22 Ultra được xem là phiên bản kế nhiệm mang đầy đủ những đặc tính của dòng Galaxy Note với màn hình lớn, thiết kế màn hình kiểu thác nước cùng với phụ kiện đặc trưng của một chiếc Samsung Galaxy Note: bút S Pen.
+	Thiết kế sang trọng, đi kèm với bút S Pen
+	Thay vì có thiết kế với màn hình có 4 góc bo tròn cùng phần camera được đặt trong cùng một cụm, kiểu thiết kế thường thấy trên các sản phẩm thuộc dòng Galaxy S, điện thoại Samsung Galaxy S22 Ultra lại có thiết kế hoàn toàn khác biệt, có gì đó thừa hưởng từ Galaxy Note 20 Ultra với thiết kế màn hình tràn viền kiểu thác nước ở 2 cạnh. Dù có trọng lượng ngang bằng với Galaxy S21 Ultra nhưng do được phân bổ đều khắp mọi vị trí chứ không mất cân bằng như S21 Ultra cùng với việc không có cụm camera nhô lên ở mặt sau nên khi sử dụng, bạn sẽ cảm thấy nhẹ nhàng và dễ chịu hơn nhiều so với dòng sản phẩm tiền nhiệm.
+	Ngoài ra, đúng với nhận định của nhiều người khi cho rằng S22 Ultra là sản phẩm kế nhiệm của dòng Galaxy Note, bút S Pen được tích hợp sẵn ngay trên S22 Ultra với khe cắm chuyên dùng. Với những người là fan trung thành của dòng Note, hay những người có sở thích ghi chú, S22 Ultra là một lựa chọn xuất sắc với độ chính xác và tốc độ nhận diện được cải thiện lên đến 70% so với các dòng Note trước đây, theo quảng cáo từ phía Samsung.
+	Màn hình cực lớn với độ phân giải 2K
+	Samsung Galaxy S22 Ultra được trang bị một màn hình lớn nhất từ trước đến nay trong các sản phẩm thuộc dòng Galaxy S với kích thước lên đến 6.8 inch. Samsung trang bị cho máy tấm nền cao cấp Dynamic AMOLED 2X với khả năng hiển thị hình ảnh và màu sắc vượt trội, cùng với độ phân giải cao 2K+ sẽ giúp thỏa mãn mọi nhu cầu giải trí của hầu hết tất cả người sử dụng, nhất là để coi phim và chơi game.
+	Đặc biệt, vào thời điểm ra mắt, màn hình của S22 Ultra còn có độ sáng tối đa lên đên 1750 nits, cao nhất trong tất cả các sản phẩm di động của Samsung. Với độ sáng này, bạn có thể sử dụng máy thoải mái bất chấp mọi điều kiều ánh sáng môi trường, không những cả trong điều kiện trời nắng gắt, hay dưới ánh đèn có độ sáng cao mà trong điều kiện thiếu sáng, khả năng hiển thị của máy cũng trở nên rõ hơn bao giờ hết.
+	Ngoài ra, tần số quét 120 Hz cũng sẽ giúp người dùng có những trải nghiệm sử dụng mượt mà trong các tác vụ thường ngày như lướt web, mạng xã hội, cũng như chơi các tựa game đối kháng có hỗ trợ tần số quét cao.
+	Quay video độ phân giải 8K, zoom quang học 10X, hỗ trợ công nghệ chống ung quang học OIS
+	Là chiếc điện thoại có giá cao nhất trong các sản phẩm thuộc dòng Galaxy S22, S22 Ultra cũng vì đó mà được trang bị các camera có thông số và tính nâng tốt hơn. Máy có tổng cộng 5 camera, bao gồm 1 camera selfie có độ phân giải 40 MP, có khả năng quay video ở độ phân giải tối đa là 4K cùng 4 camera ở mặt sau lần lượt là 1 camera góc rộng 100 MP được tích hợp công nghệ lấy nét bằng laser cùng công nghệ chống rung quang học OIS, 1 camera periscope tele 10 MP hỗ trợ công nghệ OIS, cùng khả năng zoom quang học 10X, 1 camera tele 10 MP cũng hỗ trợ công nghệ OIS, cho khả năng zoom quang học 3X và cuối cùng là 1 camera góc siêu rộng 12 MP. Với cụm camera sau, bạn có thể quay video có độ phân giải tối đa lên đến 8K và hỗ trợ HDR10+.
+	Điểm cải thiện đáng để nói đến nhất chính là khả năng chụp đêm. Nhờ vào cảm biến điểm ảnh cực lớn giúp thu được nhiều ánh sáng hơn cũng như giảm nhiễu hiệu quả hơn, kết hợp cùng với việc phủ một lớp nano có độ phản xạ cực thấp lên các camera sau, người dùng có thể chụp được các bức hình hoàn hảo với độ chi tiết và độ sáng cao trong mọi điều kiện ánh sáng.
+	Hiệu năng đỉnh cao
+	Để xứng đáng là một chiếc điện thoại nằm trong phân khúc cao cấp, Samsung Galaxy S22 Ultra sẽ được trang bị chip xử lý mạnh nhất giành cho các thiết bị chạy hệ điều hành Android trên thị trường hiện nay, đó chính là Qualcomm Snapdragon 8 Gen 1. Đây là chip xử lý cao cấp xây dựng trên tiến trình 4 nm và được gia công bởi Samsung. Chip được giới thiệu lần đầu tiên vào nửa cuối năm 2021, với hiệu năng CPU được cải thiện lên đến 20% nhưng vẫn tiết kiệm hơn 30% lượng điện năng tiêu thụ so với chip xử lý cao cấp tiền nhiệm Snapdragon 888+. Hơn thế nữa, chip đồ họa Adreno 730 trên Snapdragon 8 Gen 1 cũng có khả năng xử lý cao hơn đến 30% so với chip tiền nhiệm Adreno 660. Do đó, máy có khả năng xử lý tốt tất cả các tác vụ nặng như biên tập - chỉnh sửa video cũng như chơi mượt mà tất cả các game đòi hỏi cấu hình nặng nhất.', 
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+['product_name' => 'Samsung Galaxy A53 5G (Đen)','product_price' => 9990200 ,'product_qty' => 30, 'category_id' => 1,'brand_id' => 2,
+'product_images_1' => 'samsumGalaxyA53_1.jpg','product_images_2' => 'samsumGalaxyA53_2.jpg','product_images_3' => 'samsumGalaxyA53_3.jpg','product_description' => 'Tại sao lại nên mua Điện thoại Samsung Galaxy A53 5G?
+	Samsung Galaxy A53 5G là sản phẩm được ra mắt cùng thời điểm với 2 sản phẩm thuộc dòng A khác là Galaxy A23 và A13. Trong đó, A53 5G là phiên bản đắt tiền nhất với nhiều tính năng chỉ xuất hiện trên các điện thoại thuộc dòng cao cấp như chống rung quang học OIS, kháng nước IP67, v..v...
+	Trọng lượng khá nhẹ, có kháng nước
+	Điện thoại Samsung Galaxy A53 5G không có nhiều điểm đột phá trong thiết kế. Máy có thiết kế màn hình đục lỗ ở mặt trước giống như đa phần các điện thoại Android hiện nay, cùng với một cụm camera phía sau tương tự như trên dòng Galaxy S22. Tuy nhiên, một trong những ưu điểm dễ nhận thấy của A53 chính là trọng lượng nhẹ của máy. Mặc dù là một điện thoại có kích thước lớn với màn hình lên đến 6.5 inch nhưng trọng lượng máy chỉ ở khoảng 189 g, giúp người dùng không cảm thấy nặng nề và khó chịu khi phải cầm lâu trên tay. Phần viền của máy được sơn phủ lớp bạc giả kim, vừa giúp máy có vẻ ngoài sang trọng, nhưng vẫn có  tác dụng giảm thiểu trọng lượng của máy so với chất liệu nhôm hay kim loại.
+	Đặc biệt, Galaxy A53 5G còn được trang bị chuẩn kháng nước/ kháng bụi IP67, giúp người dùng có thể an tâm sử dụng hàng ngày mà không sợ gặp trục trặc khi chẳng may điện thoại bị dính nước.
+	Màn hình Super AMOLED với tần số quét 120 Hz
+	Samsung Galaxy A53 5G được trang bị màn hình có tầm nền AMOLED với độ sáng tối đa đạt ngưỡng 800 nit, đảm bảo cho màn hình của máy vẫn hiển thị tốt trong nhiều môi trường ánh sáng khác nhau, kể cả khi sử dụng ngoài trời. Tần số quét 120 Hz cũng sẽ mang đến những trải nghiệm sử dụng mượt mà cho người sử dụng, rất thích hợp cho những người có sở thích sử dụng mạng xã hội, chơi game, v..v...
+	Camera tích hợp công nghệ chống rung quang học OIS
+	Về mặt thông số, điện thoại Samsung Galaxy A53 5G có tổng cộng 5 camera, bao gồm 1 camera độ phân giải 32 MP ở mặt trước, và cụm 4 camera ở mặt sau lần lượt là 1 camera góc rộng 64 MP, 1 camera góc siêu rộng 12, 1 camera macro 5 MP và 1 camera đo chiều sâu 5 MP. Camera góc rộng được tích hợp công nghệ chống rung quang học OIS, thích hợp cho những người có sở thích du lịch, muốn ghi lại những hình ảnh đáng nhớ trong chuyến đi, hay những người thích quay video, làm vlog.
+	Đặc biệt, nhờ có sự hỗ trợ đắc lực của trí thông minh nhân tạo AI, người dùng sẽ chụp được những bức ảnh đẹp, sinh động mà không cần phải am hiểu về kĩ thuật chụp cũng như cách điều chỉnh các thông số khi chụp ảnh.
+	Hiệu năng khá
+	Galaxy A53 5G được trang bị chip xử lý Exynos 1280. Đây là chip xử lý tầm trung mới được Samsung công bố vào giữa tháng 3/2022, có mặt lần đầu trên dòng Galaxy A33 và A53 và được xây dựng trên tiến trình 5nm của Samsung. Về mặt hiệu năng, các bài kiểm tra cho thấy khả năng xử lý các tác vụ thông thường cũng như tác vụ xử lý đồ họa mạnh mẽ hơn khá nhiều so với chip xử lý tầm trung Snapdragon 765G của Qualcomm, cũng như có điểm số hiệu năng tương đương với chip Dimensity 900 của Mediatek. Tuy không giúp chiến tốt các tựa game đòi hỏi cấu hình mạnh như Genshin Impact, người dùng vẫn có thể chơi thoải mái các tựa game phổ biến khác như Liên Minh Tốc Chiến, PUBG Mobile, và tất nhiên máy cũng sẽ xử lý được tốt mọi tác vụ thường ngày của người sử dụng.
+	Trang bị loa kép
+	Loa kép là một trong những tính năng không thể thiếu chỉ có trên các dòng điện thoại cao cấp trước đây. Tuy nhiên, tính năng này đã xuất hiện phổ biến hơn trên các điện thoại tầm trung trong những năm gần đây. Với loa kép, trải nghiệm xem phim hay lắng nghe các bản nhạc yêu thích sẽ được nâng cao một cách đáng kể so với các mẫu điện thoại chỉ được trang bị một loa. Đăc biệt, với những ai có sở thích chơi game đối kháng, loa kép sẽ giúp người chơi định vị chính xác hơn vị trí của đối thủ, từ đó giúp bạn có được thành tích cao hơn.', 
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+['product_name' => 'Samsung Galaxy A54 8GB/ 256 GB (Tím)','product_price' => 15064500 ,'product_qty' => 30, 'category_id' => 1,'brand_id' => 2,
+'product_images_1' => 'samsumGalaxyA54_1.jpg','product_images_2' => 'samsumGalaxyA54_2.jpg','product_images_3' => 'samsumGalaxyA54_3.jpg','product_description' => 'Diện mạo sang trọng đầy cuốn hút
+	Galaxy A54 5G có thiết kế khá trẻ trung với kiểu dáng phẳng và nhiều phiên bản màu sắc mới mẻ đầy cuốn hút. Máy được làm từ nhựa, giúp cảm giác cầm nắm trở nên nhẹ nhàng và thoải mái hơn.
+	Trang bị tấm nền Super AMOLED
+	Galaxy A54 5G mang đến cho người dùng trải nghiệm hình ảnh tuyệt vời với màn hình Super AMOLED kích thước 6.4 inch và độ phân giải Full HD+ (1080 x 2340 Pixels). Với màu sắc rực rỡ và độ tương phản cao, người dùng sẽ được tận hưởng những hình ảnh sống động và sắc nét.
+	Ngoài ra, màn hình của Galaxy A54 5G được trang bị tốc độ làm mới 120 Hz, cho phép các thao tác cuộn và điều hướng trên màn hình trở nên mượt mà và phản hồi nhanh chóng. 
+	Khả năng hiển thị ngoài trời của màn hình cũng rất tốt với độ sáng tối đa lên đến 1000 nits, rất ấn tượng, giúp việc sử dụng điện thoại ở những nơi có nhiều ánh sáng như ngoài trời được dễ dàng hơn.
+	Tăng cường độ sắc nét ảnh chụp
+	Mẫu điện thoại Samsung này được trang bị bộ ba ống kính có độ phân giải cao cùng rất nhiều tính năng thú vị, một điểm đáng chú ý là camera chính với độ phân giải lên tới 50 MP, được hỗ trợ công nghệ chống rung quang học và có khả năng quay video 4K tối đa.
+	Được trang bị camera chính với độ phân giải 50 MP và khả năng chụp ảnh và quay video chất lượng cao, đây hứa hẹn sẽ là một mẫu điện thoại Android cực kỳ đáng mua cho những bạn đam mê quay phim hay chụp ảnh trên một chiếc smartphone tầm trung.
+	Nâng cao hiệu suất sử dụng nhờ chip mạnh
+	Galaxy A54 5G sử dụng con chip Exynos 1380 mới nhất của Samsung, điều này cung cấp sức mạnh và hiệu suất tối ưu cho các ứng dụng và trò chơi đòi hỏi hiệu năng cao trên một thiết bị tầm trung.
+	Ngoài ra, đây còn là mẫu điện thoại RAM 8 GB và hệ điều hành Android 13 tích hợp, vì thế Galaxy A54 5G sẽ giúp các hoạt động đa nhiệm trên máy diễn ra một cách mượt mà và trơn tru.
+	Thoải mái sử dụng với pin 5000 mAh
+	Bên cạnh những ưu điểm trên thì Galaxy A54 5G còn trang bị viên pin lớn 5000 mAh, đây được xem là chi tiết đáng chú ý, nó giúp cho thiết bị có thể sử dụng suốt cả ngày mà không cần phải lo lắng về việc sạc lại.
+	Bên cạnh đó, máy còn hỗ trợ công nghệ sạc nhanh 25 W, điều này mang đến việc sạc đầy dung lượng của thiết bị diễn ra nhanh chóng và tiện lợi hơn.
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+['product_name' => 'Samsung Galaxy Z Flip5 256GB','product_price' => 19990000 ,'product_qty' => 30, 'category_id' => 1,'brand_id' => 2,
+'product_images_1' => 'samsungGalaxyZFlip5_1.jpg','product_images_2' => 'samsungGalaxyZFlip5_2.jpg','product_images_3' => 'samsungGalaxyZFlip5_3.jpg','product_description' => '
+	Galaxy AI tiện ích - Khoanh vùng search đa năng, là trợ lý chỉnh ảnh, trợ lý chat thông minh, phiên dịch trực tiếp
+	Thần thái nổi bật, cân mọi phong cách- Lấy cảm hứng từ thiên nhiên với màu sắc thời thượng, xu hướng
+	Thiết kế thu hút ánh nhìn - Gập không kẽ hỡ, dẫn đầu công nghệ bản lề Flex
+	Tuyệt tác selfie thoả sức sáng tạo - Camera sau hỗ trợ AI xử lí cực sắc nét ngay cả trên màn hình ngoài
+	Bền bỉ bất chấp mọi tình huống - Đạt chuẩn kháng bụi và nước IPX8 cùng chất liệu nhôm Armor Aluminum giúp hạn chế cong và xước
+	Xem thông tin về giá bán, cấu hình, thiết kế của siêu phẩm Galaxy Z Flip 5 mới nhất nhà Samsung.
+	Samsung Galaxy Z Flip 5 có thiết kế màn hình rộng 6.7 inch và độ phân giải Full HD+ (1080 x 2640 Pixels), dung lượng RAM 8GB, bộ nhớ trong 256GB. Màn hình Dynamic AMOLED 2X của điện thoại này hiển thị rõ nét và sắc nét, mang đến trải nghiệm ấn tượng khi sử dụng.
+	Samsung Galaxy Z Flip 5 – Thiết kế sang trọng, cấu hình mạnh mẽ
+	Samsung Galaxy Z Flip 5 được đánh giá cao về thiết kế cho đến cấu hình sản phẩm, điện thoại sẽ ra mắt trong thời gian sắp tới nên là đề tài bàn luận của nhiều fan thương hiệu Samsung. Với những điểm mạnh riêng của điện thoại chắc chắn sẽ không làm người dùng thất vọng khi sử dụng.
+	Camera 12MP chụp rõ nét
+	Samsung Galaxy Z Flip 5 trang bị cụm camera sau 12MP, rõ nét, tạo nên hình ảnh chân thực và rõ ràng hơn. Trong điện thoại có nhiều bộ lọc màu khác nhau, người dùng không cần phải tải app khác nhau để chỉnh sửa hình như trước đây.
+	Bên cạnh đó, camera trước lên đến 10MP, chụp hình chân dung chân thực, tự nhiên và đẹp lung linh, sau đó nhanh chóng đăng lên mạng xã hội khoe với hội bạn thân ngay. Khả năng quay video không bị nhòe, vỡ ảnh trong quá trình quay phim kết hợp với độ phân giải cao.
+	Trang bị chipset Snapdragon, dung lượng RAM 8GB+256GB
+	Samsung Galaxy Z Flip 5 có cấu hình mạnh mẽ với hệ điều hành Android mới nhất, quen thuộc với nhiều sản phẩm của thương hiệu này. Con chipset Snapdragon 8 gen 2 for Galaxy cho phép máy chạy mượt mà các ứng dụng nặng. 
+	Không chỉ dừng lại ở đó, dung lượng máy lên đến RAM 8GB và bộ nhớ trong 256GB, người dùng có thể tải game với dung lượng lớn về máy mà vẫn duy trì ổn định. Không lo sảy ra tình trạng giật lag như một số sản phẩm khác.
+	Viên pin khủng 3.700 mAh
+	Samsung Galaxy Z Flip 5 được đánh giá cao về thông số năng lượng nhờ viên pin 3700mAh và còn hỗ trợ sạc nhanh 25W. Nhờ công suất pin này, người dùng có thể thoải mái xem phim, chơi game và giải trí suốt nhiều giờ mà không cần lo lắng về việc phải nạp pin liên tục. 
+	Thiết kế hiện đại, sang trọng
+	Sản phẩm được thiết kế với viền màn hình mỏng nhẹ và các góc cạnh mềm mại, tạo nên một tổng thể hoàn thiện, tăng cường vẻ đẹp thẩm mỹ cho phần giao diện. Điện thoại còn cung cấp thông báo và hiển thị thông tin khác mỗi khi có người nhắn tin hay gọi điện, tính năng này khá tiện ích cho người dùng.
+', 'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+

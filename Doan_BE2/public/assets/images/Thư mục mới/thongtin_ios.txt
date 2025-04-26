@@ -1,0 +1,48 @@
+1.
+['product_name' => 'iPhone 15 Pro Max','product_price' => 34990000,'product_qty' => 30, 'category_id' => 1,'brand_id' => 1,
+'product_images_1' => 'Iphone15_1.jpg','product_images_2' => 'Iphone15_2.jpg','product_images_3' => 'Iphone15_3.jpg',
+'product_description' => '
+iPhone 15 Pro Max đã mang đến một cuộc cách mạng hoàn toàn về thiết kế và công nghệ, đồng thời tích hợp nhiều tính năng ấn tượng. Bài viết này sẽ đi sâu vào các khía cạnh quan trọng như thiết kế, màn hình, hiệu năng, thời lượng pin và hệ thống camera để giúp bạn hiểu rõ hơn về siêu phẩm hoàn toàn mới.
+Hiệu năng mạnh mẽ với chipset A17 Pro tiên tiến
+Một trong những điểm đáng chú ý nhất của iPhone 15 Pro Max là việc nó sử dụng chip A17 Pro sản xuất trên tiến trình 3nm. Điều này đã mang lại một bước cải tiến đáng kể trong hiệu năng. Nhờ vào cải tiến về thiết kế và kiến trúc vi mô, CPU của sản phẩm đã nhanh hơn đến 10%. Điều này không chỉ cải thiện hiệu suất xử lý, mà còn giúp tích hợp các tính năng như giọng nói cá nhân và tự động sửa lỗi trở nên chuyên nghiệp hơn. GPU cũng được nâng cấp với 6 lõi mới, giúp cải thiện hiệu suất và tiết kiệm năng lượng.
+Nói về trải nghiệm chơi game, người dùng có thể trải nghiệm mượt mà hơn với các tựa game đòi hỏi đồ họa cao như Resident Evil 4, Seadth Stranding, Resident Evil Village và Assassin's Creed Mirage.
+Công nghệ màn hình vượt trội
+Màn hình OLED của iPhone 15 Pro Max là một điểm đặc biệt không thể bỏ qua. Với kích thước lớn 6,7 inch và độ phân giải đỉnh cao 2796x1179 pixel, màn hình này mang đến trải nghiệm hấp dẫn cho người dùng. Với tần số quét 120Hz và mật độ điểm ảnh cao đến 460 ppi, bạn có thể mong đợi một hiển thị màu sắc và độ sáng chân thực hơn bao giờ hết. Công nghệ HDR cũng được tích hợp, giúp màn hình tái hiện màu sắc và độ sáng tự nhiên hơn.
+Thêm vào đó, công nghệ TrueTone hiện đại đã được tích hợp để tự động điều chỉnh màu sắc của màn hình dựa trên môi trường xung quanh. Kết hợp này mang đến trải nghiệm xem phim, chơi game và lướt web tốt hơn với hình ảnh sống động, rực rỡ và màu sắc chân thực.
+Thời lượng pin ấn tượng
+iPhone 15 Pro Max sở hữu viên pin có dung lượng lớn hơn đáng kể so với thế hệ trước đó. Với viên pin này, bạn có thể thưởng thức video lên đến 29 giờ, đảm bảo bạn có thể sử dụng cả ngày mà không lo gián đoạn giữa chừng.
+Kết nối 5G vượt trội
+iPhone 15 Pro Max đặc biệt ở khả năng hỗ trợ kết nối 5G, mang đến trải nghiệm internet nhanh và ổn định hơn bao giờ hết. Điều này cho phép bạn xem video trực tuyến, chơi game online, tải nội dung và thậm chí làm việc từ xa mà không gặp sự cản trở từ tình trạng giật lag. Ngoài ra, 5G còn giúp bạn truy cập internet ở những khu vực có tín hiệu yếu một cách mượt mà.
+Thiết kế bền bỉ và thân thiện với môi trường
+iPhone 15 Pro Max được chế tạo bằng vật liệu titan cao cấp chuẩn hàng không vũ trụ với độ bền ấn tượng. Sản phẩm không chỉ thu hút mọi ánh nhìn bởi diện mạo tinh tế và hiện đại mà còn mang đến phiên bản Pro nhẹ nhất từng có của Apple. Hãng cũng sử dụng nguyên liệu tái chế để giảm lượng rác thải và đóng góp vào bảo vệ môi trường.
+Màu sắc đa dạng
+iPhone 15 Pro Max có bảng màu đa dạng gồm 5 sự lựa chọn phong cách: titan đen, titan xanh, titan tự nhiên và titan trắng. Mỗi gam màu tạo nên một câu chuyện riêng, thể hiện cá tính và phong cách cá nhân của người sử dụng.
+Công nghệ camera ấn tượng
+Hệ thống camera kép tiên tiến trên iPhone 15 Pro Max không chỉ mang lại những trải nghiệm quay chụp ấn tượng mà còn biến mỗi khoảnh khắc thành một tác phẩm nghệ thuật. Camera chính 48MP và camera UltraWide 12MP vượt trội với khả năng tối ưu hóa chụp ảnh, mang đến bức ảnh độ phân giải siêu sắc nét với màu sắc chân thực. Điều này cùng với khả năng xử lý hình ảnh tiên tiến để tạo ra những bức ảnh đẹp và ấn tượng hơn. Camera telephoto 12MP cũng mang đến sự cải thiện đáng kể với khả năng thu phóng quan học phạm vi lên đến 5x, tạo nên những bức ảnh độc đáo và chuyên nghiệp. Công nghệ Photonic Engine cũng giúp tái hiện sắc màu tươi sáng và nổi bật các chi tiết.
+Công nghệ Face ID bảo mật hàng đầu
+Với công nghệ tiên tiến của Face ID tích hợp trong iPhone 15 Pro Max, việc mở khóa thiết bị trở nên dễ dàng và an toàn hơn bao giờ hết. Sản phẩm này sử dụng khả năng nhận diện khuôn mặt vô cùng chính xác, ngay cả trong các điều kiện ánh sáng biến đổi và các góc độ khác nhau. Hệ thống camera TrueDepth đảm bảo cho bạn trải nghiệm mở khóa nhanh chóng và độ bảo mật cao.
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+2.
+['product_name' => 'iPhone 14 Pro Max 128 GB (Bạc)','product_price' => 33990000,'product_qty' => 30, 'category_id' => 1,'brand_id' => 1,
+'product_images_1' => 'Iphone14promax_1.jpg','product_images_2' => Iphone14promax_2.jpg','product_images_3' => 'Iphone14promax_3.jpg',
+'product_description' => '
+Tại sao lại nên mua điện thoại iPhone 14 Pro Max?
+Là sản phẩm đắt tiền nhất của dòng điện thoại iPhone 14, iPhone 14 Pro Max cũng là phiên bản nâng cấp của iPhone 14 Pro với màn hình lớn hơn, dung lượng pin lớn hơn và thừa hưởng tất cả tính năng cao cấp có trên iPhone 14 Pro.
+Thiết kế mới hình viên thuốc
+Apple đã trung thành với thiết kế tai thỏ trong suốt nhiều năm, và vẫn tiếp tục sử dụng thiết kế này trên iPhone 14 và iPhone 14 Plus, mặc cho các điện thoại Android chuyển sang kiểu thiết kế đục lỗ, hay camera ẩn dưới màn hình. Tuy nhiên, điện thoại iPhone 14 Pro và iPhone 14 Pro Max đã trở thành điểm đánh dấu cho sự thay đổi trong thiết kế điện thoại của Apple, với việc loại bỏ tai thỏ và thay vào đó bằng việc sử dụng thiết kế hình viên thuốc. Và đặc biệt hơn, đây không phải chỉ là thiết kế hình viên thuốc thông thường mà ta đã từng thấy rất nhiều trên các dòng điện thoại Android, bởi Apple đã tạo ra 1 tính năng hoàn toàn mới và tích hợp thẳng vào viên thuốc này với cái tên gọi cực kì thú vị "Dynamic Island".
+Nó được gọi là Dynamic Island, bởi vì viên thuốc có thể phóng to hay thu nhỏ, đi cùng với việc tạo ra các hiệu ứng chuyển cảnh khác nhau tùy thuộc vào từng thao tác của người dùng, ví dụ như nhận cuộc gọi, nghe nhạc, v..v... Ngoài ra, người dùng có thể tương tác trực tiếp với Dynamic Island để thực hiện một số thao tác nhanh như chạm để mở ứng dụng nghe nhạc, hoặc nhấn và giữ để mở trình điều khiển đa phương tiện. Và tính năng này hứa hẹn sẽ trở thành trào lưu mới không chỉ cho iPhone mà cho các các điện thoại chạy hệ điều hành Android.
+Màn hình OLED 8.7 inch với tần số quét 120 Hz
+Cùng với iPhone 14 Pro, màn hình được trang bị trên iPhone 14 Pro Max là một trong những màn hình có chất lượng cao cấp nhất trên thị trường điện thoại di động hiện nay với kích thước 8.7 inch, độ phân giải 1290 x 2796, mật độ điểm ảnh lên đến 460 ppi và độ sáng màn hình tối đa lên đến 2000 nits, cao hơn nhiều so với độ sáng tối đa 1750 nits trên mẫu điện thoại cao cấp nhất của Samsung vào thời điểm hiện tại là Samsung Galaxy S22 Ultra. Nhờ đó, người dùng có thể thoải mái sử dụng máy trong mọi điều kiện ánh sáng môi trường mà vẫn có thể nhìn rõ mọi chi tiết hiện thị trên màn hình.
+Hơn thế nữa, iPhone 14 Pro Max năm nay còn được tích hợp thêm tính năng lần đầu tiên xuất hiện trên các dòng iPhone, đó là tính năng Always on Display. Với tính năng này, người dùng có thể biết ngay các thông tin cơ bản như ngày/giờ, dung lượng pin của máy mà không cần phải mở khóa màn hình.
+Camera được nâng cấp đáng kể
+Khác với iPhone 14 và 14 Plus, cụm camera trên iPhone 14 Pro Max đã được nâng cấp đáng kể. Trong đó, camera chính góc rộng 48 MP được tích hợp cảm biến 4 điểm ảnh hoàn toàn mới, cho phép người dùng có thể chụp 1 tấm hình có độ phân giải 12 MP có độ chi tiết gấp 4 lần so với thế hệ camera trước. Với camera góc siêu rộng 12 MP, Apple cũng trang bị cho camera này 1 cảm biến mới to gấp đôi so với camera góc siêu rộng trên iPhone 13 Pro, từ đó giúp cho máy có thể bắt sáng được tốt hơn, nhờ đó ảnh chụp hay video quay trong điều kiện thiếu sáng sẽ hiển thị được nhiều chi tiết hơn.
+Ngoài ra, Apple còn trang bị cho camera chính công nghệ chống rung quang học OIS thế hệ thứ 2, giúp tăng cường khả năng chống rung/lắc khi người dùng quay video trong trạng thái di chuyển liên tục. Đây chắc chắn sẽ là tính năng cực kì hữu ích cho những ai thích quay V-log, ghi lại cuộc sống thường ngày hay những chuyến du lịch và dã ngoại của mình.
+Hiệu năng vượt trội
+Thay vì sử dụng chip xử lý cũ trên dòng iPhone 13, Apple trang bị cho iPhone 14 Pro Max chip xử lý mới nhất, đó là A16 Bionic. Được xây dựng trên tiến trình mới 4nm và được gia công bởi TSMC, băng thông bộ nhớ trong của A16 Bionic được cải thiện đến 50% so với A15 Bionic, giúp cho việc xử lý các tác vụ nhanh hơn. Ngoài ra, A16 Bionic cũng có khả năng tiết kiệm năng lượng cao hơn đến 20% so với người tiền nhiệm của mình. Trong các bài kiểm tra hiệu năng, A16 Bionic dễ dàng đánh bại A15, cũng như dẫn trước về khả năng xử lý đơn nhân và đa nhân khi so sánh với chip xử lý Snapdragon 8 Plus Gen 1 của Qualcomm.  
+',
+'product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],

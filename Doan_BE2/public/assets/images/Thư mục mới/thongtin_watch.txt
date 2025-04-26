@@ -1,0 +1,161 @@
+1. brand_id ios / watch 3
+['product_name' => 'Apple Watch SE 2022','product_price' => 8490000,'product_qty' => 30, 'category_id' => 3,'brand_id' => 1,
+'product_images_1' => 'applewatchlse_1.jpg','product_images_2' => 'applewatchlse_2.jpg','product_images_3' => 'applewatchlse_3.jpg',
+'product_description' => '
+Thiết kế trẻ trung, năng động - Viền nhôm sang trọng, màn hình Oled hiển thị tốt kể
+Thao tác mượt mà - Tích hợp chip S8 SiP cùng hệ điều hành WatchOS 9 mới nhất
+Phát hiện va chạm - Tự động phát cảnh báo và gửi vị trí cho người thân khi phát hiện tai nạn
+Sức khoẻ được theo dõi liên tục - Cảm biến nhịp tim thế hệ 2, tính năng theo dõi thuốc
+Pin lên đến 18 giờ cho 1 lần sạc, cùng chế độ tiết kiệm pin cho phép sử dụng lâu hơn
+Apple Watch SE 2022 44mm GPS viền nhôm chính là siêu phẩm với đầy sự tinh tế, hiện đại và đẳng cấp sẽ được nhà Táo cho ra mắt vào tháng 9 năm nay. Với nhiều cập nhật nổi bật về thiết kế, nhiều công nghệ màn hình hiện đại hơn và nhiều tiện ích mở rộng hơn được đưa ra thì đây chắc chắn chính là chiếc đồng hồ bạn nên lựa chọn. Hãy tham khảo thêm cho mình một vài thông tin về chiếc đồng hồ này ngay sau đây để có thể hiểu thêm về nó và các đặc tính nổi bật của nó nhé.
+Đánh giá tổng quan về Apple Watch SE 2022 44mm GPS
+Dù được nhận định rằng sẽ lại là một siêu phẩm trong dòng đồng hồ thông minh nhưng Apple Watch SE 2022 44mm GPS vẫn được kỳ vọng sẽ có được nhiều hơn những cải tiến nổi bật hơn về thiết kế, tính năng và tiện ích để tạo được điểm nhấn so với các dòng Apple Watch đã quá nổi trước đó của nhà Táo.
+Điểm qua một vài thông tin và đánh giá tổng quan về các khía cạnh của chiếc đồng hồ thông minh này của Apple để có cái nhìn đúng và chân thực hơn về nó nhé.
+Thiết kế khung nhôm sang trọng
+Apple Watch SE 2022 44mm GPS lần này vẫn là một tái thiết kế mang đầy nét riêng và quen thuộc vốn có của những chiếc Apple Watch nhà Táo – “Planet in mind- Thiết kế mặt lưng ”.
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+2. brand_id ios / watch 3
+['product_name' => 'Apple Watch Ultra 49MM (4G)','product_price' => 23990000,'product_qty' => 30, 'category_id' => 3,'brand_id' => 1,
+'product_images_1' => 'applewatchultra_1.jpg','product_images_2' => 'applewatchultra_2.jpg','product_images_3' => 'applewatchultra_3.jpg',
+'product_description' => '
+Bền bỉ trước mọi thử thách - Khung viền titan, mặt kính Sapphire mang lại độ bền chuẩn quân đội MIL-STD 810H
+Trợ lý sức khoẻ 24/24 - Cảm biến nhịp tim, cảm biến nhiệt, nhận diện va chạm xe
+Tập luyện chuyên nghiệp - Tích hợp nhiều chế độ thể thao đo như lặn, bơi, đạp xe
+Lặn sâu đến 40m, chống bụi xâm nhập - Đạt chứng nhận EN13319, IPX6
+Pin lên đến 36 giờ khi sử dụng thông thường, 60 giờ ở chế độ tiết kiệm pin
+Nhiều tính năng tiện lợi - Nghe nhạc trên đồng hồ, trợ lý ảo
+Apple Watch Ultra 49mm (4G) - Viền Titan - Dây vải cỡ nhỏ - Cá tính, bền bỉ và chuyên nghiệp
+Apple Watch Ultra 49mm (4G) viền Titan - dây vải cỡ nhỏ là dòng smartwatch được Apple trình làng mới nhất trong sự kiện ra mắt sản phẩm thường niên. Sản phẩm Apple Watch Ultra được hãng dành riêng cho các tín đồ yêu thích sự mạo hiểm, thể thao, khám phá.
+Thiết kế cá tính cùng độ bền bỉ cao
+Với phiên bản Ultra, Apple đã trang bị thêm cho dòng sản phẩm smartwatch của mình khung viền Titanium. Đồng thời, mặt kính cũng được trang bị với chất liệu Sapphire cao cấp không những tăng thêm độ sang trọng mà còn giúp cho thiết bị có thể bền bỉ hơn.
+Cạnh đó, Apple Watch Ultra 49mm (4G) viền Titan - dây vải cỡ nhỏ cũng đã được kiểm tra độ bền trước khi ra mắt thị trường. Kết quả đạt độ bền chuẩn quân đội khẳng định độ bền bỉ của chiếc đồng hồ và còn có thể hạn chế mọi hư hỏng.
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+3. brand_id samsung/ watch 3
+['product_name' => 'Đồng hồ Samsung Galaxy Fit 3','product_price' => 1390000,'product_qty' => 30, 'category_id' => 3,'brand_id' => 2,
+'product_images_1' => 'samsungfit3_1.jpg','product_images_2' => 'samsungfit3_2.jpg','product_images_3' => 'samsungfit3_3.jpg',
+'product_description' => '
+Thời lượng pin bền bỉ lên đến 13 ngày sử dụng
+Màn hình lớn 1.6 inch Amoled dễ dàng theo dõi thông tin
+Tự động phát hiện té ngã và gửi trợ giúp ngay trong những tình huống khẩn cấp
+Theo dõi giấc ngủ và hơn 100 chế độ luyện tập được tích hợp sẵn
+Đồng hồ Samsung Galaxy Fit 3 thiết kế thanh mảnh, gọn gàng, màn hình AMOLED 1.6 inch, trọng lượng chỉ 36.8g, kháng nước 5ATM và bụi IP68 cùng viên pin 208mAh kéo dài dến 13 ngày ấn tượng tích hợp sạc không dây.
+Thiết kế gọn nhẹ, tinh giản và khả năng kháng nước 5ATM, kháng bụi IP68
+Đồng hồ Galaxy Fit 3 có sự thay đổi về mặt thiết kế khi sở hữu mặt đồng hồ dạng chữ nhật, màn hình  1.6 inch cùng trọng lượng chỉ 36.8g. Với thiết kế thanh mảnh, gọn gàng đồng hồ Galaxy Fit 3 cũng chính là một món phụ kiện hiện đại.
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+4. brand_id samsung/ watch 3
+['product_name' => 'Samsung Galaxy Watch 4 Classic','product_price' => 4190000,'product_qty' => 30, 'category_id' => 3,'brand_id' => 2,
+'product_images_1' => 'samsungwatch4_1.jpg','product_images_2' => 'samsungwatch4_2.jpg','product_images_3' => 'samsungwatch4_3.jpg',
+'product_description' => '
+ĐẶC ĐIỂM NỔI BẬT
+Thiết kế sắc nét, vòng bezel xoay tiện lợi, phần mềm thông minh và cảm biến sức khỏe nổi bật của Galaxy Watch 4 Classic 46mm đã giúp nó trở thành chiếc đồng hồ cần thiết với nhiều người. 
+Galaxy Watch 4 Classic tích hợp cảm biến sức khỏe 3 trong 1 để đo nhịp tim, lấy điện tâm đồ và đọc thành phần cơ thể. Với những tính năng này, không còn nghi ngờ gì khi sản phẩm từ Samsung xứng đáng là đồng hồ thông minh tốt nhất.
+Thiết kế Galaxy Watch Classic 46mm
+Sản phẩm có khung được thiết kế lại cho phép chuyển đổi dễ dàng hơn. Bộ nút bấm đồng nhất cũng có hình dạng thuôn dài, thay vì một núm tròn nhô ra đi kèm với một nút bên phẳng.
+Galaxy Watch 4 Classic 46mm có khung bezel xoay, vừa là công cụ điều hướng tiện dụng vừa là con quay fidget spinner tuyệt vời. Kể từ khi chiếc Samsung Galaxy Watch ban đầu ra mắt khung bezel, nó đã trở thành biểu tượng cho sản phẩm - tương tự như bút S Pen trên Galaxy Note.
+Hoạt động trên hệ điều hành One UI Watch
+Phần mềm của đồng hồ thông minh Samsung năm nay cung cấp trải nghiệm tốt nhất mà bạn từng có khi sử dụng One UI Watch. Phần mềm vẫn mang lại cảm giác rất Tizen-esque, nhưng đó là một điều tốt. Nó cho phép bạn tìm kiếm và chuyển đổi giữa các ứng dụng và menu và thiết lập các trang một cách liền mạch.
+Việc bổ sung One UI Watch làm cho Galaxy Watch 4 Classic trở thành một thành viên tích cực hơn trong hệ sinh thái thiết bị Samsung. One UI Watch cũng có sẵn một thư viện mặt đồng hồ khổng lồ, từ đơn giản đến hoạt ảnh động vật và các biến thể phối hợp nhiều màu sắc. Điều đó giúp bạn thỏa sức thay đổi mặt đồng hồ mỗi ngày.
+Tính năng mới: Phân tích thành phần cơ thể
+Samsung đã phát triển một cảm biến sức khỏe mới cho Galaxy Watch năm nay. Nó kết hợp theo dõi nhịp tim (PPG), một đầu đọc điện tâm đồ (ECG) và phân tích trở kháng điện sinh học (BIA) cho một cảm biến 3 trong 1 đặt gần da hơn cảm biến sức khỏe cá nhân trong Galaxy Watch trước đó.
+Trong số đó, BIA là nâng cấp lớn. Nó hoạt động tương tự như những gì bạn tìm thấy trên cân thông minh tốt nhất. BIA gửi một dòng điện yếu qua cơ thể của bạn để phân tích tỷ lệ phần trăm chất béo cơ thể, chỉ số khối cơ thể (BMI), khối lượng cơ, khối lượng xương, tỷ lệ phần trăm nước trong cơ thể và hơn thế nữa.
+Khi được sử dụng đúng cách, phân tích thành phần cơ thể có thể giúp bạn hiểu những thay đổi đối với chế độ ăn uống hoặc hoạt động ảnh hưởng như thế nào đến sức khỏe bên trong - không chỉ là cân nặng của bạn. 
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+5. brand_id samsung/ watch 3
+['product_name' => 'Samsung Galaxy Watch6 40mm LTE SM-R935F','product_price' => 7490000,'product_qty' => 30, 'category_id' => 3,'brand_id' => 2,
+'product_images_1' => 'samsungwatch6_1.jpg','product_images_2' => 'samsungwatch6_2.jpg','product_images_3' => 'samsungwatch6_3.jpg',
+'product_description' => '
+Samsung Galaxy Watch6 được nâng cấp với nhiều tính năng nổi bật như: Theo dõi giấc ngủ chính xác hơn, theo dõi sức khỏe người dùng, đo và cảnh báo bất thường nhịp tim, thiết kế mới với viền benzel mỏng hơn, màn hình hiển thị của đồng hồ tăng đến 20%. Đặc biệt, Galaxy Watch6 có thời lượng pin lên đến 40 giờ và có thể sạc nhanh đạt đến 45% chỉ trong vòng 30 phút. Phiên bản LTE cho phép kết nối nghe gọi trực tiếp
+Sản phẩm chính hãng Samsung Việt Nam, bảo hành theo đúng chính sách của hãng.
+Tình trạng: Máy mới 100% full box nguyên seal đầy đủ phụ kiện
+Màu sắc: Đen
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+
+
+1. Phu kien khac brand_id xiaomi 3/ phu kien khac 4
+['product_name' => 'Tai nghe Gaming Xiaomi Black Shark JoyBuds SE','product_price' => 1150000,'product_qty' => 30, 'category_id' => 4,'brand_id' => 3,
+'product_images_1' => 'tainghexiaomse_1.jpg','product_images_2' => 'tainghexiaomse_2.jpg','product_images_3' => 'tainghexiaomse_3.jpg',
+'product_description' => '
+Tai nghe Gaming Xiaomi Black Shark JoyBuds SE có độ trễ cực thấp dành riêng cho Game thủ. Với thiết kế cool ngầu, đậm chất gaming mang đến trải nghiệm đàm thoại ổn định, cùng thời lượng pin lên tới 24 giờ khi sử dụng kèm dock sạc. Một lựa chọn hoàn hảo với mức giá phổ thông mà các tín đồ công nghệ không nên bỏ lỡ.
+Thông số kỹ thuật
+Kết nối: Bluetooth 5.3 
+Chuẩn âm thanh: SBC, AAC
+Phạm vi kết nối: 10m 
+Kháng nước: IPX4 
+Dung lượng pin: 45mAh( Tai nghe) / 400mAh( Hộp sạc)
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+2. Phu kien khac brand_id xiaomi 3/ phu kien khac 4
+['product_name' => 'Tai nghe Gaming Xiaomi Black Shark JoyBuds','product_price' => 1150000,'product_qty' => 30, 'category_id' => 4,'brand_id' => 3,
+'product_images_1' => 'tainghexiaomibsj_1.jpg','product_images_2' => 'tainghexiaomibsj_2.jpg','product_images_3' => 'tainghexiaomibsj_3.jpg',
+'product_description' => '
+Tai nghe Gaming Xiaomi Black Shark JoyBuds- Phiên bản tai nghe Bluetooth có độ trễ cực thấp dành riêng cho Game thủ. Với thiết kế cool ngầu, đậm chất gaming, hỗ trợ giảm tiếng ồn cuộc gọi ENC, mang đến trải nghiệm đàm thoại ổn định, cùng thời lượng pin lên tới 28 giờ khi sử dụng kèm dock sạc. Một lựa chọn hoàn hảo với mức giá phổ thông mà các tín đồ công nghệ không nên bỏ lỡ.
+Thiết kế nhỏ gọn, cho cảm giác đeo thoải mái
+Bên cạnh đường nét mượt mà trên thiết kế, tai nghe chống ồn Black Shark còn thu hút người dùng bởi sự nhỏ nhắn và linh hoạt với kích thước được tối giản, trọng lượng chỉ khoảng 4.5g. Kết cấu tai nghe với thiết kế bán trong tai, không ép chặt ống tai, khéo léo vừa vặn với đường viền của tai, sẽ giúp giải phóng áp lực cho đôi tai để bạn có được trải nghiệm đeo êm ái hơn khi sử dụng trong thời gian dài.
+Kết nối Bluetooth 5.2 - độ trễ cực thấp
+Tai nghe Black Shark JoyBuds sử dụng giao thức Bluetooth 5.2 mới nhất, kết hợp cùng công nghệ độ trễ thấp do hãng phát triển, giúp âm thanh truyền tải nhanh chóng và ổn định hơn. Hỗ trợ độ trễ thấp tới 30ms, khi ghép nối với điện thoại thì độ trễ là 85ms, mang đến trải nghiệm xem video và chơi game nhập vai thú vị hơn, nhờ vào khả năng đồng bộ mượt mà giữa âm thanh và hình ảnh.
+Âm thanh cân bằng, ổn định
+Tai nghe chơi game JoyBuds lần này cũng được trang bị màng loa composite mạ titan có độ nhạy cao với kích thước 14.2mm, mang lại độ động và chi tiết âm thanh phong phú. Thiết kế đi kèm ống bass chuyên nghiệp, giúp tái tạo âm thanh để đạt được độ trầm bổng đẹp đẽ với sự cân bằng của ba dải âm.
+Chống ồn ENC, đàm thoại rõ ràng
+Ngoài ra, mỗi bên tai nghe còn được trang bị hai micro đa hướng, kết hợp với thuật toán giảm tiếng ồn xung quanh ENC để lọc tiếng ồn bên ngoài một cách thông minh. Từ đó khi thực hiện các cuộc gọi đàm thoại, giọng nói của bạn sẽ được khôi phục một cách trung thực để người bên kia có thể nghe rõ hơn ngay cả khi đang di chuyển trên đường, trạm xe bus,... nơi có nhiều tiếng ồn.
+Pin 28 giờ, chống nước IPX4
+Tai nghe Bluetooth Xiaomi được trang bị dock sạc dung lượng 400mAh, cung cấp thời gian sử dụng lên tới 6 giờ. Đặc biệt, khi đi kèm với dock sạc thì thời lượng pin của tai nghe có thể kéo dài đến 28 giờ. Thiết kế cổng sạc Type-C, giúp sạc đầy pin chỉ với 1.5 giờ.
+Ngoài ra, mẫu tai nghe gaming của tai nghe Bluetooth Xiaomi Black Shark còn được tích hợp chuẩn chống nước IPX4, hỗ trợ chống nước nhẹ khi tiếp xúc với mồ hôi, giúp người dùng an tâm hơn khi đi mưa, tập luyện thể thao.
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+//xem lai kich thuot hinh
+3. Phu kien khac brand_id xiaomi 3/ phu kien khac 4
+['product_name' => 'Tai nghe TWS Redmi AirDots 3 Pro WSEJ01ZM','product_price' => 1390000,'product_qty' => 30, 'category_id' => 4,'brand_id' => 3,
+'product_images_1' => 'tainghetwsredmi3pro_1.jpg','product_images_2' => 'tainghetwsredmi3pro_2.jpg','product_images_3' => 'tainghetwsredmi3pro_3.jpg',
+'product_description' => '
+Nếu như Redmi AirDots 3 bản tiêu chuẩn có thiết kế tương đối phổ thông và giống với đa số các mẫu tai nghe không dây TWS trên thị trường thì bản Pro đi theo một phong cách riêng khá mới mẻ. Phiên bản Pro lần này mang tới một sự thay đổi hoàn toàn về thiết kế.
+Thiết kế
+Ngoại hình của Redmi AirDots 3 Pro khá giống với mẫu tai nghe không dây TWS Pixel Buds tới từ Google. Chiếc tai nghe này đi kèm driver âm thanh 9mm cùng 3 microphone thu âm hỗ trợ tối ưu hoá chất giọng của người nói cũng như hỗ trợ cho khả năng chống ồn chủ động ANC. Theo Redmi quảng cáo, AirDots 3 Pro cho khả năng khử ồn tới 35dB.
+Redmi AirDots 3 Pro hỗ trợ công nghệ Bluetooth 5.2 mới cho phép kết nối tới nhiều thiết bị cùng lúc, được tối ưu hoá khi sử dụng cùng với các thiết bị smartphone chạy MIUI, giảm thiểu độ trễ khi sử dụng với các thiết bị của Xiaomi.
+Thời lượng pin
+Redmi AirDots 3 Pro trang bị viên pin dung lượng 35mAh cho mỗi tai, cho phép người dùng có thể nghe nhạc liên tục trong vòng 6 giờ liên tục, hoặc 3 giờ liên tục nếu có bật chống ồn ANC. Đây là một thời lượng pin ở mức trung bình khá. Ngoài ra, case sạc của tai nghe có viên pin 470mAh có thể cung cấp tổng cộng 28 giờ nghe nhạc liên tục. Sản phẩm sử dụng cổng sạc USB-C và có hỗ trợ sạc không dây chuẩn Qi, tương thích với công nghệ sạc ngược không dây hiện có trên nhiều smartphone hiện nay.
+Thông số kỹ thuật
+Model: WSEJ01ZM
+Chuẩn kết nối: BT 5.2
+Trọng lượng 1 tai: ~4.9g
+Kích thước tai nghe: 25.4*20.3*21.3mm
+Tổng trọng lượng: ~ 55g
+Kích thước hộp sạc: 65*48*26mm
+Thời gian sạc tai nghe: ~ 1 tiếng
+Thời gian sạc hộp: ~2,5 tiếng
+Thời gian đàm thoại: ~3 tiếng (tắt noise reduction, 50% volume, AAC encoding)
+Thời gian nghe nhạc: ~6 tiếng (tắt noise reduction, 50% volume, AAC encoding)
+Thời gian chờ: ~28 tiếng (tắt noise reduction, 50% volume, AAC encoding), sử dụng kèm hộp
+Input hộp sạc: 5V=0.5A MAX (wired)
+Dung lượng tai nghe (đơn): 35mAh/0.13Wh
+Dung lượng pin hộp: 470mAh/1.78Wh
+Trở kháng: 32Ω
+', 
+product_status' => 'Active', 
+'created_at' => now(),'updated_at' => now()],
+
+
+
+
+
