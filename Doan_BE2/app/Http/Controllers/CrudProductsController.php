@@ -12,17 +12,18 @@ class CrudProductsController extends Controller
     /**
      * Hiển thị danh sách sản phẩm Admin
      */
-    public function listProduct(Request $request)
+        public function listProduct(Request $request)
     {
-        $query = Products::with('category');
+        $query = Products::with(['category', 'brand']);
 
         if ($search = $request->input('search')) {
             $query->where('product_name', 'like', "%$search%");
         }
 
-        $products = $query->paginate(10);
+        $products = $query->orderBy('created_at', 'desc')
+                        ->paginate(10);
+
         return view('crud_product.list', compact('products'));
-        
     }
     /**
      * Hiển thị form tạo sản phẩm
