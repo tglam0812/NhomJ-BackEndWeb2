@@ -10,6 +10,7 @@
         <nav>
             <a href="{{ route('products.list') }}">Products</a>
             <a href="{{ route('categories.list') }}">Category</a>
+            <a href="{{ route('accountAdmin.list') }}">User</a>
         </nav>
     </header>
     <div class="container">
