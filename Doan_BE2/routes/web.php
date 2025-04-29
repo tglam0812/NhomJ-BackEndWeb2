@@ -7,6 +7,8 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\CrudProductsController;
 use App\Http\Controllers\Admin\CrudCategoryController;
+use App\Http\Controllers\Admin\CrudAccountAdminController;
+use App\Http\Controllers\Admin\CrudLevelController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
@@ -21,7 +23,7 @@ Route::get('/', function () {
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 
-// Products
+// Products Admin
 Route::prefix('products')->group(function () {
     Route::get('/', [CrudProductsController::class, 'listProduct'])->name('products.list');
     Route::get('/create', [CrudProductsController::class, 'createProduct'])->name('products.createProduct');
@@ -32,7 +34,7 @@ Route::prefix('products')->group(function () {
     Route::delete('/{id}', [CrudProductsController::class, 'deleteProduct'])->name('products.deleteProduct');
 });
 
-// Category
+// Category Admin
 Route::prefix('categories')->group(function () {
     Route::get('/', [CrudCategoryController::class, 'listCategory'])->name('categories.list'); // Danh sách danh mục
     Route::get('/create', [CrudCategoryController::class, 'createCategory'])->name('categories.createCategory'); // Tạo danh mục
@@ -42,3 +44,25 @@ Route::prefix('categories')->group(function () {
     Route::get('/{category_id}', [CrudCategoryController::class, 'readCategory'])->name('categories.readCategory');
     Route::delete('/{category_id}', [CrudCategoryController::class, 'deleteCategory'])->name('categories.deleteCategory');
 });
+
+// Account Admin
+Route::prefix('accounts')->group(function () {
+    Route::get('/', [CrudAccountAdminController::class, 'listAccountAdmin'])->name('accountAdmin.list');
+    Route::get('/create', [CrudAccountAdminController::class, 'createAccountAdmin'])->name('accountAdmin.create'); // Tạo danh mục
+    Route::post('/create', [CrudAccountAdminController::class, 'postAccountAdmin'])->name('accountAdmin.store'); 
+    Route::get('/{account_id}/edit', [CrudAccountAdminController::class, 'updateAccountAdmin'])->name('accountAdmin.update');
+    Route::post('/{account_id}/edit', [CrudAccountAdminController::class, 'postUpdateAccountAdmin'])->name('accountAdmin.postUpdate');
+    Route::get('/{account_id}', [CrudAccountAdminController::class, 'readAccountAdmin'])->name('accountAdmin.read');
+    Route::delete('/{account_id}', [CrudAccountAdminController::class, 'deleteAccountAdmin'])->name('accountAdmin.delete');
+});
+
+// Level Admin
+Route::prefix('levels')->group(function () {
+    Route::get('/', [CrudLevelController::class, 'listLevel'])->name('levelAdmin.list');
+    Route::get('/create', [CrudLevelController::class, 'createLevel'])->name('levelAdmin.create');
+    Route::post('/create', [CrudLevelController::class, 'postLevel'])->name('levelAdmin.store');
+    Route::get('/{level_id}/edit', [CrudLevelController::class, 'updateLevel'])->name('levelAdmin.update');
+    Route::post('/{level_id}/edit', [CrudLevelController::class, 'postUpdateLevel'])->name('levelAdmin.postUpdate');
+    Route::delete('/{level_id}', [CrudLevelController::class, 'deleteLevel'])->name('levelAdmin.delete');
+});
+
