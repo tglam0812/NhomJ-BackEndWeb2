@@ -36,7 +36,11 @@
                         <td>
                             <a href="{{ route('products.readProduct', $product->product_id) }}">View</a> |
                             <a href="{{ route('products.updateProduct', $product->product_id) }}">Edit</a> |
-                            <button>Delete</button>
+                            <form action="{{ route('products.deleteProduct', $product->product_id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button onclick="return confirm('Delete {{ $product->product_name }}?')" class="btn-delete">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @empty
