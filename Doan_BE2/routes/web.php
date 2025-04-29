@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\UserController;
 use Illuminate\Support\Facades\Controller;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\CrudProductsController;
-use App\Http\Controllers\CrudCategoryController;
+use App\Http\Controllers\Admin\CrudProductsController;
+use App\Http\Controllers\Admin\CrudCategoryController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
