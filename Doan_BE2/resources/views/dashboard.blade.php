@@ -9,6 +9,7 @@
 
         <nav>
             <a href="{{ route('products.list') }}">Products</a>
+            <a href="{{ route('categories.list') }}">Category</a>
         </nav>
     </header>
     <div class="container">
