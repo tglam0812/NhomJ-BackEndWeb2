@@ -69,5 +69,6 @@ Route::prefix('levels')->group(function () {
 
 // View list index
 Route::get('/', [TrangChuController::class, 'listProductIndex']);
+Route::get('{product_id}', [TrangChuController::class, 'detailProduct'])->name('product.detail');
 
 
