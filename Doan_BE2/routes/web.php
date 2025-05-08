@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\CrudProductsController;
 use App\Http\Controllers\Admin\CrudCategoryController;
 use App\Http\Controllers\Admin\CrudAccountAdminController;
 use App\Http\Controllers\Admin\CrudLevelController;
+use App\Http\Controllers\TrangChuController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
@@ -65,4 +66,8 @@ Route::prefix('levels')->group(function () {
     Route::post('/{level_id}/edit', [CrudLevelController::class, 'postUpdateLevel'])->name('levelAdmin.postUpdate');
     Route::delete('/{level_id}', [CrudLevelController::class, 'deleteLevel'])->name('levelAdmin.delete');
 });
+
+// View list index
+Route::get('/', [TrangChuController::class, 'listProductIndex']);
+
 
