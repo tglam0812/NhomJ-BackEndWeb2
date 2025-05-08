@@ -40,11 +40,7 @@
                         <td>
                             <a href="{{ route('accountAdmin.read', $account->user_id) }}">View</a> |
                             <a href="{{ route('accountAdmin.update', $account->user_id) }}">Edit</a> |
-                            <form action="{{ route('accountAdmin.delete', $account->user_id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button onclick="return confirm('Delete {{ $account->full_name }}?')" class="btn-delete">Delete</button>
-                            </form>
+                            <button>Delete</button>
                         </td>
                     </tr>
                     @empty
