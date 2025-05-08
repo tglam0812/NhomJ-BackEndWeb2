@@ -20,9 +20,10 @@ Route::post('login', [LoginController::class, 'login'])->name('login');
 Route::get('/', function () {
     return view('index');
 });
-
+//Dang ky
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
+
 
 // Products Admin
 Route::prefix('products')->group(function () {
