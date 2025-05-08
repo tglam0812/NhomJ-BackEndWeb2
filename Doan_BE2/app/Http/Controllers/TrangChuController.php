@@ -10,6 +10,17 @@ use App\Models\Brand;
 
 class TrangChuController extends Controller
 {
+    public function home()
+    {
+        $categories = Category::all();
+        $products = Products::with(['category', 'brand'])
+            ->orderBy('created_at', 'desc')
+            ->take(8) // chỉ 8 sản phẩm
+            ->get();
+
+        return view('index', compact('products', 'categories'));
+    }
+    
     public function listProductIndex(Request $request)
     {
         $query = Products::with(['category', 'brand']);
