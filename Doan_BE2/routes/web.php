@@ -15,14 +15,14 @@ use App\Http\Controllers\TrangChuController;
 
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login'])->name('login');
+//Route::post('login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/', function () {
     return view('index');
 });
 
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('register', [RegisterController::class, 'register'])->name('register');
+//Route::post('register', [RegisterController::class, 'register'])->name('register');
 
 // Products Admin
 Route::prefix('products')->group(function () {
@@ -45,6 +45,7 @@ Route::prefix('categories')->group(function () {
     Route::get('/{category_id}', [CrudCategoryController::class, 'readCategory'])->name('categories.readCategory');
     Route::delete('/{category_id}', [CrudCategoryController::class, 'deleteCategory'])->name('categories.deleteCategory');
 });
+
 
 // Account Admin
 Route::prefix('accounts')->group(function () {
