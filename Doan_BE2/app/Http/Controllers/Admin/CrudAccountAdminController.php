@@ -91,7 +91,7 @@ class CrudAccountAdminController extends Controller
     {
         $request->validate([
             'full_name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $account_id,
+            'email' => 'required|email|unique:users,email,' . $account_id . ',user_id',
             'phone' => 'required|string|max:15',
             'gender' => 'required|string',
             'date' => 'required|date',

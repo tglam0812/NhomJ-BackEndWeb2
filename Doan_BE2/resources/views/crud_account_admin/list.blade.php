@@ -64,7 +64,6 @@
 </main>
 
 <style>
-    /* Custom CSS cho danh sách tài khoản */
     .account-list {
         padding: 20px 0;
         background-color: #f9f9f9;
