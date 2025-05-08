@@ -27,4 +27,11 @@ class TrangChuController extends Controller
 
         return view('index', compact('products', 'categories'));
     }
+    public function detailProduct($product_id)
+    {
+        $product = Products::with(['category', 'brand'])->findOrFail($product_id);
+
+        return view('detail-products', compact('product'));
+    }
+    
 }
