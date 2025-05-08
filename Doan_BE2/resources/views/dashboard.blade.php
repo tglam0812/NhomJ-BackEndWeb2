@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - Products</title>
+    <title>ADMIN</title>
 </head>
+
 <body>
     <header>
 
@@ -15,6 +17,7 @@
     </header>
     <div class="container">
         @yield('content')
-    </div>      
+    </div>
 </body>
+
 </html>

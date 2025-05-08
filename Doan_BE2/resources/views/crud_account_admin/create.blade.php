@@ -116,102 +116,101 @@
         </form>
     </div>
 </main>
-
-<style>
-    .account-admin-create {
-        padding: 20px 0;
-        background-color: #f9f9f9;
-    }
-
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: white;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .form-account-admin {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .form-group label {
-        font-weight: 500;
-        margin-bottom: 6px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"],
-    select,
-    textarea,
-    input[type="file"] {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 15px;
-    }
-
-    .radio-group {
-        display: flex;
-        gap: 15px;
-    }
-
-    .form-actions {
-        display: flex;
-        justify-content: flex-end;
-        gap: 12px;
-        margin-top: 20px;
-    }
-
-    .btn-save {
-        background-color: #007bff;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .btn-save:hover {
-        background-color: #0056b3;
-    }
-
-    .btn-cancel {
-        background-color: #6c757d;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 4px;
-    }
-
-    .btn-cancel:hover {
-        background-color: #5a6268;
-    }
-
-    .text-danger {
-        color: red;
-    }
-
-    .error {
-        color: red;
-        font-size: 14px;
-        margin-top: 4px;
-    }
-</style>
 @endsection
+<style>.account-admin-create {
+    padding: 30px 0;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.account-admin-create .container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.account-admin-create h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #333;
+}
+
+.form-account-admin .form-group {
+    margin-bottom: 20px;
+}
+
+.form-account-admin label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.form-account-admin input[type="text"],
+.form-account-admin input[type="email"],
+.form-account-admin input[type="password"],
+.form-account-admin input[type="date"],
+.form-account-admin input[type="file"],
+.form-account-admin select,
+.form-account-admin textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-account-admin .radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.form-account-admin .radio-group label {
+    font-weight: normal;
+    color: #333;
+}
+
+.form-account-admin .error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.btn-save, .btn-cancel {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-save {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #218838;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #c82333;
+}
+</style>
