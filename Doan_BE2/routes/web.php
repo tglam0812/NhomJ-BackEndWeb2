@@ -15,14 +15,18 @@ use App\Http\Controllers\TrangChuController;
 
 Route::get('/', [HomeController::class, 'page'])->name('home');
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login'])->name('login');
+//Route::post('login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+// Trang chủ (hiển thị sản phẩm mới)
+Route::get('/', [TrangChuController::class, 'home'])->name('home');
+
 //Dang ky
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('register', [RegisterController::class, 'register'])->name('register');
+//Route::post('register', [RegisterController::class, 'register'])->name('register');
 
 
 // Products Admin
@@ -69,8 +73,10 @@ Route::prefix('levels')->group(function () {
     Route::delete('/{level_id}', [CrudLevelController::class, 'deleteLevel'])->name('levelAdmin.delete');
 });
 
-// View list index
-Route::get('/', [TrangChuController::class, 'listProductIndex']);
-Route::get('{product_id}', [TrangChuController::class, 'detailProduct'])->name('product.detail');
+// Danh sách sản phẩm có tìm kiếm (tránh trùng admin)
+Route::get('/shop', [TrangChuController::class, 'listProductIndex'])->name('products.shop');
+
+// Chi tiết sản phẩm
+Route::get('/product/{product_id}', [TrangChuController::class, 'detailProduct'])->name('product.detail');
 
 
