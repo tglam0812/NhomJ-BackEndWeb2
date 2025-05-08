@@ -46,6 +46,7 @@ Route::prefix('categories')->group(function () {
     Route::delete('/{category_id}', [CrudCategoryController::class, 'deleteCategory'])->name('categories.deleteCategory');
 });
 
+
 // Account Admin
 Route::prefix('accounts')->group(function () {
     Route::get('/', [CrudAccountAdminController::class, 'listAccountAdmin'])->name('accountAdmin.list');
