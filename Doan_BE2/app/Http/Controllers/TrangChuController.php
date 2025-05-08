@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Products;
+use App\Models\Category;
+use App\Models\Brand; 
+
+class TrangChuController extends Controller
+{
+    public function listProductIndex(Request $request)
+    {
+        $query = Products::with(['category', 'brand']);
+        if ($search = $request->input('search')) {
+            $query->where('product_name', 'like', "%$search%");
+        }
+        // Lọc theo danh mục nếu có
+        if ($category_id = $request->input('category_id')) {
+            $query->where('category_id', $category_id);
+        }
+        // Lấy tất cả sản phẩm mà không phân trang
+        $products = $query->orderBy('created_at', 'desc')->get();
+
+        $categories = Category::all();
+
+        return view('index', compact('products', 'categories'));
+    }
+}
