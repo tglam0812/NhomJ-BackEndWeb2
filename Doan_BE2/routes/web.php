@@ -13,7 +13,7 @@ use App\Http\Controllers\TrangChuController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
-
+Route::get('/', [HomeController::class, 'page'])->name('home');
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login');
 
