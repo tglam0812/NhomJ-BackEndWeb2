@@ -16,6 +16,12 @@
                         <h5 class="card-title">{{ $item->product->product_name }}</h5>
                         <p class="card-text mb-2">{{ number_format($item->product->product_price) }} VND</p>
 
+                        <form action="{{ route('wishlist.toggle', $item->product->product_id) }}" method="POST" class="mt-auto">
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm w-100">
+                                <i class="bi bi-heart-fill"></i> Xóa khỏi yêu thích
+                            </button>
+                        </form>
                         
                     </div>
                 </div>
