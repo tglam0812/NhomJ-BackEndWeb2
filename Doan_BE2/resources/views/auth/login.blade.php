@@ -12,7 +12,7 @@
                                  <h5 class="text-success text-gradient">Đăng nhập</h5>
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="{{ route('login') }}" role="form">
+                                <form method="POST" action="{{ route('login.post') }}" role="form">
                                     @csrf
                                     <label>Email</label>
                                     <div class="mb-3">
