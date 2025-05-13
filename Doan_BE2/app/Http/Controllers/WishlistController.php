@@ -17,13 +17,15 @@ class WishlistController extends Controller
     {
         $user_id = Auth::id();
 
-        // Nếu sản phẩm đã tồn tại trong wishlist thì không thêm nữa
-        $exists = Wishlist::where('user_id', $user_id)
+        // Lấy bản ghi wishlist nếu có
+        $wishlist = Wishlist::where('user_id', $user_id)
             ->where('product_id', $product_id)
-            ->exists();
+            ->first();
 
-        if ($exists) {
-            return back()->with('success', 'Sản phẩm đã có trong danh sách yêu thích.');
+        if ($wishlist) {
+            // Nếu đã tồn tại thì xóa
+            $wishlist->delete();
+            return back()->with('success', 'Đã xóa khỏi danh sách yêu thích.');
         }
 
         // Nếu chưa có thì thêm mới
