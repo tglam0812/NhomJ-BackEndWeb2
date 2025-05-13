@@ -13,6 +13,7 @@
             <a href="{{ route('products.list') }}">Products</a>
             <a href="{{ route('categories.list') }}">Category</a>
             <a href="{{ route('accountAdmin.list') }}">User</a>
+            <a href="{{ route('phieugiam.index') }}">Giam gia</a>
         </nav>
     </header>
     <div class="container">

@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\CrudCategoryController;
 use App\Http\Controllers\Admin\CrudAccountAdminController;
 use App\Http\Controllers\Admin\CrudLevelController;
 use App\Http\Controllers\TrangChuController;
+use App\Http\Controllers\PhieuGiamGiaController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
@@ -79,4 +80,8 @@ Route::get('/shop', [TrangChuController::class, 'listProductIndex'])->name('prod
 // Chi tiết sản phẩm
 Route::get('/product/{product_id}', [TrangChuController::class, 'detailProduct'])->name('product.detail');
 
+//phieu giam giaaaa
 
+Route::resource('phieugiam', PhieuGiamGiaController::class)->parameters([
+    'phieugiam' => 'id'
+]);

@@ -89,7 +89,9 @@ E - Sunshine
 			</div>
 		</div>
 	</section>
+</section>
 
+<!-- Banner -->
 
 	<!-- Banner -->
 	<div class="sec-banner bg0 p-t-80 p-b-50">

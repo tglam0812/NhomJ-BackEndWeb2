@@ -1,0 +1,145 @@
+@extends('dashboard')
+@section('content')
+<a href="{{ route('phieugiam.create') }}" class="btn btn-success mb-4">
+    ➕ Thêm phiếu mới
+</a>
+
+@if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
+@if($ds->isEmpty())
+    <div class="alert alert-warning text-center">Hiện chưa có phiếu giảm giá nào.</div>
+@else
+    <table class="table table-bordered table-hover table-dark text-center align-middle">
+        <thead class="table-secondary">
+            <tr>
+                <th>ID</th>
+                <th>Tên phiếu</th>
+                <th>% Giảm</th>
+                <th>Số lượng</th>
+                <th>Ngày bắt đầu</th>
+                <th>Ngày kết thúc</th>
+                <th>Mô tả</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($ds as $item)
+                <tr>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->ten_phieu }}</td>
+                    <td>{{ $item->phan_tram_giam }}%</td>
+                    <td>{{ $item->so_luong }}</td>
+                    <td>{{ \Carbon\Carbon::parse($item->ngay_bat_dau)->format('d/m/Y') }}</td>
+                    <td>{{ \Carbon\Carbon::parse($item->ngay_ket_thuc)->format('d/m/Y') }}</td>
+                    <td>{{ $item->mo_ta }}</td>
+                    <td>
+                        <a href="{{ route('phieugiam.edit', $item->id) }}" class="btn btn-warning btn-sm mb-1">
+                            ✏️ Sửa
+                        </a>
+
+                        <form action="{{ route('phieugiam.destroy', $item->id) }}" method="POST" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa không?')">
+                                🗑️ Xóa
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endif
+@endsection
+<style>
+    .discount-list {
+        padding: 20px 0;
+        background-color: #f9f9f9;
+    }
+
+    .discount-list .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .discount-list h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .btn-add {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .btn-add:hover {
+        background-color: #218838;
+    }
+
+    .alert-success,
+    .alert-warning {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-weight: 500;
+        max-width: 1000px;
+    }
+
+    .discount-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+
+    .discount-table th,
+    .discount-table td {
+        padding: 12px;
+        border: 1px solid #dee2e6;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .discount-table th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .discount-table td a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .discount-table td a:hover {
+        text-decoration: underline;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+        padding: 5px 10px;
+        font-size: 13px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-delete:hover {
+        background-color: #c82333;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+</style>
+
