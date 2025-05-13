@@ -142,18 +142,16 @@ class CrudProductsController extends Controller
     /**
      * Xóa sản phẩm
      */
-    public function deleteProduct($product_id)
+    public function deleteCategory($category_id)
     {
-        $product = Products::findOrFail($product_id);
-
-        foreach ([1, 2, 3] as $i) {
-            $field = "product_images_$i";
-            if ($product->$field) {
-                Storage::disk('public')->delete($product->$field);
-            }
-        }
-
-        $product->delete();
-        return redirect()->route('products.list')->with('success', 'Sản phẩm đã được xóa');
+        $category = Category::findOrFail($category_id);
+    
+        // Xóa toàn bộ sản phẩm thuộc danh mục
+        $category->products()->delete();
+    
+        // Xóa danh mục
+        $category->delete();
+    
+        return redirect()->route('categories.list')->with('success', 'Danh mục và các sản phẩm đã được xóa');
     }
 }
