@@ -1,7 +1,4 @@
-@extends('layouts.discount-layout')
-
-@section('title', 'Danh sách phiếu giảm giá')
-
+@extends('dashboard')
 @section('content')
 <a href="{{ route('phieugiam.create') }}" class="btn btn-success mb-4">
     ➕ Thêm phiếu mới
@@ -56,3 +53,93 @@
     </table>
 @endif
 @endsection
+<style>
+    .discount-list {
+        padding: 20px 0;
+        background-color: #f9f9f9;
+    }
+
+    .discount-list .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .discount-list h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .btn-add {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .btn-add:hover {
+        background-color: #218838;
+    }
+
+    .alert-success,
+    .alert-warning {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-weight: 500;
+        max-width: 1000px;
+    }
+
+    .discount-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+
+    .discount-table th,
+    .discount-table td {
+        padding: 12px;
+        border: 1px solid #dee2e6;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .discount-table th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .discount-table td a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .discount-table td a:hover {
+        text-decoration: underline;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+        padding: 5px 10px;
+        font-size: 13px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-delete:hover {
+        background-color: #c82333;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+</style>
+

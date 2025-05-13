@@ -1,7 +1,4 @@
-@extends('layouts.discount-layout')
-
-@section('title', 'Thêm phiếu giảm giá')
-
+@extends('dashboard')
 @section('content')
 <form action="{{ route('phieugiam.store') }}" method="POST">
     @csrf

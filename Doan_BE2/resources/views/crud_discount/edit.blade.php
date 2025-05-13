@@ -1,7 +1,4 @@
-@extends('layouts.discount-layout')
-
-@section('title', 'Chỉnh sửa phiếu giảm giá')
-
+@extends('dashboard')
 @section('content')
 <form action="{{ route('phieugiam.update', $pg->id) }}" method="POST">
     @csrf

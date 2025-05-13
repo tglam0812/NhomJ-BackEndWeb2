@@ -90,14 +90,7 @@ E - Sunshine
 		</div>
 	</section>
 </section>
-<!-- Link quản lý phiếu giảm giá -->
-<div class="text-center mb-5">
-    <a href="{{ route('phieugiam.index') }}"
-       class="flex-c-m stext-101 cl0 size-101 bg3 bor1 hov-btn1 p-lr-15 trans-04"
-       style="display: inline-block; font-weight: bold;">
-        ➕ Quản lý Phiếu Giảm Giá
-    </a>
-</div>
+
 <!-- Banner -->
 
 	<!-- Banner -->
