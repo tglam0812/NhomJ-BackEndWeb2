@@ -11,12 +11,13 @@ use App\Http\Controllers\Admin\CrudAccountAdminController;
 use App\Http\Controllers\Admin\CrudLevelController;
 use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\PhieuGiamGiaController;
+use App\Http\Controllers\WishlistController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/', [HomeController::class, 'page'])->name('home');
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-//Route::post('login', [LoginController::class, 'login'])->name('login');
+Route::post('login', [LoginController::class, 'login'])->name('login.post');
 
 // Route::get('/', function () {
 //     return view('index');
@@ -29,6 +30,8 @@ Route::get('/', [TrangChuController::class, 'home'])->name('home');
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 //Route::post('register', [RegisterController::class, 'register'])->name('register');
 
+// Đăng xuất
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Products Admin
 Route::prefix('products')->group(function () {
@@ -85,3 +88,9 @@ Route::get('/product/{product_id}', [TrangChuController::class, 'detailProduct']
 Route::resource('phieugiam', PhieuGiamGiaController::class)->parameters([
     'phieugiam' => 'id'
 ]);
+
+// sản phẩm yêu thích
+Route::middleware(['auth'])->group(function () {
+    Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+    Route::post('/wishlist/toggle/{product_id}', [WishlistController::class, 'toggle'])->name('wishlist.toggle');
+});
