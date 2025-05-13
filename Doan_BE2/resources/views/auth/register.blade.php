@@ -13,7 +13,7 @@
                             </div>
                             <!-- End of Icons of Social Login -->
                             <div class="card-body">
-                                <form method="POST" action="{{ route('register') }}" role="form text-left">
+                                <form method="POST" action="{{ route('register.post') }}" role="form text-left">
                                     @csrf
                                     <div class="mb-3">
                                         <input type="text" class="form-control @error('full_name') is-invalid @enderror" placeholder="Họ và tên" name="full_name" aria-label="Name" aria-describedby="email-addon">

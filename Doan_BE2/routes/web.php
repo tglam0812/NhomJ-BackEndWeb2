@@ -28,7 +28,8 @@ Route::get('/', [TrangChuController::class, 'home'])->name('home');
 
 //Dang ky
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-//Route::post('register', [RegisterController::class, 'register'])->name('register');
+//Route::post('register', [RegisterController::class, 'register'])->name('register.post');
+Route::post('register-user', [RegisterController::class, 'register'])->name('register.post');
 
 // Đăng xuất
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
