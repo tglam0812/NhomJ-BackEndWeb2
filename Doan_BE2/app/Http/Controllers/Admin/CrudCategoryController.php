@@ -98,12 +98,12 @@ class CrudCategoryController extends Controller
     {
         $category = Category::findOrFail($category_id);
 
-        // Nếu cần, kiểm tra xem danh mục có sản phẩm không, tránh xóa nếu có
-        if ($category->products()->count() > 0) {
-            return redirect()->route('categories.list')->with('error', 'Không thể xóa danh mục vì đang chứa sản phẩm');
-        }
+        // Xóa toàn bộ sản phẩm thuộc danh mục
+        $category->products()->delete();
 
+        // Xóa danh mục
         $category->delete();
-        return redirect()->route('categories.list')->with('success', 'Danh mục đã được xóa');
+
+        return redirect()->route('categories.list')->with('success', 'Danh mục và các sản phẩm đã được xóa');
     }
 }
