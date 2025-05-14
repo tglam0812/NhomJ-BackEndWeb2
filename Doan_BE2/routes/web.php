@@ -97,3 +97,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store')->middleware('auth');
+// Xóa comment
+Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
+
