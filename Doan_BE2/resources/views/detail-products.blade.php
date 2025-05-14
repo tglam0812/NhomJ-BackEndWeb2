@@ -48,20 +48,23 @@
 
                 {{-- Nút 3 chấm và menu xóa, chỉ hiển thị nếu đúng user --}}
                 @if(Auth::id() === $review->user_id)
-                <div class="dropdown position-absolute" style="top: 10px; right: 10px;">
-                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenu{{ $review->id }}" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-three-dots-vertical"></i>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu{{ $review->id }}">
-                        <li>
-                            <form action="{{ route('review.destroy', $review->review_id) }}" method="POST" onsubmit="return confirm('Bạn có chắc chắn muốn xóa đánh giá này?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="dropdown-item text-danger">Xóa</button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="dropdown position-absolute" style="top: 10px; right: 10px;">
+                        <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenu{{ $review->review_id }}" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu{{ $review->review_id }}">
+                            <li>
+                                <a class="dropdown-item text-primary" href="#" onclick="openEditReviewModal({{ $review->review_id }}, {{ $review->rating }}, '{{ $review->comment }}')">Chỉnh sửa</a>
+                            </li>
+                            <li>
+                                <form action="{{ route('review.destroy', $review->review_id) }}" method="POST" onsubmit="return confirm('Bạn có chắc chắn muốn xóa đánh giá này?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="dropdown-item text-danger">Xóa</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 @endif
             </div>
         @endforeach
@@ -127,6 +130,70 @@
 </div>
 
 </section>
+
+
+<!-- Modal chỉnh sửa -->
+<div class="modal fade" id="editReviewModal" tabindex="-1" aria-labelledby="editReviewLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form id="editReviewForm" method="POST">
+        @csrf
+        @method('PUT')
+        <input type="hidden" name="review_id" id="edit-review-id">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chỉnh sửa đánh giá</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+            </div>
+            <div class="modal-body">
+                <label>Số sao:</label>
+                <select class="form-control" name="rating" id="edit-rating">
+                    @for($i = 1; $i <= 5; $i++)
+                        <option value="{{ $i }}">{{ $i }} sao</option>
+                    @endfor
+                </select>
+
+                <label class="mt-2">Nội dung:</label>
+                <textarea class="form-control" name="comment" id="edit-comment" rows="3"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+<script>
+function openEditReviewModal(id, rating, comment) {
+    const form = document.getElementById('editReviewForm');
+    document.getElementById('edit-review-id').value = id;
+    document.getElementById('edit-rating').value = rating;
+    document.getElementById('edit-comment').value = comment;
+
+    // Gán action cho form
+    form.action = '/review/' + id;
+
+    const modal = new bootstrap.Modal(document.getElementById('editReviewModal'));
+    modal.show();
+}
+</script>
+
+<style>
+    /* Đảm bảo modal hiển thị nổi lên trên */
+    .modal-backdrop {
+        z-index: 1040 !important;
+    }
+
+    .modal {
+        z-index: 1055 !important;
+    }
+
+    /* Các thành phần header không đè lên modal */
+    .navbar, header, nav, .wrap-menu-desktop {
+        z-index: 1000 !important;
+    }
+</style>
 @endsection
+
 
 
