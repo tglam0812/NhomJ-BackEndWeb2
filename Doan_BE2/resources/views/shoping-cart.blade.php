@@ -35,6 +35,7 @@ E - Sunshine
 								<th class="column-3">Price</th>
 								<th class="column-4">Quantity</th>
 								<th class="column-5">Total</th>
+								<th class="column-6">Action</th>
 							</tr>
 							@php $total = 0; @endphp
 							@if(session()->has('cart') && count(session('cart')) > 0)
@@ -50,10 +51,17 @@ E - Sunshine
 										<td class="column-3">{{ number_format($item['product_price']) }} VND</td>
 										<td class="column-4">{{ $item['quantity'] }}</td>
 										<td class="column-5">{{ number_format($lineTotal) }} VND</td>
+										<td class="column-6">
+											<form action="{{ route('cart.remove', ['id' => $item['product_id']]) }}" method="POST">
+												@csrf
+												@method('DELETE')
+												<button type="submit" class="btn btn-sm btn-danger">X</button>
+											</form>
+										</td>
 									</tr>
 								@endforeach
 							@else
-								<tr><td colspan="5" class="text-center text-danger py-3">🛒 Giỏ hàng đang trống</td></tr>
+								<tr><td colspan="6" class="text-center text-danger py-3"><i class="bi bi-cart-fill"></i> Giỏ hàng đang trống</td></tr>
 							@endif
 						</table>
 					</div>
