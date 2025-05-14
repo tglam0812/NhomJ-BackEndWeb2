@@ -28,5 +28,56 @@
             </div>
         </div>
     </div>
+
+    <div class="container mt-5">
+    <h4 class="mb-4">Đánh giá sản phẩm</h4>
+
+    {{-- Hiển thị danh sách đánh giá --}}
+    @if($reviews->isEmpty())
+        <p class="text-muted">Chưa có đánh giá nào cho sản phẩm này.</p>
+    @else
+        @foreach($reviews as $review)
+            <div class="mb-3 p-3 border rounded bg-light">
+                <strong>{{ $review->user->full_name ?? 'Người dùng' }}</strong>
+                <span class="text-warning">
+                    @for($i = 1; $i <= $review->rating; $i++) ★ @endfor
+                    @for($i = $review->rating + 1; $i <= 5; $i++) ☆ @endfor
+                </span>
+                <p class="m-0">{{ $review->comment }}</p>
+                <small class="text-muted">{{ $review->created_at->format('d/m/Y H:i') }}</small>
+            </div>
+        @endforeach
+    @endif
+
+    {{-- Form gửi đánh giá --}}
+    @if(Auth::check())
+        <form action="{{ route('review.store') }}" method="POST" class="mt-4">
+            @csrf
+            <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+
+            <div class="form-group mb-2">
+                <label for="rating">Số sao:</label>
+                <select name="rating" class="form-control" required>
+                    <option value="">-- Chọn sao --</option>
+                    @for($i = 1; $i <= 5; $i++)
+                        <option value="{{ $i }}">{{ $i }} sao</option>
+                    @endfor
+                </select>
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="comment">Nội dung đánh giá:</label>
+                <textarea name="comment" class="form-control" rows="3" placeholder="Nhập đánh giá của bạn..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success">Gửi đánh giá</button>
+        </form>
+    @else
+        <p class="mt-3">Vui lòng <a href="{{ route('login') }}">đăng nhập</a> để gửi đánh giá.</p>
+    @endif
+</div>
+
 </section>
 @endsection
+
+
