@@ -20,10 +20,11 @@ class CartController extends Controller
             $cart[$productId]['quantity'] += $quantity;
         } else {
             $cart[$productId] = [
-                'product_name' => $product->product_name,
+                'product_id'    => $product->product_id, 
+                'product_name'  => $product->product_name,
                 'product_price' => $product->product_price,
                 'product_image' => $product->product_images_1,
-                'quantity' => $quantity,
+                'quantity'      => $quantity,
             ];
         }
 
@@ -34,19 +35,19 @@ class CartController extends Controller
 
     public function viewCart()
     {
+
         $cart = session()->get('cart', []);
         return view('shoping-cart', compact('cart'));
     }
 
-    public function removeFromCart(Request $request)
+    public function remove($id)
     {
-        $productId = $request->input('product_id');
-
         $cart = session()->get('cart', []);
-        unset($cart[$productId]);
-        session()->put('cart', $cart);
+        if (isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
 
-        return redirect()->route('cart.view')->with('success', 'Đã xóa khỏi giỏ hàng');
+        return redirect()->back()->with('success', 'Đã xóa sản phẩm khỏi giỏ hàng.');
     }
 }
-

@@ -108,7 +108,7 @@ Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('revie
 // gio hanggggg
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
-Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
+Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
 
 //check outttttt
