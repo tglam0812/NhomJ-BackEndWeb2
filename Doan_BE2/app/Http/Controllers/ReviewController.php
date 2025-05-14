@@ -37,4 +37,26 @@ class ReviewController extends Controller
 
         return back()->with('success', 'Đánh giá đã được xóa thành công.');
     }
+
+    public function update(Request $request, $id)
+    {
+        $review = Review::findOrFail($id);
+
+        if (auth()->id() !== $review->user_id) {
+            abort(403);
+        }
+
+        $request->validate([
+            'rating' => 'required|integer|min:1|max:5',
+            'comment' => 'required|string|max:1000',
+        ]);
+
+        $review->update([
+            'rating' => $request->rating,
+            'comment' => $request->comment,
+        ]);
+
+        return back()->with('success', 'Đánh giá đã được cập nhật.');
+    }
+
 }
