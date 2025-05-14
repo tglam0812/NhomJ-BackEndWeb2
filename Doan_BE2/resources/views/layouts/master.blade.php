@@ -147,6 +147,13 @@
 	<script src="{{ asset('assets/js/main.js') }}"></script>
     <!-- Các custom script dành riêng cho từng view -->
     @yield('custom-scripts')
+
+	<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Bootstrap JS nếu dùng dropdown -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>

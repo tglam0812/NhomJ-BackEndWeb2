@@ -37,7 +37,7 @@
         <p class="text-muted">Chưa có đánh giá nào cho sản phẩm này.</p>
     @else
         @foreach($reviews as $review)
-            <div class="mb-3 p-3 border rounded bg-light">
+            <div class="mb-3 p-3 border rounded bg-light position-relative">
                 <strong>{{ $review->user->full_name ?? 'Người dùng' }}</strong>
                 <span class="text-warning">
                     @for($i = 1; $i <= $review->rating; $i++) ★ @endfor
@@ -45,69 +45,85 @@
                 </span>
                 <p class="m-0">{{ $review->comment }}</p>
                 <small class="text-muted">{{ $review->created_at->format('d/m/Y H:i') }}</small>
+
+                {{-- Nút 3 chấm và menu xóa, chỉ hiển thị nếu đúng user --}}
+                @if(Auth::id() === $review->user_id)
+                <div class="dropdown position-absolute" style="top: 10px; right: 10px;">
+                    <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenu{{ $review->id }}" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu{{ $review->id }}">
+                        <li>
+                            <form action="{{ route('review.destroy', $review->review_id) }}" method="POST" onsubmit="return confirm('Bạn có chắc chắn muốn xóa đánh giá này?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="dropdown-item text-danger">Xóa</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                @endif
             </div>
         @endforeach
+
     @endif
 
-@if(Auth::check())
-    <form action="{{ route('review.store') }}" method="POST" class="mt-4" onsubmit="return validateReviewForm();">
-        @csrf
-        <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+    @if(Auth::check())
+        <form action="{{ route('review.store') }}" method="POST" class="mt-4" onsubmit="return validateReviewForm();">
+            @csrf
+            <input type="hidden" name="product_id" value="{{ $product->product_id }}">
 
-        <div class="form-group mb-2">
-            <label for="rating">Số sao:</label>
-            <select id="rating" name="rating" class="form-control">
-                <option value="">-- Chọn sao --</option>
-                @for($i = 1; $i <= 5; $i++)
-                    <option value="{{ $i }}">{{ $i }} sao</option>
-                @endfor
-            </select>
-            <small id="rating-error" class="text-danger" style="display: none;">Vui lòng chọn số sao.</small>
-        </div>
+            <div class="form-group mb-2">
+                <label for="rating">Số sao:</label>
+                <select id="rating" name="rating" class="form-control">
+                    <option value="">-- Chọn sao --</option>
+                    @for($i = 1; $i <= 5; $i++)
+                        <option value="{{ $i }}">{{ $i }} sao</option>
+                    @endfor
+                </select>
+                <small id="rating-error" class="text-danger" style="display: none;">Vui lòng chọn số sao.</small>
+            </div>
 
-        <div class="form-group mb-2">
-            <label for="comment">Nội dung đánh giá:</label>
-            <textarea id="comment" name="comment" class="form-control" rows="3" placeholder="Nhập đánh giá của bạn..."></textarea>
-            <small id="comment-error" class="text-danger" style="display: none;">Bình luận không được để trống và không vượt quá 1000 ký tự.</small>
-        </div>
+            <div class="form-group mb-2">
+                <label for="comment">Nội dung đánh giá:</label>
+                <textarea id="comment" name="comment" class="form-control" rows="3" placeholder="Nhập đánh giá của bạn..."></textarea>
+                <small id="comment-error" class="text-danger" style="display: none;">Bình luận không được để trống và không vượt quá 1000 ký tự.</small>
+            </div>
 
-        <button type="submit" class="btn btn-success">Gửi đánh giá</button>
-    </form>
+            <button type="submit" class="btn btn-success">Gửi đánh giá</button>
+        </form>
 
-    <script>
-        function validateReviewForm() {
-            const rating = document.getElementById('rating').value;
-            const comment = document.getElementById('comment').value.trim(); // bỏ khoảng trắng đầu/cuối
-            const ratingError = document.getElementById('rating-error');
-            const commentError = document.getElementById('comment-error');
+        <script>
+            function validateReviewForm() {
+                const rating = document.getElementById('rating').value;
+                const comment = document.getElementById('comment').value.trim(); // bỏ khoảng trắng đầu/cuối
+                const ratingError = document.getElementById('rating-error');
+                const commentError = document.getElementById('comment-error');
 
-            let valid = true;
+                let valid = true;
 
-            // Kiểm tra số sao
-            if (!rating) {
-                ratingError.style.display = 'block';
-                valid = false;
-            } else {
-                ratingError.style.display = 'none';
+                // Kiểm tra số sao
+                if (!rating) {
+                    ratingError.style.display = 'block';
+                    valid = false;
+                } else {
+                    ratingError.style.display = 'none';
+                }
+
+                // Kiểm tra comment rỗng hoặc dài quá
+                if (comment === "" || comment.length > 1000) {
+                    commentError.style.display = 'block';
+                    valid = false;
+                } else {
+                    commentError.style.display = 'none';
+                }
+
+                return valid;
             }
-
-            // Kiểm tra comment rỗng hoặc dài quá
-            if (comment === "" || comment.length > 1000) {
-                commentError.style.display = 'block';
-                valid = false;
-            } else {
-                commentError.style.display = 'none';
-            }
-
-            return valid;
-        }
-    </script>
-@else
-    <p class="mt-3">Vui lòng <a href="{{ route('login') }}">đăng nhập</a> để gửi đánh giá.</p>
-@endif
-
-
-
+        </script>
+    @else
+        <p class="mt-3">Vui lòng <a href="{{ route('login') }}">đăng nhập</a> để gửi đánh giá.</p>
+    @endif
 </div>
 
 </section>

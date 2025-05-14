@@ -55,13 +55,14 @@ class TrangChuController extends Controller
     {
         $product = Products::with(['category', 'brand'])->findOrFail($product_id);
 
-        // Lấy tất cả đánh giá của sản phẩm kèm tên người dùng
-        $reviews = Review::where('product_id', $product_id)
-            ->with('user') // để lấy thông tin người dùng nếu cần
+        $reviews = Review::select('review_id', 'user_id', 'product_id', 'rating', 'comment', 'created_at')
+            ->where('product_id', $product_id)
+            ->with('user')
             ->orderBy('created_at', 'desc')
             ->get();
 
         return view('detail-products', compact('product', 'reviews'));
     }
+
     
 }
