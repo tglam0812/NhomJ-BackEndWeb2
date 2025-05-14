@@ -13,6 +13,9 @@ use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\PhieuGiamGiaController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
+
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
@@ -102,4 +105,11 @@ Route::put('/review/{id}', [ReviewController::class, 'update'])->name('review.up
 // Xóa comment
 Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
 
-//
+// gio hanggggg
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
+Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
+
+
+//check outttttt
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
