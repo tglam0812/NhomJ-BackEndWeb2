@@ -49,32 +49,65 @@
         @endforeach
     @endif
 
-    {{-- Form gửi đánh giá --}}
-    @if(Auth::check())
-        <form action="{{ route('review.store') }}" method="POST" class="mt-4">
-            @csrf
-            <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+@if(Auth::check())
+    <form action="{{ route('review.store') }}" method="POST" class="mt-4" onsubmit="return validateReviewForm();">
+        @csrf
+        <input type="hidden" name="product_id" value="{{ $product->product_id }}">
 
-            <div class="form-group mb-2">
-                <label for="rating">Số sao:</label>
-                <select name="rating" class="form-control" required>
-                    <option value="">-- Chọn sao --</option>
-                    @for($i = 1; $i <= 5; $i++)
-                        <option value="{{ $i }}">{{ $i }} sao</option>
-                    @endfor
-                </select>
-            </div>
+        <div class="form-group mb-2">
+            <label for="rating">Số sao:</label>
+            <select id="rating" name="rating" class="form-control">
+                <option value="">-- Chọn sao --</option>
+                @for($i = 1; $i <= 5; $i++)
+                    <option value="{{ $i }}">{{ $i }} sao</option>
+                @endfor
+            </select>
+            <small id="rating-error" class="text-danger" style="display: none;">Vui lòng chọn số sao.</small>
+        </div>
 
-            <div class="form-group mb-2">
-                <label for="comment">Nội dung đánh giá:</label>
-                <textarea name="comment" class="form-control" rows="3" placeholder="Nhập đánh giá của bạn..." required></textarea>
-            </div>
+        <div class="form-group mb-2">
+            <label for="comment">Nội dung đánh giá:</label>
+            <textarea id="comment" name="comment" class="form-control" rows="3" placeholder="Nhập đánh giá của bạn..."></textarea>
+            <small id="comment-error" class="text-danger" style="display: none;">Bình luận không được để trống và không vượt quá 1000 ký tự.</small>
+        </div>
 
-            <button type="submit" class="btn btn-success">Gửi đánh giá</button>
-        </form>
-    @else
-        <p class="mt-3">Vui lòng <a href="{{ route('login') }}">đăng nhập</a> để gửi đánh giá.</p>
-    @endif
+        <button type="submit" class="btn btn-success">Gửi đánh giá</button>
+    </form>
+
+    <script>
+        function validateReviewForm() {
+            const rating = document.getElementById('rating').value;
+            const comment = document.getElementById('comment').value.trim(); // bỏ khoảng trắng đầu/cuối
+            const ratingError = document.getElementById('rating-error');
+            const commentError = document.getElementById('comment-error');
+
+            let valid = true;
+
+            // Kiểm tra số sao
+            if (!rating) {
+                ratingError.style.display = 'block';
+                valid = false;
+            } else {
+                ratingError.style.display = 'none';
+            }
+
+            // Kiểm tra comment rỗng hoặc dài quá
+            if (comment === "" || comment.length > 1000) {
+                commentError.style.display = 'block';
+                valid = false;
+            } else {
+                commentError.style.display = 'none';
+            }
+
+            return valid;
+        }
+    </script>
+@else
+    <p class="mt-3">Vui lòng <a href="{{ route('login') }}">đăng nhập</a> để gửi đánh giá.</p>
+@endif
+
+
+
 </div>
 
 </section>
