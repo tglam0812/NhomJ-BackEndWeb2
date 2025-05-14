@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\CrudLevelController;
 use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\PhieuGiamGiaController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\ReviewController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
@@ -94,3 +95,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
     Route::post('/wishlist/toggle/{product_id}', [WishlistController::class, 'toggle'])->name('wishlist.toggle');
 });
+
+Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store')->middleware('auth');

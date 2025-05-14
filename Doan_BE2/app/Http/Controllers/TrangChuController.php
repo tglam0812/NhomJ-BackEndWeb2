@@ -9,6 +9,7 @@ use App\Models\Products;
 use App\Models\Category;
 use App\Models\Brand; 
 use App\Models\Wishlist;
+use App\Models\Review;
 
 class TrangChuController extends Controller
 {
@@ -54,7 +55,13 @@ class TrangChuController extends Controller
     {
         $product = Products::with(['category', 'brand'])->findOrFail($product_id);
 
-        return view('detail-products', compact('product'));
+        // Lấy tất cả đánh giá của sản phẩm kèm tên người dùng
+        $reviews = Review::where('product_id', $product_id)
+            ->with('user') // để lấy thông tin người dùng nếu cần
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('detail-products', compact('product', 'reviews'));
     }
     
 }
