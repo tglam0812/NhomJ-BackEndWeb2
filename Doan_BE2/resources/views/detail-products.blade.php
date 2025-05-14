@@ -18,7 +18,24 @@
                     <span class="stext-105 cl3">
                         {{ number_format($product->product_price) }} VND
                     </span>
+
+                    <!-- Thêm vào giỏ hàng -->
+                    @if(Auth::check())
+                        <form action="{{ route('cart.add') }}" method="POST" class="mt-3 d-flex align-items-center gap-2">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+                            <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px;">
+                            <button type="submit" class="btn btn-outline-primary d-flex align-items-center gap-1">
+                                <i class="zmdi zmdi-shopping-cart"></i> Thêm vào giỏ
+                            </button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-warning mt-3">
+                            <i class="zmdi zmdi-lock"></i> Đăng nhập để mua hàng
+                        </a>
+                    @endif
                 </div>
+
                 <div class="block2-txt-child2 flex-r p-t-3">
                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
                         <img class="icon-heart1 dis-block trans-04" src="{{ asset('assets/images/icons/icon-heart-01.png') }}" alt="ICON">
