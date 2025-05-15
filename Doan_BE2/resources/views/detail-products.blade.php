@@ -212,5 +212,43 @@ function openEditReviewModal(id, rating, comment) {
 </style>
 @endsection
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const addToCartForms = document.querySelectorAll('form[action="{{ route('cart.add') }}"]');
+
+    addToCartForms.forEach(form => {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Cập nhật icon giỏ hàng
+                    const cartIcon = document.getElementById('cart-icon');
+                    if (cartIcon) {
+                        cartIcon.setAttribute('data-notify', data.total);
+                    }
+
+                    alert('Đã thêm sản phẩm vào giỏ!');
+                }
+            })
+            .catch(error => {
+                console.error('Lỗi thêm vào giỏ:', error);
+            });
+        });
+    });
+});
+</script>
+
 
 

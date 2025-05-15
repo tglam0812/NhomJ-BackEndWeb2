@@ -20,7 +20,7 @@ class CartController extends Controller
             $cart[$productId]['quantity'] += $quantity;
         } else {
             $cart[$productId] = [
-                'product_id'    => $product->product_id, 
+                'product_id'    => $product->product_id,
                 'product_name'  => $product->product_name,
                 'product_price' => $product->product_price,
                 'product_image' => $product->product_images_1,
@@ -29,6 +29,12 @@ class CartController extends Controller
         }
 
         session()->put('cart', $cart);
+
+        $totalItems = collect($cart)->sum('quantity');
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true, 'total' => $totalItems]);
+        }
 
         return redirect()->back()->with('success', 'Đã thêm vào giỏ hàng!');
     }
