@@ -39,7 +39,7 @@
                         </li>
                     @endforeach
                 @else
-                    <li class="text-center p-3 w-full"><i class="bi bi-cart-fill"> Giỏ hàng đang trống</li>
+                    <li class="text-center p-3 w-full"> Giỏ hàng đang trống</li>
                 @endif
             </ul>
 
