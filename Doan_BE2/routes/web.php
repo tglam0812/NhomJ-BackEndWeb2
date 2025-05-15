@@ -28,13 +28,15 @@ Route::post('login', [LoginController::class, 'login'])->name('login.post');
 
 // Trang chủ (hiển thị sản phẩm mới)
 Route::get('/', [TrangChuController::class, 'home'])->name('home');
+// Chuyển về trang chủ 
+Route::get('/index', [TrangChuController::class, 'home'])->name('homer.return');
 
 // Đăng ký
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register'])->name('register.post');
 
 // Đăng xuất
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout.get');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Thông tin người dùng
@@ -119,5 +121,3 @@ Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('car
 // Checkout
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
-// Chuyển về trang chủ 
-Route::get('/index', [TrangChuController::class, 'home'])->name('home');
