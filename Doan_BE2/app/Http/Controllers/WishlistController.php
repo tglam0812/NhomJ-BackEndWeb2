@@ -1,39 +1,51 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Wishlist;
-use Illuminate\Http\Request;
 
 class WishlistController extends Controller
 {
+    // Danh sách sản phẩm yêu thích
     public function index()
     {
-        $wishlists = Wishlist::with('product')->where('user_id', Auth::id())->get();
+        $wishlists = Wishlist::with('product')
+            ->where('user_id', Auth::id())
+            ->get();
+
         return view('wishlist', compact('wishlists'));
     }
 
+    // Thêm hoặc xóa sản phẩm khỏi danh sách yêu thích
     public function toggle($product_id)
     {
         $user_id = Auth::id();
 
-        // Lấy bản ghi wishlist nếu có
         $wishlist = Wishlist::where('user_id', $user_id)
             ->where('product_id', $product_id)
             ->first();
 
         if ($wishlist) {
-            // Nếu đã tồn tại thì xóa
             $wishlist->delete();
+            $this->updateWishlistCountSession();
             return back()->with('success', 'Đã xóa khỏi danh sách yêu thích.');
         }
 
-        // Nếu chưa có thì thêm mới
         Wishlist::create([
             'user_id' => $user_id,
             'product_id' => $product_id
         ]);
 
-        return back()->with('success', 'Đã thêm vào ưa thích');
+        $this->updateWishlistCountSession();
+        return back()->with('success', 'Đã thêm sản phẩm vào mục yêu thích.');
+    }
+
+    // Hàm cập nhật số lượng wishlist vào session
+    private function updateWishlistCountSession()
+    {
+        $count = Wishlist::where('user_id', Auth::id())->count();
+        session(['wishlist_count' => $count]);
     }
 }

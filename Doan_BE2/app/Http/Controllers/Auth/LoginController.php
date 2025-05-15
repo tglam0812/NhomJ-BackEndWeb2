@@ -5,6 +5,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Wishlist;
 
 class LoginController extends Controller
 {
@@ -72,5 +73,13 @@ class LoginController extends Controller
         $request->session()->regenerateToken(); // Tạo token mới
 
         return redirect()->route('home'); // Chuyển hướng về trang chủ
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        $wishlistCount = Wishlist::where('user_id', $user->id)->count();
+        session(['wishlist_count' => $wishlistCount]);
+
+        return redirect()->intended('/');
     }
 }
