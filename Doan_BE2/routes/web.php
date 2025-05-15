@@ -35,7 +35,8 @@ Route::get('register', [RegisterController::class, 'showRegistrationForm'])->nam
 Route::post('register', [RegisterController::class, 'register'])->name('register.post');
 
 // Đăng xuất
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 // Products Admin
 Route::prefix('products')->group(function () {

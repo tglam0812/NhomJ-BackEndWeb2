@@ -1,4 +1,48 @@
 <!-- Header -->
+ <style>
+	.user-menu-wrapper {
+		position: relative;
+		display: inline-block;
+		z-index: 1200;
+	}
+
+	/* Submenu styling */
+.sub-menu-m {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 180px;
+    padding: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.sub-menu-m li {
+    width: 100%;
+}
+
+.sub-menu-m li a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+    border-left: 4px solid transparent;
+}
+
+/* Hover effect */
+.sub-menu-m li a:hover {
+    color: #e74c3c; /* đỏ đậm đẹp */
+    background-color: #f9f9f9;
+    border-left: 4px solid #e74c3c;
+}
+
+</style>
 <header>
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
@@ -8,8 +52,36 @@
 					<div class="left-top-bar">
 						Free shipping for standard order over $100
 					</div>
-
 					<div class="right-top-bar flex-w h-full">
+						@method('POST')
+						@if (Route::has('login'))
+								@auth
+									<div class="user-menu-wrapper">
+										<a href="javascript:void(0);" class="flex-c-m trans-04 p-lr-25 user-name" id="userToggle">
+											{{ Auth::user()->full_name }}
+										</a>
+										<ul class="sub-menu-m" id="userMenu">
+											<li><a href="#">Info</a></li>
+											<li><a href="#">Change password</a></li>
+										</ul>
+									</div>
+									<a href="{{ route('home') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="flex-c-m trans-04 p-lr-25">Đăng xuất</a> 
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+										@csrf
+									</form>
+								@else
+									<a href="{{ route('login') }}" class="flex-c-m trans-04 p-lr-25">
+										Đăng nhập
+									</a>
+									@if (Route::has('register'))
+										<a href="{{ route('register') }}" class="flex-c-m trans-04 p-lr-25">
+											Đăng ký
+										</a>
+									@endif
+								@endauth
+						@endif
+					</div>
+					<!-- <div class="right-top-bar flex-w h-full">
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
 						</a>
@@ -25,7 +97,10 @@
 						<a href="{{ route('register') }}" class="flex-c-m trans-04 p-lr-25">
 							Đăng ký
 						</a>
-					</div>
+						<a href="{{ url('/logout') }}" class="flex-c-m trans-04 p-lr-25">
+							Thoát
+						</a>
+					</div> -->
 				</div>
 			</div>
 
@@ -81,7 +156,7 @@
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
 
-						<a href="{{ route('wishlist.index') }}" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 					</div>
@@ -201,3 +276,21 @@
 			</div>
 		</div>
 	</header>
+	<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggle = document.getElementById("userToggle");
+        const menu = document.getElementById("userMenu");
+
+        toggle.addEventListener("click", function(e) {
+            e.preventDefault();
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        });
+
+        // Tùy chọn: Click ra ngoài thì đóng menu
+        document.addEventListener("click", function(event) {
+            if (!toggle.contains(event.target) && !menu.contains(event.target)) {
+                menu.style.display = "none";
+            }
+        });
+    });
+</script>
