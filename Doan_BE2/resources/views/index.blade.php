@@ -18,10 +18,15 @@ E - Sunshine
 				<div class="item-slick1" style="background-image: url({{ asset('assets/images/phone4.jpg') }});">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1" style="color: black; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);">
-									iPhone chính hãng <br>
-									Giá tốt mỗi ngày
+							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
+								<span class="ltext-101 cl2 respon2">
+									iPhone chính hãng - Giá tốt mỗi ngày
+								</span>
+							</div>
+								
+							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
+								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1" style="color: red;">
+									Mua ngay !!!
 								</h2>
 							</div>
 						</div>
@@ -38,15 +43,9 @@ E - Sunshine
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
+								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1" style="color: red;">
 									Mua ngay !!!
 								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
-								</a>
 							</div>
 						</div>
 					</div>
@@ -62,15 +61,9 @@ E - Sunshine
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
+								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1" style="color: red;">
 									Giảm thêm 30%
 								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
-								</a>
 							</div>
 						</div>
 					</div>
@@ -183,7 +176,7 @@ E - Sunshine
 						{{ $category->category_name }}
 					</button>
 				@endforeach
-			</div>yy
+			</div>
 				<div class="flex-w flex-c-m m-tb-10">
 					<div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
 						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
