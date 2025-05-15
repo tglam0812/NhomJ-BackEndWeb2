@@ -19,21 +19,20 @@
                         {{ number_format($product->product_price) }} VND
                     </span>
 
-                    <!-- Thêm vào giỏ hàng -->
-                    @if(Auth::check())
-                        <form action="{{ route('cart.add') }}" method="POST" class="mt-3 d-flex align-items-center gap-2">
-                            @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->product_id }}">
-                            <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px;">
-                            <button type="submit" class="btn btn-outline-primary d-flex align-items-center gap-1">
-                                <i class="zmdi zmdi-shopping-cart"></i> Thêm vào giỏ
-                            </button>
-                        </form>
-                    @else
-                        <a href="{{ route('login') }}" class="btn btn-warning mt-3">
-                            <i class="zmdi zmdi-lock"></i> Đăng nhập để mua hàng
-                        </a>
-                    @endif
+@if(Auth::check())
+    <form action="{{ route('cart.add') }}" method="POST" class="mt-3 d-flex align-items-center gap-2">
+        @csrf
+        <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+        <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px;">
+        <button type="submit" class="btn btn-outline-primary d-flex align-items-center gap-1">
+            <i class="zmdi zmdi-shopping-cart"></i> Thêm vào giỏ
+        </button>
+    </form>
+@else
+    <a href="{{ route('login') }}" class="btn btn-warning mt-3">
+        <i class="zmdi zmdi-lock"></i> Đăng nhập để mua hàng
+    </a>
+@endif
                 </div>
 
                 <div class="block2-txt-child2 flex-r p-t-3">
@@ -211,44 +210,6 @@ function openEditReviewModal(id, rating, comment) {
     }
 </style>
 @endsection
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const addToCartForms = document.querySelectorAll('form[action="{{ route('cart.add') }}"]');
-
-    addToCartForms.forEach(form => {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-
-            fetch(this.action, {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                    'Accept': 'application/json'
-                },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Cập nhật icon giỏ hàng
-                    const cartIcon = document.getElementById('cart-icon');
-                    if (cartIcon) {
-                        cartIcon.setAttribute('data-notify', data.total);
-                    }
-
-                    alert('Đã thêm sản phẩm vào giỏ!');
-                }
-            })
-            .catch(error => {
-                console.error('Lỗi thêm vào giỏ:', error);
-            });
-        });
-    });
-});
-</script>
 
 
 

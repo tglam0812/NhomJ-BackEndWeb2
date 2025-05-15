@@ -72,7 +72,13 @@
 						<i class="zmdi zmdi-search"></i>
 					</div>
 
-					<div id="cart-icon" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="{{ session('cart') ? collect(session('cart'))->sum('quantity') : 0 }}">
+					@php
+					$cart = session('cart', []);
+					$cartTotal = collect($cart)->sum('quantity');
+					@endphp
+
+					<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+						data-notify="{{ $cartTotal }}">
 						<i class="zmdi zmdi-shopping-cart"></i>
 					</div>
 
