@@ -82,6 +82,14 @@ E - Sunshine
 
 	<!-- Product -->
 	<section class="bg0 p-t-23 p-b-140">
+		@if(session('success'))
+			<div class="container mt-4">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					{{ session('success') }}
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			</div>
+		@endif
 		<div class="container">
 			<div class="p-b-10">
 				<h3 class="ltext-103 cl5">
@@ -362,4 +370,15 @@ E - Sunshine
 <!-- Product -->
 @endsection
 @section('custom-scripts')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: '{{ session('success') }}',
+        showConfirmButton: false,
+        timer: 2000
+    });
+</script>
+@endif
 @endsection
