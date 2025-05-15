@@ -1,58 +1,59 @@
 @extends('dashboard')
+
 @section('content')
-<a href="{{ route('phieugiam.create') }}" class="btn btn-success mb-4">
-    ➕ Thêm phiếu mới
-</a>
+<main class="discount-list">
+    <div class="container">
+        <h2>Danh sách phiếu giảm giá</h2>
 
-@if(session('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
-@endif
+        <a href="{{ route('phieugiam.create') }}" class="btn-add">➕ Thêm phiếu mới</a>
 
-@if($ds->isEmpty())
-    <div class="alert alert-warning text-center">Hiện chưa có phiếu giảm giá nào.</div>
-@else
-    <table class="table table-bordered table-hover table-dark text-center align-middle">
-        <thead class="table-secondary">
-            <tr>
-                <th>ID</th>
-                <th>Tên phiếu</th>
-                <th>% Giảm</th>
-                <th>Số lượng</th>
-                <th>Ngày bắt đầu</th>
-                <th>Ngày kết thúc</th>
-                <th>Mô tả</th>
-                <th>Thao tác</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($ds as $item)
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->ten_phieu }}</td>
-                    <td>{{ $item->phan_tram_giam }}%</td>
-                    <td>{{ $item->so_luong }}</td>
-                    <td>{{ \Carbon\Carbon::parse($item->ngay_bat_dau)->format('d/m/Y') }}</td>
-                    <td>{{ \Carbon\Carbon::parse($item->ngay_ket_thuc)->format('d/m/Y') }}</td>
-                    <td>{{ $item->mo_ta }}</td>
-                    <td>
-                        <a href="{{ route('phieugiam.edit', $item->id) }}" class="btn btn-warning btn-sm mb-1">
-                            ✏️ Sửa
-                        </a>
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
 
-                        <form action="{{ route('phieugiam.destroy', $item->id) }}" method="POST" style="display:inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc muốn xóa không?')">
-                                🗑️ Xóa
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endif
+        @if($ds->isEmpty())
+            <div class="alert alert-warning text-center">Hiện chưa có phiếu giảm giá nào.</div>
+        @else
+            <table class="discount-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên phiếu</th>
+                        <th>% Giảm</th>
+                        <th>Số lượng</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Mô tả</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($ds as $item)
+                        <tr>
+                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->ten_phieu }}</td>
+                            <td>{{ $item->phan_tram_giam }}%</td>
+                            <td>{{ $item->so_luong }}</td>
+                            <td>{{ \Carbon\Carbon::parse($item->ngay_bat_dau)->format('d/m/Y') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($item->ngay_ket_thuc)->format('d/m/Y') }}</td>
+                            <td>{{ $item->mo_ta }}</td>
+                            <td>
+                                <a href="{{ route('phieugiam.edit', $item->id) }}" class="btn-edit">✏️ Sửa</a>
+                                <form action="{{ route('phieugiam.destroy', $item->id) }}" method="POST" style="display:inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn-delete" onclick="return confirm('Bạn có chắc muốn xóa không?')">🗑️ Xóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @endif
+    </div>
+</main>
 @endsection
+
 <style>
     .discount-list {
         padding: 20px 0;
@@ -61,13 +62,14 @@
 
     .discount-list .container {
         max-width: 1200px;
-        margin: 0 auto;
+        margin: auto;
+        padding: 0 20px;
     }
 
     .discount-list h2 {
         font-size: 26px;
         margin-bottom: 20px;
-        color: #333;
+        color: #2c3e50;
     }
 
     .btn-add {
@@ -84,13 +86,11 @@
         background-color: #218838;
     }
 
-    .alert-success,
-    .alert-warning {
-        padding: 10px 20px;
+    .alert-success, .alert-warning {
+        padding: 12px 20px;
+        border-radius: 5px;
         margin-bottom: 20px;
-        border-radius: 4px;
         font-weight: 500;
-        max-width: 1000px;
     }
 
     .discount-table {
@@ -112,14 +112,20 @@
         color: white;
     }
 
-    .discount-table td a {
-        color: #007bff;
+    .btn-edit {
+        background-color: #ffc107;
+        color: #000;
+        padding: 5px 10px;
+        font-size: 13px;
+        border: none;
+        border-radius: 4px;
         text-decoration: none;
-        font-weight: 500;
+        margin-right: 5px;
+        display: inline-block;
     }
 
-    .discount-table td a:hover {
-        text-decoration: underline;
+    .btn-edit:hover {
+        background-color: #e0a800;
     }
 
     .btn-delete {
@@ -135,11 +141,4 @@
     .btn-delete:hover {
         background-color: #c82333;
     }
-
-    .pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
 </style>
-
