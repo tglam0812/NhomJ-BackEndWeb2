@@ -15,6 +15,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\ContactManageController;
+
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
@@ -128,3 +130,11 @@ Route::get('/contact', [TrangChuController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/my-feedbacks', [App\Http\Controllers\ContactController::class, 'feedbacks'])->name('feedbacks');
+
+
+
+// giao diện trả lời feedback
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('/messages', [ContactManageController::class, 'index'])->name('admin.messages');
+    Route::post('/messages/{id}/reply', [ContactManageController::class, 'reply'])->name('admin.messages.reply');
+});
