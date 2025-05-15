@@ -62,4 +62,9 @@ class TrangChuController extends Controller
 
         return view('detail-products', compact('product', 'reviews'));
     }
+    public function contact()
+    {
+        return view('contact');
+    }
+
 }

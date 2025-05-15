@@ -82,11 +82,11 @@
                 <div class="menu-desktop">
                     <ul class="main-menu">
                         <li class="active-menu"><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="product.html">Shop</a></li>
-                        <li class="label1" data-label1="hot"><a href="shoping-cart.html">Features</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li class="label1" data-label1="hot"><a href="#">Features</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
 
@@ -103,11 +103,11 @@
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
 
-<a href="{{ route('wishlist.index') }}"
-   class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
-   data-notify="{{ session('wishlist_count', 0) }}">
-    <i class="zmdi zmdi-favorite-outline"></i>
-</a>
+                    <a href="{{ route('wishlist.index') }}"
+                    class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
+                    data-notify="{{ session('wishlist_count', 0) }}">
+                        <i class="zmdi zmdi-favorite-outline"></i>
+                    </a>
 
                 </div>
             </nav>
