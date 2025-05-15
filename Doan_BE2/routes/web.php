@@ -15,6 +15,7 @@ use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\HomeController;
 
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
@@ -113,3 +114,6 @@ Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('car
 
 //check outttttt
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+
+// Chuyển về trang chủ 
+Route::get('/index', [HomeController::class, 'index'])->name('home');
