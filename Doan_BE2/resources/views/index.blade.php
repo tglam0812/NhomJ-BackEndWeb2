@@ -15,42 +15,31 @@ E - Sunshine
 <section class="section-slide">
 		<div class="wrap-slick1">
 			<div class="slick1">
-				<div class="item-slick1" style="background-image: url({{ asset('assets/images/slide-01.jpg') }});">
+				<div class="item-slick1" style="background-image: url({{ asset('assets/images/phone4.jpg') }});">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-								<span class="ltext-101 cl2 respon2">
-									Women Collection 2018
-								</span>
-							</div>
-								
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									NEW SEASON
+								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1" style="color: black; text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);">
+									iPhone chính hãng <br>
+									Giá tốt mỗi ngày
 								</h2>
-							</div>
-								
-							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
-								</a>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="item-slick1" style="background-image: url({{ asset('assets/images/slide-02.jpg') }});">
+				<div class="item-slick1" style="background-image: url({{ asset('assets/images/phone5.jpg') }});">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Men New-Season
+									Apple iPhone 14 Pro Max
 								</span>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									Jackets & Coats
+									Mua ngay !!!
 								</h2>
 							</div>
 								
@@ -63,18 +52,18 @@ E - Sunshine
 					</div>
 				</div>
 
-				<div class="item-slick1" style="background-image: url({{ asset('assets/images/slide-03.jpg') }});">
+				<div class="item-slick1" style="background-image: url({{ asset('assets/images/Phone6.jpg') }});">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Men Collection 2018
+									Redmi Note 13 Pro+ (Plus) 5G
 								</span>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									New arrivals
+									Giảm thêm 30%
 								</h2>
 							</div>
 								
