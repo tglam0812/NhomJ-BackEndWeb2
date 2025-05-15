@@ -61,8 +61,8 @@
 											{{ Auth::user()->full_name }}
 										</a>
 										<ul class="sub-menu-m" id="userMenu">
-											<li><a href="#">Info</a></li>
-											<li><a href="#">Change password</a></li>
+											<li><a href="{{ route('auth.info') }}">Info</a></li>
+											<li><a href="{{ route('auth.showresetpassword') }}">Change password</a></li>
 										</ul>
 									</div>
 									<a href="{{ route('home') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="flex-c-m trans-04 p-lr-25">Đăng xuất</a> 
