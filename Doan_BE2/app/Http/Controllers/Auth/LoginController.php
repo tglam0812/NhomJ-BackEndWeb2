@@ -58,11 +58,19 @@ class LoginController extends Controller
         return back()->withInput();
     }
     //logout
-    public function logout()
+    // public function logout()
+    // {
+    //     Auth::logout();
+    //     $request->session()->invalidate();
+    //     $request->session()->regenerateToken();
+    //     return redirect('/');
+    // }
+    public function logout(Request $request)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect('/');
+        auth()->logout(); // Đăng xuất người dùng
+        $request->session()->invalidate(); // Làm mới session
+        $request->session()->regenerateToken(); // Tạo token mới
+
+        return redirect()->route('home'); // Chuyển hướng về trang chủ
     }
 }
