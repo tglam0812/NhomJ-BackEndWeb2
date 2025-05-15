@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id'); // thay email bằng user_id
             $table->text('message');
+            $table->text('reply')->nullable();
             $table->timestamps();
 
             // Nếu bạn muốn ràng buộc khoá ngoại (tuỳ chọn)

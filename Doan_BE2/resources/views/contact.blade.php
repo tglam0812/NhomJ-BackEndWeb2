@@ -56,12 +56,8 @@ E - Sunshine
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="index.html">Home</a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul>
+								<a href="{{ route('home') }}">Home</a>
+
 							</li>
 
 							<li>
@@ -81,7 +77,7 @@ E - Sunshine
 							</li>
 
 							<li class="active-menu">
-								<a href="contact.html">Contact</a>
+								<a href="#">Contact</a>
 							</li>
 						</ul>
 					</div>	
@@ -92,13 +88,18 @@ E - Sunshine
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-							<i class="zmdi zmdi-shopping-cart"></i>
-						</div>
-
-						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-							<i class="zmdi zmdi-favorite-outline"></i>
-						</a>
+                    @php
+                        $cart = session('cart', []);
+                        $cartTotal = collect($cart)->sum('quantity');
+                    @endphp
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="{{ $cartTotal }}">
+                        <i class="zmdi zmdi-shopping-cart"></i>
+                    </div>
+                    <a href="{{ route('wishlist.index') }}"
+                    class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
+                    data-notify="{{ session('wishlist_count', 0) }}">
+                        <i class="zmdi zmdi-favorite-outline"></i>
+                    </a>
 					</div>
 				</nav>
 			</div>	
@@ -179,7 +180,7 @@ E - Sunshine
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="#">Shop</a>
 				</li>
 
 				<li>
@@ -187,15 +188,15 @@ E - Sunshine
 				</li>
 
 				<li>
-					<a href="blog.html">Blog</a>
+					<a href="#">Blog</a>
 				</li>
 
 				<li>
-					<a href="about.html">About</a>
+					<a href="#">About</a>
 				</li>
 
 				<li>
-					<a href="contact.html">Contact</a>
+					<a href="#">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -343,6 +344,7 @@ E - Sunshine
 						<button type="submit" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
 							Submit
 						</button>
+						<li><a href="{{ route('feedbacks') }}">Xem phản hồi của bạn</a></li>
 					</form>
 
 					<!-- Thông báo -->

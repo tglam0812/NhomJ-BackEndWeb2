@@ -22,5 +22,15 @@ class ContactController extends Controller
 
         return back()->with('success', 'Cảm ơn bạn đã gửi liên hệ!');
     }
+
+    public function feedbacks()
+    {
+        $messages = \App\Models\ContactMessage::with('user')
+            ->where('user_id', Auth::id())
+            ->latest()
+            ->get();
+
+        return view('feedbacks', compact('messages'));
+    }
 }
 

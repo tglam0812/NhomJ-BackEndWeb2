@@ -14,6 +14,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\ContactController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
@@ -121,3 +122,9 @@ Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('car
 // Checkout
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
+// Link tới trang contact
+Route::get('/contact', [TrangChuController::class, 'contact'])->name('contact');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/my-feedbacks', [App\Http\Controllers\ContactController::class, 'feedbacks'])->name('feedbacks');

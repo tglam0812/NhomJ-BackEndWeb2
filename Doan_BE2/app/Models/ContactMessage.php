@@ -10,7 +10,8 @@ class ContactMessage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'message'];
+    protected $fillable = ['user_id', 'message', 'reply'];
+
 
     // Quan hệ đến người dùng
     public function user()
