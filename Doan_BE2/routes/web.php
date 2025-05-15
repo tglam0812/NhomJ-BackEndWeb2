@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\UserController;
-use Illuminate\Support\Facades\Controller;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\CrudProductsController;
@@ -15,12 +13,12 @@ use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\InformationController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/', [HomeController::class, 'page'])->name('home');
+Route::get('/', [TrangChuController::class, 'home'])->name('home');
+
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login'])->name('login.post');
 
@@ -31,13 +29,21 @@ Route::post('login', [LoginController::class, 'login'])->name('login.post');
 // Trang chủ (hiển thị sản phẩm mới)
 Route::get('/', [TrangChuController::class, 'home'])->name('home');
 
-//Dang ky
+// Đăng ký
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register'])->name('register.post');
 
 // Đăng xuất
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+
+// Thông tin người dùng
+Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function () {
+    Route::get('/info', [InformationController::class, 'info'])->name('auth.info');
+    Route::patch('/info/{user_id}', [InformationController::class, 'update'])->name('info.update');
+    Route::get('/resetpassword', [InformationController::class, 'showresetpassword'])->name('auth.showresetpassword');
+    Route::patch('/resetpassword/{user_id}', [InformationController::class, 'resetpassword'])->name('info.resetpassword');
+});
 
 // Products Admin
 Route::prefix('products')->group(function () {
@@ -60,7 +66,6 @@ Route::prefix('categories')->group(function () {
     Route::get('/{category_id}', [CrudCategoryController::class, 'readCategory'])->name('categories.readCategory');
     Route::delete('/{category_id}', [CrudCategoryController::class, 'deleteCategory'])->name('categories.deleteCategory');
 });
-
 
 // Account Admin
 Route::prefix('accounts')->group(function () {
@@ -89,13 +94,12 @@ Route::get('/shop', [TrangChuController::class, 'listProductIndex'])->name('prod
 // Chi tiết sản phẩm
 Route::get('/product/{product_id}', [TrangChuController::class, 'detailProduct'])->name('product.detail');
 
-//phieu giam giaaaa
-
+// Phiếu giảm giá
 Route::resource('phieugiam', PhieuGiamGiaController::class)->parameters([
     'phieugiam' => 'id'
 ]);
 
-// sản phẩm yêu thích
+// Sản phẩm yêu thích
 Route::middleware(['auth'])->group(function () {
     Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
     Route::post('/wishlist/toggle/{product_id}', [WishlistController::class, 'toggle'])->name('wishlist.toggle');
@@ -107,14 +111,13 @@ Route::put('/review/{id}', [ReviewController::class, 'update'])->name('review.up
 // Xóa comment
 Route::delete('/review/{id}', [ReviewController::class, 'destroy'])->name('review.destroy');
 
-// gio hanggggg
+// Giỏ hàng
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
-
-//check outttttt
+// Checkout
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
 // Chuyển về trang chủ 
-Route::get('/index', [HomeController::class, 'index'])->name('home');
+Route::get('/index', [TrangChuController::class, 'home'])->name('home');
