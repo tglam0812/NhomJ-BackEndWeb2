@@ -70,7 +70,6 @@ E - Sunshine
 				</div>
 			</div>
 		</div>
-	</section>
 </section>
 
 <!-- Banner -->
@@ -97,14 +96,20 @@ E - Sunshine
 				</h3>
 			</div>
 
-			<div class="flex-w flex-sb-m p-b-52">
+		<div class="flex-w flex-sb-m p-b-52">
 			<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-				<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">Tất cả sản phẩm</button>
+				{{-- Link tất cả sản phẩm --}}
+				<a href="{{ route('home') }}"
+				class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 {{ request('category_id') ? '' : 'how-active1' }}">
+					Tất cả sản phẩm
+				</a>
+
+				{{-- Các danh mục --}}
 				@foreach ($categories as $category)
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
-						data-filter=".{{ Str::slug($category->category_name) }}">
+					<a href="{{ url('/') . '?category_id=' . $category->category_id }}"
+					class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 {{ request('category_id') == $category->category_id ? 'how-active1' : '' }}">
 						{{ $category->category_name }}
-					</button>
+					</a>
 				@endforeach
 			</div>
 				<div class="flex-w flex-c-m m-tb-10">
@@ -122,7 +127,7 @@ E - Sunshine
 				</div>
 				
 				<!-- Search product -->
-				<<form method="GET" action="{{ route('products.shop') }}">
+				<form method="GET" action="{{ route('home') }}">
 					<div class="bor8 dis-flex p-l-15">
 						<button type="submit" class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
 							<i class="zmdi zmdi-search"></i>
@@ -357,7 +362,7 @@ E - Sunshine
 						</div>
 					</div>
 					
-				</div>
+				</div>	
 				@endforeach
 			</div>
 			<!-- phan trang -->

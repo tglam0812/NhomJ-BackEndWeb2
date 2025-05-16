@@ -13,39 +13,32 @@ use App\Models\Review;
 
 class TrangChuController extends Controller
 {
-        public function home()
+    public function home(Request $request)
     {
-        $categories = Category::all();
-        $products = Products::with(['category', 'brand'])
-            ->orderBy('created_at', 'desc')
-            ->paginate(8); 
-        $userWishlistIds = [];
-        if (Auth::check()) {
-            $userWishlistIds = Wishlist::where('user_id', Auth::id())->pluck('product_id')->toArray();
-        }
-
-        return view('index', compact('products', 'categories', 'userWishlistIds'));
-    }
-        public function listProductIndex(Request $request)
-    {
+        // Khởi tạo query sản phẩm kèm quan hệ category và brand
         $query = Products::with(['category', 'brand']);
 
-        if ($search = $request->input('search')) {
-            $query->where('product_name', 'like', "%$search%");
+        // Lọc theo từ khóa tìm kiếm
+        if ($request->filled('search')) {
+            $query->where('product_name', 'like', '%' . $request->search . '%');
         }
 
-        if ($category_id = $request->input('category_id')) {
-            $query->where('category_id', $category_id);
+        // Lọc theo category_id nếu có
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
         }
 
-        $products = $query->orderBy('created_at', 'desc')->paginate(12); // ✅ phân trang
+        // Phân trang sau khi lọc
+        $products = $query->orderBy('created_at', 'desc')->paginate(8);
+
+        // Giữ lại các tham số khi bấm phân trang
+        $products->appends($request->only(['search', 'category_id']));
 
         $categories = Category::all();
 
-        $userWishlistIds = [];
-        if (Auth::check()) {
-            $userWishlistIds = Wishlist::where('user_id', Auth::id())->pluck('product_id')->toArray();
-        }
+        $userWishlistIds = Auth::check()
+            ? Wishlist::where('user_id', Auth::id())->pluck('product_id')->toArray()
+            : [];
 
         return view('index', compact('products', 'categories', 'userWishlistIds'));
     }
