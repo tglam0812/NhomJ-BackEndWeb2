@@ -85,7 +85,7 @@
                         <li><a href="#">Shop</a></li>
                         <li class="label1" data-label1="hot"><a href="#">Features</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
                         <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
@@ -149,11 +149,11 @@
 
         <ul class="main-menu-m">
             <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="product.html">Shop</a></li>
-            <li><a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">>Shop</a></li>
+            <li><a href="#" class="label1 rs1" data-label1="hot">Features</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
     </div>
 

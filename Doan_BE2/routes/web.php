@@ -19,6 +19,8 @@ use App\Http\Controllers\Admin\ContactManageController;
 
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
+// trang about
+Route::get('/about', [TrangChuController::class, 'about'])->name('about');
 
 // hiển thị sản phẩm
 Route::get('/', [TrangChuController::class, 'home'])->name('home');
