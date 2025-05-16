@@ -54,6 +54,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
            
             return redirect()->intended('/');
+            
         }
 
         return back()->withInput();

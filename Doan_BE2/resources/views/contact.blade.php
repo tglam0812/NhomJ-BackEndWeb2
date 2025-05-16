@@ -61,19 +61,19 @@ Thương Mại Điện Tử
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="#">Shop</a>
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="shoping-cart.html">Features</a>
+								<a href="#">Features</a>
 							</li>
 
 							<li>
-								<a href="blog.html">Blog</a>
+								<a href="#">Blog</a>
 							</li>
 
 							<li>
-								<a href="about.html">About</a>
+								<a href="{{ route('about') }}">About</a>
 							</li>
 
 							<li class="active-menu">
@@ -192,7 +192,7 @@ Thương Mại Điện Tử
 				</li>
 
 				<li>
-					<a href="#">About</a>
+					<a href="{{ route('about') }}">About</a>
 				</li>
 
 				<li>
