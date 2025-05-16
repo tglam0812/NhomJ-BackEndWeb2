@@ -3,7 +3,7 @@
 <!-- header - cart - footer -->
 
 @section('title')
-E - Sunshine
+Thương Mại Điện Tử
 @endsection
 
 @section('custom-css')
