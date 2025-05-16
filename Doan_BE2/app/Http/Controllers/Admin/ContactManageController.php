@@ -11,9 +11,15 @@ class ContactManageController extends Controller
 {
     public function index()
     {
-        $messages = ContactMessage::with('user')->latest()->get();
+        // Chỉ lấy các phản hồi CHƯA trả lời (reply = null)
+        $messages = ContactMessage::with('user')
+                    ->whereNull('reply')
+                    ->latest()
+                    ->get();
+
         return view('admin.messages', compact('messages'));
     }
+
 
     public function reply(Request $request, $id)
     {
