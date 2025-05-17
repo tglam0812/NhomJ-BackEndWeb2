@@ -14,6 +14,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\InformationController;
+use App\Http\Controllers\Admin\CrudSupplierController;
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');
 
@@ -77,6 +78,16 @@ Route::prefix('accounts')->group(function () {
     Route::get('/{account_id}', [CrudAccountAdminController::class, 'readAccountAdmin'])->name('accountAdmin.read');
     Route::delete('/{account_id}', [CrudAccountAdminController::class, 'deleteAccountAdmin'])->name('accountAdmin.delete');
 });
+// crud nhà cung cấp supplier
+Route::prefix('suppliers')->group(function () {
+    Route::get('/', [CrudSupplierController::class, 'listSupplier'])->name('suppliers.list'); // Danh sách nhà cung cấp
+    Route::get('/create', [CrudSupplierController::class, 'createSupplier'])->name('suppliers.createSupplier'); // Tạo nhà cung cấp
+    Route::post('/create', [CrudSupplierController::class, 'postSupplier'])->name('suppliers.store'); 
+    Route::get('/{supplier_id}/edit', [CrudSupplierController::class, 'updateSupplier'])->name('suppliers.updateSupplier'); // Cập nhật nhà cung cấp
+    Route::put('/{supplier_id}/update', [CrudSupplierController::class, 'postUpdateSupplier'])->name('suppliers.update'); 
+    Route::get('/{supplier_id}', [CrudSupplierController::class, 'readSupplier'])->name('suppliers.readSupplier');
+    Route::delete('/{supplier_id}', [CrudSupplierController::class, 'deleteSupplier'])->name('suppliers.deleteSupplier'); // Xóa nhà cung cấp
+});
 
 // Level Admin
 Route::prefix('levels')->group(function () {
@@ -87,6 +98,9 @@ Route::prefix('levels')->group(function () {
     Route::post('/{level_id}/edit', [CrudLevelController::class, 'postUpdateLevel'])->name('levelAdmin.postUpdate');
     Route::delete('/{level_id}', [CrudLevelController::class, 'deleteLevel'])->name('levelAdmin.delete');
 });
+
+
+
 
 // Danh sách sản phẩm có tìm kiếm (tránh trùng admin)
 Route::get('/shop', [TrangChuController::class, 'listProductIndex'])->name('products.shop');
