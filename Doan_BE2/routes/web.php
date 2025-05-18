@@ -123,6 +123,9 @@ Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add')
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
 Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
+//update giỏ hàng
+Route::put('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+
 // Checkout
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 

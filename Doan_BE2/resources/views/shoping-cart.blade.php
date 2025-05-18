@@ -29,41 +29,70 @@ Thương Mại Điện Tử
 				<div class="m-l-25 m-r--38 m-lr-0-xl">
 					<div class="wrap-table-shopping-cart">
 						<table class="table-shopping-cart">
-							<tr class="table_head">
-								<th class="column-1">Product</th>
-								<th class="column-2"></th>
-								<th class="column-3">Price</th>
-								<th class="column-4">Quantity</th>
-								<th class="column-5">Total</th>
-								<th class="column-6">Action</th>
-							</tr>
-							@php $total = 0; @endphp
-							@if(session()->has('cart') && count(session('cart')) > 0)
-								@foreach(session('cart') as $item)
-									@php $lineTotal = $item['product_price'] * $item['quantity']; $total += $lineTotal; @endphp
-									<tr class="table_row">
-										<td class="column-1">
-											<div class="how-itemcart1">
-												<img src="{{ asset('assets/images/products/' . $item['product_image']) }}" alt="IMG">
-											</div>
-										</td>
-										<td class="column-2">{{ $item['product_name'] }}</td>
-										<td class="column-3">{{ number_format($item['product_price']) }} VND</td>
-										<td class="column-4">{{ $item['quantity'] }}</td>
-										<td class="column-5">{{ number_format($lineTotal) }} VND</td>
-										<td class="column-6">
-											<form action="{{ route('cart.remove', ['id' => $item['product_id']]) }}" method="POST">
-												@csrf
-												@method('DELETE')
-												<button type="submit" class="btn btn-sm btn-danger">X</button>
-											</form>
-										</td>
-									</tr>
-								@endforeach
-							@else
-								<tr><td colspan="6" class="text-center text-danger py-3"><i class="bi bi-cart-fill"></i> Giỏ hàng đang trống</td></tr>
-							@endif
-						</table>
+    <thead>
+        <tr class="table_head">
+            <th class="column-1">
+                <input type="checkbox" id="checkAll" />
+            </th>
+            <th class="column-2">Product</th>
+            <th class="column-3">Price</th>
+            <th class="column-4">Quantity</th>
+            <th class="column-5">Total</th>
+            <th class="column-6">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    @php $total = 0; @endphp
+    @if(session()->has('cart') && count(session('cart')) > 0)
+        @foreach(session('cart') as $item)
+            @php
+                $lineTotal = $item['product_price'] * $item['quantity'];
+                $total += $lineTotal;
+            @endphp
+            <tr class="table_row">
+                <td class="column-1">
+                    <input type="checkbox" class="product-checkbox" name="selected_products[]" value="{{ $item['product_id'] }}" />
+                </td>
+                <td class="column-2">
+                    <div class="how-itemcart1">
+                        <img src="{{ asset('assets/images/products/' . $item['product_image']) }}" alt="IMG">
+                    </div>
+                    <br>
+                    {{ $item['product_name'] }}
+                </td>
+                <td class="column-3">{{ number_format($item['product_price']) }} VND</td>
+                <td class="column-4">
+                    <form action="{{ route('cart.update', ['id' => $item['product_id']]) }}" method="POST" style="display: flex; align-items: center; gap: 5px;">
+                        @csrf
+                        @method('PUT')
+                        <input type="number" name="quantity" value="{{ $item['quantity'] }}" min="1" style="width: 60px; text-align: center;" />
+                        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                    </form>
+                </td>
+                <td class="column-5">{{ number_format($lineTotal) }} VND</td>
+                <td class="column-6">
+                    <form action="{{ route('cart.remove', ['id' => $item['product_id']]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-danger">X</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+    @else
+        <tr><td colspan="6" class="text-center text-danger py-3"><i class="bi bi-cart-fill"></i> Giỏ hàng đang trống</td></tr>
+    @endif
+    </tbody>
+</table>
+
+<script>
+    // checkbox chọn tất cả
+    document.getElementById('checkAll').addEventListener('change', function() {
+        let checked = this.checked;
+        document.querySelectorAll('.product-checkbox').forEach(chk => chk.checked = checked);
+    });
+</script>
+
 					</div>
 				</div>
 			</div>
@@ -88,7 +117,7 @@ Thương Mại Điện Tử
 						</div>
 					</div>
 					<a href="{{ route('checkout.index') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-						Proceed to Checkout
+						Thanh Toán
 					</a>
 				</div>
 			</div>
