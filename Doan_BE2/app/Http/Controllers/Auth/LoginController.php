@@ -51,10 +51,17 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-           
+        $request->session()->regenerate();
+
+        $user = Auth::user();  // Lấy user vừa đăng nhập
+
+        // Kiểm tra quyền
+        if ($user->level_id == 1) {
+                return redirect()->intended('/products');  // Admin vào trang quản lý sản phẩm
+            }
+
+            // Nếu không phải admin, vào trang chủ hoặc trang khác
             return redirect()->intended('/');
-            
         }
 
         return back()->withInput();
@@ -81,6 +88,10 @@ class LoginController extends Controller
         $wishlistCount = Wishlist::where('user_id', $user->id)->count();
         session(['wishlist_count' => $wishlistCount]);
 
-        return redirect()->intended('/');
+        if ($user->level_id == 1) {
+            return redirect()->route('categories.list'); // Admin → CRUD sản phẩm
+        } else {
+            return redirect()->intended('/');   
+        }
     }
 }
