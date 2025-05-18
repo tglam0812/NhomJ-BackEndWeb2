@@ -105,13 +105,18 @@
 
 <body>
     <header>
-        <nav>
-            <a href="{{ route('products.list') }}">Products</a>
-            <a href="{{ route('categories.list') }}">Category</a>
-            <a href="{{ route('accountAdmin.list') }}">User</a>
-            <a href="{{ route('phieugiam.index') }}">Giam gia</a>
-            <a href="{{ route('admin.messages') }}">Phản hồi KH</a>
-            <a href="{{ route('suppliers.list') }}">Supplier</a>
+        <nav style="display: flex; justify-content: center; align-items: center;">
+            <div style="flex-grow: 1; text-align: center;">
+                <a href="{{ route('products.list') }}">Products</a>
+                <a href="{{ route('categories.list') }}">Category</a>
+                <a href="{{ route('accountAdmin.list') }}">User</a>
+                <a href="{{ route('phieugiam.index') }}">Giam gia</a>
+                <a href="{{ route('admin.messages') }}">Phản hồi KH</a>
+                <a href="{{ route('suppliers.list') }}">Supplier</a>
+            </div>
+            <div style="flex-shrink: 0;">
+                <a href="{{ route('logout') }}" style="color:#ffffff; margin-left: 20px; font-weight: 600;">Đăng xuất</a>
+            </div>
         </nav>
     </header>
 
