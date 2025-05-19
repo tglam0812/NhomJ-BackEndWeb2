@@ -28,7 +28,7 @@
                         <td>{{ $supplier->supplier_description }}</td>
                         <td>{{ $supplier->supplier_status == 1 ? 'Active' : 'Inactive' }}</td>
                         <td>
-                            <a href="{{ route('suppliers.readSupplier', $supplier->supplier_id) }}">View</a> |
+                            <!-- <a href="{{ route('suppliers.readSupplier', $supplier->supplier_id) }}">View</a> | -->
                             <a href="{{ route('suppliers.updateSupplier', $supplier->supplier_id) }}">Edit</a> |
                             <form action="{{ route('suppliers.deleteSupplier', $supplier->supplier_id) }}" method="POST" style="display:inline;">
                                 @csrf
