@@ -14,7 +14,6 @@ class UsersTableSeeder extends Seeder
     {
         $genders = ['Male', 'Female', 'Other'];
         $avatars = ['avatar1.jpg', 'avatar2.jpg', 'avatar3.jpg'];
-        $statuses = ['active', 'inactive'];
         $levelCount = DB::table('level_user')->count(); // số lượng quyền
 
         for ($i = 1; $i <= 50; $i++) {

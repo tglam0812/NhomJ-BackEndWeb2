@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         // Gọi lần lượt các seeder cần thiết
         $this->call([
+            PhieuGiamGiaSeeder::class,
             LevelUserSeeder::class,   
             UsersTableSeeder::class,  
             CategorySeeder::class, 
