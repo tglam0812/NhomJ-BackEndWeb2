@@ -25,7 +25,7 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => rand(1, $totalCategories),
                 'brand_id' => rand(1, 5),
                 'product_description' => 'Mô tả sản phẩm mẫu số ' . $i . '. Đây là sản phẩm dùng để test hệ thống.',
-                'product_status' => 'active',
+                'product_status' => '1',
                 'product_images_1' => $images[array_rand($images)],
                 'product_images_2' => $images[array_rand($images)],
                 'product_images_3' => $images[array_rand($images)],

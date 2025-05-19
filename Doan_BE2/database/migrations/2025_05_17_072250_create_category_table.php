@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id('category_id');
             $table->string('category_name');
             $table->string('category_description')->nullable();
-            $table->string('category_status')->default('Active');
+            $table->string('category_status')->default('1');
             $table->timestamps(); // created_at, updated_at
         });
     }
