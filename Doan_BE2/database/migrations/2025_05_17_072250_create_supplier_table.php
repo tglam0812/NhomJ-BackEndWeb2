@@ -6,26 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('supplier', function (Blueprint $table) {
-            $table->id('supplier_id');
-            $table->string('supplier_name');
-            $table->string('supplier_email', 191)->unique();
-            $table->string('supplier_description');
-             $table->boolean('supplier_status')->default(1);
-            $table->timestamps();
+        Schema::create('category', function (Blueprint $table) {
+            $table->id('category_id');
+            $table->string('category_name');
+            $table->string('category_description')->nullable();
+            $table->string('category_status')->default('Active');
+            $table->timestamps(); // created_at, updated_at
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('supplier');
+        Schema::dropIfExists('category');
     }
 };

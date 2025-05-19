@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -11,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('phieu_giam_gia_moi', function (Blueprint $table) {
+        Schema::create('phieu_giam_gia', function (Blueprint $table) {
             $table->id(); // Khóa chính auto_increment
             $table->string('ten_phieu');
             $table->integer('phan_tram_giam');
