@@ -13,7 +13,7 @@
             <table class="supplier-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Name</th>
                         <th>Description</th>
                         <th>Status</th>
@@ -23,12 +23,12 @@
                 <tbody>
                     @forelse($suppliers as $supplier)
                     <tr>
-                        <td>{{ $supplier->supplier_id }}</td>
+                        <!-- <td>{{ $supplier->supplier_id }}</td> -->
                         <td>{{ $supplier->supplier_name }}</td>
                         <td>{{ $supplier->supplier_description }}</td>
                         <td>{{ $supplier->supplier_status == 1 ? 'Active' : 'Inactive' }}</td>
                         <td>
-                            <a href="{{ route('suppliers.readSupplier', $supplier->supplier_id) }}">View</a> |
+                            <!-- <a href="{{ route('suppliers.readSupplier', $supplier->supplier_id) }}">View</a> | -->
                             <a href="{{ route('suppliers.updateSupplier', $supplier->supplier_id) }}">Edit</a> |
                             <form action="{{ route('suppliers.deleteSupplier', $supplier->supplier_id) }}" method="POST" style="display:inline;">
                                 @csrf
