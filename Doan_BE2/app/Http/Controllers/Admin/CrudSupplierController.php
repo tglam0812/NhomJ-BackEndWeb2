@@ -14,7 +14,7 @@ class CrudSupplierController extends Controller
      public function listSupplier(Request $request)
     {
         $query = Supplier::query();
-
+        //search
         if ($search = $request->input('search')) {
             $query->where('supplier_name', 'like', "%$search%");
         }
