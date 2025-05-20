@@ -3,39 +3,72 @@
 @section('title', 'Thanh toán')
 
 @section('main-content')
-<div class="container mt-5">
-    <h2>Trang thanh toán</h2>
-    @if(session()->has('cart') && count(session('cart')) > 0)
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Giá</th>
-                    <th>Tổng</th>
-                </tr>
-            </thead>
-            <tbody>
-                @php $total = 0; @endphp
-                @foreach(session('cart') as $item)
-                    @php $lineTotal = $item['product_price'] * $item['quantity']; $total += $lineTotal; @endphp
-                    <tr>
-                        <td>{{ $item['product_name'] }}</td>
-                        <td>{{ $item['quantity'] }}</td>
-                        <td>{{ number_format($item['product_price']) }} VND</td>
-                        <td>{{ number_format($lineTotal) }} VND</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <h4 class="text-end">Tổng cộng: {{ number_format($total) }} VND</h4>
+@extends('layouts.master')
 
-        <form action="#" method="POST">
-            @csrf
-            <button class="btn btn-success">Xác nhận thanh toán</button>
-        </form>
-    @else
-        <p>Không có sản phẩm trong giỏ hàng.</p>
-    @endif
+@section('main-content')
+<div class="container checkout-container">
+    <h4>Thông tin người nhận hàng</h4>
+    <form action="{{ route('checkout.store') }}" method="POST">
+        @csrf
+        <div class="mb-3">
+            <label for="fullname">Họ và tên:</label>
+            <input type="text" name="fullname" id="fullname" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" name="phone" id="phone" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="address">Địa chỉ:</label>
+            <textarea name="address" id="address" rows="3" class="form-control" required></textarea>
+        </div>
+
+        <button type="submit">Xác nhận đặt hàng</button>
+    </form>
 </div>
 @endsection
+<style>
+    .checkout-container {
+        margin-top: 80px; /* đẩy form cách navbar */
+        max-width: 600px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkout-container h4 {
+        margin-bottom: 25px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .checkout-container label {
+        font-weight: 500;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .checkout-container input,
+    .checkout-container textarea {
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    .checkout-container button {
+        margin-top: 20px;
+        width: 100%;
+        background-color: #222;
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 25px;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .checkout-container button:hover {
+        background-color: #444;
+    }
+</style>
+
