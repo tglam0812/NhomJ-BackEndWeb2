@@ -19,4 +19,10 @@ class Bill extends Model
         'note',
         'phieu_giam_id',
     ];
+
+    public function details()
+    {
+        return $this->hasMany(\App\Models\BillDetail::class, 'bill_id', 'bill_id');
+    }
+    
 }

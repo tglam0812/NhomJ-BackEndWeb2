@@ -156,3 +156,14 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 //hiển thị giỏ hàng
 Route::get('/order-success', [CheckoutController::class, 'success'])->name('order.success');
 
+//xem chi tiết đơn hàng
+Route::get('/order/{id}', [CheckoutController::class, 'showOrder'])->name('order.detail');
+
+//xem danh sach don hang
+Route::get('/orders', [CheckoutController::class, 'myOrders'])
+    ->middleware('auth')
+    ->name('orders.mine');
+
+
+
+
