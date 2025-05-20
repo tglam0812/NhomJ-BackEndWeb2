@@ -126,8 +126,17 @@ Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('car
 //update giỏ hàng
 Route::put('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
 
-// Checkout
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+//áp dụng phiếu giảm giá
+Route::post('/cart/apply-coupon', [CartController::class, 'applyCoupon'])->name('cart.applyCoupon');
+
+//loại bỏ phiếu giảm giá
+Route::post('/cart/remove-coupon', [CartController::class, 'removeCoupon'])->name('cart.removeCoupon');
+
+Route::middleware(['auth'])->group(function () {
+    // Checkout chỉ cho người đã đăng nhập
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+});
 
 // Contact - Gửi và xem phản hồi
 Route::get('/contact', [TrangChuController::class, 'contact'])->name('contact');
@@ -139,3 +148,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/messages', [ContactManageController::class, 'index'])->name('admin.messages');
     Route::post('/messages/{id}/reply', [ContactManageController::class, 'reply'])->name('admin.messages.reply');
 });
+
+//
+
+//hiển thị giỏ hàng
+Route::get('/order-success', [CheckoutController::class, 'success'])->name('order.success');
+

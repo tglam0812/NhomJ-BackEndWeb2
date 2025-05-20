@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\PhieuGiamGia;
 
 class CartController extends Controller
 {
+    //thêm phiếu giảm giá mới
     public function addToCart(Request $request)
     {
         $productId = $request->input('product_id');
@@ -51,7 +53,7 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Đã xóa sản phẩm khỏi giỏ hàng.');
     }
-    //
+    //sửa lại phiếu giảm giá
     public function update(Request $request, $id)
     {
         $quantity = (int) $request->input('quantity');
@@ -69,6 +71,38 @@ class CartController extends Controller
         }
 
         return redirect()->back()->with('error', 'Sản phẩm không tồn tại trong giỏ hàng.');
+    }
+
+    //áp dụng phiếu giảm giá
+
+            public function applyCoupon(Request $request)
+    {
+        $maPhieu = $request->input('ma_phieu');
+
+        $coupon = PhieuGiamGia::where('ten_phieu', $maPhieu)
+            ->where('ngay_bat_dau', '<=', now())
+            ->where('ngay_ket_thuc', '>=', now())
+            ->first();
+
+        if (!$coupon) {
+            return redirect()->back()->with('error', 'Mã giảm giá không hợp lệ hoặc đã hết hạn.');
+        }
+
+        session(['coupon' => [
+            'ma_phieu' => $coupon->ten_phieu,
+            'loai_giam' => 'percent',
+            'gia_tri' => $coupon->phan_tram_giam,
+        ]]);
+
+        return redirect()->back()->with('success', 'Áp dụng thành công!');
+    }
+    
+
+    //xóa phiếu giảm giá trong cart
+        public function removeCoupon()
+    {
+        session()->forget('coupon');
+        return redirect()->back()->with('success', 'Đã hủy mã giảm giá.');
     }
 
 }
