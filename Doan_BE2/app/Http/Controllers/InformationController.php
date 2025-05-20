@@ -111,7 +111,9 @@ class InformationController extends Controller
         $user->save();
 
         // 5. Thông báo thành công
-        return redirect()->back()->with('success', 'Cập nhật mật khẩu thành công!');
+        //return redirect()->back()->with('success', 'Cập nhật mật khẩu thành công!');
+        //return redirect()->route('home'); // Chuyển hướng về trang chủ
+        return redirect('/login')->with('success', 'Cập nhật mật khẩu thành công! Vui lòng đăng nhập lại.');
     }
     /**
      * Remove the specified resource from storage.
