@@ -41,7 +41,18 @@ class PhieuGiamGiaController extends Controller
 
     public function update(Request $request, $id)
     {
-        
+            $request->validate([
+                'ten_phieu' => 'required',
+                'phan_tram_giam' => 'required|numeric|min:1|max:100',
+                'so_luong' => 'required|integer|min:1',
+                'ngay_bat_dau' => 'required|date',
+                'ngay_ket_thuc' => 'required|date|after_or_equal:ngay_bat_dau',
+            ]);
+
+            $phieugiam = PhieuGiamGia::findOrFail($id); // <-- lấy thủ công bằng ID
+            $phieugiam->update($request->all());
+
+            return redirect()->route('phieugiam.index')->with('success', 'Cập nhật thành công');
     }
 
     public function destroy($id)
