@@ -24,9 +24,10 @@
             </div>
 
             <div class="form-group">
-                <label for="products_description">Mô tả</label>
-                <textarea id="products_description" name="products_description" class="form-control" rows="4">{{ old('products_description', $product->products_description) }}</textarea>
+                <label for="product_description">Mô tả</label>
+                <textarea id="product_description" name="product_description" class="form-control" rows="4">{{ old('product_description', $product->product_description) }}</textarea>
             </div>
+
 
             <div class="form-group">
                 <label for="category_id">Danh mục</label>

@@ -16,16 +16,15 @@ return new class extends Migration
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('brand_id');
             $table->string('product_description', 10000);
-            $table->string('product_status', 255);
+            $table->string('product_status')->default('1');
             $table->string('product_images_1', 255)->nullable();
             $table->string('product_images_2', 255)->nullable();
             $table->string('product_images_3', 255)->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
 
-            // Nếu bạn có bảng categories và brands, có thể thêm ràng buộc khóa ngoại:
-            // $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            // $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
     }
 

@@ -57,6 +57,8 @@ Route::prefix('products')->group(function () {
     Route::post('/{id}/edit', [CrudProductsController::class, 'postUpdateProduct'])->name('products.postUpdateProduct');
     Route::get('/{id}', [CrudProductsController::class, 'readProduct'])->name('products.readProduct');
     Route::delete('/{id}', [CrudProductsController::class, 'deleteProduct'])->name('products.deleteProduct');
+    Route::delete('/products/{id}', [CrudProductsController::class, 'deleteProduct'])->name('products.delete');
+    
 });
 
 // CRUD Danh mục

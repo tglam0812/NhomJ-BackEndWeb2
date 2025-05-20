@@ -26,7 +26,7 @@
                     @forelse($products as $product)
                     <tr>
                         <td>
-                            <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" width="60" alt="{{ $product->product_name }}">
+                            <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" width="60" height="60" alt="{{ $product->product_name }}">
                         </td>
                         <td>{{ $product->product_name }}</td>
                         <td>{{ number_format($product->product_price) }} VND</td>
@@ -36,11 +36,12 @@
                         <td>
                             <a href="{{ route('products.readProduct', $product->product_id) }}">View</a> |
                             <a href="{{ route('products.updateProduct', $product->product_id) }}">Edit</a> |
-                            <form action="{{ route('products.deleteProduct', $product->product_id) }}" method="POST" style="display:inline;">
+                            <form action="{{ route('products.delete', $product->product_id) }}" method="POST" onsubmit="return confirm('Bạn có chắc muốn xóa không?');">
                                 @csrf
                                 @method('DELETE')
-                                <button onclick="return confirm('Delete {{ $product->product_name }}?')" class="btn-delete">Delete</button>
+                                <button type="submit" class="btn btn-danger">Xóa</button>
                             </form>
+
                         </td>
                     </tr>
                     @empty
