@@ -103,6 +103,10 @@ class CrudSupplierController extends Controller
      */
     public function deleteSupplier($supplier_id)
     {
-        
+        //tim 
+        $supplier = Supplier::findOrFail($supplier_id);
+         // Xóa danh mục
+        $supplier->delete();
+        return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp và các sản phẩm đã được xóa');
     }
 }
