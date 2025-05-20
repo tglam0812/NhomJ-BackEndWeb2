@@ -14,9 +14,12 @@ class CrudSupplierController extends Controller
      public function listSupplier(Request $request)
     {
         $query = Supplier::query();
+        //search
+        if ($search = $request->input('search')) {
+            $query->where('supplier_name', 'like', "%$search%");
+        }
         $suppliers = $query->paginate(10);
         return view('crud_supplier.list', compact('suppliers'));
-
     }
 
     /**
