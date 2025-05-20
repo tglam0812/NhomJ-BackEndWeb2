@@ -86,11 +86,32 @@ class InformationController extends Controller
     }
     public function showresetpassword(Request $request)
     {
-        
+        $user = Auth::user();
+        return view('auth.resetpassword', compact('user'));
     }
     public function resetpassword(Request $request, $id)
     {
-        
+        // 1. Tìm user
+        $user = User::findOrFail($id);
+
+        // 2. Validate dữ liệu đầu vào
+        $request->validate([
+            'current_password' => 'required',
+            'new_password'     => 'required|min:5',
+            'confirm_password' => 'required|same:new_password',
+        ]);
+
+        // 3. Kiểm tra mật khẩu cũ
+        if (!Hash::check($request->current_password, $user->password)) {
+            return redirect()->back()->with('error', 'Mật khẩu hiện tại không đúng!');
+        }
+
+        // 4. Cập nhật mật khẩu mới
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        // 5. Thông báo thành công
+        return redirect()->back()->with('success', 'Cập nhật mật khẩu thành công!');
     }
     /**
      * Remove the specified resource from storage.
