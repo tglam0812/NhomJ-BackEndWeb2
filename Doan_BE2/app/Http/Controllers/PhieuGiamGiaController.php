@@ -41,11 +41,12 @@ class PhieuGiamGiaController extends Controller
 
     public function update(Request $request, $id)
     {
-       
+        
     }
 
     public function destroy($id)
     {
-        
+        PhieuGiamGia::destroy($id);
+        return redirect()->back()->with('success', 'Xóa thành công');
     }
 }
