@@ -4,10 +4,11 @@
 
 @section('main-content')
 <section class="section-slide">
-    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{ Str::slug($product->category->category_name) }}">
+    <div class="d-flex justify-content-center p-b-35 isotope-item {{ Str::slug($product->category->category_name) }}">
         <div class="block2">
-            <div class="block2-pic hov-img0">
-                <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" alt="IMG-PRODUCT">
+           <div class="block2-pic hov-img0 text-center" style="margin-top: 60px;">
+                <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" alt="IMG-PRODUCT"
+                    style="max-width: 300px; height: auto; margin: 0 auto; display: block;">
             </div>
             <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l ">
@@ -208,6 +209,13 @@ function openEditReviewModal(id, rating, comment) {
     .navbar, header, nav, .wrap-menu-desktop {
         z-index: 1000 !important;
     }
+
+    .product-detail-image {
+    max-width: 300px;
+    height: auto;
+    margin: 60px auto 30px auto;
+    display: block;
+}
 </style>
 @endsection
 

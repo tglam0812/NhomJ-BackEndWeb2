@@ -53,17 +53,40 @@ class CrudProductsController extends Controller
             'product_images_3' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
-        $image1 = $request->file('product_images_1')?->store('products', 'public');
-        $image2 = $request->file('product_images_2')?->store('products', 'public');
-        $image3 = $request->file('product_images_3')?->store('products', 'public');
+        // Đường dẫn đích
+        $path = public_path('assets/images/products');
 
+        // Lưu từng ảnh
+        $image1 = null;
+        $image2 = null;
+        $image3 = null;
+
+        if ($request->hasFile('product_images_1')) {
+            $file1 = $request->file('product_images_1');
+            $image1 = $file1->getClientOriginalName();
+            $file1->move($path, $image1);
+        }
+
+        if ($request->hasFile('product_images_2')) {
+            $file2 = $request->file('product_images_2');
+            $image2 = $file2->getClientOriginalName();
+            $file2->move($path, $image2);
+        }
+
+        if ($request->hasFile('product_images_3')) {
+            $file3 = $request->file('product_images_3');
+            $image3 = $file3->getClientOriginalName();
+            $file3->move($path, $image3);
+        }
+
+        // Lưu vào DB
         Products::create([
             'product_name' => $request->product_name,
             'product_price' => $request->product_price,
             'product_qty' => $request->product_qty,
             'category_id' => $request->category_id,
             'brand_id' => $request->brand_id,
-            'product_description' => $request->products_description,
+            'product_description' => $request->product_description,
             'products_status' => $request->products_status ?? 1,
             'product_images_1' => $image1,
             'product_images_2' => $image2,
@@ -72,6 +95,7 @@ class CrudProductsController extends Controller
 
         return redirect()->route('products.list')->with('success', 'Sản phẩm đã được thêm thành công');
     }
+
 
     /**
      * Hiển thị form cập nhật sản phẩm
@@ -104,23 +128,35 @@ class CrudProductsController extends Controller
 
         $product = Products::findOrFail($product_id);
 
+        // Đường dẫn đến thư mục lưu ảnh
+        $path = public_path('assets/images/products');
+
+        // Cập nhật từng ảnh nếu có file mới
         foreach ([1, 2, 3] as $i) {
             $field = "product_images_$i";
             if ($request->hasFile($field)) {
-                if ($product->$field) {
-                    Storage::disk('public')->delete($product->$field);
+                // Xóa ảnh cũ nếu tồn tại
+                $oldImage = $product->$field;
+                if ($oldImage && file_exists($path . '/' . $oldImage)) {
+                    unlink($path . '/' . $oldImage);
                 }
-                $product->$field = $request->file($field)->store('products', 'public');
+
+                // Lưu ảnh mới
+                $file = $request->file($field);
+                $fileName = $file->getClientOriginalName();
+                $file->move($path, $fileName);
+                $product->$field = $fileName;
             }
         }
 
+        // Cập nhật dữ liệu còn lại
         $product->update([
             'product_name' => $request->product_name,
             'product_price' => $request->product_price,
             'product_qty' => $request->product_qty,
             'category_id' => $request->category_id,
             'brand_id' => $request->brand_id,
-            'products_description' => $request->products_description,
+            'product_description' => $request->product_description,
             'products_status' => $request->products_status ?? 1,
             'product_images_1' => $product->product_images_1,
             'product_images_2' => $product->product_images_2,
@@ -129,6 +165,7 @@ class CrudProductsController extends Controller
 
         return redirect()->route('products.list')->with('success', 'Cập nhật sản phẩm thành công');
     }
+
 
     /**
      * Xem chi tiết sản phẩm
@@ -154,4 +191,25 @@ class CrudProductsController extends Controller
     
         return redirect()->route('categories.list')->with('success', 'Danh mục và các sản phẩm đã được xóa');
     }
+
+    /**
+     * Xóa sản phẩm
+     */
+    public function deleteProduct($product_id)
+    {
+        $product = Products::findOrFail($product_id);
+
+        // Xóa ảnh nếu có
+        foreach ([1, 2, 3] as $i) {
+            $field = "product_images_$i";
+            if ($product->$field) {
+                Storage::disk('public')->delete($product->$field);
+            }
+        }
+
+        $product->delete();
+
+        return redirect()->route('products.list')->with('success', 'Xóa sản phẩm thành công');
+    }
+
 }
