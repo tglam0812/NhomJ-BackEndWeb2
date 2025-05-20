@@ -93,4 +93,26 @@ class CheckoutController extends Controller
 
         return view('checkout.success', compact('order'));
     }
+
+    //xem chi tiết đơn hàng
+    public function showOrder($id)
+    {
+        $bill = \App\Models\Bill::with('details.product')->findOrFail($id);
+        return view('checkout.order_detail', compact('bill'));
+    }
+
+    public function myOrders()
+    {
+        //dd(Auth::id());
+        //$userId = Auth::id(); 
+
+        $bills = \App\Models\Bill::where('user_id', Auth::id())
+                    ->orderByDesc('date_invoice')
+                    ->with('details.product')
+                    ->get();
+
+        return view('checkout.orders', compact('bills'));
+
+         //dd($bills);
+    }
 }
