@@ -28,13 +28,16 @@
                         <td>{{ $category->category_description }}</td>
                         <td>{{ $category->category_status == 1 ? 'Active' : 'Inactive' }}</td>
                         <td>
-                            <a href="{{ route('categories.readCategory', $category->category_id) }}">View</a> |
+
                             <a href="{{ route('categories.updateCategory', $category->category_id) }}">Edit</a> |
-                            <form action="{{ route('categories.deleteCategory', $category->category_id) }}" method="POST" style="display:inline;">
+                            <form method="POST" action="{{ route('categories.deleteCategory', $category->category_id) }}" class="form-delete" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button onclick="return confirm('Delete {{ $category->category_name }}?')" class="btn-delete">Delete</button>
+                                <button type="button" class="btn-delete"
+                                    data-category-name="{{ $category->category_name }}">Delete</button>
                             </form>
+
+
                         </td>
                     </tr>
                     @empty
@@ -45,115 +48,38 @@
                 </tbody>
             </table>
 
-            <!-- Hiển thị phân trang -->
-            <div class="pagination">
-                {{ $categories->links() }}
-            </div>
+            {{ $categories->links('phantrang') }}
+
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteButtons = document.querySelectorAll('.btn-delete');
+
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const form = this.closest('.form-delete');
+                    const categoryName = this.getAttribute('data-category-name');
+
+                    Swal.fire({
+                        title: 'Bạn có chắc chắn?',
+                        text: `Bạn có muốn xóa danh mục "${categoryName}" không?`,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Có',
+                        cancelButtonText: 'Hủy',
+                        reverseButtons: false
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
 </main>
+<link rel="stylesheet" href="{{ asset('assets/css/category/list.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
-<style>
-    .category-list {
-        padding: 20px 0;
-        background-color: #f9f9f9;
-    }
-
-    .category-list .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .category-list h2 {
-        font-size: 26px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .search-form {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .search-form input {
-        padding: 8px 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 250px;
-    }
-
-    .search-form button {
-        background-color: #007bff;
-        color: white;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .search-form button:hover {
-        background-color: #0056b3;
-    }
-
-    .btn-add {
-        display: inline-block;
-        margin-bottom: 20px;
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
-        border-radius: 4px;
-        text-decoration: none;
-    }
-
-    .btn-add:hover {
-        background-color: #218838;
-    }
-
-    .category-table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: white;
-    }
-
-    .category-table th, .category-table td {
-        padding: 12px;
-        border: 1px solid #dee2e6;
-        text-align: left;
-    }
-
-    .category-table th {
-        background-color: #007bff;
-        color: white;
-    }
-
-    .category-table td a {
-        color: #007bff;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    .category-table td a:hover {
-        text-decoration: underline;
-    }
-
-    .btn-delete {
-        background-color: #dc3545;
-        color: white;
-        padding: 5px 10px;
-        font-size: 13px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .btn-delete:hover {
-        background-color: #c82333;
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-</style>

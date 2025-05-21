@@ -11,14 +11,14 @@ class CrudSupplierController extends Controller
     /**
      * Hiển thị danh sách nhà cung cấp
      */
-     public function listSupplier(Request $request)
+    public function listSupplier(Request $request)
     {
         $query = Supplier::query();
         //search
         if ($search = $request->input('search')) {
             $query->where('supplier_name', 'like', "%$search%");
         }
-        $suppliers = $query->paginate(10);
+        $suppliers = $query->paginate(5)->appends($request->only('search'));
         return view('crud_supplier.list', compact('suppliers'));
     }
 
@@ -41,11 +41,11 @@ class CrudSupplierController extends Controller
     /**
      * Xử lý form nhà cung cấp
      */
-   public function postSupplier(Request $request)
+    public function postSupplier(Request $request)
     {
         $request->validate([
             'supplier_name' => 'required|string|max:255',
-            'supplier_email' =>  ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'], 
+            'supplier_email' =>  ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'],
             'supplier_description' => 'nullable|string',
             'supplier_status' => 'required|boolean',
         ]);
@@ -60,7 +60,7 @@ class CrudSupplierController extends Controller
         return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp đã được thêm thành công');
     }
 
-     /**
+    /**
      * Hiển thị form cập nhật nhà cung cấp
      */
     public function updateSupplier($supplier_id)
@@ -69,14 +69,14 @@ class CrudSupplierController extends Controller
         return view('crud_supplier.update', compact('supplier'));
     }
 
-     /**
+    /**
      * Xử lý form cập nhật nhà cung cấp
      */
     public function postUpdateSupplier(Request $request, $supplier_id)
     {
-       $request->validate([
+        $request->validate([
             'supplier_name' => 'required|string|max:255',
-            'supplier_email' =>  ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'], 
+            'supplier_email' =>  ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'],
             'supplier_description' => 'nullable|string',
             'supplier_status' => 'required|boolean',
         ]);
@@ -108,7 +108,7 @@ class CrudSupplierController extends Controller
     {
         //tim 
         $supplier = Supplier::findOrFail($supplier_id);
-         // Xóa danh mục
+        // Xóa danh mục
         $supplier->delete();
         return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp và các sản phẩm đã được xóa');
     }

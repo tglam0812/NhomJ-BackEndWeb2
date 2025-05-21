@@ -7,11 +7,18 @@ use Illuminate\Http\Request;
 
 class PhieuGiamGiaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $ds = PhieuGiamGia::all();
+        $query = PhieuGiamGia::query();
+        if ($request->has('search')) {
+            $query->where('ten_phieu', 'like', '%' . $request->search . '%');
+        }
+
+        $ds = $query->paginate(5)->appends($request->only('search'));
+
         return view('crud_discount.index', compact('ds'));
     }
+
 
     public function create()
     {
@@ -41,18 +48,18 @@ class PhieuGiamGiaController extends Controller
 
     public function update(Request $request, $id)
     {
-            $request->validate([
-                'ten_phieu' => 'required',
-                'phan_tram_giam' => 'required|numeric|min:1|max:100',
-                'so_luong' => 'required|integer|min:1',
-                'ngay_bat_dau' => 'required|date',
-                'ngay_ket_thuc' => 'required|date|after_or_equal:ngay_bat_dau',
-            ]);
+        $request->validate([
+            'ten_phieu' => 'required',
+            'phan_tram_giam' => 'required|numeric|min:1|max:100',
+            'so_luong' => 'required|integer|min:1',
+            'ngay_bat_dau' => 'required|date',
+            'ngay_ket_thuc' => 'required|date|after_or_equal:ngay_bat_dau',
+        ]);
 
-            $phieugiam = PhieuGiamGia::findOrFail($id); // <-- lấy thủ công bằng ID
-            $phieugiam->update($request->all());
+        $phieugiam = PhieuGiamGia::findOrFail($id);
+        $phieugiam->update($request->all());
 
-            return redirect()->route('phieugiam.index')->with('success', 'Cập nhật thành công');
+        return redirect()->route('phieugiam.index')->with('success', 'Cập nhật thành công');
     }
 
     public function destroy($id)

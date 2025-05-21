@@ -36,12 +36,12 @@
                         <td>
                             <a href="{{ route('products.readProduct', $product->product_id) }}">View</a> |
                             <a href="{{ route('products.updateProduct', $product->product_id) }}">Edit</a> |
-                            <form action="{{ route('products.delete', $product->product_id) }}" method="POST" onsubmit="return confirm('Bạn có chắc muốn xóa không?');">
+                            <form method="POST" action="{{ route('products.deleteProduct', $product->product_id) }}" class="form-delete">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Xóa</button>
+                                <button type="button" class="btn-delete"
+                                    data-product-name="{{ $product->product_name }}">Delete</button>
                             </form>
-
                         </td>
                     </tr>
                     @empty
@@ -51,111 +51,38 @@
                     @endforelse
                 </tbody>
             </table>
-            {!! $products->withQueryString()->links('pagination::bootstrap-5') !!}
+            {{ $products->links('phantrang') }}
+
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteButtons = document.querySelectorAll('.btn-delete');
+
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const form = this.closest('.form-delete');
+                    const productName = this.getAttribute('data-product-name');
+
+                    Swal.fire({
+                        title: 'Bạn có chắc chắn?',
+                        text: `Bạn có muốn xóa sản phẩm "${productName}" không?`,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Có',
+                        cancelButtonText: 'Hủy',
+                        reverseButtons: false
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </main>
-<style>
-    .product-list {
-        padding: 20px 0;
-        background-color: #f9f9f9;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    h2 {
-        font-size: 26px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .search-form {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .search-form input {
-        padding: 8px 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 250px;
-    }
-
-    .search-form button {
-        background-color: #007bff;
-        color: white;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .search-form button:hover {
-        background-color: #0056b3;
-    }
-
-    .btn-add {
-        display: inline-block;
-        margin-bottom: 20px;
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
-        border-radius: 4px;
-        text-decoration: none;
-    }
-
-    .btn-add:hover {
-        background-color: #218838;
-    }
-
-    .product-table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: white;
-    }
-
-    .product-table th, .product-table td {
-        padding: 12px;
-        border: 1px solid #dee2e6;
-        text-align: left;
-    }
-
-    .product-table th {
-        background-color: #007bff;
-        color: white;
-    }
-
-    .product-table td img {
-        border-radius: 4px;
-    }
-
-    .product-table td a {
-        color: #007bff;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    .product-table td a:hover {
-        text-decoration: underline;
-    }
-
-    .btn-delete {
-        background-color: #dc3545;
-        color: white;
-        padding: 5px 10px;
-        font-size: 13px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .btn-delete:hover {
-        background-color: #c82333;
-    }
-
-</style>
+<link rel="stylesheet" href="{{ asset('assets/css/product/list.css') }}">
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

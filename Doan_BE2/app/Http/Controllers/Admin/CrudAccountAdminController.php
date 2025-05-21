@@ -18,13 +18,13 @@ class CrudAccountAdminController extends Controller
         $query = Account_Admin::with('level');
 
         if ($search = $request->input('search')) {
-            $query->where(function($q) use ($search) {
+            $query->where(function ($q) use ($search) {
                 $q->where('full_name', 'like', "%$search%")
-                ->orWhere('email', 'like', "%$search%");
+                    ->orWhere('email', 'like', "%$search%");
             });
         }
+        $accounts = $query->paginate(5)->appends($request->only('search'));
 
-        $accounts = $query->orderBy('created_at', 'desc')->paginate(10);
 
         return view('crud_account_admin.list', compact('accounts'));
     }
@@ -135,7 +135,7 @@ class CrudAccountAdminController extends Controller
     public function deleteAccountAdmin($account_id)
     {
         $account = Account_Admin::findOrFail($account_id);
-        
+
         if ($account->avatar) {
             Storage::disk('public')->delete($account->avatar);
         }

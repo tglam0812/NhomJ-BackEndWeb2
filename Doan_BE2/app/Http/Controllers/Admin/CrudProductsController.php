@@ -1,18 +1,20 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Products;
 use App\Models\Category;
 use App\Models\Brand;
+
 class CrudProductsController extends Controller
 {
     /**
      * Hiển thị danh sách sản phẩm Admin
      */
-        public function listProduct(Request $request)
+    public function listProduct(Request $request)
     {
         $query = Products::with(['category', 'brand']);
 
@@ -20,8 +22,7 @@ class CrudProductsController extends Controller
             $query->where('product_name', 'like', "%$search%");
         }
 
-        $products = $query->orderBy('created_at', 'desc')
-                        ->paginate(10);
+        $products = $query->paginate(5)->appends($request->only('search'));
 
         return view('crud_product.list', compact('products'));
     }
@@ -32,7 +33,7 @@ class CrudProductsController extends Controller
     {
         $categories = Category::all();
         $brands = Brand::all();
-        return view('crud_product.create', compact('categories','brands'));
+        return view('crud_product.create', compact('categories', 'brands'));
     }
 
     /**
@@ -182,13 +183,13 @@ class CrudProductsController extends Controller
     public function deleteCategory($category_id)
     {
         $category = Category::findOrFail($category_id);
-    
+
         // Xóa toàn bộ sản phẩm thuộc danh mục
         $category->products()->delete();
-    
+
         // Xóa danh mục
         $category->delete();
-    
+
         return redirect()->route('categories.list')->with('success', 'Danh mục và các sản phẩm đã được xóa');
     }
 
@@ -211,5 +212,4 @@ class CrudProductsController extends Controller
 
         return redirect()->route('products.list')->with('success', 'Xóa sản phẩm thành công');
     }
-
 }
