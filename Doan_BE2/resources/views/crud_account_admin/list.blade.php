@@ -5,17 +5,11 @@
     <div class="container">
         <div class="row justify-content-between">
             <h2>Account List</h2>
-            
-            <!-- Form tìm kiếm -->
             <form method="GET" class="mb-3 d-flex search-form">
                 <input type="text" name="search" placeholder="Search accounts..." value="{{ request('search') }}">
                 <button type="submit">Search</button>
             </form>
-
-            <!-- Nút thêm tài khoản mới -->
             <a href="{{ route('accountAdmin.create') }}" class="btn-add">Add Account</a>
-
-            <!-- Bảng danh sách tài khoản -->
             <table class="account-table">
                 <thead>
                     <tr>
@@ -38,13 +32,14 @@
                         <td>{{ $account->level->level_name ?? 'N/A' }}</td>
                         <td>{{ $account->status == 1 ? 'Active' : 'Inactive' }}</td>
                         <td>
-                            <a href="{{ route('accountAdmin.read', $account->user_id) }}">View</a> |
+
                             <a href="{{ route('accountAdmin.update', $account->user_id) }}">Edit</a> |
-                            <form action="{{ route('accountAdmin.delete', $account->user_id) }}" method="POST" style="display:inline;">
+                            <form method="POST" action="{{ route('accountAdmin.delete', $account->user_id) }}" class="form-delete" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button onclick="return confirm('Delete {{ $account->full_name }}?')" class="btn-delete">Delete</button>
+                                <button type="button" class="btn-delete" data-account-name="{{ $account->full_name }}">Delete</button>
                             </form>
+
                         </td>
                     </tr>
                     @empty
@@ -54,111 +49,39 @@
                     @endforelse
                 </tbody>
             </table>
+            {{ $accounts->links('phantrang') }}
 
-            <!-- Phân trang -->
-            <div class="pagination">
-                {{ $accounts->links() }}
-            </div>
+
+
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteButtons = document.querySelectorAll('.btn-delete');
+
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const form = this.closest('.form-delete');
+                    const accountName = this.getAttribute('data-account-name');
+
+                    Swal.fire({
+                        title: 'Bạn có chắc chắn?',
+                        text: `Bạn có muốn xóa tài khoản "${accountName}" không?`,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Có',
+                        cancelButtonText: 'Hủy',
+                        reverseButtons: false // Có bên trái, Hủy bên phải
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </main>
-
-<style>
-    .account-list {
-        padding: 20px 0;
-        background-color: #f9f9f9;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    h2 {
-        font-size: 26px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .search-form {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .search-form input {
-        padding: 8px 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 250px;
-    }
-
-    .search-form button {
-        background-color: #007bff;
-        color: white;
-        padding: 8px 16px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .search-form button:hover {
-        background-color: #0056b3;
-    }
-
-    .btn-add {
-        display: inline-block;
-        margin-bottom: 20px;
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
-        border-radius: 4px;
-        text-decoration: none;
-    }
-
-    .btn-add:hover {
-        background-color: #218838;
-    }
-
-    .account-table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: white;
-    }
-
-    .account-table th, .account-table td {
-        padding: 12px;
-        border: 1px solid #dee2e6;
-        text-align: left;
-    }
-
-    .account-table th {
-        background-color: #007bff;
-        color: white;
-    }
-
-    .account-table td a {
-        color: #007bff;
-        text-decoration: none;
-        font-weight: 500;
-    }
-
-    .account-table td a:hover {
-        text-decoration: underline;
-    }
-
-    .btn-delete {
-        background-color: #dc3545;
-        color: white;
-        padding: 5px 10px;
-        font-size: 13px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .btn-delete:hover {
-        background-color: #c82333;
-    }
-</style>
+<link rel="stylesheet" href="{{ asset('assets/css/account/list.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

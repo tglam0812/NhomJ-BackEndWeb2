@@ -1,0 +1,76 @@
+ 
+.category-update {
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.category-update .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-update h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.category-update .form-group {
+    margin-bottom: 15px;
+}
+
+.category-update label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.category-update input[type="text"],
+.category-update textarea,
+.category-update select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.category-update textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.category-update .error {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.category-update button.btn-submit {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-update button.btn-submit:hover {
+    background-color: #2980b9;
+}
+
+.category-update button.btn-submit:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+ 

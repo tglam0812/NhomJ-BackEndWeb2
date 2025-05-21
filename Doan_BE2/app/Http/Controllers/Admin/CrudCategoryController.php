@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
@@ -18,9 +19,8 @@ class CrudCategoryController extends Controller
             $query->where('category_name', 'like', "%$search%");
         }
 
-        $categories = $query->paginate(10);
+        $categories = $query->paginate(10)->appends($request->only('search'));
         return view('crud_category.list', compact('categories'));
-
     }
 
     /**

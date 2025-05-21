@@ -1,6 +1,8 @@
 @extends('dashboard')
 
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <main class="supplier-list">
     <div class="container">
         <div class="row justify-content-between">
@@ -9,7 +11,10 @@
                 <input type="text" name="search" placeholder="Search suppliers..." value="{{ request('search') }}">
                 <button type="submit">Search</button>
             </form>
-            <a href="{{ route('suppliers.createSupplier') }}" class="btn-add">Add Supplier</a>
+            <div class="col-md-4 text-end">
+                <a href="{{ route('suppliers.createSupplier') }}" class="btn-add me-2">Add Supplier</a>
+            </div>
+
             <table class="supplier-table">
                 <thead>
                     <tr>
@@ -44,11 +49,7 @@
                     @endforelse
                 </tbody>
             </table>
-
-            <!-- Hiển thị phân trang -->
-            <div class="pagination">
-                {{ $suppliers->links() }}
-            </div>
+            {{ $suppliers->links('phantrang') }}
         </div>
     </div>
 </main>
@@ -116,7 +117,8 @@
         background-color: white;
     }
 
-    .supplier-table th, .supplier-table td {
+    .supplier-table th,
+    .supplier-table td {
         padding: 12px;
         border: 1px solid #dee2e6;
         text-align: left;
@@ -149,11 +151,5 @@
 
     .btn-delete:hover {
         background-color: #c82333;
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
     }
 </style>
