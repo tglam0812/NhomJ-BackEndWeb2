@@ -73,11 +73,14 @@
     }
 </style>
 
+@extends('layouts.app') \
+
+@section('content')
 <div class="category-update">
     <div class="container">
         <h2>Cập Nhật Phiếu Giảm Giá</h2>
 
-        <form action="{{ route('phieugiam.update', $pg->id) }}" method="POST">
+        <form action="{{ route('phieugiam.update', $pg->id) }}" method="POST" class="form-update">
             @csrf
             @method('PUT')
 
@@ -120,4 +123,17 @@
         </form>
     </div>
 </div>
+
+<script>
+    document.querySelector('.form-update').addEventListener('submit', function (e) {
+        const startDate = new Date(document.getElementById('ngay_bat_dau').value);
+        const endDate = new Date(document.getElementById('ngay_ket_thuc').value);
+
+        if (endDate <= startDate) {
+            e.preventDefault();
+            alert("Ngày kết thúc phải sau ngày bắt đầu!");
+        }
+    });
+</script>
 @endsection
+

@@ -130,5 +130,16 @@
         </form>
     </div>
 </div>
+<script>
+    document.querySelector('.form-category').addEventListener('submit', function (e) {
+        const startDate = new Date(document.getElementById('ngay_bat_dau').value);
+        const endDate = new Date(document.getElementById('ngay_ket_thuc').value);
+
+        if (endDate <= startDate) {
+            e.preventDefault();
+            alert("Ngày kết thúc phải sau ngày bắt đầu!");
+        }
+    });
+</script>
 @endsection
 
