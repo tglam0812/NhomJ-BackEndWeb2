@@ -32,8 +32,11 @@ class PhieuGiamGiaController extends Controller
             'phan_tram_giam' => 'required|numeric|min:1|max:100',
             'so_luong' => 'required|integer|min:1',
             'ngay_bat_dau' => 'required|date',
-            'ngay_ket_thuc' => 'required|date|after_or_equal:ngay_bat_dau',
+            'ngay_ket_thuc' => 'required|date|after:ngay_bat_dau', 
+        ],[
+            'ngay_ket_thuc.after' => 'Ngày kết thúc phải sau ngày bắt đầu.',
         ]);
+
 
         PhieuGiamGia::create($request->all());
 
@@ -48,13 +51,16 @@ class PhieuGiamGiaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+       $request->validate([
             'ten_phieu' => 'required',
             'phan_tram_giam' => 'required|numeric|min:1|max:100',
             'so_luong' => 'required|integer|min:1',
             'ngay_bat_dau' => 'required|date',
-            'ngay_ket_thuc' => 'required|date|after_or_equal:ngay_bat_dau',
+            'ngay_ket_thuc' => 'required|date|after:ngay_bat_dau', 
+    ], [
+            'ngay_ket_thuc.after' => 'Ngày kết thúc phải sau ngày bắt đầu.',
         ]);
+
 
         $phieugiam = PhieuGiamGia::findOrFail($id);
         $phieugiam->update($request->all());

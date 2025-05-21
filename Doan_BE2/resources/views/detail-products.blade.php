@@ -21,18 +21,18 @@
                     </span>
 
 @if(Auth::check())
-    <form action="{{ route('cart.add') }}" method="POST" class="mt-3 d-flex align-items-center gap-2">
-        @csrf
-        <input type="hidden" name="product_id" value="{{ $product->product_id }}">
-        <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px;">
-        <button type="submit" class="btn btn-outline-primary d-flex align-items-center gap-1">
-            <i class="zmdi zmdi-shopping-cart"></i> Thêm vào giỏ
-        </button>
-    </form>
+    <div class="w-100 d-flex justify-content-center mt-3">
+        <form action="{{ route('cart.add') }}" method="POST" style="display: flex; gap: 10px; align-items: center;">
+            @csrf
+            <input type="hidden" name="product_id" value="{{ $product->product_id }}">
+            <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px;">
+            <button type="submit" class="btn btn-outline-primary"><i class="zmdi zmdi-shopping-cart me-1"></i>  Thêm vào giỏ</button>
+        </form>
+    </div>
 @else
-    <a href="{{ route('login') }}" class="btn btn-warning mt-3">
-        <i class="zmdi zmdi-lock"></i> Đăng nhập để mua hàng
-    </a>
+    <div class="w-100 d-flex justify-content-center mt-3">
+        <a href="{{ route('login') }}" class="btn btn-warning">Đăng nhập để mua hàng</a>
+    </div>
 @endif
                 </div>
 

@@ -69,7 +69,7 @@ Thương Mại Điện Tử
 
             @php $coupon = session('coupon'); @endphp
 
-            <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-30 m-r-40 m-lr-0-xl p-lr-15-sm">
+            <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-30 m-r-20 m-lr-0-xl p-lr-15-sm">
                 <h4 class="mtext-109 cl2 p-b-30">Cart Totals</h4>
 
                 <div class="flex-w flex-t bor12 p-b-13">
