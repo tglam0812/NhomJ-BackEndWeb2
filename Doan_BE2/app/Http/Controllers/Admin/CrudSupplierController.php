@@ -62,8 +62,16 @@ class CrudSupplierController extends Controller
      */
     public function updateSupplier($supplier_id)
     {
-        $supplier = Supplier::findOrFail($supplier_id);
-        return view('crud_supplier.update', compact('supplier'));
+        // $supplier = Supplier::findOrFail($supplier_id);
+        // return view('crud_supplier.update', compact('supplier'));
+        $supplier = Supplier::find($supplier_id);
+
+    // Kiểm tra xem nhà cung cấp có tồn tại không
+    if (!$supplier) {
+        return redirect()->route('suppliers.list')->with('error', 'Nhà cung cấp không tồn tại');
+    }
+
+    return view('crud_supplier.update', compact('supplier'));
     }
 
      /**
@@ -72,22 +80,29 @@ class CrudSupplierController extends Controller
     public function postUpdateSupplier(Request $request, $supplier_id)
     {
        $request->validate([
-            'supplier_name' => 'required|string|max:255',
-            'supplier_email' =>  ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'], 
-            'supplier_description' => 'nullable|string',
-            'supplier_status' => 'required|boolean',
-        ]);
+        'supplier_name' => 'required|string|max:255',
+        'supplier_email' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'], 
+        'supplier_description' => 'nullable|string',
+        'supplier_status' => 'required|boolean',
+    ]);
 
-        $supplier = Supplier::findOrFail($supplier_id);
+    // Tìm nhà cung cấp
+    $supplier = Supplier::find($supplier_id);
 
-        $supplier->update([
-            'supplier_name' => $request->supplier_name,
-            'supplier_email' => $request->supplier_email,
-            'supplier_description' => $request->supplier_description,
-            'supplier_status' => $request->supplier_status,
-        ]);
+    // Kiểm tra xem nhà cung cấp có tồn tại không
+    if (!$supplier) {
+        return redirect()->route('suppliers.list')->with('error', 'Nhà cung cấp không tồn tại');
+    }
 
-        return redirect()->route('suppliers.list')->with('success', 'Cập nhật nhà cung cấp thành công');
+    // Cập nhật nhà cung cấp
+    $supplier->update([
+        'supplier_name' => $request->supplier_name,
+        'supplier_email' => $request->supplier_email,
+        'supplier_description' => $request->supplier_description,
+        'supplier_status' => $request->supplier_status,
+    ]);
+
+    return redirect()->route('suppliers.list')->with('success', 'Cập nhật nhà cung cấp thành công');
     }
     /**
      * Xem chi tiết nhà cung cấp
@@ -103,9 +118,19 @@ class CrudSupplierController extends Controller
      */
     public function deleteSupplier($supplier_id)
     {
-        //tim 
-        $supplier = Supplier::findOrFail($supplier_id);
-         // Xóa danh mục
+        // //tim 
+        // $supplier = Supplier::findOrFail($supplier_id);
+        //  // Xóa danh mục
+        // $supplier->delete();
+        // return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp và các sản phẩm đã được xóa');
+        $supplier = Supplier::find($supplier_id);
+
+        // Kiểm tra xem nhà cung cấp có tồn tại không
+        if (!$supplier) {
+            return redirect()->route('suppliers.list')->with('error', 'Nhà cung cấp không tồn tại');
+        }
+
+        // Xóa nhà cung cấp
         $supplier->delete();
         return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp và các sản phẩm đã được xóa');
     }
