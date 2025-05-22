@@ -376,14 +376,14 @@
             <div class="form-row">
                 <div class="form-group" style="--i: 3">
                     <label for="phone">Số Điện Thoại</label>
-                    <input class="form-control" type="tel" value="{{ $user->phone }}" placeholder="" id="number" name="phone">
+                    <input class="form-control" type="tel" value="{{ $user->phone }}" placeholder="+84" id="number" name="phone">
                     <span class="icon">📞</span>
                     <span class="tooltip" style="top: 100%; left: 0;">Số điện thoại liên lạc</span>
                     <span class="error-text" id="phone-error">Số điện thoại phải là 10 chữ số</span>
                 </div>
                 <div class="form-group" style="--i: 4">
                     <label for="dateOfBirth">Ngày Sinh</label>
-                    <input class="form-control" type="tel" value="{{ $user->date }}" placeholder="+84" id="number" name="date">
+                    <input class="form-control" type="tel" value="{{ $user->date }}" placeholder="" id="number" name="date">
                     <span class="icon">🎂</span>
                     <span class="tooltip" style="top: 100%; left: 0;">Ngày tháng năm sinh</span>
                     <span class="error-text" id="dateOfBirth-error">Ngày sinh không được để trống</span>
