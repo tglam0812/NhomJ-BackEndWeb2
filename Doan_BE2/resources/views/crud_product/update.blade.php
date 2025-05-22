@@ -67,7 +67,9 @@
 
             <div class="text-center">
                 <button type="submit" class="btn-submit">Cập nhật sản phẩm</button>
+
             </div>
+            <a href="{{ route('products.list') }}" class="btn btn-secondary">Trở về</a>
         </form>
     </div>
 </div>

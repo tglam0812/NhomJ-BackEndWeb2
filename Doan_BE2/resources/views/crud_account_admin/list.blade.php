@@ -18,7 +18,7 @@
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Level</th>
-                        <th>Status</th>
+                        
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -30,7 +30,7 @@
                         <td>{{ $account->email }}</td>
                         <td>{{ $account->phone }}</td>
                         <td>{{ $account->level->level_name ?? 'N/A' }}</td>
-                        <td>{{ $account->status == 1 ? 'Active' : 'Inactive' }}</td>
+                        
                         <td>
 
                             <a href="{{ route('accountAdmin.update', $account->user_id) }}">Edit</a> |
