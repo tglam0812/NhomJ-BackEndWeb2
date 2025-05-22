@@ -18,7 +18,7 @@
             <table class="supplier-table">
                 <thead>
                     <tr>
-                        <!-- <th>ID</th> -->
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th>Status</th>
@@ -28,7 +28,7 @@
                 <tbody>
                     @forelse($suppliers as $supplier)
                     <tr>
-                        <!-- <td>{{ $supplier->supplier_id }}</td> -->
+                        <td>{{ $supplier->supplier_id }}</td>
                         <td>{{ $supplier->supplier_name }}</td>
                         <td>{{ $supplier->supplier_description }}</td>
                         <td>{{ $supplier->supplier_status == 1 ? 'Active' : 'Inactive' }}</td>
