@@ -1,4 +1,3 @@
-```blade
 @extends('dashboard')
 
 @section('content')
@@ -197,4 +196,3 @@
 }
 </style>
 @endsection
-```
