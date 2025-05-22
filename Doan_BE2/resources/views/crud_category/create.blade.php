@@ -27,7 +27,7 @@
 
             <div class="form-actions">
                 <button type="submit" class="btn-save">Save Category</button>
-                <a href="{{ route('categories.list') }}" class="btn-cancel">Cancel</a>
+                <a href="{{ route('categories.list') }}" class="btn-cancel">Trở về</a>
             </div>
         </form>
     </div>

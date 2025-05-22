@@ -111,7 +111,7 @@
 
             <div class="form-actions">
                 <button type="submit" class="btn-save">Save Account</button>
-                <a href="{{ route('accountAdmin.list') }}" class="btn-cancel">Cancel</a>
+                <a href="{{ route('accountAdmin.list') }}" class="btn-cancel">Trở về</a>
             </div>
         </form>
     </div>

@@ -7,7 +7,7 @@
         <!-- Form sửa danh mục -->
         <form method="POST" action="{{ route('categories.update', $category->category_id) }}" class="category-form">
             @csrf
-            @method('PUT') <!-- Dùng PUT cho việc cập nhật -->
+            @method('PUT')
 
             <div class="form-group">
                 <label for="category_name">Category Name</label>
@@ -39,6 +39,7 @@
             <div class="form-group">
                 <button type="submit" class="btn-submit">Update Category</button>
             </div>
+            <a href="{{ route('categories.list') }}" class="btn btn-secondary">Trở về</a>
         </form>
     </div>
 </main>

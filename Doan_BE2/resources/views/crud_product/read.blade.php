@@ -6,7 +6,7 @@
     <table class="table">
         <tr>
             <td>
-            <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" width="60" alt="{{ $product->product_name }}">
+                <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" width="60" alt="{{ $product->product_name }}">
             </td>
             <td> <strong>Tên sản phẩm: </strong>{{ $product->product_name }}</td>
             <td>{{ number_format($product->product_price) }} VND</td>
@@ -17,6 +17,6 @@
             <td colspan="5"><strong>Description:</strong> {{ $product->product_description }}</td>
         </tr>
     </table>
-    <a href="{{ route('products.list') }}">Back to list</a>
+    <a href="{{ route('products.list') }}">Trở về</a>
 </div>
 @endsection

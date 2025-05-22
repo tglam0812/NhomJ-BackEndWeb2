@@ -96,7 +96,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Cập nhật</button>
-        <a href="{{ route('accountAdmin.list') }}" class="btn btn-secondary">Quay lại</a>
+        <a href="{{ route('accountAdmin.list') }}" class="btn btn-secondary">Trở về</a>
     </form>
 </div>
 <link rel="stylesheet" href="{{ asset('assets/css/account/update.css') }}">
