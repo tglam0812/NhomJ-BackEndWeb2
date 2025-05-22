@@ -103,7 +103,12 @@ class CrudProductsController extends Controller
      */
     public function updateProduct($product_id)
     {
-        $product = Products::findOrFail($product_id);
+        $product = Products::find($product_id);
+        if (!$product) {
+            return redirect()->route('products.list')
+                ->with('error', 'Sản phẩm đã bị xóa hoặc không còn tồn tại.');
+        }
+
         $categories = Category::all();
         $brands = Brand::all();
         return view('crud_product.update', compact('product', 'categories', 'brands'));
@@ -114,6 +119,13 @@ class CrudProductsController extends Controller
      */
     public function postUpdateProduct(Request $request, $product_id)
     {
+        $product = Products::find($product_id);
+
+        if (!$product) {
+            return redirect()->route('products.list')
+                ->with('error', 'Sản phẩm đã bị xóa. Vui lòng tải lại trang.');
+        }
+
         $request->validate([
             'product_name' => 'required|string|max:255',
             'product_price' => 'required|numeric|min:0',
@@ -173,9 +185,14 @@ class CrudProductsController extends Controller
      */
     public function readProduct($product_id)
     {
-        $product = Products::with('category')->findOrFail($product_id);
+        $product = Products::with('category')->find($product_id);
+        if (!$product) {
+            return redirect()->route('products.list')
+                ->with('error', 'Sản phẩm đã bị xóa hoặc không còn tồn tại. Vui lòng tải lại trang.');
+        }
         return view('crud_product.read', compact('product'));
     }
+
 
     /**
      * Xóa sản phẩm
@@ -198,7 +215,12 @@ class CrudProductsController extends Controller
      */
     public function deleteProduct($product_id)
     {
-        $product = Products::findOrFail($product_id);
+        $product = Products::find($product_id);
+
+        if (!$product) {
+            return redirect()->route('products.list')
+                ->with('error', 'Sản phẩm không còn tồn tại. Vui lòng tải lại trang.');
+        }
 
         // Xóa ảnh nếu có
         foreach ([1, 2, 3] as $i) {

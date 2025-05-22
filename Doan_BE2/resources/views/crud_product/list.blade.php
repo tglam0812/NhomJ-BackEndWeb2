@@ -50,6 +50,19 @@
                     </tr>
                     @endforelse
                 </tbody>
+                @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+                @endif
+
+                @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+
             </table>
             {{ $products->links('phantrang') }}
 
@@ -86,3 +99,12 @@
 <!-- SweetAlert2 CDN -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
+<!--Hiển thị thông báo trong 3 giây -->
+<script>
+    setTimeout(function() {
+        var alert = document.getElementById('alert-message');
+        if (alert) {
+            alert.style.display = 'none';
+        }
+    }, 3000); // thông báo trong 3 giât
+</script>

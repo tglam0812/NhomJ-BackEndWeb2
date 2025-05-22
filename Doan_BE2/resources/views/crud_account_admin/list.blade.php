@@ -18,7 +18,7 @@
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Level</th>
-                        
+
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -30,7 +30,7 @@
                         <td>{{ $account->email }}</td>
                         <td>{{ $account->phone }}</td>
                         <td>{{ $account->level->level_name ?? 'N/A' }}</td>
-                        
+
                         <td>
 
                             <a href="{{ route('accountAdmin.update', $account->user_id) }}">Edit</a> |
@@ -48,6 +48,26 @@
                     </tr>
                     @endforelse
                 </tbody>
+                @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+                @endif
+
+                @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+                @endif
+                <!--Hiển thị thông báo trong 3 giây -->
+                <script>
+                    setTimeout(function() {
+                        var alert = document.getElementById('alert-message');
+                        if (alert) {
+                            alert.style.display = 'none';
+                        }
+                    }, 3000); // thông báo trong 3 giât
+                </script>
             </table>
             {{ $accounts->links('phantrang') }}
 
