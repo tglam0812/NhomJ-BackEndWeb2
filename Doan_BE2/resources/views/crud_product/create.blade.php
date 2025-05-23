@@ -4,22 +4,37 @@
 <main class="product-create">
     <div class="container">
         <h2>Add New Product</h2>
+
+        {{-- Hiển thị lỗi validation --}}
+        @if ($errors->any())
+        <div class="alert alert-danger" style="margin-bottom: 20px;">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <form action="{{ route('products.postProduct') }}" method="POST" enctype="multipart/form-data" class="form-product">
             @csrf
 
             <div class="form-group">
                 <label for="product_name">Product Name <span class="text-danger">*</span></label>
-                <input type="text" id="product_name" name="product_name" value="{{ old('product_name') }}" required>
+                <input type="text" id="product_name" name="product_name"
+                    value="{{ old('product_name') }}" required>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="product_price">Price (VND) <span class="text-danger">*</span></label>
-                    <input type="number" id="product_price" name="product_price" min="0" value="{{ old('product_price') }}" required>
+                    <input type="number" id="product_price" name="product_price" min="0"
+                        value="{{ old('product_price') }}" required>
                 </div>
                 <div class="form-group">
                     <label for="product_qty">Quantity <span class="text-danger">*</span></label>
-                    <input type="number" id="product_qty" name="product_qty" min="0" value="{{ old('product_qty') }}" required>
+                    <input type="number" id="product_qty" name="product_qty" min="0"
+                        value="{{ old('product_qty') }}" required>
                 </div>
             </div>
 
@@ -29,7 +44,10 @@
                     <select name="category_id" id="category_id" required>
                         <option value="">-- Select Category --</option>
                         @foreach ($categories as $category)
-                        <option value="{{ $category->category_id }}">{{ $category->category_name }}</option>
+                        <option value="{{ $category->category_id }}"
+                            {{ old('category_id') == $category->category_id ? 'selected' : '' }}>
+                            {{ $category->category_name }}
+                        </option>
                         @endforeach
                     </select>
                 </div>
@@ -38,31 +56,28 @@
                     <select name="brand_id" id="brand_id">
                         <option value="">-- Select Brand --</option>
                         @foreach ($brands as $brand)
-                        <option value="{{ $brand->brand_id }}">{{ $brand->brand_name }}</option>
+                        <option value="{{ $brand->brand_id }}"
+                            {{ old('brand_id') == $brand->brand_id ? 'selected' : '' }}>
+                            {{ $brand->brand_name }}
+                        </option>
                         @endforeach
                     </select>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="products_description">Description</label>
-                <textarea name="products_description" id="products_description" rows="4">{{ old('products_description') }}</textarea>
+                <label for="product_description">Description</label>
+                <textarea name="product_description" id="product_description" rows="4">{{ old('product_description') }}</textarea>
             </div>
 
-            <div class="form-group">
-                <label>Status</label>
-                <div class="radio-group">
-                    <label><input type="radio" name="products_status" value="1" checked> Active</label>
-                    <label><input type="radio" name="products_status" value="0"> Inactive</label>
-                </div>
-            </div>
+            
 
             <div class="form-group">
                 <label>Images (JPG/PNG/GIF, max 2MB each)</label>
                 <div class="image-inputs">
-                    <input type="file" name="product_images_1">
-                    <input type="file" name="product_images_2">
-                    <input type="file" name="product_images_3">
+                    Ảnh 1<input type="file" name="product_images_1" accept=".jpg,.jpeg,.png,.gif">
+                    Ảnh 2<input type="file" name="product_images_2" accept=".jpg,.jpeg,.png,.gif">
+                    Ảnh 3<input type="file" name="product_images_3" accept=".jpg,.jpeg,.png,.gif">
                 </div>
             </div>
 
@@ -73,5 +88,6 @@
         </form>
     </div>
 </main>
+
 <link rel="stylesheet" href="{{ asset('assets/css/product/create.css') }}">
 @endsection

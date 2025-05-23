@@ -56,7 +56,12 @@ class CrudCategoryController extends Controller
      */
     public function updateCategory($category_id)
     {
-        $category = Category::findOrFail($category_id);
+        $category = Category::find($category_id);
+
+        if (!$category) {
+            return redirect()->route('categories.list')->with('error', 'Danh mục không tồn tại hoặc đã bị xóa');
+        }
+
         return view('crud_category.update', compact('category'));
     }
 
@@ -71,7 +76,11 @@ class CrudCategoryController extends Controller
             'category_status' => 'required|boolean',
         ]);
 
-        $category = Category::findOrFail($category_id);
+        $category = Category::find($category_id);
+
+        if (!$category) {
+            return redirect()->route('categories.list')->with('error', 'Không thể cập nhật vì danh mục đã bị xóa');
+        }
 
         $category->update([
             'category_name' => $request->category_name,
@@ -87,7 +96,12 @@ class CrudCategoryController extends Controller
      */
     public function readCategory($category_id)
     {
-        $category = Category::with('category')->findOrFail($category_id);
+        $category = Category::find($category_id);
+
+        if (!$category) {
+            return redirect()->route('categories.list')->with('error', 'Danh mục không tồn tại hoặc đã bị xóa');
+        }
+
         return view('crud_category.read', compact('category'));
     }
 
@@ -96,7 +110,11 @@ class CrudCategoryController extends Controller
      */
     public function deleteCategory($category_id)
     {
-        $category = Category::findOrFail($category_id);
+        $category = Category::find($category_id);
+
+        if (!$category) {
+            return redirect()->route('categories.list')->with('warning', 'Danh mục đã bị xóa trước đó');
+        }
 
         // Xóa toàn bộ sản phẩm thuộc danh mục
         $category->products()->delete();

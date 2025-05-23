@@ -51,13 +51,13 @@
                     @endforelse
                 </tbody>
                 @if (session('error'))
-                <div class="alert alert-danger">
+                <div class="alert alert-danger auto-dismiss">
                     {{ session('error') }}
                 </div>
                 @endif
 
                 @if (session('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-success auto-dismiss">
                     {{ session('success') }}
                 </div>
                 @endif
@@ -94,17 +94,18 @@
             });
         });
     </script>
+    <script>
+        setTimeout(function() {
+            document.querySelectorAll('.auto-dismiss').forEach(function(alert) {
+                alert.style.transition = 'opacity 0.5s ease';
+                alert.style.opacity = '0';
+                setTimeout(() => alert.remove(), 500);
+            });
+        }, 3000); // 3 giây sau bắt đầu ẩn
+    </script>
+
 </main>
 <link rel="stylesheet" href="{{ asset('assets/css/product/list.css') }}">
 <!-- SweetAlert2 CDN -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
-<!--Hiển thị thông báo trong 3 giây -->
-<script>
-    setTimeout(function() {
-        var alert = document.getElementById('alert-message');
-        if (alert) {
-            alert.style.display = 'none';
-        }
-    }, 3000); // thông báo trong 3 giât
-</script>
