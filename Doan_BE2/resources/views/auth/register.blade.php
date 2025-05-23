@@ -17,7 +17,7 @@
                                     @csrf
                                     <div class="mb-3">
                                         <input type="text" class="form-control @error('full_name') is-invalid @enderror" placeholder="Họ và tên" name="full_name" aria-label="Name" aria-describedby="email-addon">
-                                        @error('name')
+                                        @error('full_name')
                                             <span class="invalid-feedback text-xs" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
