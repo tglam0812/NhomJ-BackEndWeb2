@@ -241,6 +241,7 @@ class CrudProductsController extends Controller
         $path = public_path('assets/images/products');
 
         // Xóa ảnh khỏi thư mục
+        /*
         if ($product->product_images_1 && file_exists($path . '/' . $product->product_images_1)) {
             unlink($path . '/' . $product->product_images_1);
         }
@@ -250,6 +251,7 @@ class CrudProductsController extends Controller
         if ($product->product_images_3 && file_exists($path . '/' . $product->product_images_3)) {
             unlink($path . '/' . $product->product_images_3);
         }
+        */
 
         $product->delete();
 
