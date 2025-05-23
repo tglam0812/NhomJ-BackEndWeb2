@@ -55,17 +55,39 @@ class RegisterController extends Controller
     protected function validator(array $data)
 {
     // Định nghĩa regex để kiểm tra khoảng trắng (bao gồm cả U+0020 và U+3000)
-    $noWhitespace = function ($attribute, $value, $fail) {
-        if (preg_match('/[\s\x{3000}]/u', $value)) {
-            $fail('Trường :attribute không được chứa khoảng trắng.');
-        }
-    };
+    // $noWhitespace = function ($attribute, $value, $fail) {
+    //     if (preg_match('/[\s\x{3000}]/u', $value)) {
+    //         $fail('Trường :attribute không được chứa khoảng trắng.');
+    //     }
+    // };
 
-    return Validator::make($data, [
-        'full_name' => ['required', 'string', 'max:255', $noWhitespace],
-        'email' => ['required', 'string', 'email', 'max:255', 'unique:users', $noWhitespace],
-        'password' => ['required', 'string', 'min:6', 'confirmed', $noWhitespace],
-    ]);
+    // return Validator::make($data, [
+    //     'full_name' => ['required', 'string', 'max:255', $noWhitespace],
+    //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users', $noWhitespace],
+    //     'password' => ['required', 'string', 'min:6', 'confirmed', $noWhitespace],
+    // ]);
+    $data['full_name'] = rtrim($data['full_name']);
+
+$noWhitespace = function ($attribute, $value, $fail) {
+    if (preg_match('/[\s\x{3000}]/u', $value)) {
+        $fail("Trường :attribute không được chứa khoảng trắng.");
+    }
+};
+
+return Validator::make($data, [
+    'full_name' => ['required', 'string', 'max:255'], // Không áp dụng $noWhitespace
+    'email' => ['required', 'string', 'email', 'max:255', 'unique:users', $noWhitespace],
+    'password' => ['required', 'string', 'min:6', 'confirmed', $noWhitespace],
+], [
+    'full_name.required' => 'Tên đăng nhập sai hoặc quá dài',
+    'full_name.max' => 'Tên đăng nhập sai hoặc quá dài',
+    'email.required' => 'Email phải có @',
+    'email.email' => 'Email phải có @',
+    'email.unique' => 'Email này đã được đăng ký',
+    'password.required' => 'Password phải tối thiểu 6 ký tự và không được có khoảng trắng',
+    'password.min' => 'Password phải tối thiểu 6 ký tự và không được có khoảng trắng',
+    'password.confirmed' => 'Mật khẩu xác nhận không khớp',
+]);
 }
 
     /**
