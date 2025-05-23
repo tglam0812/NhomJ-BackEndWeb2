@@ -8,12 +8,21 @@
         <form method="POST" action="{{ route('categories.update', $category->category_id) }}" class="category-form">
             @csrf
             @method('PUT')
-
+            {{-- Hiển thị lỗi validation --}}
+            @if ($errors->any())
+            <div class="alert alert-danger" style="margin-bottom: 20px;">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="form-group">
                 <label for="category_name">Category Name</label>
                 <input type="text" id="category_name" name="category_name" value="{{ old('category_name', $category->category_name) }}" required>
                 @error('category_name')
-                    <div class="error">{{ $message }}</div>
+                <div class="error">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -21,7 +30,7 @@
                 <label for="category_description">Description</label>
                 <textarea id="category_description" name="category_description">{{ old('category_description', $category->category_description) }}</textarea>
                 @error('category_description')
-                    <div class="error">{{ $message }}</div>
+                <div class="error">{{ $message }}</div>
                 @enderror
             </div>
 
@@ -32,7 +41,7 @@
                     <option value="0" {{ old('category_status', $category->category_status) == 0 ? 'selected' : '' }}>Inactive</option>
                 </select>
                 @error('category_status')
-                    <div class="error">{{ $message }}</div>
+                <div class="error">{{ $message }}</div>
                 @enderror
             </div>
 

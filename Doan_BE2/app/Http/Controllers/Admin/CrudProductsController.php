@@ -260,7 +260,7 @@ class CrudProductsController extends Controller
         $product = Products::with('category')->find($product_id);
         if (!$product) {
             return redirect()->route('products.list')
-                ->with('error', 'Sản phẩm đã bị xóa hoặc không còn tồn tại. Vui lòng tải lại trang.');
+                ->with('error', 'Sản phẩm đã bị xóa hoặc không tồn tại.');
         }
         return view('crud_product.read', compact('product'));
     }
