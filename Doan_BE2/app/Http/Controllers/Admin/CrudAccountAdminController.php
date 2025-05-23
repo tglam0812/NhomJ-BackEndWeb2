@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class CrudAccountAdminController extends Controller
 {
-    /**
-     * Hiển thị danh sách tài khoản quản trị
-     */
     public function listAccountAdmin(Request $request)
     {
         $query = Account_Admin::with('level');
@@ -23,23 +20,18 @@ class CrudAccountAdminController extends Controller
                     ->orWhere('email', 'like', "%$search%");
             });
         }
-        $accounts = $query->paginate(5)->appends($request->only('search'));
 
+        $accounts = $query->paginate(5)->appends($request->only('search'));
 
         return view('crud_account_admin.list', compact('accounts'));
     }
-    /**
-     * Hiển thị form tạo tài khoản
-     */
+
     public function createAccountAdmin()
     {
         $levels = LevelUser::all();
         return view('crud_account_admin.create', compact('levels'));
     }
 
-    /**
-     * Xử lý tạo tài khoản
-     */
     public function postAccountAdmin(Request $request)
     {
         $request->validate([
@@ -74,19 +66,17 @@ class CrudAccountAdminController extends Controller
         return redirect()->route('accountAdmin.list')->with('success', 'Tài khoản đã được tạo thành công');
     }
 
-    /**
-     * Hiển thị form sửa tài khoản
-     */
     public function updateAccountAdmin($account_id)
     {
-        $account = Account_Admin::findOrFail($account_id);
+        $account = Account_Admin::find($account_id);
+        if (!$account) {
+            return redirect()->route('accountAdmin.list')->with('error', 'Tài khoản không còn tồn tại.');
+        }
+
         $levels = LevelUser::all();
         return view('crud_account_admin.update', compact('account', 'levels'));
     }
 
-    /**
-     * Xử lý cập nhật tài khoản
-     */
     public function postUpdateAccountAdmin(Request $request, $account_id)
     {
         $request->validate([
@@ -101,7 +91,11 @@ class CrudAccountAdminController extends Controller
             'status' => 'required|boolean',
         ]);
 
-        $account = Account_Admin::findOrFail($account_id);
+        $account = Account_Admin::find($account_id);
+        if (!$account) {
+            return redirect()->route('accountAdmin.list')->with('error', 'Tài khoản không còn tồn tại.');
+        }
+
         $avatar = $request->file('avatar') ? $request->file('avatar')->store('avatars', 'public') : $account->avatar;
 
         $account->update([
@@ -120,21 +114,22 @@ class CrudAccountAdminController extends Controller
         return redirect()->route('accountAdmin.list')->with('success', 'Tài khoản đã được cập nhật thành công');
     }
 
-    /**
-     * Xem chi tiết tài khoản
-     */
     public function readAccountAdmin($account_id)
     {
-        $account = Account_Admin::with('level')->findOrFail($account_id);
+        $account = Account_Admin::with('level')->find($account_id);
+        if (!$account) {
+            return redirect()->route('accountAdmin.list')->with('error', 'Tài khoản không còn tồn tại.');
+        }
+
         return view('crud_account_admin.read', compact('account'));
     }
 
-    /**
-     * Xóa tài khoản
-     */
     public function deleteAccountAdmin($account_id)
     {
-        $account = Account_Admin::findOrFail($account_id);
+        $account = Account_Admin::find($account_id);
+        if (!$account) {
+            return redirect()->route('accountAdmin.list')->with('error', 'Tài khoản đã bị xóa hoặc không tồn tại.');
+        }
 
         if ($account->avatar) {
             Storage::disk('public')->delete($account->avatar);

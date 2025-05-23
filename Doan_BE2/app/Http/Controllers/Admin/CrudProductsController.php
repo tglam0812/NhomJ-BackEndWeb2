@@ -41,83 +41,83 @@ class CrudProductsController extends Controller
      * Xử lý form tạo sản phẩm
      */
     public function postProduct(Request $request)
-{
-    $request->validate([
-        'product_name' => ['required', 'string', 'max:30', 'regex:/^[\pL\s\d\-]+$/u'],
-        'product_price' => 'required|numeric|min:0|max:99999999',
-        'product_qty' => 'required|integer|min:0|max:100000',
-        'category_id' => 'required|exists:category,category_id',
-        'brand_id' => 'nullable|exists:brand,brand_id',
-        'product_description' => 'nullable|string|max:2000',
-        'product_images_1' => 'required|image|mimes:jpg,jpeg,png,gif|max:2048',
-        'product_images_2' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-        'product_images_3' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-    ], [
-        'product_name.required' => 'Vui lòng nhập tên sản phẩm.',
-        'product_name.max' => 'Tên sản phẩm không được vượt quá 30 ký tự.',
-        'product_name.regex' => 'Tên sản phẩm chỉ được chứa chữ, số, khoảng trắng và dấu gạch ngang.',
-        'product_price.required' => 'Vui lòng nhập giá sản phẩm.',
-        'product_price.numeric' => 'Giá sản phẩm phải là số hợp lệ.',
-        'product_price.min' => 'Giá sản phẩm phải lớn hơn hoặc bằng 0.',
-        'product_price.max' => 'Giá sản phẩm không được vượt quá 99.999.999.',
-        'product_qty.required' => 'Vui lòng nhập số lượng.',
-        'product_qty.integer' => 'Số lượng phải là số nguyên.',
-        'product_qty.min' => 'Số lượng phải lớn hơn hoặc bằng 0.',
-        'product_qty.max' => 'Số lượng không được vượt quá 100000.',
-        'category_id.required' => 'Vui lòng chọn danh mục sản phẩm.',
-        'category_id.exists' => 'Danh mục sản phẩm không tồn tại.',
-        'brand_id.exists' => 'Thương hiệu không tồn tại.',
-        'product_description.max' => 'Mô tả sản phẩm không được vượt quá 2000 ký tự.',
-        'product_images_1.required' => 'Ảnh 1 là bắt buộc.',
-        'product_images_1.image' => 'File ảnh 1 không hợp lệ.',
-        'product_images_1.mimes' => 'Ảnh 1 phải có định dạng jpg, jpeg, png hoặc gif.',
-        'product_images_1.max' => 'Ảnh 1 không được vượt quá 2MB.',
-        'product_images_2.image' => 'File ảnh 2 không hợp lệ.',
-        'product_images_2.mimes' => 'Ảnh 2 phải có định dạng jpg, jpeg, png hoặc gif.',
-        'product_images_2.max' => 'Ảnh 2 không được vượt quá 2MB.',
-        'product_images_3.image' => 'File ảnh 3 không hợp lệ.',
-        'product_images_3.mimes' => 'Ảnh 3 phải có định dạng jpg, jpeg, png hoặc gif.',
-        'product_images_3.max' => 'Ảnh 3 không được vượt quá 2MB.',
-    ]);
+    {
+        $request->validate([
+            'product_name' => ['required', 'string', 'max:30', 'regex:/^[\pL\s\d\-]+$/u'],
+            'product_price' => 'required|numeric|min:0|max:99999999',
+            'product_qty' => 'required|integer|min:0|max:100000',
+            'category_id' => 'required|exists:category,category_id',
+            'brand_id' => 'nullable|exists:brand,brand_id',
+            'product_description' => 'nullable|string|max:2000',
+            'product_images_1' => 'required|image|mimes:jpg,jpeg,png,gif|max:4048',
+            'product_images_2' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
+            'product_images_3' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
+        ], [
+            'product_name.required' => 'Vui lòng nhập tên sản phẩm.',
+            'product_name.max' => 'Tên sản phẩm không được vượt quá 30 ký tự.',
+            'product_name.regex' => 'Tên sản phẩm chỉ được chứa chữ, số, khoảng trắng và dấu gạch ngang.',
+            'product_price.required' => 'Vui lòng nhập giá sản phẩm.',
+            'product_price.numeric' => 'Giá sản phẩm phải là số hợp lệ.',
+            'product_price.min' => 'Giá sản phẩm phải lớn hơn hoặc bằng 0.',
+            'product_price.max' => 'Giá sản phẩm không được vượt quá 99.999.999.',
+            'product_qty.required' => 'Vui lòng nhập số lượng.',
+            'product_qty.integer' => 'Số lượng phải là số nguyên.',
+            'product_qty.min' => 'Số lượng phải lớn hơn hoặc bằng 0.',
+            'product_qty.max' => 'Số lượng không được vượt quá 100000.',
+            'category_id.required' => 'Vui lòng chọn danh mục sản phẩm.',
+            'category_id.exists' => 'Danh mục sản phẩm không tồn tại.',
+            'brand_id.exists' => 'Thương hiệu không tồn tại.',
+            'product_description.max' => 'Mô tả sản phẩm không được vượt quá 2000 ký tự.',
+            'product_images_1.required' => 'Ảnh 1 là bắt buộc.',
+            'product_images_1.image' => 'File ảnh 1 không hợp lệ.',
+            'product_images_1.mimes' => 'Ảnh 1 phải có định dạng jpg, jpeg, png hoặc gif.',
+            'product_images_1.max' => 'Ảnh 1 không được vượt quá 4MB.',
+            'product_images_2.image' => 'File ảnh 2 không hợp lệ.',
+            'product_images_2.mimes' => 'Ảnh 2 phải có định dạng jpg, jpeg, png hoặc gif.',
+            'product_images_2.max' => 'Ảnh 2 không được vượt quá 4MB.',
+            'product_images_3.image' => 'File ảnh 3 không hợp lệ.',
+            'product_images_3.mimes' => 'Ảnh 3 phải có định dạng jpg, jpeg, png hoặc gif.',
+            'product_images_3.max' => 'Ảnh 3 không được vượt quá 4MB.',
+        ]);
 
-    $path = public_path('assets/images/products');
+        $path = public_path('assets/images/products');
 
-    $image1 = null;
-    $image2 = null;
-    $image3 = null;
+        $image1 = null;
+        $image2 = null;
+        $image3 = null;
 
-    if ($request->hasFile('product_images_1')) {
-        $file1 = $request->file('product_images_1');
-        $image1 = time() . '_1_' . $file1->getClientOriginalName();
-        $file1->move($path, $image1);
+        if ($request->hasFile('product_images_1')) {
+            $file1 = $request->file('product_images_1');
+            $image1 = time() . '_1_' . $file1->getClientOriginalName();
+            $file1->move($path, $image1);
+        }
+
+        if ($request->hasFile('product_images_2')) {
+            $file2 = $request->file('product_images_2');
+            $image2 = time() . '_2_' . $file2->getClientOriginalName();
+            $file2->move($path, $image2);
+        }
+
+        if ($request->hasFile('product_images_3')) {
+            $file3 = $request->file('product_images_3');
+            $image3 = time() . '_3_' . $file3->getClientOriginalName();
+            $file3->move($path, $image3);
+        }
+
+        Products::create([
+            'product_name' => $request->product_name,
+            'product_price' => $request->product_price,
+            'product_qty' => $request->product_qty,
+            'category_id' => $request->category_id,
+            'brand_id' => $request->brand_id,
+            'product_description' => $request->product_description,
+            'product_images_1' => $image1,
+            'product_images_2' => $image2,
+            'product_images_3' => $image3,
+        ]);
+
+        return redirect()->route('products.list')->with('success', 'Sản phẩm đã được thêm thành công');
     }
-
-    if ($request->hasFile('product_images_2')) {
-        $file2 = $request->file('product_images_2');
-        $image2 = time() . '_2_' . $file2->getClientOriginalName();
-        $file2->move($path, $image2);
-    }
-
-    if ($request->hasFile('product_images_3')) {
-        $file3 = $request->file('product_images_3');
-        $image3 = time() . '_3_' . $file3->getClientOriginalName();
-        $file3->move($path, $image3);
-    }
-
-    Products::create([
-        'product_name' => $request->product_name,
-        'product_price' => $request->product_price,
-        'product_qty' => $request->product_qty,
-        'category_id' => $request->category_id,
-        'brand_id' => $request->brand_id,
-        'product_description' => $request->product_description,
-        'product_images_1' => $image1,
-        'product_images_2' => $image2,
-        'product_images_3' => $image3,
-    ]);
-
-    return redirect()->route('products.list')->with('success', 'Sản phẩm đã được thêm thành công');
-}
 
 
     /**

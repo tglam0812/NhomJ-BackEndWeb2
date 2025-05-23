@@ -49,25 +49,29 @@
                     @endforelse
                 </tbody>
                 @if (session('error'))
-                <div class="alert alert-danger">
+                <div id="alert-message" class="alert alert-danger">
                     {{ session('error') }}
                 </div>
                 @endif
 
                 @if (session('success'))
-                <div class="alert alert-success">
+                <div id="alert-message" class="alert alert-success">
                     {{ session('success') }}
                 </div>
                 @endif
-                <!--Hiển thị thông báo trong 3 giây -->
+
+                <!-- Tự động ẩn thông báo sau 3 giây -->
                 <script>
                     setTimeout(function() {
-                        var alert = document.getElementById('alert-message');
+                        const alert = document.getElementById('alert-message');
                         if (alert) {
-                            alert.style.display = 'none';
+                            alert.style.transition = 'opacity 0.5s ease';
+                            alert.style.opacity = '0';
+                            setTimeout(() => alert.remove(), 500); // Xóa khỏi DOM sau khi ẩn
                         }
-                    }, 3000); // thông báo trong 3 giât
+                    }, 3000);
                 </script>
+
             </table>
             {{ $accounts->links('phantrang') }}
 

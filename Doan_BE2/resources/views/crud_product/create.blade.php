@@ -70,14 +70,14 @@
                 <textarea name="product_description" id="product_description" rows="4">{{ old('product_description') }}</textarea>
             </div>
 
-            
+
 
             <div class="form-group">
-                <label>Images (JPG/PNG/GIF, max 2MB each)</label>
+                <label>Images (JPG/PNG/GIF, max 4MB each)</label>
                 <div class="image-inputs">
-                    Ảnh 1<input type="file" name="product_images_1" accept=".jpg,.jpeg,.png,.gif">
-                    Ảnh 2<input type="file" name="product_images_2" accept=".jpg,.jpeg,.png,.gif">
-                    Ảnh 3<input type="file" name="product_images_3" accept=".jpg,.jpeg,.png,.gif">
+                    Ảnh sản phẩm 1<input type="file" name="product_images_1" accept=".jpg,.jpeg,.png,.gif">
+                    Ảnh sản phẩm 2<input type="file" name="product_images_2" accept=".jpg,.jpeg,.png,.gif">
+                    Ảnh sản phẩm 3<input type="file" name="product_images_3" accept=".jpg,.jpeg,.png,.gif">
                 </div>
             </div>
 
