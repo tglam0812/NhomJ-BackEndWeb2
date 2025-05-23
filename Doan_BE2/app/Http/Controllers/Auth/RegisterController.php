@@ -53,13 +53,20 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'full_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-        ]);
-    }
+{
+    // Định nghĩa regex để kiểm tra khoảng trắng (bao gồm cả U+0020 và U+3000)
+    $noWhitespace = function ($attribute, $value, $fail) {
+        if (preg_match('/[\s\x{3000}]/u', $value)) {
+            $fail('Trường :attribute không được chứa khoảng trắng.');
+        }
+    };
+
+    return Validator::make($data, [
+        'full_name' => ['required', 'string', 'max:255', $noWhitespace],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users', $noWhitespace],
+        'password' => ['required', 'string', 'min:6', 'confirmed', $noWhitespace],
+    ]);
+}
 
     /**
      * Create a new user instance after a valid registration.
