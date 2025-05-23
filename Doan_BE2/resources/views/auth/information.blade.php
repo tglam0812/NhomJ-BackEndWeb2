@@ -376,7 +376,7 @@
             <div class="form-row">
                 <div class="form-group" style="--i: 3">
                     <label for="phone">Số Điện Thoại</label>
-                    <input class="form-control" type="tel" value="{{ $user->phone }}" placeholder="+84" id="number" name="phone">
+                    <input class="form-control" type="tel" value="{{ $user->phone }}" placeholder="" id="number" name="phone">
                     <span class="icon">📞</span>
                     <span class="tooltip" style="top: 100%; left: 0;">Số điện thoại liên lạc</span>
                     <span class="error-text" id="phone-error">Số điện thoại phải là 10 chữ số</span>
