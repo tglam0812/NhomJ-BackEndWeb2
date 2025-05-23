@@ -15,7 +15,7 @@ class ProductsTableSeeder extends Seeder
     public function run(): void
     {
         $totalCategories = DB::table('category')->count();
-        $images = ['xiaomi11Tpro_2.jpg', 'samsum23_3.jpg', 'tainghexiaomse_1.jpg', 'laptophpvictus15_1.jpg'];
+        $images = ['xiaominote13pro.jpg', 'xiaomi14pro_1.jpg', 'samsung22_1.jpg', 'xiaomimixfox3_1.jpg'];
 
         for ($i = 1; $i <= 100; $i++) {
             DB::table('products')->insert([

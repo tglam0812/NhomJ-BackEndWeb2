@@ -1,65 +1,19 @@
 @extends('dashboard')
 
 @section('content')
-<style>
-    .product-detail {
-        display: flex;
-        gap: 30px;
-        padding: 20px;
-        align-items: flex-start;
-        max-width: 900px;
-        margin: auto;
-    }
-
-    .product-detail img {
-        width: 300px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-info {
-        flex: 1;
-        font-size: 16px;
-    }
-
-    .product-info table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .product-info th {
-        text-align: left;
-        padding-right: 10px;
-        white-space: nowrap;
-        width: 150px;
-        color: #333;
-    }
-
-    .product-info td {
-        padding-bottom: 10px;
-        color: #000;
-    }
-
-    .back-link {
-        display: block;
-        margin-top: 20px;
-        text-decoration: none;
-        color: #6c63ff;
-        font-weight: bold;
-    }
-
-    .back-link:hover {
-        text-decoration: underline;
-    }
-</style>
-
 <div class="product-detail">
-    <!-- Ảnh -->
-    <div>
-        <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" alt="Ảnh sản phẩm">
+    <div class="image-stack" id="imageStack">
+        @foreach ([$product->product_images_1, $product->product_images_2, $product->product_images_3] as $img)
+        @if ($img)
+        <img src="{{ asset('assets/images/products/' . $img) }}" alt="Ảnh sản phẩm">
+        @endif
+        @endforeach
+
+        <button class="btn-nav btn-prev" id="prevBtn" aria-label="Previous image">&#8249;</button>
+        <button class="btn-nav btn-next" id="nextBtn" aria-label="Next image">&#8250;</button>
+        <button class="btn-zoom" id="zoomBtn">Phóng to</button>
     </div>
 
-    <!-- Thông tin -->
     <div class="product-info">
         <table>
             <tr>
@@ -90,10 +44,83 @@
                 <th>Mô tả sản phẩm</th>
                 <td>{{ $product->product_description }}</td>
             </tr>
-
         </table>
 
         <a href="{{ route('products.list') }}" class="back-link">← Trở về danh sách</a>
     </div>
 </div>
+
+<!-- Modal hiển thị ảnh phóng to -->
+<div class="zoom-modal" id="zoomModal">
+    <img src="" alt="Phóng to ảnh" id="zoomedImage">
+</div>
+
+<script>
+    const images = document.querySelectorAll('#imageStack img');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const zoomBtn = document.getElementById('zoomBtn');
+    const zoomModal = document.getElementById('zoomModal');
+    const zoomedImage = document.getElementById('zoomedImage');
+    let currentIndex = 0;
+    let intervalId;
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.remove('active');
+        });
+        images[index].classList.add('active');
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+    function startAutoSlide() {
+        intervalId = setInterval(nextImage, 3000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(intervalId);
+    }
+
+    function zoomCurrentImage() {
+        const activeImage = document.querySelector('#imageStack img.active');
+        if (activeImage) {
+            zoomedImage.src = activeImage.src;
+            zoomModal.classList.add('active');
+        }
+    }
+
+    zoomModal.addEventListener('click', () => {
+        zoomModal.classList.remove('active');
+        zoomedImage.src = '';
+    });
+
+    if (images.length > 0) {
+        showImage(currentIndex);
+        startAutoSlide();
+
+        nextBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            nextImage();
+            startAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            prevImage();
+            startAutoSlide();
+        });
+
+        zoomBtn.addEventListener('click', zoomCurrentImage);
+    }
+</script>
+<link rel="stylesheet" href="{{ asset('assets/css/product/read.css') }}">
 @endsection
