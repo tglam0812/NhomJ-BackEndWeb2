@@ -54,27 +54,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
 {
-    // Định nghĩa regex để kiểm tra khoảng trắng (bao gồm cả U+0020 và U+3000)
-    // $noWhitespace = function ($attribute, $value, $fail) {
-    //     if (preg_match('/[\s\x{3000}]/u', $value)) {
-    //         $fail('Trường :attribute không được chứa khoảng trắng.');
-    //     }
-    // };
+        $trimWhitespace = function ($value) 
+        {
+        return rtrim($value, " \t\n\r\0\x0B\x{3000}");
+        }   ;
 
-    // return Validator::make($data, [
-    //     'full_name' => ['required', 'string', 'max:255', $noWhitespace],
-    //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users', $noWhitespace],
-    //     'password' => ['required', 'string', 'min:6', 'confirmed', $noWhitespace],
-    // ]);
-    $data['full_name'] = rtrim($data['full_name']);
-
-$noWhitespace = function ($attribute, $value, $fail) {
-    if (preg_match('/[\s\x{3000}]/u', $value)) {
+// Áp dụng trim cho các trường cần thiết
+        $data['full_name'] = $trimWhitespace($data['full_name']);
+        $data['email'] = $trimWhitespace($data['email']);
+        $data['password'] = $trimWhitespace($data['password']);
+        $noWhitespace = function ($attribute, $value, $fail) {
+        if (preg_match('/[\s\x{3000}]/u', $value)) {
         $fail("Trường :attribute không được chứa khoảng trắng.");
     }
 };
 
-return Validator::make($data, [
+    return Validator::make($data, [
     'full_name' => ['required', 'string', 'max:255'], // Không áp dụng $noWhitespace
     'email' => ['required', 'string', 'email', 'max:255', 'unique:users', $noWhitespace],
     'password' => ['required', 'string', 'min:6', 'confirmed', $noWhitespace],
