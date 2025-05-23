@@ -4,6 +4,25 @@
 <div class="category-update">
     <div class="container">
         <h2>Update Products</h2>
+
+        {{-- Thông báo thành công --}}
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+
+        {{-- Thông báo lỗi validation --}}
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul style="margin: 0; padding-left: 20px;">
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <form action="{{ route('products.postUpdateProduct', ['id' => $product->product_id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
@@ -27,7 +46,6 @@
                 <label for="product_description">Mô tả</label>
                 <textarea id="product_description" name="product_description" class="form-control" rows="4">{{ old('product_description', $product->product_description) }}</textarea>
             </div>
-
 
             <div class="form-group">
                 <label for="category_id">Danh mục</label>
@@ -67,7 +85,6 @@
 
             <div class="text-center">
                 <button type="submit" class="btn-submit">Cập nhật sản phẩm</button>
-
             </div>
             <a href="{{ route('products.list') }}" class="btn btn-secondary">Trở về</a>
         </form>

@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Products;
 use App\Models\Category;
-use App\Models\Brand; 
+use App\Models\Brand;
 use App\Models\Wishlist;
 use App\Models\Review;
 
@@ -44,10 +45,14 @@ class TrangChuController extends Controller
         return view('index', compact('products', 'categories', 'userWishlistIds', 'wishlistCount'));
     }
 
-    
+
     public function detailProduct($product_id)
     {
-        $product = Products::with(['category', 'brand'])->findOrFail($product_id);
+        $product = Products::with(['category', 'brand'])->find($product_id);
+
+        if (!$product) {
+            return redirect()->route('home')->with('error', 'Sản phẩm không tồn tại hoặc đã bị xóa.');
+        }
 
         $reviews = Review::select('review_id', 'user_id', 'product_id', 'rating', 'comment', 'created_at')
             ->where('product_id', $product_id)
@@ -57,6 +62,7 @@ class TrangChuController extends Controller
 
         return view('detail-products', compact('product', 'reviews'));
     }
+
     public function contact()
     {
         return view('contact');
@@ -66,6 +72,4 @@ class TrangChuController extends Controller
     {
         return view('about');
     }
-
-
 }
