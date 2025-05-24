@@ -24,5 +24,9 @@ class Bill extends Model
     {
         return $this->hasMany(\App\Models\BillDetail::class, 'bill_id', 'bill_id');
     }
+   public function coupon()
+    {
+        return $this->belongsTo(PhieuGiamGia::class, 'phieu_giam_id');
+    }
     
 }

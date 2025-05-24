@@ -17,49 +17,65 @@ class CheckoutController extends Controller
         return view('checkout.index', compact('cart', 'coupon'));
     }
 
-    public function store(Request $request)
+   public function store(Request $request)
     {
-        
+        //dd(session('coupon'));
         $request->validate([
-            'fullname' => 'required|string|max:255',
-            'phone'    => 'required|string|max:20',
-            'address'  => 'required|string|max:500',
+            'fullname' => ['required', 'regex:/^[a-zA-ZÀ-ỹ\s]+$/u', 'max:255'],
+            'phone'    => ['required', 'regex:/^0[0-9]{8,10}$/'],
+            'address'  => ['required', 'string', 'max:500'],
+        ], [
+            'fullname.required' => 'Vui lòng nhập họ và tên.',
+            'fullname.regex'    => 'Họ tên chỉ được chứa chữ cái và khoảng trắng.',
+            'phone.required'    => 'Vui lòng nhập số điện thoại.',
+            'phone.regex'       => 'Số điện thoại phải bắt đầu bằng 0 và có 9-11 chữ số.',
+            'address.required'  => 'Vui lòng nhập địa chỉ.',
         ]);
 
-        $cart = session('cart', []);
-        $coupon = session('coupon');
         if (!Auth::check()) {
             return redirect()->route('login')->with('error', 'Bạn cần đăng nhập để thanh toán.');
         }
-        $user = Auth::user();
+
+        $user   = Auth::user();
+        $cart   = session('cart', []);
+        $coupon = session('coupon');
 
         // Tính toán
         $totalQty    = collect($cart)->sum('quantity');
-        $totalAmount = collect($cart)->sum(fn($item) => $item['product_price'] * $item['quantity']);
-
+        $subtotal    = collect($cart)->sum(fn($item) => $item['product_price'] * $item['quantity']);
+        
         $couponId = null;
-        if ($coupon && isset($coupon['id'])) {
-            $couponId = $coupon['id']; // lưu ID
-            $giam = ($coupon['loai_giam'] == 'percent')
-                ? $totalAmount * $coupon['gia_tri'] / 100
+        $discount = 0;
+
+        if ($coupon) {
+            if (isset($coupon['id'])) {
+                $couponId = $coupon['id'];
+            }
+
+            $discount = ($coupon['loai_giam'] === 'percent')
+                ? $subtotal * $coupon['gia_tri'] / 100
                 : $coupon['gia_tri'];
-            $totalAmount -= $giam;
+
+            // Không để totalAmount âm
+            if ($discount > $subtotal) $discount = $subtotal;
         }
+
+        $totalAmount = $subtotal - $discount;
+
         // Tạo bill
         $bill = Bill::create([
-            'user_id' => $user->user_id,
-            'total_qty'     => $totalQty,
-            'total_amount'  => $totalAmount,
-            'date_invoice'  => now(),
-            'status'        => 'pending',
-            'note'          => $request->fullname . ' | ' . $request->phone . ' | ' . $request->address,
-            'phieu_giam_id' => $couponId,
+            'user_id'        => $user->user_id,
+            'total_qty'      => $totalQty,
+            'total_amount'   => $totalAmount,
+            'date_invoice'   => now(),
+            'status'         => 'pending',
+            'note'           => $request->fullname . ' | ' . $request->phone . ' | ' . $request->address,
+            'phieu_giam_id'  => $couponId,
         ]);
 
-        // ✅ Lưu chi tiết đơn hàng đúng cách
         foreach ($cart as $item) {
             BillDetail::create([
-                'bill_id'    => $bill->bill_id, // hoặc $bill->id nếu primary key là id
+                'bill_id'    => $bill->bill_id,
                 'cart_id'    => null,
                 'product_id' => $item['product_id'],
                 'quantity'   => $item['quantity'],
@@ -67,7 +83,7 @@ class CheckoutController extends Controller
             ]);
         }
 
-        // Lưu đơn hàng gần nhất để hiển thị cho người dùng
+        // Lưu đơn hàng vào session để hiển thị ra giao diện order success
         session(['last_order' => [
             'fullname' => $request->fullname,
             'phone'    => $request->phone,
@@ -77,16 +93,17 @@ class CheckoutController extends Controller
             'total'    => $totalAmount,
         ]]);
 
-        // Xóa giỏ hàng và mã giảm giá khỏi session
+        // Clear cart và coupon
         session()->forget('cart');
         session()->forget('coupon');
 
         return redirect()->route('order.success');
     }
+
     public function success()
     {
         $order = session('last_order');
-        
+
         if (!$order) {
             return redirect('/'); // nếu không có order thì quay lại trang chủ
         }
@@ -94,25 +111,19 @@ class CheckoutController extends Controller
         return view('checkout.success', compact('order'));
     }
 
-    //xem chi tiết đơn hàng
     public function showOrder($id)
     {
-        $bill = \App\Models\Bill::with('details.product')->findOrFail($id);
+        $bill = \App\Models\Bill::with(['details.product', 'coupon'])->findOrFail($id);
         return view('checkout.order_detail', compact('bill'));
     }
 
     public function myOrders()
     {
-        //dd(Auth::id());
-        //$userId = Auth::id(); 
-
         $bills = \App\Models\Bill::where('user_id', Auth::id())
                     ->orderByDesc('date_invoice')
-                    ->with('details.product')
+                    ->with(['details.product', 'coupon'])
                     ->get();
 
         return view('checkout.orders', compact('bills'));
-
-         //dd($bills);
     }
 }
