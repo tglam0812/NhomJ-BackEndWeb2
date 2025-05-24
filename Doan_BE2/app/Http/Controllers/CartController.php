@@ -75,7 +75,7 @@ class CartController extends Controller
 
     //áp dụng phiếu giảm giá
 
-            public function applyCoupon(Request $request)
+        public function applyCoupon(Request $request)
     {
         $maPhieu = $request->input('ma_phieu');
 
@@ -88,14 +88,18 @@ class CartController extends Controller
             return redirect()->back()->with('error', 'Mã giảm giá không hợp lệ hoặc đã hết hạn.');
         }
 
-        session(['coupon' => [
-            'ma_phieu' => $coupon->ten_phieu,
-            'loai_giam' => 'percent',
-            'gia_tri' => $coupon->phan_tram_giam,
-        ]]);
+        session([
+            'coupon' => [
+                'id'        => $coupon->id,                   
+                'ma_phieu'  => $coupon->ten_phieu,
+                'loai_giam' => 'percent',
+                'gia_tri'   => $coupon->phan_tram_giam,
+            ]
+        ]);
 
-        return redirect()->back()->with('success', 'Áp dụng thành công!');
+        return redirect()->back()->with('success', 'Áp dụng mã giảm giá thành công!');
     }
+
     
 
     //xóa phiếu giảm giá trong cart

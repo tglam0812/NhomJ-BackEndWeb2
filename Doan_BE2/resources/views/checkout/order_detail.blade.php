@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('main-content')
 <div class="container mt-5 pt-5">
     <div class="bg-light p-4 shadow rounded">
@@ -26,16 +27,37 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php $subtotal = 0; @endphp
                     @foreach ($bill->details as $item)
+                        @php
+                            $lineTotal = $item->price * $item->quantity;
+                            $subtotal += $lineTotal;
+                        @endphp
                         <tr>
                             <td>{{ $item->product->product_name ?? 'Sản phẩm đã xóa' }}</td>
                             <td>{{ $item->quantity }}</td>
                             <td>{{ number_format($item->price) }} VND</td>
-                            <td>{{ number_format($item->price * $item->quantity) }} VND</td>
+                            <td>{{ number_format($lineTotal) }} VND</td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+        </div>
+
+        @php
+            $discount = 0;
+        @endphp
+
+        <div class="mt-4">
+            <p><i class="bi bi-calculator"></i> <strong>Tạm tính:</strong> {{ number_format($subtotal) }} VND</p>
+
+            @if ($bill->coupon)
+                @php
+                    $discount = round($subtotal * $bill->coupon->phan_tram_giam / 100);
+                @endphp
+                <p><i class="bi bi-tag"></i> <strong>Phiếu giảm giá:</strong> {{ $bill->coupon->ten_phieu }} ({{ $bill->coupon->phan_tram_giam }}%)</p>
+                <p><i class="bi bi-patch-check-fill text-success"></i> <strong>Số tiền được giảm:</strong> <span class="text-success">-{{ number_format($discount) }} VND</span></p>
+            @endif
         </div>
 
         <div class="d-flex justify-content-end mt-4">

@@ -168,6 +168,9 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById('discount').innerText = '-' + formatVND(discount);
         }
         document.getElementById('total').innerText = formatVND(total);
+
+        //
+         autoRemoveCouponIfNoneChecked();
     }
 
     // Load trạng thái checkbox đã lưu trước đó
@@ -193,7 +196,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Gọi khi trang load
-    updateCartSummary();
+        updateCartSummary();
+
+    // 👇 CHẶN ÁP DỤNG KHI CHƯA TICK
+    const applyCouponForm = document.querySelector('form[action="{{ route('cart.applyCoupon') }}"]');
+    if (applyCouponForm) {
+        applyCouponForm.addEventListener('submit', function (e) {
+            const checked = document.querySelectorAll('.product-checkbox:checked');
+            if (checked.length === 0) {
+                e.preventDefault();
+                alert("⚠️ Vui lòng chọn ít nhất một sản phẩm để áp dụng mã giảm giá.");
+            }
+        });
+    }
+    // Hủy mã giảm giá nếu không còn sản phẩm nào được chọn
+    function autoRemoveCouponIfNoneChecked() {
+        const hasChecked = document.querySelectorAll('.product-checkbox:checked').length > 0;
+        if (!hasChecked && coupon) {
+            fetch("{{ route('cart.removeCoupon') }}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({})
+            }).then(() => location.reload());
+        }
+    }
 });
 </script>
 
