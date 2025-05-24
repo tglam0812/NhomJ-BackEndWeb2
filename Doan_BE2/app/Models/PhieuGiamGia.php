@@ -17,7 +17,7 @@ class PhieuGiamGia extends Model
 ];
     public $timestamps = false;
 
-    // Quan hệ 1-n: Một phiếu giảm giá có thể thuộc nhiều hóa đơn
+    
     public function bills()
     {
         return $this->hasMany(Bill::class, 'phieu_giam_id', 'id');

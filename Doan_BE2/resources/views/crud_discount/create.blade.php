@@ -95,32 +95,50 @@
 
             <div class="form-group">
                 <label for="ten_phieu">Tên phiếu *</label>
-                <input type="text" name="ten_phieu" id="ten_phieu" required>
+                <input type="text" name="ten_phieu" id="ten_phieu" value="{{ old('ten_phieu') }}" required>
+                @error('ten_phieu')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="phan_tram_giam">Phần trăm giảm (%) *</label>
-                <input type="number" name="phan_tram_giam" id="phan_tram_giam" min="1" max="100" required>
+                <input type="number" name="phan_tram_giam" id="phan_tram_giam" min="1" max="100" value="{{ old('phan_tram_giam') }}" required>
+                @error('phan_tram_giam')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="so_luong">Số lượng *</label>
-                <input type="number" name="so_luong" id="so_luong" min="1" required>
+                <input type="number" name="so_luong" id="so_luong" min="1" value="{{ old('so_luong') }}" required>
+                @error('so_luong')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="ngay_bat_dau">Ngày bắt đầu *</label>
-                <input type="date" name="ngay_bat_dau" id="ngay_bat_dau" required>
+                <input type="date" name="ngay_bat_dau" id="ngay_bat_dau" value="{{ old('ngay_bat_dau') }}" required>
+                @error('ngay_bat_dau')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="ngay_ket_thuc">Ngày kết thúc *</label>
-                <input type="date" name="ngay_ket_thuc" id="ngay_ket_thuc" required>
+                <input type="date" name="ngay_ket_thuc" id="ngay_ket_thuc" value="{{ old('ngay_ket_thuc') }}" required>
+                @error('ngay_ket_thuc')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="mo_ta">Mô tả</label>
-                <textarea name="mo_ta" id="mo_ta" rows="3"></textarea>
+                <textarea name="mo_ta" id="mo_ta" rows="3">{{ old('mo_ta') }}</textarea>
+                @error('mo_ta')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-actions">
@@ -130,6 +148,7 @@
         </form>
     </div>
 </div>
+
 <script>
     document.querySelector('.form-category').addEventListener('submit', function (e) {
         const startDate = new Date(document.getElementById('ngay_bat_dau').value);
