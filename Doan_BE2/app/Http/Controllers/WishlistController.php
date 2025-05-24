@@ -84,7 +84,7 @@ class WishlistController extends Controller
     }
 
 
-    private function updateWishlistCountSession()
+    public function updateWishlistCountSession()
     {
         $count = Wishlist::where('user_id', Auth::id())->count();
         session(['wishlist_count' => $count]);

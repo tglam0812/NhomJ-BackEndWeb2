@@ -51,6 +51,12 @@ class TrangChuController extends Controller
         $product = Products::with(['category', 'brand'])->find($product_id);
 
         if (!$product) {
+            $user_id = Auth::id();
+            Wishlist::where('user_id', $user_id)    
+                    ->where('product_id', $product_id)
+                    ->delete();
+            $count = Wishlist::where('user_id', Auth::id())->count();
+            session(['wishlist_count' => $count]);
             return redirect()->route('home')->with('error', 'Sản phẩm không tồn tại hoặc đã bị xóa.');
         }
 
