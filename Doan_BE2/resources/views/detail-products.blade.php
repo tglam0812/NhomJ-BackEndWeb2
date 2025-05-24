@@ -187,7 +187,6 @@ function openEditReviewModal(id, rating, comment) {
     document.getElementById('edit-rating').value = rating;
     document.getElementById('edit-comment').value = comment;
 
-    // Gán action cho form
     form.action = '/review/' + id;
 
     const modal = new bootstrap.Modal(document.getElementById('editReviewModal'));
@@ -196,7 +195,6 @@ function openEditReviewModal(id, rating, comment) {
 </script>
 
 <style>
-    /* Đảm bảo modal hiển thị nổi lên trên */
     .modal-backdrop {
         z-index: 1040 !important;
     }
@@ -205,7 +203,6 @@ function openEditReviewModal(id, rating, comment) {
         z-index: 1055 !important;
     }
 
-    /* Các thành phần header không đè lên modal */
     .navbar, header, nav, .wrap-menu-desktop {
         z-index: 1000 !important;
     }
