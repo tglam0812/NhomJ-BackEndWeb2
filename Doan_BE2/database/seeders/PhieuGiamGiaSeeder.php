@@ -52,7 +52,7 @@ class PhieuGiamGiaSeeder extends Seeder
                 'updated_at' => Carbon::parse('2025-05-13 15:45:56'),
             ],
             [
-                'ten_phieu' => 'Black Fridayyyyyyyyyyyyyyyyy',
+                'ten_phieu' => 'Black Fridayy',
                 'phan_tram_giam' => 40,
                 'so_luong' => 200,
                 'ngay_bat_dau' => '2025-11-25',

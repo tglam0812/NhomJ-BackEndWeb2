@@ -1,4 +1,4 @@
-@extends('dashboard')
+
 
 @section('content')
 <style>
@@ -73,9 +73,8 @@
     }
 </style>
 
-@extends('layouts.app') \
+@extends('layouts.app') 
 
-@section('content')
 <div class="category-update">
     <div class="container">
         <h2>Cập Nhật Phiếu Giảm Giá</h2>
@@ -88,35 +87,53 @@
                 <label for="ten_phieu">Tên phiếu *</label>
                 <input type="text" name="ten_phieu" id="ten_phieu"
                        value="{{ old('ten_phieu', $pg->ten_phieu) }}" required>
+                @error('ten_phieu')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="phan_tram_giam">Phần trăm giảm (%) *</label>
                 <input type="number" name="phan_tram_giam" id="phan_tram_giam"
                        value="{{ old('phan_tram_giam', $pg->phan_tram_giam) }}" min="1" max="100" required>
+                @error('phan_tram_giam')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="so_luong">Số lượng *</label>
                 <input type="number" name="so_luong" id="so_luong"
                        value="{{ old('so_luong', $pg->so_luong) }}" min="1" required>
+                @error('so_luong')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="ngay_bat_dau">Ngày bắt đầu *</label>
                 <input type="date" name="ngay_bat_dau" id="ngay_bat_dau"
                        value="{{ old('ngay_bat_dau', \Carbon\Carbon::parse($pg->ngay_bat_dau)->format('Y-m-d')) }}" required>
+                @error('ngay_bat_dau')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="ngay_ket_thuc">Ngày kết thúc *</label>
                 <input type="date" name="ngay_ket_thuc" id="ngay_ket_thuc"
                        value="{{ old('ngay_ket_thuc', \Carbon\Carbon::parse($pg->ngay_ket_thuc)->format('Y-m-d')) }}" required>
+                @error('ngay_ket_thuc')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="mo_ta">Mô tả</label>
-                <textarea name="mo_ta" id="mo_ta">{{ old('mo_ta', $pg->mo_ta) }}</textarea>
+                <textarea name="mo_ta" id="mo_ta" rows="3">{{ old('mo_ta', $pg->mo_ta) }}</textarea>
+                @error('mo_ta')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <button type="submit" class="btn-submit">Cập nhật</button>

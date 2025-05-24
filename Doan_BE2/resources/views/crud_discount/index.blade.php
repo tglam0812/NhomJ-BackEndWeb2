@@ -9,10 +9,23 @@
 
         <a href="{{ route('phieugiam.create') }}" class="btn-add">➕ Thêm phiếu mới</a>
 
+        {{-- Thông báo thành công --}}
         @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle-fill"></i> {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
         @endif
 
+        {{-- Thông báo lỗi --}}
+        @if(session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        @endif
+
+        {{-- Danh sách --}}
         @if($ds->isEmpty())
         <div class="alert alert-warning text-center">Hiện chưa có phiếu giảm giá nào.</div>
         @else
@@ -51,11 +64,14 @@
                 @endforeach
             </tbody>
         </table>
+
+        {{-- Phân trang --}}
         {{ $ds->links('phantrang') }}
         @endif
     </div>
 </main>
 @endsection
+
 
 <style>
     .discount-list {
