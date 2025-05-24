@@ -48,7 +48,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .card + .card {
+        .card+.card {
             margin-top: 20px;
         }
 
@@ -110,8 +110,8 @@
                 <a href="{{ route('products.list') }}">Products</a>
                 <a href="{{ route('categories.list') }}">Category</a>
                 <a href="{{ route('accountAdmin.list') }}">User</a>
-                <a href="{{ route('phieugiam.index') }}">Giam gia</a>
-                <a href="{{ route('admin.messages') }}">Phản hồi KH</a>
+                <a href="{{ route('phieugiam.index') }}">Discount</a>
+                <a href="{{ route('admin.messages') }}">Feedback</a>
                 <a href="{{ route('suppliers.list') }}">Supplier</a>
             </div>
             <div style="flex-shrink: 0;">
