@@ -15,23 +15,29 @@ class ContactManageController extends Controller
         $messages = ContactMessage::with('user')
                     ->whereNull('reply')
                     ->latest()
-                    ->get();
+                    ->paginate(3);
 
         return view('admin.messages', compact('messages'));
     }
 
 
     public function reply(Request $request, $id)
-    {
+    {   
         $request->validate([
             'reply' => 'required|string|max:1000'
         ]);
 
-        $message = ContactMessage::findOrFail($id);
+        $message = ContactMessage::find($id);
+
+        if (!$message) {
+            return back()->with('error', 'Phản hồi không tồn tại hoặc đã bị xoá.');
+        }
+
         $message->reply = $request->reply;
         $message->save();
 
         return back()->with('success', 'Phản hồi đã được gửi thành công.');
     }
+
 }
 

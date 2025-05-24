@@ -28,9 +28,24 @@ class ContactController extends Controller
         $messages = \App\Models\ContactMessage::with('user')
             ->where('user_id', Auth::id())
             ->latest()
-            ->get();
+            ->paginate(2);
 
         return view('feedbacks', compact('messages'));
     }
+
+
+    public function destroy($id)
+    {
+        $message = ContactMessage::find($id);
+
+        if (!$message || $message->user_id !== Auth::id()) {
+            return back()->with('error', 'Không tìm thấy phản hồi hoặc bạn không có quyền xóa.');
+        }
+
+        $message->delete();
+
+        return back()->with('success', 'Phản hồi đã được xóa.');
+    }
+
 }
 

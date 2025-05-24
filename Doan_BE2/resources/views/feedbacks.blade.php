@@ -23,5 +23,9 @@
     @empty
         <p class="text-muted">Bạn chưa gửi câu hỏi nào.</p>
     @endforelse
+    
+		<div class="flex-c-m flex-w w-full p-t-45">
+			{{ $messages->links() }}
+		</div>
 </div>
 @endsection
