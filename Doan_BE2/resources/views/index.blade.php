@@ -379,7 +379,7 @@ Thương Mại Điện Tử
 		</div>
 	</div>
 </section>
-<!-- Banner -->
+<!-- Banner -->	
 <!-- Product -->
 @endsection
 @section('custom-scripts')
