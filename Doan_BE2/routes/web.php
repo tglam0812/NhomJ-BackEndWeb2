@@ -149,6 +149,7 @@ Route::get('/my-feedbacks', [ContactController::class, 'feedbacks'])->name('feed
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/messages', [ContactManageController::class, 'index'])->name('admin.messages');
     Route::post('/messages/{id}/reply', [ContactManageController::class, 'reply'])->name('admin.messages.reply');
+    Route::delete('/contact/delete/{id}', [ContactController::class, 'destroy'])->name('contact.delete');
 });
 
 //

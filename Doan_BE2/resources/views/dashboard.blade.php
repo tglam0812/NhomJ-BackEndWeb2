@@ -122,6 +122,7 @@
 
     <div class="container">
         @yield('content')
+        @yield('custom-scripts')
     </div>
 </body>
 

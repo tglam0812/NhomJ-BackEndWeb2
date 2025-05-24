@@ -215,6 +215,3 @@ function openEditReviewModal(id, rating, comment) {
 }
 </style>
 @endsection
-
-
-
