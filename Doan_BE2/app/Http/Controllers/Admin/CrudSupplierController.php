@@ -132,6 +132,6 @@ class CrudSupplierController extends Controller
 
         // Xóa nhà cung cấp
         $supplier->delete();
-        return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp và các sản phẩm đã được xóa');
+        return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp đã được xóa');
     }
 }
