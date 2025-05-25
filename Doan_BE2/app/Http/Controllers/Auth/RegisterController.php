@@ -52,39 +52,48 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+   protected function validator(array $data)
 {
-        $trimWhitespace = function ($value) 
-        {
+    // Trim các ký tự khoảng trắng mở rộng
+    $trimWhitespace = function ($value) {
         return rtrim($value, " \t\n\r\0\x0B\x{3000}");
-        }   ;
+    };
 
-// Áp dụng trim cho các trường cần thiết
-        $data['full_name'] = $trimWhitespace($data['full_name']);
-        $data['email'] = $trimWhitespace($data['email']);
-        $data['password'] = $trimWhitespace($data['password']);
-        $noWhitespace = function ($attribute, $value, $fail) {
+    // Áp dụng trim cho các trường
+    $data['full_name'] = $trimWhitespace($data['full_name']);
+    $data['email'] = $trimWhitespace($data['email']);
+    $data['password'] = $trimWhitespace($data['password']);
+
+    // Rule: Không được chứa khoảng trắng
+    $noWhitespace = function ($attribute, $value, $fail) {
         if (preg_match('/[\s\x{3000}]/u', $value)) {
-        $fail("Trường :attribute không được chứa khoảng trắng.");
-    }
-};
+            $fail("Trường :attribute không được chứa khoảng trắng.");
+        }
+    };
+
+    // Rule: Chỉ cho phép chữ cái và số cho full_name
+    $alphaNumOnly = function ($attribute, $value, $fail) {
+        if (!preg_match('/^[a-zA-Z0-9]+$/', $value)) {
+            $fail("Trường :attribute chỉ được chứa chữ cái và số.");
+        }
+    };
 
     return Validator::make($data, [
-    'full_name' => ['required', 'string', 'max:255'], // Không áp dụng $noWhitespace
-    'email' => ['required', 'string', 'email', 'max:255', 'unique:users', $noWhitespace],
-    'password' => ['required', 'string', 'min:6', 'confirmed', $noWhitespace],
-], [
-    'full_name.required' => 'Tên đăng nhập sai hoặc quá dài',
-    'full_name.max' => 'Tên đăng nhập sai hoặc quá dài',
-    'email.required' => 'Email phải có @',
-    'email.email' => 'Email phải có @',
-    'email.unique' => 'Email này đã được đăng ký',
-    'password.required' => 'Password phải tối thiểu 6 ký tự và không được có khoảng trắng',
-    'password.min' => 'Password phải tối thiểu 6 ký tự và không được có khoảng trắng',
-    'password.confirmed' => 'Mật khẩu xác nhận không khớp',
-]);
+        'full_name' => ['required', 'string', 'max:255', $alphaNumOnly],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users', $noWhitespace],
+        'password' => ['required', 'string', 'min:6', 'confirmed', $noWhitespace],
+    ], [
+        'full_name.required' => 'Tên đăng nhập sai hoặc quá dài',
+        'full_name.max' => 'Tên đăng nhập sai hoặc quá dài',
+        'full_name.*' => 'Tên đăng nhập chỉ được sử dụng chữ cái và số',
+        'email.required' => 'Email phải có @',
+        'email.email' => 'Email phải có @',
+        'email.unique' => 'Email này đã được đăng ký',
+        'password.required' => 'Password phải tối thiểu 6 ký tự và không được có khoảng trắng',
+        'password.min' => 'Password phải tối thiểu 6 ký tự và không được có khoảng trắng',
+        'password.confirmed' => 'Mật khẩu xác nhận không khớp',
+    ]);
 }
-
     /**
      * Create a new user instance after a valid registration.
      *
