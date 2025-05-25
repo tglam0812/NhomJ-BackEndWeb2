@@ -1,13 +1,26 @@
 @extends('dashboard')
-
 @section('content')
 <main class="supplier-update">
     <div class="container">
         <h2>Update Supplier</h2>
+        @if (session('error'))
+            <div class="error-message">
+                {{ session('error') }}
+            </div>
+        @endif
+        @if (session('success'))
+            <div class="success-message">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <!-- Form sửa danh mục -->
         <form method="POST" action="{{ route('suppliers.update', $supplier->supplier_id) }}" class="supplier-form">
             @csrf
             @method('PUT') <!-- Dùng PUT cho việc cập nhật -->
+
+            <!-- Trường ẩn để lưu giá trị updated_at -->
+            <input type="hidden" name="updated_at" value="{{ $supplier->updated_at->toDateTimeString() }}">
 
             <div class="form-group">
                 <label for="supplier_name">Supplier Name</label>
@@ -17,7 +30,6 @@
                 @enderror
             </div>
 
-            
             <div class="form-group">
                 <label for="supplier_email">Supplier Email</label>
                 <input type="text" id="supplier_email" name="supplier_email" value="{{ old('supplier_email', $supplier->supplier_email) }}" required>
@@ -52,6 +64,8 @@
     </div>
 </main>
 @endsection
+
+
 <style>
 .supplier-update {
     padding: 20px;
@@ -105,6 +119,24 @@
     color: #e74c3c;
     font-size: 12px;
     margin-top: 5px;
+}
+
+.supplier-update .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.supplier-update .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .supplier-update button.btn-submit {
