@@ -8,18 +8,29 @@ use App\Models\PhieuGiamGia;
 
 class CartController extends Controller
 {
-    //thêm phiếu giảm giá mới
     public function addToCart(Request $request)
     {
         $productId = $request->input('product_id');
-        $quantity = $request->input('quantity', 1);
+        $quantity = (int) $request->input('quantity', 1);
 
         $product = Products::findOrFail($productId);
 
         $cart = session()->get('cart', []);
 
+        $currentQuantity = isset($cart[$productId]) ? $cart[$productId]['quantity'] : 0;
+        $newQuantity = $currentQuantity + $quantity;
+
+        if ($product->product_qty <= $currentQuantity) {
+            return redirect()->back()->with('error', 'Bạn đã thêm tối đa số lượng có sẵn (' . $product->product_qty . ' sản phẩm).');
+        }
+
+        if ($newQuantity > $product->product_qty) {
+            $remaining = max(0, $product->product_qty - $currentQuantity);
+            return redirect()->back()->with('error', 'Số lượng vượt quá tồn kho. Chỉ còn ' . $remaining . ' sản phẩm.');
+        }
+
         if (isset($cart[$productId])) {
-            $cart[$productId]['quantity'] += $quantity;
+            $cart[$productId]['quantity'] = $newQuantity;
         } else {
             $cart[$productId] = [
                 'product_id'    => $product->product_id,
@@ -35,10 +46,8 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Đã thêm vào giỏ hàng!');
     }
 
-
     public function viewCart()
     {
-
         $cart = session()->get('cart', []);
         return view('shoping-cart', compact('cart'));
     }
@@ -53,13 +62,19 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Đã xóa sản phẩm khỏi giỏ hàng.');
     }
-    //sửa lại phiếu giảm giá
+
     public function update(Request $request, $id)
     {
         $quantity = (int) $request->input('quantity');
 
         if ($quantity < 1) {
             return redirect()->back()->with('error', 'Số lượng phải lớn hơn hoặc bằng 1.');
+        }
+
+        $product = Products::findOrFail($id);
+
+        if ($quantity > $product->product_qty) {
+            return redirect()->back()->with('error', 'Số lượng vượt quá tồn kho. Chỉ còn ' . $product->product_qty . ' sản phẩm.');
         }
 
         $cart = session()->get('cart', []);
@@ -73,9 +88,7 @@ class CartController extends Controller
         return redirect()->back()->with('error', 'Sản phẩm không tồn tại trong giỏ hàng.');
     }
 
-    //áp dụng phiếu giảm giá
-
-            public function applyCoupon(Request $request)
+    public function applyCoupon(Request $request)
     {
         $maPhieu = $request->input('ma_phieu');
 
@@ -88,21 +101,21 @@ class CartController extends Controller
             return redirect()->back()->with('error', 'Mã giảm giá không hợp lệ hoặc đã hết hạn.');
         }
 
-        session(['coupon' => [
-            'ma_phieu' => $coupon->ten_phieu,
-            'loai_giam' => 'percent',
-            'gia_tri' => $coupon->phan_tram_giam,
-        ]]);
+        session([
+            'coupon' => [
+                'id'        => $coupon->id,
+                'ma_phieu'  => $coupon->ten_phieu,
+                'loai_giam' => 'percent',
+                'gia_tri'   => $coupon->phan_tram_giam,
+            ]
+        ]);
 
-        return redirect()->back()->with('success', 'Áp dụng thành công!');
+        return redirect()->back()->with('success', 'Áp dụng mã giảm giá thành công!');
     }
-    
 
-    //xóa phiếu giảm giá trong cart
-        public function removeCoupon()
+    public function removeCoupon()
     {
         session()->forget('coupon');
         return redirect()->back()->with('success', 'Đã hủy mã giảm giá.');
     }
-
 }

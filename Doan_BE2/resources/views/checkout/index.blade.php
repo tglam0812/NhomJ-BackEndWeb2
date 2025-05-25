@@ -3,33 +3,45 @@
 @section('title', 'Thanh toán')
 
 @section('main-content')
-@extends('layouts.master')
-
-@section('main-content')
 <div class="container checkout-container">
     <h4>Thông tin người nhận hàng</h4>
+
     <form action="{{ route('checkout.store') }}" method="POST">
         @csrf
+
         <div class="mb-3">
             <label for="fullname">Họ và tên:</label>
-            <input type="text" name="fullname" id="fullname" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label for="phone">Số điện thoại:</label>
-            <input type="text" name="phone" id="phone" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label for="address">Địa chỉ:</label>
-            <textarea name="address" id="address" rows="3" class="form-control" required></textarea>
+            <input type="text" name="fullname" id="fullname" class="form-control" value="{{ old('fullname') }}" required>
+            @error('fullname')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
         </div>
 
-        <button type="submit">Xác nhận đặt hàng</button>
+        <div class="mb-3">
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') }}" required>
+            @error('phone')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="address">Địa chỉ:</label>
+            <textarea name="address" id="address" rows="3" class="form-control" required>{{ old('address') }}</textarea>
+            @error('address')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+
+        <button type="submit" class="btn btn-dark w-100">Xác nhận đặt hàng</button>
     </form>
 </div>
 @endsection
+
+@section('custom-css')
 <style>
     .checkout-container {
-        margin-top: 80px; /* đẩy form cách navbar */
+        margin-top: 80px;
         max-width: 600px;
         background-color: #fff;
         padding: 30px;
@@ -71,4 +83,4 @@
         background-color: #444;
     }
 </style>
-
+@endsection

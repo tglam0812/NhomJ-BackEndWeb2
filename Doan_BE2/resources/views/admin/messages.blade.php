@@ -8,7 +8,11 @@
         <h3 class="mb-4">Danh sách phản hồi từ khách hàng</h3>
 
         @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
+            <div class="alert alert-success auto-dismiss">{{ session('success') }}</div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger auto-dismiss">{{ session('error') }}</div>
         @endif
 
         @forelse ($messages as $item)
@@ -32,8 +36,25 @@
             <p class="text-muted">Hiện chưa có phản hồi nào từ khách hàng.</p>
         @endforelse
     </div>
+    {{ $messages->links('phantrang') }}
 </main>
 @endsection
+
+@section('custom-scripts')
+<script>
+    console.log("Custom script chạy");
+    setTimeout(() => {
+        document.querySelectorAll('.auto-dismiss').forEach(el => {
+            el.style.transition = 'opacity 0.5s ease';
+            el.style.opacity = '0';
+            setTimeout(() => el.remove(), 500);
+        });
+    }, 3000);
+</script>
+@endsection
+
+
+
 
 <style>
     .feedback-list {
@@ -91,6 +112,47 @@
         padding: 10px 15px;
         border-radius: 6px;
         margin-bottom: 20px;
+    }
+    .pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .pagination li {
+        margin: 0 3px;
+    }
+
+    .pagination li a,
+    .pagination li span {
+        padding: 6px 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #007bff;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+
+    .pagination li a:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .pagination li.active span {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+    }
+
+    .pagination li.disabled span {
+        color: #6c757d;
     }
 </style>
 

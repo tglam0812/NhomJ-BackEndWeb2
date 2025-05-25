@@ -6,7 +6,16 @@
         <h2>Add New Category</h2>
         <form action="{{ route('categories.store') }}" method="POST" class="form-category">
             @csrf
-
+            {{-- Hiển thị lỗi validation --}}
+            @if ($errors->any())
+            <div class="alert alert-danger" style="margin-bottom: 20px;">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="form-group">
                 <label for="category_name">Category Name <span class="text-danger">*</span></label>
                 <input type="text" id="category_name" name="category_name" value="{{ old('category_name') }}" required>

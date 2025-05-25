@@ -18,10 +18,22 @@
                 @else
                     <div class="text-muted fst-italic">Đang xử lý...</div>
                 @endif
+
+                <!-- Nút xóa -->
+                <form action="{{ route('contact.delete', $item->id) }}" method="POST" onsubmit="return confirm('Bạn chắc chắn muốn xóa phản hồi này?');" class="mt-3">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Xóa</button>
+                </form>
             </div>
         </div>
     @empty
         <p class="text-muted">Bạn chưa gửi câu hỏi nào.</p>
     @endforelse
+
+    
+		<div class="flex-c-m flex-w w-full p-t-45">
+			{{ $messages->links() }}
+		</div>
 </div>
 @endsection

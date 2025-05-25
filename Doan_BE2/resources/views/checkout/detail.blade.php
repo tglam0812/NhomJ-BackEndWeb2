@@ -7,6 +7,17 @@
     <p><strong>Ngày đặt:</strong> {{ $bill->date_invoice }}</p>
     <p><strong>Trạng thái:</strong> {{ ucfirst($bill->status) }}</p>
 
+    @php
+        $subtotal = 0;
+        foreach ($bill->details as $detail) {
+            $subtotal += $detail->price * $detail->quantity;
+        }
+        $discount = 0;
+        if ($bill->coupon) {
+            $discount = round($subtotal * $bill->coupon->phan_tram_giam / 100);
+        }
+    @endphp
+
     <table class="table mt-4">
         <thead>
             <tr>
@@ -28,6 +39,15 @@
         </tbody>
     </table>
 
-    <h4 class="mt-3 text-end">Tổng cộng: {{ number_format($bill->total_amount) }} VND</h4>
+    <div class="text-end mt-4">
+        <p><strong>Tạm tính:</strong> {{ number_format($subtotal) }} VND</p>
+
+        @if ($bill->coupon)
+            <p><strong>Mã giảm giá:</strong> {{ $bill->coupon->ten_phieu }} ({{ $bill->coupon->phan_tram_giam }}%)</p>
+            <p><strong>Giảm giá:</strong> -{{ number_format($discount) }} VND</p>
+        @endif
+
+        <h4><strong>Tổng cộng:</strong> {{ number_format($bill->total_amount) }} VND</h4>
+    </div>
 </div>
 @endsection

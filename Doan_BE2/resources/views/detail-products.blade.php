@@ -1,12 +1,11 @@
 <!-- {{-- View này sẽ kế thừa giao diện từ layout->master--}} -->
 @extends('layouts.master')
-<!-- header - cart - footer -->
 
 @section('main-content')
 <section class="section-slide">
     <div class="d-flex justify-content-center p-b-35 isotope-item {{ Str::slug($product->category->category_name) }}">
         <div class="block2">
-           <div class="block2-pic hov-img0 text-center" style="margin-top: 60px;">
+            <div class="block2-pic hov-img0 text-center" style="margin-top: 60px;">
                 <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" alt="IMG-PRODUCT"
                     style="max-width: 300px; height: auto; margin: 0 auto; display: block;">
             </div>
@@ -20,13 +19,23 @@
                         {{ number_format($product->product_price) }} VND
                     </span>
 
+
+  @php
+    $cart = session('cart', []);
+    $cartQty = isset($cart[$product->product_id]) ? $cart[$product->product_id]['quantity'] : 0;
+    $remaining = max(0, $product->product_qty - $cartQty);
+@endphp
+
+
+
 @if(Auth::check())
     <div class="w-100 d-flex justify-content-center mt-3">
         <form action="{{ route('cart.add') }}" method="POST" style="display: flex; gap: 10px; align-items: center;">
             @csrf
             <input type="hidden" name="product_id" value="{{ $product->product_id }}">
-            <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px;">
-            <button type="submit" class="btn btn-outline-primary"><i class="zmdi zmdi-shopping-cart me-1"></i>  Thêm vào giỏ</button>
+            <input type="number" name="quantity" value="1" min="1" max="{{ $remaining }}" class="form-control" style="width: 80px;">
+            <button type="submit" class="btn btn-outline-primary"><i class="zmdi zmdi-shopping-cart me-1"></i> Thêm vào giỏ</button>
+            <p class="text-muted mb-0">Số lượng còn lại: {{ $remaining }} sản phẩm</p>
         </form>
     </div>
 @else
@@ -34,8 +43,8 @@
         <a href="{{ route('login') }}" class="btn btn-warning">Đăng nhập để mua hàng</a>
     </div>
 @endif
-                </div>
 
+                </div>
                 <div class="block2-txt-child2 flex-r p-t-3">
                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
                         <img class="icon-heart1 dis-block trans-04" src="{{ asset('assets/images/icons/icon-heart-01.png') }}" alt="ICON">
@@ -49,7 +58,6 @@
     <div class="container mt-5">
     <h4 class="mb-4">Đánh giá sản phẩm</h4>
 
-    {{-- Hiển thị danh sách đánh giá --}}
     @if($reviews->isEmpty())
         <p class="text-muted">Chưa có đánh giá nào cho sản phẩm này.</p>
     @else
@@ -63,7 +71,6 @@
                 <p class="m-0">{{ $review->comment }}</p>
                 <small class="text-muted">{{ $review->created_at->format('d/m/Y H:i') }}</small>
 
-                {{-- Nút 3 chấm và menu xóa, chỉ hiển thị nếu đúng user --}}
                 @if(Auth::id() === $review->user_id)
                     <div class="dropdown position-absolute" style="top: 10px; right: 10px;">
                         <button class="btn btn-sm btn-light dropdown-toggle" type="button" id="dropdownMenu{{ $review->review_id }}" data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,7 +92,6 @@
                 @endif
             </div>
         @endforeach
-
     @endif
 
     @if(Auth::check())
@@ -116,13 +122,12 @@
         <script>
             function validateReviewForm() {
                 const rating = document.getElementById('rating').value;
-                const comment = document.getElementById('comment').value.trim(); // bỏ khoảng trắng đầu/cuối
+                const comment = document.getElementById('comment').value.trim();
                 const ratingError = document.getElementById('rating-error');
                 const commentError = document.getElementById('comment-error');
 
                 let valid = true;
 
-                // Kiểm tra số sao
                 if (!rating) {
                     ratingError.style.display = 'block';
                     valid = false;
@@ -130,7 +135,6 @@
                     ratingError.style.display = 'none';
                 }
 
-                // Kiểm tra comment rỗng hoặc dài quá
                 if (comment === "" || comment.length > 1000) {
                     commentError.style.display = 'block';
                     valid = false;
@@ -145,11 +149,8 @@
         <p class="mt-3">Vui lòng <a href="{{ route('login') }}">đăng nhập</a> để gửi đánh giá.</p>
     @endif
 </div>
-
 </section>
 
-
-<!-- Modal chỉnh sửa -->
 <div class="modal fade" id="editReviewModal" tabindex="-1" aria-labelledby="editReviewLabel" aria-hidden="true">
   <div class="modal-dialog">
     <form id="editReviewForm" method="POST">
@@ -168,7 +169,6 @@
                         <option value="{{ $i }}">{{ $i }} sao</option>
                     @endfor
                 </select>
-
                 <label class="mt-2">Nội dung:</label>
                 <textarea class="form-control" name="comment" id="edit-comment" rows="3"></textarea>
             </div>
@@ -186,31 +186,17 @@ function openEditReviewModal(id, rating, comment) {
     document.getElementById('edit-review-id').value = id;
     document.getElementById('edit-rating').value = rating;
     document.getElementById('edit-comment').value = comment;
-
-    // Gán action cho form
     form.action = '/review/' + id;
-
     const modal = new bootstrap.Modal(document.getElementById('editReviewModal'));
     modal.show();
 }
 </script>
 
 <style>
-    /* Đảm bảo modal hiển thị nổi lên trên */
-    .modal-backdrop {
-        z-index: 1040 !important;
-    }
-
-    .modal {
-        z-index: 1055 !important;
-    }
-
-    /* Các thành phần header không đè lên modal */
-    .navbar, header, nav, .wrap-menu-desktop {
-        z-index: 1000 !important;
-    }
-
-    .product-detail-image {
+.modal-backdrop { z-index: 1040 !important; }
+.modal { z-index: 1055 !important; }
+.navbar, header, nav, .wrap-menu-desktop { z-index: 1000 !important; }
+.product-detail-image {
     max-width: 300px;
     height: auto;
     margin: 60px auto 30px auto;
@@ -218,6 +204,3 @@ function openEditReviewModal(id, rating, comment) {
 }
 </style>
 @endsection
-
-
-

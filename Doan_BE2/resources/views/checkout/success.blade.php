@@ -54,6 +54,21 @@
     }
 </style>
 
+@php
+    $subtotal = collect($order['items'])->sum(function($item) {
+        return $item['product_price'] * $item['quantity'];
+    });
+
+    $discount = 0;
+    if ($order['coupon']) {
+        $discount = $order['coupon']['loai_giam'] === 'percent'
+            ? $subtotal * $order['coupon']['gia_tri'] / 100
+            : $order['coupon']['gia_tri'];
+
+        if ($discount > $subtotal) $discount = $subtotal;
+    }
+@endphp
+
 <div class="order-success-container">
     <h2><i class="bi bi-check2-circle"></i> Đặt hàng thành công!</h2>
 
@@ -64,15 +79,31 @@
     <h5 class="mt-4 mb-2"><i class="bi bi-bag-fill"></i> Danh sách sản phẩm:</h5>
     <ul>
         @foreach($order['items'] as $item)
-            <li>{{ $item['product_name'] }} × {{ $item['quantity'] }} – <span class="highlight">{{ number_format($item['product_price']) }} VND</span></li>
+            <li>{{ $item['product_name'] }} × {{ $item['quantity'] }} – 
+                <span class="highlight">{{ number_format($item['product_price']) }} VND</span>
+            </li>
         @endforeach
     </ul>
 
+    <p><i class="bi bi-wallet2"></i> <strong>Tạm tính:</strong> {{ number_format($subtotal) }} VND</p>
+
     @if($order['coupon'])
-        <p><i class="bi bi-tag-fill"></i> <strong>Mã giảm giá:</strong> {{ $order['coupon']['ma_phieu'] }}</p>
+        <p>
+            <i class="bi bi-tag-fill"></i> 
+            <strong>Giảm giá:</strong> {{ $order['coupon']['ma_phieu'] }}
+            @if($order['coupon']['loai_giam'] === 'percent')
+                ({{ $order['coupon']['gia_tri'] }}%)
+            @else
+                ({{ number_format($order['coupon']['gia_tri']) }} VND)
+            @endif
+            <br>
+            <span class="text-success">→ Tiết kiệm: {{ number_format($discount) }} VND</span>
+        </p>
     @endif
 
-    <p><i class="bi bi-wallet-fill"></i> <strong>Tổng tiền:</strong> <span class="highlight">{{ number_format($order['total']) }} VND</span></p>
+    <p><i class="bi bi-cash-coin"></i> <strong>Tổng thanh toán:</strong> 
+        <span class="highlight">{{ number_format($order['total']) }} VND</span>
+    </p>
 
     <a href="/" class="btn-back mt-3"><i class="bi bi-arrow-left"></i> Về trang chủ</a>
 </div>
