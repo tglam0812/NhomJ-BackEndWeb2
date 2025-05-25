@@ -80,7 +80,7 @@ class CrudSupplierController extends Controller
      */
     public function postUpdateSupplier(Request $request, $supplier_id)
     {
-        // Validate dữ liệu
+        // Validate dữ liệu cơ bản
         $request->validate([
             'supplier_name' => [
                 'required',
@@ -107,6 +107,15 @@ class CrudSupplierController extends Controller
         // Kiểm tra xem nhà cung cấp có tồn tại không
         if (!$supplier) {
             return redirect()->route('suppliers.list')->with('error', 'Nhà cung cấp không tồn tại');
+        }
+
+        // Kiểm tra tính duy nhất của email (ngoại trừ bản ghi hiện tại)
+        $existingSupplier = Supplier::where('supplier_email', $request->supplier_email)
+            ->where('supplier_id', '!=', $supplier_id)
+            ->first();
+
+        if ($existingSupplier) {
+            return back()->withInput()->with('error', 'Email này đã được sử dụng bởi một nhà cung cấp khác.');
         }
 
         // Kiểm tra concurrency
