@@ -44,8 +44,12 @@ Thương Mại Điện Tử
                                                 <form action="{{ route('cart.update', ['id' => $item['product_id']]) }}" method="POST" style="display: flex; align-items: center; gap: 5px;">
                                                     @csrf
                                                     @method('PUT')
-                                                    <input type="number" name="quantity" value="{{ $item['quantity'] }}" min="1" style="width: 60px; text-align: center;" />
-                                                    <button type="submit" class="btn btn-sm btn-primary">Cập nhật</button>
+                                                    <div class="input-group quantity-group" data-max="{{ $item['product_quantity'] }}">
+                                                        <button type="button" class="btn btn-outline-secondary decrement">-</button>
+                                                        <input type="text" name="quantity" class="form-control quantity" value="{{ $item['quantity'] }}" readonly style="width: 60px; text-align: center;">
+                                                        <button type="button" class="btn btn-outline-secondary increment">+</button>
+                                                    </div>
+                                                    
                                                 </form>
                                             </td>
                                             <td class="column-5">{{ number_format($lineTotal) }} VND</td>
@@ -126,6 +130,7 @@ Thương Mại Điện Tử
 @endsection
 
 @section('custom-scripts')
+@section('custom-scripts')
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const coupon = {!! json_encode(session('coupon')) !!};
@@ -169,11 +174,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         document.getElementById('total').innerText = formatVND(total);
 
-        //
-         autoRemoveCouponIfNoneChecked();
+        autoRemoveCouponIfNoneChecked();
     }
 
-    // Load trạng thái checkbox đã lưu trước đó
+    // Load trạng thái checkbox đã lưu
     const prevChecked = JSON.parse(localStorage.getItem('checkedProducts') || '[]');
     document.querySelectorAll('.product-checkbox').forEach(chk => {
         if (prevChecked.includes(chk.value)) {
@@ -181,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Bắt sự kiện checkbox và quantity thay đổi
+    // Gắn sự kiện thay đổi checkbox hoặc số lượng
     document.querySelectorAll('.product-checkbox, input[name="quantity"]').forEach(e => {
         e.addEventListener('change', updateCartSummary);
     });
@@ -195,10 +199,10 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCartSummary();
     });
 
-    // Gọi khi trang load
-        updateCartSummary();
+    // Gọi khi load
+    updateCartSummary();
 
-    // 👇 CHẶN ÁP DỤNG KHI CHƯA TICK
+    // Ngăn áp dụng mã nếu không chọn sản phẩm
     const applyCouponForm = document.querySelector('form[action="{{ route('cart.applyCoupon') }}"]');
     if (applyCouponForm) {
         applyCouponForm.addEventListener('submit', function (e) {
@@ -209,7 +213,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    // Hủy mã giảm giá nếu không còn sản phẩm nào được chọn
+
+    // Tự động hủy mã giảm nếu không còn sản phẩm được chọn
     function autoRemoveCouponIfNoneChecked() {
         const hasChecked = document.querySelectorAll('.product-checkbox:checked').length > 0;
         if (!hasChecked && coupon) {
@@ -223,8 +228,34 @@ document.addEventListener("DOMContentLoaded", function () {
             }).then(() => location.reload());
         }
     }
+
+    // Tăng/giảm số lượng với giới hạn
+    document.querySelectorAll('.quantity-group').forEach(group => {
+        const input = group.querySelector('.quantity');
+        const btnUp = group.querySelector('.increment');
+        const btnDown = group.querySelector('.decrement');
+        const max = parseInt(group.dataset.max);
+
+        btnUp.addEventListener('click', () => {
+            let val = parseInt(input.value);
+            if (val < max) {
+                input.value = val + 1;
+                updateCartSummary();
+            }
+        });
+
+        btnDown.addEventListener('click', () => {
+            let val = parseInt(input.value);
+            if (val > 1) {
+                input.value = val - 1;
+                updateCartSummary();
+            }
+        });
+    });
 });
 </script>
+@endsection
+
 
 </script>
 @endsection
