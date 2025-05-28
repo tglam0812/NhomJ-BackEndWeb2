@@ -27,11 +27,20 @@
 
         <div class="mb-3">
             <label for="address">Địa chỉ:</label>
-            <textarea name="address" id="address" rows="3" class="form-control" required>{{ old('address') }}</textarea>
+            <textarea
+                name="address"
+                id="address"
+                rows="3"
+                class="form-control @error('address') is-invalid @enderror"
+                required>{{ old('address') }}</textarea>
+
             @error('address')
-                <small class="text-danger">{{ $message }}</small>
+                <div class="invalid-feedback d-block fw-semibold mt-1">
+                    {{ $message }}
+                </div>
             @enderror
         </div>
+
 
         <button type="submit" class="btn btn-dark w-100">Xác nhận đặt hàng</button>
     </form>

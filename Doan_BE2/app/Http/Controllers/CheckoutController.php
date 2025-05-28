@@ -21,15 +21,19 @@ class CheckoutController extends Controller
     {
         //dd(session('coupon'));
         $request->validate([
-            'fullname' => ['required', 'regex:/^[a-zA-ZÀ-ỹ\s]+$/u', 'max:255'],
+            'fullname' => ['required', 'regex:/^[a-zA-ZÀ-ỹ\s]+$/u', 'max:50'],
             'phone'    => ['required', 'regex:/^0[0-9]{8,10}$/'],
-            'address'  => ['required', 'string', 'max:500'],
+            'address' => [
+        'required',
+        'min:5',
+        'regex:/^[a-zA-Z0-9À-ỹ\s,\.\-\/]+$/u' 
+    ],
         ], [
             'fullname.required' => 'Vui lòng nhập họ và tên.',
             'fullname.regex'    => 'Họ tên chỉ được chứa chữ cái và khoảng trắng.',
             'phone.required'    => 'Vui lòng nhập số điện thoại.',
             'phone.regex'       => 'Số điện thoại phải bắt đầu bằng 0 và có 9-11 chữ số.',
-            'address.required'  => 'Vui lòng nhập địa chỉ.',
+            'address.required'  => 'Địa chỉ không được chứa ký tự đặc biệt như @, #, $.',
         ]);
 
         if (!Auth::check()) {

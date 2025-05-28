@@ -38,6 +38,7 @@ class CartController extends Controller
                 'product_price' => $product->product_price,
                 'product_image' => $product->product_images_1,
                 'quantity'      => $quantity,
+                'product_quantity' => $product->product_qty,
             ];
         }
 
@@ -49,6 +50,15 @@ class CartController extends Controller
     public function viewCart()
     {
         $cart = session()->get('cart', []);
+
+        foreach ($cart as $id => &$item) {
+            $product = Products::find($id);
+            if ($product) {
+                $item['product_quantity'] = $product->product_qty;
+            }
+        }
+
+        session()->put('cart', $cart); // Cập nhật lại session
         return view('shoping-cart', compact('cart'));
     }
 
@@ -79,8 +89,9 @@ class CartController extends Controller
 
         $cart = session()->get('cart', []);
 
-        if (isset($cart[$id])) {
+       if (isset($cart[$id])) {
             $cart[$id]['quantity'] = $quantity;
+            $cart[$id]['product_quantity'] = $product->product_qty; 
             session()->put('cart', $cart);
             return redirect()->back()->with('success', 'Cập nhật số lượng thành công.');
         }
