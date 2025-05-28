@@ -1,20 +1,30 @@
 @extends('dashboard')
 
 @section('content')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('.form-product');
+        const submitButton = form.querySelector('.btn-save');
+
+        form.addEventListener('submit', function() {
+            submitButton.disabled = true;
+            submitButton.innerText = 'Đang lưu...';
+        });
+    });
+</script>
+
 <div class="category-update">
     <div class="container">
         <h2>Update Products</h2>
-
-        {{-- Thông báo thành công --}}
         @if(session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success" id="alert-success">
             {{ session('success') }}
         </div>
         @endif
 
-        {{-- Thông báo lỗi validation --}}
         @if ($errors->any())
-        <div class="alert alert-danger">
+        <div class="alert alert-danger" id="alert-error">
+            <strong>Lỗi!</strong> Vui lòng kiểm tra lại dữ liệu nhập vào.<br><br>
             <ul style="margin: 0; padding-left: 20px;">
                 @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -22,6 +32,16 @@
             </ul>
         </div>
         @endif
+
+        <script>
+            setTimeout(function() {
+                const success = document.getElementById('alert-success');
+                const error = document.getElementById('alert-error');
+                if (success) success.style.display = 'none';
+                if (error) error.style.display = 'none';
+            }, 3000);
+        </script>
+
 
         <form action="{{ route('products.postUpdateProduct', ['id' => $product->product_id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -83,11 +103,15 @@
             </div>
             @endforeach
 
+            <input type="hidden" name="updated_at" value="{{ $product->updated_at }}">
+
+
             <div class="text-center">
                 <button type="submit" class="btn-submit">Cập nhật sản phẩm</button>
             </div>
             <a href="{{ route('products.list') }}" class="btn btn-secondary">Trở về</a>
         </form>
+
     </div>
 </div>
 <link rel="stylesheet" href="{{ asset('assets/css/product/update.css') }}">

@@ -71,7 +71,7 @@
 				</h4>
 
 				<p class="stext-107 cl7 size-201">
-					Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+					Any questions? Visit us at 53 Vo Van Ngan Street, Linh Chieu Ward, Thu Duc City, Ho Chi Minh City or call us at (+84) 797 890 713
 				</p>
 
 				<div class="p-t-27">
@@ -112,25 +112,26 @@
 		<div class="p-t-40">
 			<div class="flex-c-m flex-w p-b-18">
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+					<img src="{{ asset('assets/images/icons/icon-pay-01.png') }}" alt="ICON-PAY">
 				</a>
 
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+					<img src="{{ asset('assets/images/icons/icon-pay-02.png') }}" alt="ICON-PAY">
 				</a>
 
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+					<img src="{{ asset('assets/images/icons/icon-pay-03.png') }}" alt="ICON-PAY">
 				</a>
 
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+					<img src="{{ asset('assets/images/icons/icon-pay-04.png') }}" alt="ICON-PAY">
 				</a>
 
 				<a href="#" class="m-all-1">
-					<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+					<img src="{{ asset('assets/images/icons/icon-pay-05.png') }}" alt="ICON-PAY">
 				</a>
 			</div>
+
 
 			<p class="stext-107 cl6 txt-center">
 				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

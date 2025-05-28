@@ -13,6 +13,7 @@
             <table class="product-table">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Image</th>
                         <th>Name</th>
                         <th>Price</th>
@@ -25,6 +26,7 @@
                 <tbody>
                     @forelse($products as $product)
                     <tr>
+                        <td>{{ $product->product_id }}</td>
                         <td>
                             <img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" width="60" height="60" alt="{{ $product->product_name }}">
                         </td>
