@@ -120,8 +120,8 @@ Thương Mại Điện Tử
                     <div class="alert alert-danger">{{ session('error') }}</div>
                 @endif
 
-                <a href="{{ route('checkout.index') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                    Thanh Toán
+                <a href="{{ route('checkout.index') }}" id="checkout-btn" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                    THANH TOÁN
                 </a>
             </div>
         </div>
@@ -251,6 +251,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateCartSummary();
             }
         });
+    });
+    //
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    checkoutBtn.addEventListener('click', function (e) {
+        const checked = document.querySelectorAll('.product-checkbox:checked');
+        if (checked.length === 0) {
+            e.preventDefault();
+            alert("⚠️ Vui lòng chọn ít nhất một sản phẩm để tiến hành thanh toán.");
+        }
     });
 });
 </script>
