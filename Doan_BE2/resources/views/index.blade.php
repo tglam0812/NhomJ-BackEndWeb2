@@ -7,7 +7,40 @@ Thương Mại Điện Tử
 @endsection
 
 @section('custom-css')
+<style>
+	.scrollable-categories {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+		padding: 10px 0;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: thin; /* Cho Firefox */
+		border-bottom: 1px solid #e0e0e0;
+	}
+
+	.scrollable-categories a {
+		display: inline-block;
+		white-space: nowrap;
+		margin-right: 20px;
+		text-decoration: none;
+	}
+
+	/* Cho Chrome/Safari hiển thị thanh cuộn */
+	.scrollable-categories::-webkit-scrollbar {
+		height: 6px;
+	}
+
+	.scrollable-categories::-webkit-scrollbar-thumb {
+		background: #888;
+		border-radius: 3px;
+	}
+
+	.scrollable-categories::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+</style>
 @endsection
+
 
 @section('main-content')
 
@@ -90,7 +123,7 @@ Thương Mại Điện Tử
 		</div>
 
 		<div class="flex-w flex-sb-m p-b-52">
-			<div class="flex-w flex-l-m filter-tope-group m-tb-10">
+			<div class="scrollable-categories flex-w flex-l-m filter-tope-group m-tb-10">
 				{{-- Link tất cả sản phẩm --}}
 				<a href="{{ route('home') }}"
 					class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 {{ request('category_id') ? '' : 'how-active1' }}">
