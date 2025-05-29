@@ -140,4 +140,46 @@
         background-color: #fff3cd;
         color: #856404;
     }
+
+    .pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .pagination li {
+        margin: 0 3px;
+    }
+
+    .pagination li a,
+    .pagination li span {
+        padding: 6px 12px;
+        border: 1px solid #dee2e6;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #007bff;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+
+    .pagination li a:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .pagination li.active span {
+        background-color: #007bff;
+        color: #fff;    
+        border-color: #007bff;
+    }
+
+    .pagination li.disabled span {
+        color: #6c757d;
+    }
 </style>

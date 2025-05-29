@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Products;
 use App\Models\Category;
 use App\Models\Brand;
+use Carbon\Carbon;
 
 class CrudProductsController extends Controller
 {
@@ -22,10 +23,17 @@ class CrudProductsController extends Controller
             $query->where('product_name', 'like', "%$search%");
         }
 
+        // Hiển thị theo từ cũ đến mới
+        // $query->orderBy('product_id', 'asc');
+
+        // Hiển thị theo từ mới đến cũ
+        $query->orderBy('product_id', 'desc');
+
         $products = $query->paginate(5)->appends($request->only('search'));
 
         return view('crud_product.list', compact('products'));
     }
+
 
     /**
      * Hiển thị form tạo sản phẩm
@@ -49,11 +57,11 @@ class CrudProductsController extends Controller
             'category_id' => 'required|exists:category,category_id',
             'brand_id' => 'nullable|exists:brand,brand_id',
             'product_description' => 'nullable|string|max:2000',
-            'product_images_1' => 'required|image|mimes:jpg,jpeg,png,gif|max:4048',
+            'product_images_1' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
             'product_images_2' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
             'product_images_3' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
         ], [
-            'product_name.required' => 'Vui lòng nhập tên sản phẩm.',
+            'product_name.required' => 'Vui lòng nhập tên sản phẩm, không được nhập khoảng trống.',
             'product_name.max' => 'Tên sản phẩm không được vượt quá 30 ký tự.',
             'product_name.regex' => 'Tên sản phẩm chỉ được chứa chữ, số, khoảng trắng và dấu gạch ngang.',
             'product_price.required' => 'Vui lòng nhập giá sản phẩm.',
@@ -68,7 +76,6 @@ class CrudProductsController extends Controller
             'category_id.exists' => 'Danh mục sản phẩm không tồn tại.',
             'brand_id.exists' => 'Thương hiệu không tồn tại.',
             'product_description.max' => 'Mô tả sản phẩm không được vượt quá 2000 ký tự.',
-            'product_images_1.required' => 'Ảnh 1 là bắt buộc.',
             'product_images_1.image' => 'File ảnh 1 không hợp lệ.',
             'product_images_1.mimes' => 'Ảnh 1 phải có định dạng jpg, jpeg, png hoặc gif.',
             'product_images_1.max' => 'Ảnh 1 không được vượt quá 4MB.',
@@ -82,7 +89,7 @@ class CrudProductsController extends Controller
 
         $path = public_path('assets/images/products');
 
-        $image1 = null;
+        $image1 = 'Iphone15_1.jpg'; // Mặc định ảnh 1
         $image2 = null;
         $image3 = null;
 
@@ -120,6 +127,7 @@ class CrudProductsController extends Controller
     }
 
 
+
     /**
      * Hiển thị form cập nhật sản phẩm
      */
@@ -144,42 +152,55 @@ class CrudProductsController extends Controller
         $product = Products::find($product_id);
 
         if (!$product) {
-            return redirect()->route('products.list')
-                ->with('error', 'Sản phẩm đã bị xóa. Vui lòng tải lại trang.');
+            return redirect()->route('products.list')->with('error', 'Sản phẩm đã bị xóa.');
         }
 
+        // So sánh timestamp
+        $formUpdatedAt = Carbon::parse($request->input('updated_at'));
+        if ($product->updated_at->ne($formUpdatedAt)) {
+            return redirect()->back()->withErrors([
+                'conflict' => 'Dữ liệu sản phẩm đã được cập nhật, vui lòng tải lại trang.',
+            ]);
+        }
         $request->validate([
             'product_name' => ['required', 'string', 'max:30', 'regex:/^[\pL\s\d\-]+$/u'],
-            'product_price' => 'required|numeric|min:0|max:99999999',
-            'product_qty' => 'required|integer|min:0|max:100000',
+            'product_price' => 'required|numeric|min:1|max:99999999',
+            'product_qty' => 'required|integer|min:1|max:100000',
             'category_id' => 'required|exists:category,category_id',
             'brand_id' => 'nullable|exists:brand,brand_id',
             'product_description' => 'nullable|string|max:2000',
-            'product_images_1' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'product_images_2' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'product_images_3' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'product_images_1' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
+            'product_images_2' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
+            'product_images_3' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
         ], [
-            'product_name.required' => 'Vui lòng nhập tên sản phẩm.',
+            'product_name.required' => 'Vui lòng nhập tên sản phẩm, không được nhập khoảng trống.',
             'product_name.max' => 'Tên sản phẩm không được vượt quá 30 ký tự.',
             'product_name.regex' => 'Tên sản phẩm chỉ được chứa chữ, số, khoảng trắng và dấu gạch ngang.',
+
             'product_price.required' => 'Vui lòng nhập giá sản phẩm.',
-            'product_price.numeric' => 'Giá sản phẩm phải là số hợp lệ.',
-            'product_price.min' => 'Giá sản phẩm phải lớn hơn hoặc bằng 0.',
+            'product_price.numeric' => 'Vui lòng nhập giá sản phẩm là số hợp lệ.',
+            'product_price.min' => 'Giá sản phẩm phải lớn hơn 0.',
             'product_price.max' => 'Giá sản phẩm không được vượt quá 99.999.999.',
+
             'product_qty.required' => 'Vui lòng nhập số lượng.',
-            'product_qty.integer' => 'Số lượng phải là số nguyên.',
+            'product_qty.integer' => 'Vui lòng nhập số lượng là số nguyên hợp lệ.',
             'product_qty.min' => 'Số lượng phải lớn hơn hoặc bằng 0.',
             'product_qty.max' => 'Số lượng không được vượt quá 100000.',
+
             'category_id.required' => 'Vui lòng chọn danh mục sản phẩm.',
             'category_id.exists' => 'Danh mục sản phẩm không tồn tại.',
             'brand_id.exists' => 'Thương hiệu không tồn tại.',
+
             'product_description.max' => 'Mô tả sản phẩm không được vượt quá 2000 ký tự.',
+
             'product_images_1.image' => 'File ảnh 1 không hợp lệ.',
             'product_images_1.mimes' => 'Ảnh 1 phải có định dạng jpg, jpeg, png hoặc gif.',
             'product_images_1.max' => 'Ảnh 1 không được vượt quá 2MB.',
+
             'product_images_2.image' => 'File ảnh 2 không hợp lệ.',
             'product_images_2.mimes' => 'Ảnh 2 phải có định dạng jpg, jpeg, png hoặc gif.',
             'product_images_2.max' => 'Ảnh 2 không được vượt quá 2MB.',
+
             'product_images_3.image' => 'File ảnh 3 không hợp lệ.',
             'product_images_3.mimes' => 'Ảnh 3 phải có định dạng jpg, jpeg, png hoặc gif.',
             'product_images_3.max' => 'Ảnh 3 không được vượt quá 2MB.',
@@ -239,24 +260,35 @@ class CrudProductsController extends Controller
         }
 
         $path = public_path('assets/images/products');
+        $defaultImage = 'Iphone15_1.jpg';
 
-        // Xóa ảnh khỏi thư mục
-        /*
-        if ($product->product_images_1 && file_exists($path . '/' . $product->product_images_1)) {
-            unlink($path . '/' . $product->product_images_1);
+        // Chỉ xóa ảnh nếu KHÔNG phải là ảnh mặc định
+        if ($product->product_images_1 && $product->product_images_1 !== $defaultImage) {
+            $imagePath = $path . '/' . $product->product_images_1;
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
         }
-        if ($product->product_images_2 && file_exists($path . '/' . $product->product_images_2)) {
-            unlink($path . '/' . $product->product_images_2);
+
+        if ($product->product_images_2) {
+            $imagePath = $path . '/' . $product->product_images_2;
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
         }
-        if ($product->product_images_3 && file_exists($path . '/' . $product->product_images_3)) {
-            unlink($path . '/' . $product->product_images_3);
+
+        if ($product->product_images_3) {
+            $imagePath = $path . '/' . $product->product_images_3;
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
         }
-        */
 
         $product->delete();
 
         return redirect()->route('products.list')->with('success', 'Sản phẩm đã được xóa thành công');
     }
+
     public function readProduct($product_id)
     {
         $product = Products::with('category')->find($product_id);

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->integer('product_qty');
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('brand_id');
-            $table->string('product_description', 10000);
+            $table->string('product_description', 10000)->nullable();
+
             $table->string('product_status')->default('1');
             $table->string('product_images_1', 255)->nullable();
             $table->string('product_images_2', 255)->nullable();

@@ -1,18 +1,17 @@
-
 @extends('dashboard')
 @section('content')
 <div class="container">
-    <h2>Update Account</h2>
+    <h2>Update Account Admin</h2>
 
     @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Lỗi!</strong> Vui lòng kiểm tra lại dữ liệu nhập vào.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <strong>Lỗi!</strong> Vui lòng kiểm tra lại dữ liệu nhập vào.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <form action="{{ route('accountAdmin.postUpdate', ['account_id' => $account->user_id]) }}" method="POST" enctype="multipart/form-data">
@@ -20,84 +19,91 @@
         @csrf
 
         <div class="mb-3">
-            <label>Họ tên:</label>
-            <input type="text" name="full_name" class="form-control" value="{{ old('full_name', $account->full_name) }}" required>
+            <label for="full_name">Full Name <span class="text-danger">*</span></label>
+            <input type="text" id="full_name" name="full_name" class="form-control" value="{{ old('full_name', $account->full_name) }}" required>
         </div>
 
         <div class="mb-3">
-            <label>Email:</label>
-            <input type="email" name="email" class="form-control" value="{{ old('email', $account->email) }}" required>
+            <label for="email">Email <span class="text-danger">*</span></label>
+            <input type="email" id="email" name="email" class="form-control" value="{{ old('email', $account->email) }}" required>
+        </div>
+
+        <!-- Đổi pass
+        <div class="mb-3">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control">
+        </div>  -->
+
+        <div class="mb-3">
+            <label for="phone">Phone Number <span class="text-danger">*</span></label>
+            <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone', $account->phone) }}" required>
         </div>
 
         <div class="mb-3">
-            <label>Số điện thoại:</label>
-            <input type="text" name="phone" class="form-control" value="{{ old('phone', $account->phone) }}" required>
+            <label>Gender <span class="text-danger">*</span></label>
+            <div>
+                <label><input type="radio" name="gender" value="male" {{ old('gender', strtolower($account->gender)) == 'male' ? 'checked' : '' }}> Male</label>&nbsp;&nbsp;
+                <label><input type="radio" name="gender" value="female" {{ old('gender', strtolower($account->gender)) == 'female' ? 'checked' : '' }}> Female</label>&nbsp;&nbsp;
+                <label><input type="radio" name="gender" value="other" {{ old('gender', strtolower($account->gender)) == 'other' ? 'checked' : '' }}> Other</label>
+            </div>
         </div>
 
         <div class="mb-3">
-            <label>Giới tính:</label>
-            <select name="gender" class="form-control" required>
-                <option value="Nam" {{ old('gender', $account->gender) == 'Nam' ? 'selected' : '' }}>Nam</option>
-                <option value="Nữ" {{ old('gender', $account->gender) == 'Nữ' ? 'selected' : '' }}>Nữ</option>
-                <option value="Khác" {{ old('gender', $account->gender) == 'Khác' ? 'selected' : '' }}>Khác</option>
-            </select>
+            <label for="date">Date of Birth <span class="text-danger">*</span></label>
+            <input type="date" id="date" name="date" class="form-control" value="{{ old('date', $account->date) }}" required>
         </div>
 
         <div class="mb-3">
-            <label>Ngày sinh:</label>
-            <input type="date" name="date" class="form-control" value="{{ old('date', $account->date) }}" required>
-        </div>
-
-        <div class="mb-3">
-            <label>Địa chỉ:</label>
-            <input type="text" name="address" class="form-control" value="{{ old('address', $account->address) }}" required>
-        </div>
-
-        <div class="mb-3">
-            <label>Ảnh đại diện hiện tại:</label><br>
-            @if ($account->avatar)
-                <img src="{{ asset('storage/' . $account->avatar) }}" width="100">
-            @else
-                <p>Chưa có ảnh</p>
-            @endif
-        </div>
-
-        <div class="mb-3">
-            <label>Thay ảnh đại diện (nếu muốn):</label>
-            <input type="file" name="avatar" class="form-control">
+            <label for="address">Address <span class="text-danger">*</span></label>
+            <input type="text" id="address" name="address" class="form-control" value="{{ old('address', $account->address) }}" required>
         </div>
 
         <div class="mb-3">
             <label for="level_id">Level <span class="text-danger">*</span></label>
-            <select name="level_id" id="level_id" required>
+            <select name="level_id" id="level_id" class="form-control" required>
                 <option value="">-- Select Level --</option>
                 @foreach ($levels as $level)
-                    <option value="{{ $level->level_id }}" {{ old('level_id') == $level->level_id ? 'selected' : '' }}>
-                        {{ $level->level_name }}
-                    </option>
+                <option value="{{ $level->level_id }}" {{ old('level_id', $account->level_id) == $level->level_id ? 'selected' : '' }}>
+                    {{ $level->level_name }}
+                </option>
                 @endforeach
             </select>
             @error('level_id')
-                <span class="error">{{ $message }}</span>
+            <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
 
         <div class="mb-3">
-            <label>Trạng thái:</label>
-            <select name="status" class="form-control" required>
-                <option value="1" {{ old('status', $account->status) == 1 ? 'selected' : '' }}>Hoạt động</option>
-                <option value="0" {{ old('status', $account->status) == 0 ? 'selected' : '' }}>Tạm khóa</option>
-            </select>
+            <label>Status <span class="text-danger">*</span></label>
+            <div>
+                <label><input type="radio" name="status" value="1" {{ old('status', $account->status) == 1 ? 'checked' : '' }}> Active</label>&nbsp;&nbsp;
+                <label><input type="radio" name="status" value="0" {{ old('status', $account->status) == 0 ? 'checked' : '' }}> Inactive</label>
+            </div>
         </div>
 
         <div class="mb-3">
-            <label>Giới thiệu:</label>
-            <textarea name="about" class="form-control">{{ old('about', $account->about) }}</textarea>
+            <label for="about">About</label>
+            <textarea id="about" name="about" class="form-control" rows="4">{{ old('about', $account->about) }}</textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Cập nhật</button>
-        <a href="{{ route('accountAdmin.list') }}" class="btn btn-secondary">Trở về</a>
+        <div class="mb-3">
+            <label>Current Avatar</label><br>
+            @if ($account->avatar)
+            <img src="{{ asset('storage/' . $account->avatar) }}" width="100" alt="avatar">
+            @else
+            <p>No avatar uploaded.</p>
+            @endif
+        </div>
+
+        <div class="mb-3">
+            <label for="avatar">Change Avatar</label>
+            <input type="file" id="avatar" name="avatar" class="form-control" accept="image/*">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Account</button>
+        <a href="{{ route('accountAdmin.list') }}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
+
 <link rel="stylesheet" href="{{ asset('assets/css/account/update.css') }}">
 @endsection

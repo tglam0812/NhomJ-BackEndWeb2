@@ -7,7 +7,50 @@ Thương Mại Điện Tử
 @endsection
 
 @section('custom-css')
+<style>
+	.scrollable-categories {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+		padding: 10px 0;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: thin; /* Cho Firefox */
+		border-bottom: 1px solid #e0e0e0;
+	}
+
+	.scrollable-categories a {
+		display: inline-block;
+		white-space: nowrap;
+		margin-right: 20px;
+		text-decoration: none;
+	}
+
+	/* Cho Chrome/Safari hiển thị thanh cuộn */
+	.scrollable-categories::-webkit-scrollbar {
+		height: 6px;
+	}
+
+	.scrollable-categories::-webkit-scrollbar-thumb {
+		background: #888;
+		border-radius: 3px;
+	}
+
+	.scrollable-categories::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+	
+	input:focus, select:focus, button:focus {
+    box-shadow: none !important;
+    outline: none;
+	}
+
+	form .form-select, form .btn {
+		height: 42px;
+		font-size: 14px;
+	}
+</style>
 @endsection
+
 
 @section('main-content')
 
@@ -90,7 +133,7 @@ Thương Mại Điện Tử
 		</div>
 
 		<div class="flex-w flex-sb-m p-b-52">
-			<div class="flex-w flex-l-m filter-tope-group m-tb-10">
+			<div class="scrollable-categories flex-w flex-l-m filter-tope-group m-tb-10">
 				{{-- Link tất cả sản phẩm --}}
 				<a href="{{ route('home') }}"
 					class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 {{ request('category_id') ? '' : 'how-active1' }}">
@@ -105,33 +148,33 @@ Thương Mại Điện Tử
 				</a>
 				@endforeach
 			</div>
-			<div class="flex-w flex-c-m m-tb-10">
-				<div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
-					<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
-					<i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-					Filter
-				</div>
 
-				<div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
-					<i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
-					<i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-					Search
-				</div>
-			</div>
 
 			<!-- Search product -->
-			<form method="GET" action="{{ route('home') }}">
-				<div class="bor8 dis-flex p-l-15">
-					<button type="submit" class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="mtext-107 cl2 size-114 plh2 p-r-15"
-						type="text"
-						name="search"
-						value="{{ request('search') }}"
-						placeholder="Tìm kiếm sản phẩm...">
+			<form method="GET" action="{{ route('home') }}" class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4 mt-3">
+
+				{{-- Dropdown lọc giá --}}
+				<div>
+					<select name="price_range" class="form-select rounded-pill px-4 py-2 shadow-sm border" style="min-width: 200px; height: 42px;" onchange="this.form.submit()">
+						<option value="">-- Chọn khoảng giá --</option>
+						<option value="under_5m" {{ request('price_range') == 'under_5m' ? 'selected' : '' }}>Dưới 5 triệu</option>
+						<option value="5m_15m" {{ request('price_range') == '5m_15m' ? 'selected' : '' }}>5 - 15 triệu</option>
+						<option value="15m_25m" {{ request('price_range') == '15m_25m' ? 'selected' : '' }}>15 - 25 triệu</option>
+						<option value="above_25m" {{ request('price_range') == 'above_25m' ? 'selected' : '' }}>Trên 25 triệu</option>
+					</select>
 				</div>
+
+				<!-- {{-- Nút tìm kiếm --}}
+				<div>
+					<button type="submit" class="btn btn-dark rounded-pill px-4 shadow-sm" style="height: 42px;">
+						Tìm kiếm
+					</button>
+				</div> -->
+
 			</form>
+
+
+
 			<!-- Filter -->
 			<div class="dis-none panel-filter w-full p-t-10">
 				<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
@@ -379,19 +422,20 @@ Thương Mại Điện Tử
 		</div>
 	</div>
 </section>
-<!-- Banner -->	
+<!-- Banner -->
 <!-- Product -->
 @endsection
 @section('custom-scripts')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @if(session('success'))
 <script>
-    Swal.fire({
-        icon: 'success',
-        title: '{{ session('success') }}',
-        showConfirmButton: false,
-        timer: 3000
-    });
+	Swal.fire({
+		icon: 'success',
+		title: '{{ session('
+		success ') }}',
+		showConfirmButton: false,
+		timer: 3000
+	});
 </script>
 @endif
 @endsection

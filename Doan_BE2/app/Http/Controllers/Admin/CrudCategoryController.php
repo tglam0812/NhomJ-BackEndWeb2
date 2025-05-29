@@ -34,7 +34,7 @@ class CrudCategoryController extends Controller
                 'max:30',
                 'regex:/^[a-zA-Z0-9\sÀ-ỹàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ]+$/u'
             ],
-            'category_description' => 'nullable|string',
+            'category_description' => 'nullable|string|max:500',
             'category_status' => 'required|boolean',
         ], [
             'category_name.required' => 'Tên danh mục không được để trống.',
@@ -42,6 +42,7 @@ class CrudCategoryController extends Controller
             'category_name.regex' => 'Tên danh mục không được chứa ký tự đặc biệt.',
             'category_status.required' => 'Trạng thái danh mục là bắt buộc.',
             'category_status.boolean' => 'Trạng thái danh mục không hợp lệ.',
+            'category_description.max' => 'Mô tả danh mục không được vượt quá 500 ký tự.',
         ]);
 
         Category::create([
@@ -73,7 +74,7 @@ class CrudCategoryController extends Controller
                 'max:30',
                 'regex:/^[a-zA-Z0-9\sÀ-ỹàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ]+$/u'
             ],
-            'category_description' => 'nullable|string',
+            'category_description' => 'nullable|string|max:500',
             'category_status' => 'required|boolean',
         ], [
             'category_name.required' => 'Tên danh mục không được để trống.',
@@ -81,6 +82,7 @@ class CrudCategoryController extends Controller
             'category_name.regex' => 'Tên danh mục không được chứa ký tự đặc biệt.',
             'category_status.required' => 'Trạng thái danh mục là bắt buộc.',
             'category_status.boolean' => 'Trạng thái danh mục không hợp lệ.',
+            'category_description.max' => 'Mô tả danh mục không được vượt quá 500 ký tự.',
         ]);
 
         $category = Category::find($category_id);
