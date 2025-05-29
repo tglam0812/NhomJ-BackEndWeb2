@@ -15,3 +15,4 @@ class Supplier extends Model
         'supplier_status'
     ];
 }
+
