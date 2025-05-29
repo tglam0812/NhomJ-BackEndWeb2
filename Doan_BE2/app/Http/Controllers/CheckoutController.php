@@ -22,12 +22,9 @@ class CheckoutController extends Controller
         //dd(session('coupon'));
         $request->validate([
             'fullname' => ['required', 'regex:/^[a-zA-ZÀ-ỹ\s]+$/u', 'max:50'],
-            'phone'    => ['required', 'regex:/^0[0-9]{8,10}$/'],
-            'address' => [
-        'required',
-        'min:5',
-        'regex:/^[a-zA-Z0-9À-ỹ\s,\.\-\/]+$/u' 
-    ],
+    'phone'    => ['required', 'regex:/^0[0-9]{8,10}$/'],
+    'address'  => ['required', 'min:5', 'regex:/^[a-zA-Z0-9À-ỹ\s,\.\-\/]+$/u'],
+    'payment_method' => 'required|in:cod,bank', 
         ], [
             'fullname.required' => 'Vui lòng nhập họ và tên.',
             'fullname.regex'    => 'Họ tên chỉ được chứa chữ cái và khoảng trắng.',
@@ -75,6 +72,7 @@ class CheckoutController extends Controller
             'status'         => 'pending',
             'note'           => $request->fullname . ' | ' . $request->phone . ' | ' . $request->address,
             'phieu_giam_id'  => $couponId,
+            'payment_method' => $request->payment_method, 
         ]);
 
         foreach ($cart as $item) {

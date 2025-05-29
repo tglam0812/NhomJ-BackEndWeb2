@@ -75,7 +75,9 @@
     <p><i class="bi bi-person-fill"></i> <strong>Họ tên:</strong> {{ $order['fullname'] }}</p>
     <p><i class="bi bi-telephone-fill"></i> <strong>SĐT:</strong> {{ $order['phone'] }}</p>
     <p><i class="bi bi-geo-alt-fill"></i> <strong>Địa chỉ:</strong> {{ $order['address'] }}</p>
-
+    <p><i class="bi bi-credit-card"></i> <strong>Hình thức thanh toán:</strong> 
+        {{ $order['payment_method'] === 'cod' ? 'Thanh toán khi nhận hàng' : 'Chuyển khoản ngân hàng' }}
+    </p>
     <h5 class="mt-4 mb-2"><i class="bi bi-bag-fill"></i> Danh sách sản phẩm:</h5>
     <ul>
         @foreach($order['items'] as $item)
