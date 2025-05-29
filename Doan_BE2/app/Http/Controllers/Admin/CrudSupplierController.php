@@ -80,11 +80,25 @@ class CrudSupplierController extends Controller
      */
     public function postUpdateSupplier(Request $request, $supplier_id)
     {
+        // Validate dữ liệu cơ bản
         $request->validate([
-            'supplier_name' => 'required|string|max:255',
-            'supplier_email' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'],
+            'supplier_name' => [
+                'required',
+                'string',
+                'max:255',
+                'regex:/^[a-zA-Z0-9\s]+$/' // Cho phép chữ cái, số và khoảng trắng
+            ],
+            'supplier_email' => [
+                'required',
+                'string',
+                'max:255',
+                'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'
+            ],
             'supplier_description' => 'nullable|string',
             'supplier_status' => 'required|boolean',
+            'updated_at' => 'required' // Nhận updated_at từ form
+        ], [
+            'supplier_name.regex' => 'Tên nhà cung cấp chỉ được chứa chữ cái, số và khoảng trắng, không chứa ký tự đặc biệt.'
         ]);
 
         // Tìm nhà cung cấp
@@ -95,9 +109,23 @@ class CrudSupplierController extends Controller
             return redirect()->route('suppliers.list')->with('error', 'Nhà cung cấp không tồn tại');
         }
 
-        // Cập nhật nhà cung cấp
+        // Kiểm tra tính duy nhất của email (ngoại trừ bản ghi hiện tại)
+        $existingSupplier = Supplier::where('supplier_email', $request->supplier_email)
+            ->where('supplier_id', '!=', $supplier_id)
+            ->first();
+
+        if ($existingSupplier) {
+            return back()->withInput()->with('error', 'Email này đã được sử dụng bởi một nhà cung cấp khác.');
+        }
+
+        // Kiểm tra concurrency
+        if ($supplier->updated_at->toDateTimeString() !== $request->updated_at) {
+            return back()->withInput()->with('error', 'Nhà cung cấp đã bị thay đổi bởi người khác. Vui lòng tải lại trang.');
+        }
+
+        // Cập nhật nhà cung cấp với supplier_name đã được trim
         $supplier->update([
-            'supplier_name' => $request->supplier_name,
+            'supplier_name' => trim($request->supplier_name), // Loại bỏ khoảng trắng đầu và cuối
             'supplier_email' => $request->supplier_email,
             'supplier_description' => $request->supplier_description,
             'supplier_status' => $request->supplier_status,
@@ -129,6 +157,6 @@ class CrudSupplierController extends Controller
 
         // Xóa nhà cung cấp
         $supplier->delete();
-        return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp và các sản phẩm đã được xóa');
+        return redirect()->route('suppliers.list')->with('success', 'Nhà cung cấp đã được xóa');
     }
 }
