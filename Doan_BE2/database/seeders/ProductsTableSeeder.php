@@ -12,7 +12,7 @@ class ProductsTableSeeder extends Seeder
     {
         // Lấy danh sách [category_id => category_name]
         $categories = DB::table('category')->pluck('category_name', 'category_id');
-        $images = ['macbookpro13m2_1.jpg', 'samsum22_2.jpg', 'laptopasusf15_1.jpg', 'samsum23_1.jpg'];
+        $images = ['macbookpro13m2_1.jpg', 'samsum22_2.jpg', 'laptopasusf15_1.jpg', 'samsum23_1.jpg', 'samsungfit3_3.jpg', 'macbookpro13m2_2.jpg', 'gallery-04.jpg'];
 
         for ($i = 1; $i <= 100; $i++) {
             $categoryId = $categories->keys()->random(); // random category_id
