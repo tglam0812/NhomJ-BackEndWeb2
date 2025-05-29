@@ -1,4 +1,4 @@
-<?php
+update<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CrudCategoryController;
 use App\Http\Controllers\Admin\CrudAccountAdminController;
 use App\Http\Controllers\Admin\CrudLevelController;
 use App\Http\Controllers\Admin\CrudSupplierController;
+
 use App\Http\Controllers\Admin\CrudBrandController;
 use App\Http\Controllers\Admin\ContactManageController;
 use App\Http\Controllers\TrangChuController;
