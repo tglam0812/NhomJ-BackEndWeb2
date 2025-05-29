@@ -113,6 +113,7 @@
                 <a href="{{ route('phieugiam.index') }}">Discount</a>
                 <a href="{{ route('admin.messages') }}">Feedback</a>
                 <a href="{{ route('suppliers.list') }}">Supplier</a>
+                <a href="{{ route('brands.list') }}">Brand</a>
             </div>
             <div style="flex-shrink: 0;">
                 <a href="{{ route('logout') }}" style="color:#ffffff; margin-left: 20px; font-weight: 600;">Đăng xuất</a>

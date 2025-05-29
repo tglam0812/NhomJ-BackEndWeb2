@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CrudCategoryController;
 use App\Http\Controllers\Admin\CrudAccountAdminController;
 use App\Http\Controllers\Admin\CrudLevelController;
 use App\Http\Controllers\Admin\CrudSupplierController;
+use App\Http\Controllers\Admin\CrudBrandController;
 use App\Http\Controllers\Admin\ContactManageController;
 use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\PhieuGiamGiaController;
@@ -92,6 +93,17 @@ Route::prefix('suppliers')->group(function () {
     Route::put('/{supplier_id}/update', [CrudSupplierController::class, 'postUpdateSupplier'])->name('suppliers.update');
     Route::get('/{supplier_id}', [CrudSupplierController::class, 'readSupplier'])->name('suppliers.readSupplier');
     Route::delete('/{supplier_id}', [CrudSupplierController::class, 'deleteSupplier'])->name('suppliers.deleteSupplier');
+});
+
+// CRUD Thương hiệu
+Route::prefix('brands')->group(function () {
+    Route::get('/', [CrudBrandController::class, 'listBrand'])->name('brands.list');
+    Route::get('/create', [CrudBrandController::class, 'createBrand'])->name('brands.createBrand');
+    Route::post('/create', [CrudBrandController::class, 'postBrand'])->name('brands.store');
+    Route::get('/{Brand_id}/edit', [CrudBrandController::class, 'updateBrand'])->name('brands.updateBrand');
+    Route::put('/{Brand_id}/update', [CrudBrandController::class, 'postUpdateBrand'])->name('brands.update');
+    Route::get('/{Brand_id}', [CrudBrandController::class, 'readBrand'])->name('brands.readBrand');
+    Route::delete('/{Brand_id}', [CrudBrandController::class, 'deleteBrand'])->name('brands.deleteBrand');
 });
 
 // CRUD Cấp độ Admin
