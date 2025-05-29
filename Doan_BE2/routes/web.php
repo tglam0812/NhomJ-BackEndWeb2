@@ -17,6 +17,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CompareController;
 
 // Trang chủ và About
 Route::get('/', [TrangChuController::class, 'home'])->name('home');
@@ -165,6 +166,9 @@ Route::get('/orders', [CheckoutController::class, 'myOrders'])
     ->middleware('auth')
     ->name('orders.mine');
 
-
+//so sanh san pham
+Route::get('/compare', [CompareController::class, 'showCompare'])->name('compare.show');
+Route::get('/compare/add/{id}', [CompareController::class, 'addToCompare'])->name('compare.add');
+Route::get('/compare/remove/{id}', [CompareController::class, 'removeFromCompare'])->name('compare.remove');
 
 
