@@ -19,11 +19,13 @@
                     <div class="error">{{ $message }}</div>
                 @enderror
             </div>
-
-            <div class="form-group">
-                <label for="supplier_description">Description</label>
-                <textarea name="supplier_description" id="supplier_description" rows="4">{{ old('supplier_description') }}</textarea>
-            </div>
+<div class="form-group">
+    <label for="supplier_description">Mô tả</label>
+    <textarea name="supplier_description" id="supplier_description" rows="4" class="form-control">{{ old('supplier_description') }}</textarea>
+    @error('supplier_description')
+        <span class="text-danger">{{ $message }}</span>
+    @enderror
+</div>
 
             <div class="form-group">
                 <label>Status <span class="text-danger">*</span></label>

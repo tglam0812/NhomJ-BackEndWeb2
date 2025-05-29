@@ -1,5 +1,3 @@
-<?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -14,7 +12,7 @@ class CrudSupplierController extends Controller
     public function listSupplier(Request $request)
     {
         $query = Supplier::query();
-        //search
+        // Tìm kiếm
         if ($search = $request->input('search')) {
             $query->where('supplier_name', 'like', "%$search%");
         }
@@ -23,7 +21,7 @@ class CrudSupplierController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Hiển thị form tạo nhà cung cấp
      */
     public function create()
     {
@@ -31,7 +29,7 @@ class CrudSupplierController extends Controller
     }
 
     /**
-     * xử lý form tạo nhà cung cấp
+     * Xử lý yêu cầu hiển thị form tạo nhà cung cấp (không cần thiết, có thể gộp vào create)
      */
     public function createSupplier(Request $request)
     {
@@ -39,19 +37,33 @@ class CrudSupplierController extends Controller
     }
 
     /**
-     * Xử lý form nhà cung cấp
+     * Xử lý form tạo nhà cung cấp
      */
     public function postSupplier(Request $request)
     {
         $request->validate([
-            'supplier_name' => 'required|string|max:255',
-            'supplier_email' => ['required', 'string', 'max:255', 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'],
-            'supplier_description' => 'nullable|string',
+            'supplier_name' => [
+                'required',
+                'string',
+                'max:255',
+                'regex:/^[\p{L}0-9\s]+$/u' // Cho phép chữ cái (bao gồm tiếng Việt), số và khoảng trắng
+            ],
+            'supplier_email' => [
+                'required',
+                'string',
+                'max:255',
+                'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'
+            ],
+            'supplier_description' => 'nullable|string|max:100',
             'supplier_status' => 'required|boolean',
+        ], [
+            'supplier_name.regex' => 'Tên nhà cung cấp chỉ được chứa chữ cái, số và khoảng trắng, không chứa ký tự đặc biệt.',
+            'supplier_email.regex' => 'Email nhà cung cấp phải là địa chỉ Gmail hợp lệ.',
+            'supplier_description.max' => 'Mô tả nhà cung cấp không được vượt quá 100 ký tự.'
         ]);
 
         Supplier::create([
-            'supplier_name' => $request->supplier_name,
+            'supplier_name' => trim($request->supplier_name), // Loại bỏ khoảng trắng đầu và cuối
             'supplier_email' => $request->supplier_email,
             'supplier_description' => $request->supplier_description,
             'supplier_status' => $request->supplier_status,
@@ -86,7 +98,7 @@ class CrudSupplierController extends Controller
                 'required',
                 'string',
                 'max:255',
-                'regex:/^[a-zA-Z0-9\s]+$/' // Cho phép chữ cái, số và khoảng trắng
+                'regex:/^[\p{L}0-9\s]+$/u' // Cho phép chữ cái (bao gồm tiếng Việt), số và khoảng trắng
             ],
             'supplier_email' => [
                 'required',
@@ -94,11 +106,13 @@ class CrudSupplierController extends Controller
                 'max:255',
                 'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'
             ],
-            'supplier_description' => 'nullable|string',
+            'supplier_description' => 'nullable|string|max:1000',
             'supplier_status' => 'required|boolean',
-            'updated_at' => 'required' // Nhận updated_at từ form
+            'updated_at' => 'required'
         ], [
-            'supplier_name.regex' => 'Tên nhà cung cấp chỉ được chứa chữ cái, số và khoảng trắng, không chứa ký tự đặc biệt.'
+            'supplier_name.regex' => 'Tên nhà cung cấp chỉ được chứa chữ cái, số và khoảng trắng, không chứa ký tự đặc biệt.',
+            'supplier_email.regex' => 'Email nhà cung cấp phải là địa chỉ Gmail hợp lệ.',
+            'supplier_description.max' => 'Mô tả nhà cung cấp không được vượt quá 1000 ký tự.'
         ]);
 
         // Tìm nhà cung cấp
@@ -125,7 +139,7 @@ class CrudSupplierController extends Controller
 
         // Cập nhật nhà cung cấp với supplier_name đã được trim
         $supplier->update([
-            'supplier_name' => trim($request->supplier_name), // Loại bỏ khoảng trắng đầu và cuối
+            'supplier_name' => trim($request->supplier_name),
             'supplier_email' => $request->supplier_email,
             'supplier_description' => $request->supplier_description,
             'supplier_status' => $request->supplier_status,
