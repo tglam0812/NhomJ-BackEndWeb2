@@ -109,6 +109,11 @@
                     data-notify="{{ session('wishlist_count', 0) }}">
                         <i class="zmdi zmdi-favorite-outline"></i>
                     </a>
+                    <a href="{{ route('compare.show') }}"
+                    class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
+                    data-notify="{{ count(session('compare', [])) }}">
+                        <i class="zmdi zmdi-balance"></i>
+                    </a>
 
                 </div>
             </nav>
