@@ -18,27 +18,47 @@ class TrangChuController extends Controller
     {
         $query = Products::with(['category', 'brand']);
 
+        // Tìm kiếm theo tên
         if ($request->filled('search')) {
             $query->where('product_name', 'like', '%' . $request->search . '%');
         }
 
+        // Lọc theo danh mục
         if ($request->filled('category_id')) {
             $query->where('category_id', $request->category_id);
         }
 
+        // ✅ Lọc theo giá
+        if ($request->filled('price_range')) {
+            switch ($request->price_range) {
+                case 'under_5m':
+                    $query->where('product_price', '<', 5000000);
+                    break;
+                case '5m_15m':
+                    $query->whereBetween('product_price', [5000000, 15000000]);
+                    break;
+                case '15m_25m':
+                    $query->whereBetween('product_price', [15000000, 25000000]);
+                    break;
+                case 'above_25m':
+                    $query->where('product_price', '>', 25000000);
+                    break;
+            }
+        }
+
+        // Phân trang
         $products = $query->orderBy('created_at', 'desc')->paginate(8);
-        $products->appends($request->only(['search', 'category_id']));
+        $products->appends($request->only(['search', 'category_id', 'price_range']));
 
         $categories = Category::all();
 
+        // Danh sách sản phẩm yêu thích
         $wishlistCount = 0;
         $userWishlistIds = [];
 
         if (Auth::check()) {
             $wishlistCount = Wishlist::where('user_id', Auth::id())->count();
             $userWishlistIds = Wishlist::where('user_id', Auth::id())->pluck('product_id')->toArray();
-
-            // Lưu vào session để dùng trong header (trái tim)
             session(['wishlist_count' => $wishlistCount]);
         }
 

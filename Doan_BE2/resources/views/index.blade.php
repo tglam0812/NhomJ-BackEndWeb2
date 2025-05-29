@@ -38,6 +38,16 @@ Thương Mại Điện Tử
 	.scrollable-categories::-webkit-scrollbar-track {
 		background: #f1f1f1;
 	}
+	
+	input:focus, select:focus, button:focus {
+    box-shadow: none !important;
+    outline: none;
+	}
+
+	form .form-select, form .btn {
+		height: 42px;
+		font-size: 14px;
+	}
 </style>
 @endsection
 
@@ -141,18 +151,30 @@ Thương Mại Điện Tử
 
 
 			<!-- Search product -->
-			<form method="GET" action="{{ route('home') }}">
-				<div class="bor8 dis-flex p-l-15">
-					<button type="submit" class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="mtext-107 cl2 size-114 plh2 p-r-15"
-						type="text"
-						name="search"
-						value="{{ request('search') }}"
-						placeholder="Tìm kiếm sản phẩm...">
+			<form method="GET" action="{{ route('home') }}" class="d-flex flex-wrap justify-content-center align-items-center gap-3 mb-4 mt-3">
+
+				{{-- Dropdown lọc giá --}}
+				<div>
+					<select name="price_range" class="form-select rounded-pill px-4 py-2 shadow-sm border" style="min-width: 200px; height: 42px;" onchange="this.form.submit()">
+						<option value="">-- Chọn khoảng giá --</option>
+						<option value="under_5m" {{ request('price_range') == 'under_5m' ? 'selected' : '' }}>Dưới 5 triệu</option>
+						<option value="5m_15m" {{ request('price_range') == '5m_15m' ? 'selected' : '' }}>5 - 15 triệu</option>
+						<option value="15m_25m" {{ request('price_range') == '15m_25m' ? 'selected' : '' }}>15 - 25 triệu</option>
+						<option value="above_25m" {{ request('price_range') == 'above_25m' ? 'selected' : '' }}>Trên 25 triệu</option>
+					</select>
 				</div>
+
+				<!-- {{-- Nút tìm kiếm --}}
+				<div>
+					<button type="submit" class="btn btn-dark rounded-pill px-4 shadow-sm" style="height: 42px;">
+						Tìm kiếm
+					</button>
+				</div> -->
+
 			</form>
+
+
+
 			<!-- Filter -->
 			<div class="dis-none panel-filter w-full p-t-10">
 				<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
