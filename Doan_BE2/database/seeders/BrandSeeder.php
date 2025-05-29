@@ -10,7 +10,7 @@ class BrandSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('brand')->insert([
+        $brands = [
             [
                 'brand_name' => 'Apple',
                 'brand_description' => 'Thương hiệu Apple',
@@ -46,6 +46,18 @@ class BrandSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-        ]);
+        ];
+        
+
+        for ($i = 1; $i <= 10; $i++) {
+            $brands[] = [
+                'brand_name' => 'HP',
+                'brand_description' => 'Thương hiệu HP'. $i,
+                'brand_status' => '1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ];
+        }
+        DB::table('brand')->insert($brands);
     }
 }
