@@ -381,39 +381,48 @@ Thương Mại Điện Tử
 
 		<div class="row isotope-grid">
 			@foreach ($products as $product)
-			<!--Sản phẩm theo danh mục -->
-			<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{ Str::slug($product->category->category_name) }}">
-				<div class="block2">
-					<div class="block2-pic hov-img0">
-						<img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" alt="IMG-PRODUCT">
+<!--Sản phẩm theo danh mục -->
+		<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{ Str::slug($product->category->category_name) }}">
+			<div class="block2">
+				<div class="block2-pic hov-img0">
+					<img src="{{ asset('assets/images/products/' . $product->product_images_1) }}" alt="IMG-PRODUCT">
 
-						<a href="{{ route('product.detail', ['product_id' => $product->product_id]) }}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-							Quick View
+					<a href="{{ route('product.detail', ['product_id' => $product->product_id]) }}"
+						class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+						Quick View
+					</a>
+				</div>
+				<div class="block2-txt flex-w flex-t p-t-14">
+					<div class="block2-txt-child1 flex-col-l">
+						<a href="{{ route('product.detail', ['product_id' => $product->product_id]) }}"
+							class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+							{{ $product->product_name }}
+						</a>
+
+						<span class="stext-105 cl3">
+							{{ number_format($product->product_price) }} VND
+						</span>
+
+						{{-- Nút so sánh sản phẩm --}}
+						<a href="{{ route('compare.add', $product->product_id) }}"
+							class="btn btn-sm btn-outline-primary mt-2 rounded-pill">
+							So sánh
 						</a>
 					</div>
-					<div class="block2-txt flex-w flex-t p-t-14">
-						<div class="block2-txt-child1 flex-col-l ">
-							<a href="{{ route('product.detail', ['product_id' => $product->product_id]) }}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-								{{ $product->product_name }}
-							</a>
 
-							<span class="stext-105 cl3">
-								{{ number_format($product->product_price) }} VND
-							</span>
-						</div>
-						<div class="block2-txt-child2 flex-r p-t-3">
-							<form action="{{ route('wishlist.toggle', $product->product_id) }}" method="POST">
-								@csrf
-								<button type="submit" class="btn btn-link p-0 border-0">
-									<i class="bi bi-heart{{ in_array($product->product_id, $userWishlistIds ?? []) ? '-fill text-danger' : '' }}"></i>
-								</button>
-							</form>
-						</div>
+					<div class="block2-txt-child2 flex-r p-t-3">
+						<form action="{{ route('wishlist.toggle', $product->product_id) }}" method="POST">
+							@csrf
+							<button type="submit" class="btn btn-link p-0 border-0">
+								<i class="bi bi-heart{{ in_array($product->product_id, $userWishlistIds ?? []) ? '-fill text-danger' : '' }}"></i>
+							</button>
+						</form>
 					</div>
 				</div>
-
 			</div>
-			@endforeach
+		</div>
+		@endforeach
+
 		</div>
 		<!-- phan trang -->
 
