@@ -89,7 +89,7 @@ class CrudProductsController extends Controller
 
         $path = public_path('assets/images/products');
 
-        $image1 = 'applewatchlse_3.jpg'; // Mặc định ảnh 1
+        $image1 = 'Iphone15_1.jpg'; // Mặc định ảnh 1
         $image2 = null;
         $image3 = null;
 
@@ -169,9 +169,9 @@ class CrudProductsController extends Controller
             'category_id' => 'required|exists:category,category_id',
             'brand_id' => 'nullable|exists:brand,brand_id',
             'product_description' => 'nullable|string|max:2000',
-            'product_images_1' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'product_images_2' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'product_images_3' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'product_images_1' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
+            'product_images_2' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
+            'product_images_3' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:4048',
         ], [
             'product_name.required' => 'Vui lòng nhập tên sản phẩm, không được nhập khoảng trống.',
             'product_name.max' => 'Tên sản phẩm không được vượt quá 30 ký tự.',
@@ -260,7 +260,7 @@ class CrudProductsController extends Controller
         }
 
         $path = public_path('assets/images/products');
-        $defaultImage = 'applewatchlse_3.jpg';
+        $defaultImage = 'Iphone15_1.jpg';
 
         // Chỉ xóa ảnh nếu KHÔNG phải là ảnh mặc định
         if ($product->product_images_1 && $product->product_images_1 !== $defaultImage) {
