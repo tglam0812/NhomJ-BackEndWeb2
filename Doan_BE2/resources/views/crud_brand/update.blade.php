@@ -2,7 +2,7 @@
 @section('content')
 <main class="brand-update">
     <div class="container">
-        <h2>Update Supplier</h2>
+        <h2>Update Brand</h2>
         @if (session('error'))
             <div class="error-message">
                 {{ session('error') }}
@@ -23,7 +23,7 @@
             <input type="hidden" name="updated_at" value="{{ $brand->updated_at->toDateTimeString() }}">
 
             <div class="form-group">
-                <label for="brand_name">Supplier Name</label>
+                <label for="brand_name">Brand Name</label>
                 <input type="text" id="brand_name" name="brand_name" value="{{ old('brand_name', $brand->brand_name) }}" required>
                 @error('brand_name')
                     <div class="error">{{ $message }}</div>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn-submit">Update Supplier</button>
+                <button type="submit" class="btn-submit">Update Brand</button>
             </div>
         </form>
     </div>
