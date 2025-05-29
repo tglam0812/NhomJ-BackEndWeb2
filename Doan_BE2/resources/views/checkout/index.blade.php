@@ -40,6 +40,20 @@
                 </div>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="payment_method">Hình thức thanh toán:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="cod" value="cod" checked>
+                <label class="form-check-label" for="cod">Thanh toán khi nhận hàng (COD)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="payment_method" id="bank" value="bank">
+                <label class="form-check-label" for="bank">Chuyển khoản ngân hàng</label>
+            </div>
+            @error('payment_method')
+                <div class="text-danger mt-1">{{ $message }}</div>
+            @enderror
+        </div>
 
 
         <button type="submit" class="btn btn-dark w-100">Xác nhận đặt hàng</button>

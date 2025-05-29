@@ -20,7 +20,10 @@
                 <strong><i class="bi bi-info-circle"></i> Trạng thái:</strong> 
                 <span class="badge bg-warning text-dark">{{ ucfirst($bill->status) }}</span>
             </p>
-
+            <p>
+                <strong><i class="bi bi-credit-card"></i> Hình thức thanh toán:</strong>
+                {{ $bill->payment_method === 'cod' ? 'Thanh toán khi nhận hàng' : 'Chuyển khoản ngân hàng' }}
+            </p>
             <ul class="mb-3">
                 @foreach ($bill->details as $item)
                     <li>

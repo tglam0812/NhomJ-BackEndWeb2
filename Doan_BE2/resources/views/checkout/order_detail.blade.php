@@ -12,6 +12,9 @@
             <p><i class="bi bi-info-circle"></i> <strong>Trạng thái:</strong> 
                 <span class="badge bg-warning text-dark">{{ ucfirst($bill->status) }}</span>
             </p>
+            <p><i class="bi bi-credit-card"></i> <strong>Hình thức thanh toán:</strong> 
+                {{ $bill->payment_method === 'cod' ? 'Thanh toán khi nhận hàng' : 'Chuyển khoản ngân hàng' }}
+            </p>
             <p><i class="bi bi-chat-left-text"></i> <strong>Ghi chú:</strong> {{ $bill->note }}</p>
         </div>
 
